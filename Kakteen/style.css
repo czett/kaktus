@@ -77,6 +77,29 @@ body, html{
     box-sizing: border-box;
 	position: relative;
     padding: var(--lrpad);
+    z-index: 10;
+}
+
+.card{
+	width: calc(100vw - 2 * var(--lrpad));
+	height: 40vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 1.5vw;
+	visibility: hidden;
+    box-sizing: border-box;
+    color: var(--bg);
+    overflow: hidden;
+    transition: 500ms;
+    user-select: none;
+    background-size: cover;
+    z-index: 10;
+
+    /* visible design*/
+    padding: calc(0.5 * var(--lrpad));
+    /* v.d. ende */
 }
 
 .card{
@@ -184,7 +207,7 @@ button{
 }
 
 .card .gradient p{
-    max-width: 30%;
+    max-width: 50%;
     font-size: 18px;
     line-height: 1.1em;
 }
@@ -294,5 +317,6 @@ button{
         box-sizing: border-box;
         transform: translate(-50%, -50%);
         background: red;
+        z-index: 200;
     }
 }
