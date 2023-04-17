@@ -77,6 +77,7 @@ body, html{
     box-sizing: border-box;
 	position: relative;
     padding: var(--lrpad);
+    z-index: 10;
 }
 
 .card{
@@ -94,13 +95,10 @@ body, html{
     transition: 500ms;
     user-select: none;
     background-size: cover;
+    z-index: 10;
 
     /* visible design*/
-
-    border: none;
-    /* background-color: var(--ac); */
     padding: calc(0.5 * var(--lrpad));
-
     /* v.d. ende */
 }
 
@@ -294,5 +292,6 @@ button{
         box-sizing: border-box;
         transform: translate(-50%, -50%);
         background: red;
+        z-index: 200;
     }
 }
