@@ -41,5 +41,10 @@ var menuCollapsed = false;
 function triggerMenu(){
 	if (menuCollapsed == false){
 		console.log("menu is not visible");
+		document.querySelector(".link-box").style.display = "flex";
+		menuCollapsed = true;
+	}else{
+		document.querySelector(".link-box").style.display = "none";
+		menuCollapsed = false;
 	}
 }
