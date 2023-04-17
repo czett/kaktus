@@ -77,7 +77,6 @@ body, html{
     box-sizing: border-box;
 	position: relative;
     padding: var(--lrpad);
-    z-index: 10;
 }
 
 .card{
@@ -95,12 +94,17 @@ body, html{
     transition: 500ms;
     user-select: none;
     background-size: cover;
-    z-index: 10;
 
     /* visible design*/
+
+    border: none;
+    /* background-color: var(--ac); */
     padding: calc(0.5 * var(--lrpad));
+
     /* v.d. ende */
 }
+
+
 
 .card:hover{
     filter: brightness(1.15);
@@ -182,7 +186,7 @@ button{
 }
 
 .card .gradient p{
-    max-width: 30%;
+    max-width: 50%;
     font-size: 18px;
     line-height: 1.1em;
 }
@@ -281,28 +285,17 @@ button{
         display: block;
     }
 
-    .cycler{
-        z-index: -1;
-    }
-
     .link-box{
-        visibility: none;
         position: absolute;
         width: 66vw;
+        display: flex;
         flex-direction: column;
-        top: calc(3 * var(--lrpad) + 160%);
+        top: 100%;
         left: 50%;
-        padding: calc(3 * var(--lrpad));
+        padding: var(--lrpad);
+        box-sizing: border-box;
         transform: translate(-50%, -50%);
-        background: var(--bg);
-        border: 1px solid var(--ac);
-        border-radius: 2vh;
+        background: red;
         z-index: 200;
-    }
-
-    .menu-trigger{
-        border: 2px solid red;
-        display: block;
-        width: 2vw;
     }
 }
