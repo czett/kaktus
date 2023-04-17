@@ -35,3 +35,11 @@ Array.from(document.querySelectorAll('.card')).forEach((element,index) =>
 {
 	 element.addEventListener('click', cycle);
 });
+
+var menuCollapsed = false;
+
+function triggerMenu(){
+	if (menuCollapsed == false){
+		console.log("menu is not visible");
+	}
+}
