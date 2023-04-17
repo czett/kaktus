@@ -281,17 +281,28 @@ button{
         display: block;
     }
 
+    .cycler{
+        z-index: -1;
+    }
+
     .link-box{
+        visibility: none;
         position: absolute;
         width: 66vw;
-        display: flex;
         flex-direction: column;
-        top: 100%;
+        top: calc(3 * var(--lrpad) + 160%);
         left: 50%;
-        padding: var(--lrpad);
-        box-sizing: border-box;
+        padding: calc(3 * var(--lrpad));
         transform: translate(-50%, -50%);
-        background: red;
+        background: var(--bg);
+        border: 1px solid var(--ac);
+        border-radius: 2vh;
         z-index: 200;
+    }
+
+    .menu-trigger{
+        border: 2px solid red;
+        display: block;
+        width: 2vw;
     }
 }
