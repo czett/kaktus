@@ -253,5 +253,17 @@ button{
 
 .overview .icons .icon .icon-circle:hover{
     filter: brightness(1.1);
-    transform: scale(1.15);
+    transform: scale(1.2) 
+    
+   
+}
+
+.link:hover{
+    transition: 500ms;
+    transform: scale(1.2);
+}
+
+.link{
+    transition: 500ms;
+    
 }
