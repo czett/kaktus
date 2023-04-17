@@ -279,4 +279,17 @@ button{
     .mob{
         display: block;
     }
+
+    .link-box{
+        position: absolute;
+        width: 66vw;
+        display: flex;
+        flex-direction: column;
+        top: 100%;
+        left: 50%;
+        padding: var(--lrpad);
+        box-sizing: border-box;
+        transform: translate(-50%, -50%);
+        background: red;
+    }
 }
