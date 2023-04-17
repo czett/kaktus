@@ -109,7 +109,7 @@ body, html{
 }
 
 #one{
-    background-image: url(img/dark.jpg);
+    background-image: url(img/kaktuseis2.png);
     background-position: 0% 50%;
 }
 
@@ -186,7 +186,7 @@ button{
 .card .gradient p{
     max-width: 30%;
     font-size: 18px;
-    line-height: 2em;
+    line-height: 1.1em;
 }
 
 .gradient{
