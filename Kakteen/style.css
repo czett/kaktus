@@ -104,6 +104,31 @@ body, html{
     /* v.d. ende */
 }
 
+.card{
+	width: calc(100vw - 2 * var(--lrpad));
+	height: 40vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 1.5vw;
+	visibility: hidden;
+    box-sizing: border-box;
+    color: var(--bg);
+    overflow: hidden;
+    transition: 500ms;
+    user-select: none;
+    background-size: cover;
+
+    /* visible design*/
+
+    border: none;
+    /* background-color: var(--ac); */
+    padding: calc(0.5 * var(--lrpad));
+
+    /* v.d. ende */
+}
+
 .card:hover{
     filter: brightness(1.15);
 }
@@ -184,7 +209,7 @@ button{
 }
 
 .card .gradient p{
-    max-width: 30%;
+    max-width: 50%;
     font-size: 18px;
     line-height: 1.1em;
 }
