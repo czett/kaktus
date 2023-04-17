@@ -77,29 +77,6 @@ body, html{
     box-sizing: border-box;
 	position: relative;
     padding: var(--lrpad);
-    z-index: 10;
-}
-
-.card{
-	width: calc(100vw - 2 * var(--lrpad));
-	height: 40vh;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	border-radius: 1.5vw;
-	visibility: hidden;
-    box-sizing: border-box;
-    color: var(--bg);
-    overflow: hidden;
-    transition: 500ms;
-    user-select: none;
-    background-size: cover;
-    z-index: 10;
-
-    /* visible design*/
-    padding: calc(0.5 * var(--lrpad));
-    /* v.d. ende */
 }
 
 .card{
@@ -126,6 +103,8 @@ body, html{
 
     /* v.d. ende */
 }
+
+
 
 .card:hover{
     filter: brightness(1.15);
@@ -304,19 +283,5 @@ button{
 
     .mob{
         display: block;
-    }
-
-    .link-box{
-        position: absolute;
-        width: 66vw;
-        display: flex;
-        flex-direction: column;
-        top: 100%;
-        left: 50%;
-        padding: var(--lrpad);
-        box-sizing: border-box;
-        transform: translate(-50%, -50%);
-        background: red;
-        z-index: 200;
     }
 }
