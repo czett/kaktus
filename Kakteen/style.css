@@ -302,6 +302,9 @@ button{
         border: 1px solid var(--ac);
         border-radius: 2vh;
         z-index: 200;
+        display: none;
+        visibility: hidden;
+        transition: 250ms;
     }
 
     .menu-trigger{
