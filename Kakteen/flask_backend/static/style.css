@@ -1,8 +1,7 @@
-<<<<<<< HEAD:Kakteen/style.css
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Unbounded:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Unbounded:wght@700&display=swap');
 
 *{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--fg);
 }
 
@@ -801,4 +800,3 @@ button{
         transition: 250ms;
     }
 }
->>>>>>> c2a449e4a5f1c74f7c303110d613bc4df23f8d95:Kakteen/flask_backend/static/style.css
