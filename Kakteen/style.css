@@ -360,11 +360,11 @@ button{
     
     
     position: absolute;
-    height: 5%;
+    height: 50%;
     width: 100%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 150%);
+    transform: translate(-60%, 50%);
     padding: var(--lrpad);
     box-sizing: border-box; 
     
@@ -382,7 +382,7 @@ button{
 }
 
 .card-s .gradient-s p{
-    max-width: 110%;
+    max-width:100%;
     font-size: 20px;
     line-height: 1.11em;
     
