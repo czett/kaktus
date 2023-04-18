@@ -69,7 +69,13 @@ body, html{
 
 .content{
     margin-top: 7.5vh;
-    padding: 0 var(--lrpad);
+    padding: calc(0.5 * var(--lrpad)) var(--lrpad);
+}
+
+.ueberschrift{
+    font-family: 'Unbounded';
+    letter-spacing: 0.1em;
+    text-decoration: dashed underline;
 }
 
 /* Cycler */
