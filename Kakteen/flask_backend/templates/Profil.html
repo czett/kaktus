@@ -4,20 +4,20 @@
 <!-- <img src="{{  url_for('static', filename='img/1.jpg')  }}" alt=""> -->
 <h1 class="ueberschrift">Profil</h1>
 
-<form action="momogus">
+<!-- <form action="momogus">
     <input type="radio" name="profilbild" id="1">
     <input type="radio" name="profilbild" id="2">
     <input type="radio" name="profilbild" id="3">
 
     <div class="bilder">
         <label for="1">
-            <img src="1.jpg" alt="">
+            <img src="{{  url_for('static', filename='img/1.jpg')  }}" alt="">
         </label>
         <label for="2">
-            <img src="2.jpg" alt="">
+            <img src="{{  url_for('static', filename='img/2.jpg')  }}" alt="">
         </label>
         <label for="3">
-            <img src="3.jpg" alt="">
+            <img src="{{  url_for('static', filename='img/3.jpg')  }}" alt="">
         </label>
     </div>
 </form>
@@ -32,8 +32,8 @@
     }
 
     label, img{
-        width: 10vw;
-        height: 10vw;
+        width: 12vw;
+        height: 12vw;
         overflow: hidden;
         border-radius: 50%;
     }
@@ -42,12 +42,15 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        width: 100vw;
+        width: 75vw;
 
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
-</style>
+</style> -->
+
+
+
 {% endblock %}
