@@ -41,5 +41,12 @@ var menuCollapsed = false;
 function triggerMenu(){
 	if (menuCollapsed == false){
 		console.log("menu is not visible");
+		document.querySelector(".link-box").style.display = "flex";
+		document.querySelector(".trigger-icon").style.transform = "rotate(90deg)";
+		menuCollapsed = true;
+	}else{
+		document.querySelector(".link-box").style.display = "none";
+		document.querySelector(".trigger-icon").style.transform = "rotate(0deg)";
+		menuCollapsed = false;
 	}
 }

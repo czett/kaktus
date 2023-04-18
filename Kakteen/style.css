@@ -310,7 +310,7 @@ button{
 
 .link:hover{
     transition: 500ms;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .link{
@@ -333,5 +333,41 @@ button{
 
     .mob{
         display: block;
+    }
+
+    .cycler, .card{
+        visibility: hidden;
+    }
+
+    .link-box{
+        position: absolute;
+        width: 66vw;
+        display: flex;
+        flex-direction: column;
+        top: calc(3 * var(--lrpad) + 180%);
+        left: 50%;
+        padding: calc(3 * var(--lrpad));
+        transform: translate(-50%, -50%);
+        background: var(--bg);
+        border: 1px solid var(--ac);
+        border-radius: 2vh;
+        z-index: 200;
+    }
+
+    .menu-trigger{
+        width: 7.5vw;
+        height: 7.5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .menu-trigger i{
+        font-size: 5vw;
+        transition: 250ms;
     }
 }
