@@ -51,3 +51,8 @@ function triggerMenu(){
 		menuCollapsed = true;
 	}
 }
+
+
+//================/Notification alert\================\\
+
+const bell = document.getElementById('bell');

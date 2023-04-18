@@ -390,7 +390,6 @@ button{
 
 /*ENDE vom Shop*/
 
-=======
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins&family=Unbounded:wght@700&display=swap');
 
 *{
@@ -800,3 +799,18 @@ button{
         transition: 250ms;
     }
 }
+
+
+/*===============/Notification alert\===================*/
+
+#bell {
+    transition: 150ms;
+}
+
+#bell:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+
+/*==============/Notifikation alert [end]\==============*/
