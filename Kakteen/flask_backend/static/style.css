@@ -367,7 +367,8 @@ color: black;
 #content.her {
     color: var(--ac);
     position: fixed;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll; 
     border: 2px solid var(--ac);
     border-top: none;
     border-right: none;
@@ -379,6 +380,9 @@ color: black;
     transform: translate(-100%, calc(7.5vh - 1px));
 }
 
+#content.her ::-webkit-scrollbar{
+    width: 0px;
+}
 
 .contentBoxText {
     margin: 0;
