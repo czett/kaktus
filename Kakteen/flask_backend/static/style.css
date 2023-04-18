@@ -468,7 +468,7 @@ body, html{
 .ueberschrift{
     font-family: 'Unbounded';
     letter-spacing: 0.1em;
-    text-decoration: dashed underline;
+    text-decoration: underline;
 }
 
 /* Cycler */
