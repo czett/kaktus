@@ -149,6 +149,56 @@ button{
     animation-delay: 0ms;
 }
 
+
+
+.card-s{
+	width: calc(100vw - 2 * var(--lrpad));
+	height: 40vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 1.5vw;
+	visibility: hidden;
+    box-sizing: border-box;
+    color: var(--bg);
+    overflow: hidden;
+    transition: 500ms;
+    user-select: none;
+    background-size: cover;
+
+    /* visible design*/
+
+    border: none;
+    /* background-color: var(--ac); */
+    padding: calc(0.5 * var(--lrpad));
+
+    /* v.d. ende */
+}
+
+
+
+
+
+
+.card-s:hover{
+    filter: brightness(1.15);
+}
+
+#one-s{
+    background-image: url(img/kaktuseis2.png);
+    background-position: 0% 50%;
+}
+
+#two-s{
+    background-image: url(img/flowers.jpg);
+}
+
+#three-s{
+    background-image: url(img/topdown.jpg);
+    background-position: 0% 50%;
+}
+
 @keyframes out{
 	0%{
 		visibility: visible;
