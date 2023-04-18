@@ -365,6 +365,42 @@ button{
     opacity: 0.8;
 }
 
+#content {
+    position: absolute;
+    border-radius: 0 0 0 10%;
+    background-color: var(--bg);
+    width: 0;
+    height: 0;
+    margin-right: 0.5vw;
+    overflow: hidden;
+}
+#content.her {
+    color: var(--ac);
+    position: fixed;
+    overflow: scroll;
+    border: 2px solid var(--ac);
+    border-top: none;
+    border-right: none;
+    width: 22vw;
+    height: 50vh;
+    z-index: 10000;
+    top: 0;
+    left: 100%;
+    transform: translate(-100%, calc(7.5vh - 1px));
+}
+
+
+.contentBoxText {
+    margin: 0;
+    padding: 2.7vh 1vw 2.7vh 1.75vw;
+    display: flex;
+    align-items: center;
+}
+
+.contentBoxText:hover {
+    background-color: rgb(59, 59, 59);
+}
+
 
 /*==============/Notifikation alert [end]\==============*/
 

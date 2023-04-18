@@ -27,7 +27,7 @@
             <a href="/shop" class="link">Shop</a>
             <a href="/entdecken" class="link">Entdecken</a>
             <a href="/support" class="link">Kakteen-Support</a>
-            <i id="bell" class="fa-solid fa-bell"></i>
+            <i onmousedown="ausklappen()" id="bell" class="fa-solid fa-bell"></i>
 
            
             <a href="/profil">
@@ -40,6 +40,20 @@
     </div>
     
     <div class="content">
+
+    <!---/Notifikation alert\-------------------------------------------------->  
+
+        <div id="content">
+
+            <p class="contentBoxText">_Place Holder_</p>
+            <p class="contentBoxText">_Place Holder_</p>
+
+        </div>
+
+
+    <!---/Notifikation alert [end]\-------------------------------------------->
+
+
         {% block content %}
         {% endblock %}
     </div>

@@ -55,4 +55,18 @@ function triggerMenu(){
 
 //================/Notification alert\================\\
 
-const bell = document.getElementById('bell');
+const bell = document.querySelector('#bell');
+const ctnt = document.querySelector('#content');
+var ausgeklappt = false;
+
+function ausklappen(){
+    if(ausgeklappt == false) {
+        ctnt.classList.add('her');
+        ausgeklappt = true;
+    }else {
+        ctnt.classList.remove('her');
+        ausgeklappt = false;
+    }
+}
+
+//================/Notification alert [end]\==========\\
