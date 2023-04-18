@@ -156,80 +156,9 @@ button{
     animation-delay: 0ms;
 }
 
-.card-s{
-	width: calc(100vw - 2 * var(--lrpad));
-	height: 40vh;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	border-radius: 1.5vw;
-	visibility: hidden;
-    box-sizing: border-box;
-    color: var(--bg);
-    overflow: hidden;
-    transition: 500ms;
-    user-select: none;
-    background-size: cover;
 
-    /* visible design*/
 
-    border: none;
-    /* background-color: var(--ac); */
-    padding: calc(0.5 * var(--lrpad));
 
-    /* v.d. ende */
-}
-
-.card-s:hover{
-    filter: brightness(1.15);
-}
-
-#one-s{
-    background-image: url(img/kaktuseis2.png);
-    background-position: 0% 50%;
-}
-
-#two-s{
-    background-image: url(img/flowers.jpg);
-}
-
-#three-s{
-    background-image: url(img/topdown.jpg);
-    background-position: 0% 50%;
-}
-
-@keyframes out{
-	0%{
-		visibility: visible;
-		transform: translate(-50%, -50%);
-		left: 50%;
-		top: 50%;
-	}
-	100%{
-		visibility: hidden;
-		left: -50%;
-		/*transform: translate(-50%, -50%) rotate(-25deg);*/
-        transform: translate(-50%, -50%);
-	}
-}
-
-@keyframes in{
-	0%{
-		visibility: hidden;
-		left: 100%;
-		top: 50%;
-		/* transform: translate(-50%, -50%) rotate(-10deg); */
-        transform: translate(-50%, -50%);
-	}
-	100%{
-		visibility: visible;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-}
-
-/* Cycler Ende */
 
 .card .gradient h2, .card .gradient p{
     color: var(--bg);
@@ -341,7 +270,6 @@ button{
     transform: scale(1.1);
     box-shadow: 0px 0px 10px 1px var(--ac);
     border-radius: 50%;
-
 }
 
 .profile-icon{
@@ -353,6 +281,68 @@ button{
     min-height: 100%;
 }
 
+.profile-change{
+    width: 20vh;
+	height: 20vh;
+    overflow: visible;
+    border: 2px solid var(--ac);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.profile-change:hover{
+    transition: 500ms;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 1px var(--ac);
+    border-radius: 50%;
+}
+
+.profile-change-img-wrap{
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.profile-change{
+    transition: 500ms;
+    position: relative;
+}
+
+.stift-wrap{
+    background-color: var(--ac);
+    aspect-ratio: 1 / 1;
+    width: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+
+    top: 83.5%;
+    left: 83.5%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 275ms;
+}
+
+.profile-change:hover .stift-wrap{
+    opacity: 1;
+}
+
+.stift-wrap:hover{
+    filter: brightness(0.9);
+}
+
+.feld1 {
+color: black;
+}
+
+.form1 {
+
+    color: blue;
+}
 
 /*===============/Notification alert\===================*/
 
@@ -400,6 +390,8 @@ button{
 .contentBoxText:hover {
     background-color: rgb(59, 59, 59);
 }
+
+
 
 
 /*==============/Notifikation alert [end]\==============*/
@@ -457,3 +449,83 @@ button{
         transition: 250ms;
     }
 }
+
+
+
+
+/* SHOP Anfang */
+
+.card-s {
+    aspect-ratio: 1 / 1;
+	height: 30vh;
+	position: absolute;
+	top: 50%;
+	left: 15%;
+	transform: translate(-50%, -50%);
+	border-radius: 10%;
+    box-sizing: border-box;
+    color: pink;
+    overflow: visible;
+    transition: 500ms;
+    user-select: none;
+    background-size:cover;
+
+    /* visible design*/
+
+    border:thick;
+    border-color: #faa1b0;
+    border-style:solid;
+    /* background-color: var(--ac); */
+    padding: calc(0.5 * var(--lrpad));
+
+    /* v.d. ende */
+}
+
+.card-s:hover{
+    filter: brightness(0.7);
+}
+
+#one-s{
+    background-image: url(img/kaktuseis2.png);
+    background-position: 45% 45%;
+    background-size: 270%;
+    top: 50%;
+	left: 15%;
+}
+
+ #two-s{
+    background-image: url(img/kaktus\ mit\ stiel.jpg);
+    background-position: 55% 30%;
+    background-size: 100%;
+    top: 50%;
+	left: 35%;
+} */
+
+/* #three-s{
+    background-image: url(img/topdown.jpg);
+    background-position: 0% 50%;
+} */
+
+.card-s .gradient-s p{
+    max-width: 150%;
+    font-size: 18px;
+    line-height: 1.1rem;
+}
+
+.gradient-s{
+    /* background: linear-gradient(90deg, var(--ac) 20%, transparent 60%); */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, 30%);
+    padding: var(--lrpad);
+    box-sizing: border-box;
+    color: white;
+}
+
+
+
+
+/* SHOP Ende */
