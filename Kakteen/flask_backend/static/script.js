@@ -70,3 +70,20 @@ function ausklappen(){
 }
 
 //================/Notification alert [end]\==========\\
+
+/* login */
+
+var login_vis = false;
+const login_window = document.querySelector(".logreg-box");
+
+function trigger_logreg(){
+    if(ausgeklappt == false) {
+        login_window.style.visibility = "visible"
+        ausgeklappt = true;
+    }else {
+        login_window.style.visibility = "hidden"
+        ausgeklappt = false;
+    }
+}
+
+/* login ende */

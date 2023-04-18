@@ -355,8 +355,6 @@ color: black;
     opacity: 0.8;
 }
 
-<<<<<<< HEAD
-=======
 #content {
     position: absolute;
     border-radius: 0 0 0 10%;
@@ -397,8 +395,6 @@ color: black;
     background-color: rgb(59, 59, 59);
 }
 
-
->>>>>>> a5ac1c0bbb69f4ae6776ca5c5c82813a676e8cc7
 /*==============/Notifikation alert [end]\==============*/
 
 /*=============Log in Box anfang=============*/
@@ -415,6 +411,8 @@ color: black;
     top: calc(-1px + 7.5vh);
     left: 100%;
     transform: translateX(-100%);
+
+    visibility: hidden;
 }
 
 .logreg-box form{
