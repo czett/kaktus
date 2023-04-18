@@ -36,5 +36,9 @@ def support():
 def profil():
 	return render_template("Profil.html")
 
+@app.route("/auswahl")
+def auswahl():
+	return render_template("Auswahl.html")
+
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)
