@@ -69,6 +69,7 @@ body, html{
 
 .content{
     margin-top: 7.5vh;
+    padding: 0 var(--lrpad);
 }
 
 /* Cycler */
