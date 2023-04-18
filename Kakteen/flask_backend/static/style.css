@@ -334,9 +334,62 @@ button{
     opacity: 0.8;
 }
 
-
 /*==============/Notifikation alert [end]\==============*/
 
+/*=============Log in Box anfang=============*/
+
+.logreg-box{
+    position: absolute;
+    background-color: var(--bg);
+    display: flex;
+    border: 1px solid var(--ac);
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: calc(0.5 * var(--lrpad));
+
+    top: calc(-1px + 7.5vh);
+    left: 100%;
+    transform: translateX(-100%);
+}
+
+.logreg-box form{
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.75 * var(--lrpad));
+    padding: calc(0.5 * var(--lrpad)) var(--lrpad);
+}
+
+.logreg-box form input{
+    border: 1px solid var(--ac);
+    background: transparent;
+    padding: 0.66vw;
+    border-radius: 0.5vw;
+    color: var(--fg);
+    width: 15vw;
+    box-sizing: border-box;
+}
+
+.logreg-box form button[type="submit"]{
+    background-color: var(--ac);
+    border: none;
+    border-radius: 0.5vw;
+    padding: 0.75vw;
+    width: 15vw;
+    box-sizing: border-box;
+}
+
+.gradient-text{
+    background: linear-gradient(90deg, var(--ac), var(--ac2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.logreg-header{
+    font-size: 22px;
+}
+
+/*=============log in box ende=============*/
 
 /*NICHT MEHR HIER DRUNTER ÄNDERN!!!!!!*/
 

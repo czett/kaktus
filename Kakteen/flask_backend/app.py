@@ -1,11 +1,24 @@
 from flask import Flask, render_template, redirect, session
-import os
+import pymongo
+from pymongo import MongoClient
 
 app = Flask(__name__)
+app.secret_key = "qwerizfugwoegfliugdshkg"
+cluster = MongoClient("mongodb+srv://kaktusmensch:kaktusdevgobrr@mrkaktus.icfdq08.mongodb.net/?retryWrites=true&w=majority")
+
+db = cluster["mrkaktus"]
+login = db["login"]
+
+def check_if_logged_in():
+	try:
+		test = session["logged_in"]
+	except:
+		session["logged_in"] = False
 
 @app.route("/")
 def start():
-	return render_template("index.html")
+	check_if_logged_in()
+	return render_template("index.html", logged_in=session["logged_in"])
 
 @app.route("/shop")
 def shop():

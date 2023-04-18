@@ -30,12 +30,27 @@
             <i id="bell" class="fa-solid fa-bell"></i>
 
            
-            <a href="/profil">
-                <div class="profile-icon">
+            {% if logged_in == True %}
+                <a href="/profil">
+                    <div class="profile-icon">
+                        <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
+                        <img src="{{  url_for('static', filename='img/d.jpg')  }}" alt="" class="profile-image">
+                    </div>
+                </a>
+            {% else %}
+                <div class="profile-icon" onmousedown="trigger_logreg()">
                     <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
-                    <img src="{{  url_for('static', filename='img/d.jpg')  }}" alt="" class="profile-image">
+                    <img src="{{  url_for('static', filename='img/1.jpg')  }}" alt="" class="profile-image">
                 </div>
-            </a>
+                <div class="logreg-box">
+                    <form action="/login" class="logreg-form">
+                        <h3 class="logreg-header">Anmelden bei <span class="gradient-text">MrKaktus</span></h3>
+                        <input type="text" name="username">
+                        <input type="password" name="password">
+                        <button type="submit">Anmelden</button>
+                    </form>
+                </div>
+            {% endif %}
         </div>
     </div>
     
