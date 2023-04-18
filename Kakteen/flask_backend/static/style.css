@@ -156,47 +156,7 @@ button{
     animation-delay: 0ms;
 }
 
-.card-s {
-    aspect-ratio: 1 / 1;
-	height: 30vh;
-	position: absolute;
-	top: 50%;
-	left: 15%;
-	transform: translate(-50%, -50%);
-	border-radius: 10%;
-    box-sizing: border-box;
-    color: var(--bg);
-    overflow: hidden;
-    transition: 500ms;
-    user-select: none;
-    background-size: cover;
 
-    /* visible design*/
-
-    border: none;
-    /* background-color: var(--ac); */
-    padding: calc(0.5 * var(--lrpad));
-
-    /* v.d. ende */
-}
-
-.card-s:hover{
-    filter: brightness(1.15);
-}
-
-#one-s{
-    background-image: url(img/kaktuseis2.png);
-    background-position: 0% 50%;
-}
-
-/* #two-s{
-    background-image: url(img/flowers.jpg);
-} */
-
-/* #three-s{
-    background-image: url(img/topdown.jpg);
-    background-position: 0% 50%;
-} */
 
 
 
@@ -390,3 +350,83 @@ button{
         transition: 250ms;
     }
 }
+
+
+
+
+/* SHOP Anfang */
+
+.card-s {
+    aspect-ratio: 1 / 1;
+	height: 30vh;
+	position: absolute;
+	top: 50%;
+	left: 15%;
+	transform: translate(-50%, -50%);
+	border-radius: 10%;
+    box-sizing: border-box;
+    color: pink;
+    overflow: visible;
+    transition: 500ms;
+    user-select: none;
+    background-size:cover;
+
+    /* visible design*/
+
+    border:thick;
+    border-color: #faa1b0;
+    border-style:solid;
+    /* background-color: var(--ac); */
+    padding: calc(0.5 * var(--lrpad));
+
+    /* v.d. ende */
+}
+
+.card-s:hover{
+    filter: brightness(0.7);
+}
+
+#one-s{
+    background-image: url(img/kaktuseis2.png);
+    background-position: 45% 45%;
+    background-size: 270%;
+    top: 50%;
+	left: 15%;
+}
+
+ #two-s{
+    background-image: url(img/kaktus\ mit\ stiel.jpg);
+    background-position: 55% 30%;
+    background-size: 100%;
+    top: 50%;
+	left: 35%;
+} */
+
+/* #three-s{
+    background-image: url(img/topdown.jpg);
+    background-position: 0% 50%;
+} */
+
+.card-s .gradient-s p{
+    max-width: 150%;
+    font-size: 18px;
+    line-height: 1.1rem;
+}
+
+.gradient-s{
+    /* background: linear-gradient(90deg, var(--ac) 20%, transparent 60%); */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, 30%);
+    padding: var(--lrpad);
+    box-sizing: border-box;
+    color: white;
+}
+
+
+
+
+/* SHOP Ende */
