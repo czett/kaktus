@@ -36,17 +36,18 @@ Array.from(document.querySelectorAll('.card')).forEach((element,index) =>
 	 element.addEventListener('click', cycle);
 });
 
-var menuCollapsed = false;
+var menuCollapsed = true;
 
 function triggerMenu(){
-	if (menuCollapsed == false){
-		console.log("menu is not visible");
+	if (menuCollapsed == true){
 		document.querySelector(".link-box").style.display = "flex";
+		document.querySelector(".link-box").style.visibility = "visible";
 		document.querySelector(".trigger-icon").style.transform = "rotate(90deg)";
-		menuCollapsed = true;
+		menuCollapsed = false;
 	}else{
 		document.querySelector(".link-box").style.display = "none";
+		document.querySelector(".link-box").style.visibility = "hidden";
 		document.querySelector(".trigger-icon").style.transform = "rotate(0deg)";
-		menuCollapsed = false;
+		menuCollapsed = true;
 	}
 }

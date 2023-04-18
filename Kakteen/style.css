@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Unbounded:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins&family=Unbounded:wght@700&display=swap');
 
 *{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--fg);
 }
 
@@ -39,6 +39,8 @@ body, html{
     left: 0px;
     width: 100vw;
     height: 7.5vh;
+    z-index: 100;
+    background-color: var(--bg);
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -50,7 +52,7 @@ body, html{
 .nav .link-box{
     display: flex;
     justify-content: space-between;
-    width: 40%;
+    min-width: 40%;
     align-items: center;
 }
 
@@ -103,8 +105,6 @@ body, html{
 
     /* v.d. ende */
 }
-
-
 
 .card:hover{
     filter: brightness(1.15);
@@ -238,7 +238,7 @@ button{
 .card .gradient p{
     max-width: 50%;
     font-size: 18px;
-    line-height: 1.1em;
+    line-height: 2rem;
 }
 
 .gradient{
@@ -283,6 +283,7 @@ button{
 
 .overview .icons .icon .icon-desc{
     font-size: 16px;
+    line-height: 1.75em;
 }
 
 .overview .icons .icon .icon-circle{
@@ -367,6 +368,9 @@ button{
         border: 1px solid var(--ac);
         border-radius: 2vh;
         z-index: 200;
+        display: none;
+        visibility: hidden;
+        transition: 250ms;
     }
 
     .menu-trigger{
