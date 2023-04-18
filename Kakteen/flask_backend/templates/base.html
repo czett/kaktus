@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MrKaktus</title>
+    <link rel="stylesheet" href="{{  url_for('static', filename='style.css')  }}">
+    <script src="https://kit.fontawesome.com/2339b7a2a3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div class="nav">
+        <div class="pc">
+            <div class="logo-wrap">
+                <h3 class="logo">kaktus</h3>
+            </div>
+        </div>
+        <div class="mob">
+            <div class="menu-trigger" id="menu-trigger" onmousedown="triggerMenu()">
+                <i class="fa-solid fa-bars trigger-icon"></i>
+            </div>
+        </div>
+        <div class="link-box">
+            <a href="Home.html" class="link">Home</a>
+            <a href="Shop.html" class="link">Shop</a>
+            <a href="Entdecken.html" class="link">Entdecken</a>
+            <a href="Support.html" class="link">Kakteen-Support</a>
+            <a href="Profil.html" class="link">Profil</a>
+            <div class="profile-icon">
+                <img src="img/d.jpg" alt="" class="profile-image">
+            </div>
+        </div>
+    </div>
+    
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+    <script src="{{  url_for('static', filename='script.js')  }}"></script>
+
+</body>
+</html>
