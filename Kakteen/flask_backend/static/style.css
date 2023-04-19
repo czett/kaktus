@@ -486,6 +486,21 @@ color: black;
 	}
 }
 
+#register-form{
+    display: none;
+}
+
+.switch-options{
+    font-size: 12px;
+    display: block;
+    margin: auto;
+    transition: 250ms;
+}
+
+.switch-options:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
 
 /*=============log in box ende=============*/
 

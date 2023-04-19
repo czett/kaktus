@@ -22,22 +22,27 @@ def start():
 
 @app.route("/shop")
 def shop():
+	check_if_logged_in()
 	return render_template("Shop.html")
 
 @app.route("/entdecken")
 def entdecken():
+	check_if_logged_in()
 	return render_template("Entdecken.html")
 
 @app.route("/support")
 def support():
+	check_if_logged_in()
 	return render_template("Support.html")
 
 @app.route("/profil")
 def profil():
+	check_if_logged_in()
 	return render_template("Profil.html")
 
 @app.route("/auswahl")
 def auswahl():
+	check_if_logged_in()
 	return render_template("Auswahl.html")
 
 if __name__ == "__main__":
