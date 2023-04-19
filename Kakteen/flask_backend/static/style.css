@@ -323,8 +323,7 @@ button{
     border: 2px solid var(--ac);
 }
 
-<<<<<<< HEAD
-=======
+
 .profilbildoption:hover{
 
     transition: 500ms;
@@ -367,7 +366,7 @@ button{
 
 /* SHOP Anfang */
 
->>>>>>> 6a521622b06f5be889ec0d1287630cf96be18c66
+
 .stift-wrap{
     background-color: var(--ac);
     aspect-ratio: 1 / 1;
