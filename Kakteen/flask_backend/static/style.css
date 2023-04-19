@@ -721,7 +721,7 @@ button{
 }
 
 .top-leiste .info-leiste .interaction-options .add{
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .top-leiste .info-leiste .interaction-options .report{
@@ -729,6 +729,10 @@ button{
 }
 
 /* profilseite ende */
+
+*{
+    filter: blur(0.05vh);
+}
 
 /*=============Log in Box anfang=============*/
 
