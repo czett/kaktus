@@ -544,6 +544,22 @@ color: black;
     text-decoration: underline;
 }
 
+.logreg-warning{
+    width: 100%;
+    background: #EB6E6E;
+    display: flex;
+    padding: .35vw .75vw;
+    box-sizing: border-box;
+    align-items: center;
+    gap: .5vw;
+    border-radius: .5vw;
+    border: 2px solid #DB0000;
+}
+
+.logreg-warning p{
+    font-size: 10px;
+}
+
 /*=============log in box ende=============*/
 
 /*NICHT MEHR HIER DRUNTER ÄNDERN!!!!!!*/
