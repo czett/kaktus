@@ -683,6 +683,53 @@ button{
 
 /*==============/Notifikation alert [end]\==============*/
 
+/* Profilseite anfang */
+
+.top-leiste{
+    display: flex;
+    gap: 2vw;
+    height: calc(2px + 20vh);
+}
+
+.top-leiste .info-leiste{
+    backdrop-filter: brightness(1.75);
+    box-sizing: border-box;
+    border-radius: calc(var(--lrpad) * 0.5);
+    display: flex;
+    width: 40vw;
+    overflow: hidden;
+    align-items: center;
+}
+
+.top-leiste .info-leiste div{
+    width: 50%;
+    padding: calc(0.5 * var(--lrpad));
+    display: flex;
+    flex-direction: column;
+}
+
+.top-leiste .info-leiste .info .name{
+    font-size: 20px;
+}
+
+.top-leiste .info-leiste .info .id-tag{
+    font-size: 12px;
+}
+
+.top-leiste .info-leiste .info .freunde{
+    font-size: 16px;
+}
+
+.top-leiste .info-leiste .interaction-options .add{
+    font-size: 20px;
+}
+
+.top-leiste .info-leiste .interaction-options .report{
+    color: #EA3434;
+}
+
+/* profilseite ende */
+
 /*=============Log in Box anfang=============*/
 
 .logreg-box{
