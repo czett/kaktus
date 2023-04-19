@@ -49,5 +49,3 @@ def register(username, password):
 		return True
 	else:
 		return False, "e" #e = exists
-
-print(login("Pimmel Peter", "PeterPimmelAmooooogus"))
