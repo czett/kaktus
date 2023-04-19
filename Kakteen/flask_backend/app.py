@@ -1,8 +1,14 @@
 from flask import Flask, render_template, redirect, session, request
-import funcs
+import funcs, pymongo, certifi
+from pymongo import MongoClient
 
 app = Flask(__name__)
 app.secret_key = "qwerizfugwoegfliugdshkg"
+
+cluster = MongoClient("mongodb+srv://kaktusmensch:kaktusdevgobrr@mrkaktus.icfdq08.mongodb.net/?retryWrites=true&w=majority", tlsCAFile=certifi.where())
+
+db = cluster["mrkaktus"]
+logreg = db["login"]
 
 def check_if_logged_in():
 	try:
@@ -49,7 +55,8 @@ def support():
 @app.route("/profil")
 def profil():
 	check_if_logged_in()
-	return render_template("Profil.html", logged_in=session["logged_in"])
+
+	return render_template("Profil.html", logged_in=session["logged_in"], username=session["username"], user_id=session["user_id"], friends=0)
 
 @app.route("/auswahl")
 def auswahl():
@@ -65,6 +72,11 @@ def login():
 
 	if log_return == True:
 		session["logged_in"] = True
+		session["username"] = un
+
+		uid = funcs.find_in_coll(logreg, {"username": un})["_id"]
+
+		session["user_id"] = uid
 		return redirect("/profil")
 	else:
 		session["warning"] = [log_return[1], "l"]
@@ -79,6 +91,11 @@ def register():
 
 	if reg_return == True:
 		session["logged_in"] = True
+		session["username"] = un
+
+		uid = funcs.find_in_coll(login, {"username": un})["_id"]
+
+		session["user_id"] = uid
 		return redirect("/profil")
 	else:
 		session["warning"] = [reg_return[1], "r"]
