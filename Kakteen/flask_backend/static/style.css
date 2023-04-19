@@ -323,8 +323,6 @@ button{
     border: 2px solid var(--ac);
 }
 
-<<<<<<< HEAD
-=======
 .profilbildoption:hover{
 
     transition: 500ms;
@@ -367,7 +365,6 @@ button{
 
 /* SHOP Anfang */
 
->>>>>>> 6a521622b06f5be889ec0d1287630cf96be18c66
 .stift-wrap{
     background-color: var(--ac);
     aspect-ratio: 1 / 1;
@@ -393,25 +390,16 @@ button{
 .stift-wrap:hover{
     filter: brightness(0.9);
 }
-<<<<<<< HEAD
 
 /* SHOP Anfang */
 
-
-=======
->>>>>>> 6a521622b06f5be889ec0d1287630cf96be18c66
-
 .feld1 {
-color: black;
+    color: black;
 }
 
 .form1 {
-
     color: blue;
 }
-
-
-
 
 .card-s {
     transition: 500ms;
