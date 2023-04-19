@@ -323,10 +323,6 @@ button{
     border: 2px solid var(--ac);
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c56e89cc3abe56787858e967c1c012cf34191b99
 .profilbildoption:hover{
 
     transition: 500ms;
@@ -348,8 +344,6 @@ button{
     
 }
 
-
-
 /* .profilbildoption{
     animation-name: bild;
     animation-duration: 120s;
@@ -367,10 +361,6 @@ button{
 
 /* SHOP Anfang */
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c56e89cc3abe56787858e967c1c012cf34191b99
 .stift-wrap{
     background-color: var(--ac);
     aspect-ratio: 1 / 1;
