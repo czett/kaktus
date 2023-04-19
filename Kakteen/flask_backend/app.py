@@ -56,6 +56,11 @@ def auswahl():
 	check_if_logged_in()
 	return render_template("Auswahl.html")
 
+@app.route("/quiz")
+def quiz():
+	check_if_logged_in()
+	return render_template("quiz.html")
+
 @app.route("/login", methods=["POST"])
 def login():
 	un = request.form.get("username")

@@ -723,6 +723,71 @@ color: black;
 
 /*=============log in box ende=============*/
 
+/*===============/Kaktus Quiz\===================*/
+
+#qustSec {
+    margin: 0;
+    width: 100vw;
+    height: 40vh;
+}
+
+#qustBox {
+    margin: 0;
+    margin-top: 5vh;
+    width: 50vw;
+    height: 30vh;
+    border: 2px solid var(--ac);
+    border-radius: 2vh;
+    position: absolute;
+    left: 100%;
+    transform: translate(-150%, -0%);
+}
+
+#question {
+    margin-top: 10vh;
+    text-align: center;
+    font-size: larger;
+}
+
+/* Fragen */
+
+#allover {
+    left: 100%;
+    transform: translate(5%, 0);
+}
+
+#answSec {
+    margin: 0;
+    width: 100vw;
+    height: 43vh;
+}
+
+.AnswBox {
+    display: inline-flex;
+    margin: 0;
+    margin-top: 5vh;
+    width: 40vw;
+    height: 5vh;
+    border: 2px solid var(--ac);
+    border-radius: 2vh;
+    align-items: center;
+    cursor: pointer;
+}
+
+.AnswBoxL {
+    margin-right: 5vw;
+}
+
+.paragrahQuiz {
+    align-items: center;
+    margin: 0;
+    margin-left: 1.5vw;
+    display: block;
+}
+
+
+/*===============/Kaktus Quiz [ende]\===================*/
+
 /*NICHT MEHR HIER DRUNTER ÄNDERN!!!!!!*/
 
 /* MOBILE YAY */
