@@ -47,5 +47,3 @@ def register(username, password):
 		return True
 	else:
 		return False, "e" #e = exists
-	
-logreg.insert_one({"_id": "wzufgwezf", "name": "fabido"})
