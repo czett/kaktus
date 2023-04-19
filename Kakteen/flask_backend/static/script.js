@@ -86,4 +86,18 @@ function trigger_logreg(){
     }
 }
 
+var login_displayed = true;
+
+function switchLogregOptions(){
+	if (login_displayed == true){
+		document.querySelector("#login-form").style.display = "none";
+		document.querySelector("#register-form").style.display = "flex";
+		login_displayed = false;
+	}else{
+		document.querySelector("#register-form").style.display = "none";
+		document.querySelector("#login-form").style.display = "flex";
+		login_displayed = true;
+	}
+}
+
 /* login ende */
