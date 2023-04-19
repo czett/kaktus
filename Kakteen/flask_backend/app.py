@@ -64,12 +64,10 @@ def login():
 	log_return = funcs.login(un, pw)
 
 	if log_return == True:
-		#return "wolugf"
 		session["logged_in"] = True
 		return redirect("/")
 	else:
 		session["warning"] = [log_return[1], "l"]
-		#return str(session["warning"])
 		return redirect("/")
 
 @app.route("/register", methods=["POST"])

@@ -45,8 +45,8 @@
                 <div class="logreg-box">
                     <form action="/login" class="logreg-form" id="login-form" method="post" enctype="multipart/form-data">
                         <h3 class="logreg-header">Anmelden bei <span class="gradient-text">MrKaktus</span></h3>
-                        <input type="text" name="username" placeholder="Benutzername">
-                        <input type="password" name="password" placeholder="Passwort">
+                        <input type="text" name="username" placeholder="Benutzername" required>
+                        <input type="password" name="password" placeholder="Passwort" required>
                         
                         {% if warning is defined and warning[0] == "e" and warning[1] == "l" %}
                         
@@ -79,8 +79,8 @@
                     </form>
                     <form action="/register" class="logreg-form" id="register-form" method="post" enctype="multipart/form-data">
                         <h3 class="logreg-header">Registrieren bei <span class="gradient-text">MrKaktus</span></h3>
-                        <input type="text" name="username" placeholder="Benutzername">
-                        <input type="password" name="password" placeholder="Passwort">
+                        <input type="text" name="username" placeholder="Benutzername" required>
+                        <input type="password" name="password" placeholder="Passwort" required>
                         
                         {% if warning is defined and warning[0] == "e" and warning[1] == "r" %}
                         
