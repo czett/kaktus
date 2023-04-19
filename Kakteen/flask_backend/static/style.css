@@ -456,6 +456,37 @@ color: black;
     font-size: 22px;
 }
 
+@keyframes out{
+	0%{
+		visibility: visible;
+		transform: translate(-50%, -50%);
+		left: 50%;
+		top: 50%;
+	}
+	100%{
+		visibility: hidden;
+		left: -50%;
+		/*transform: translate(-50%, -50%) rotate(-25deg);*/
+        transform: translate(-50%, -50%);
+	}
+}
+
+@keyframes in{
+	0%{
+		visibility: hidden;
+		left: 100%;
+		top: 50%;
+		/* transform: translate(-50%, -50%) rotate(-10deg); */
+        transform: translate(-50%, -50%);
+	}
+	100%{
+		visibility: visible;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+
 /*=============log in box ende=============*/
 
 /*NICHT MEHR HIER DRUNTER ÄNDERN!!!!!!*/
