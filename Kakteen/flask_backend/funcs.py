@@ -1,8 +1,8 @@
-import pymongo, random
+import pymongo, random, certifi
 from pymongo import MongoClient
 import string, random
 
-cluster = MongoClient("mongodb+srv://kaktusmensch:kaktusdevgobrr@mrkaktus.icfdq08.mongodb.net/?retryWrites=true&w=majority")
+cluster = MongoClient("mongodb+srv://kaktusmensch:kaktusdevgobrr@mrkaktus.icfdq08.mongodb.net/?retryWrites=true&w=majority", tlsCAFile=certifi.where())
 
 db = cluster["mrkaktus"]
 logreg = db["login"]
@@ -47,3 +47,5 @@ def register(username, password):
 		return True
 	else:
 		return False, "e" #e = exists
+	
+logreg.insert_one({"_id": "wzufgwezf", "name": "fabido"})
