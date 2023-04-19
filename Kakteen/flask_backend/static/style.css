@@ -336,6 +336,18 @@ button{
     transition: 500ms;
 }
 
+.auswahl-back{
+   
+}
+
+.auswahl-back:hover{
+
+    transition: 500ms;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 1px var(--ac);
+    border-radius: 50%;
+}
+
 
 
 /* .profilbildoption{
