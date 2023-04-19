@@ -55,7 +55,6 @@ def support():
 @app.route("/profil")
 def profil():
 	check_if_logged_in()
-
 	return render_template("Profil.html", logged_in=session["logged_in"], username=session["username"], user_id=session["user_id"], friends=0)
 
 @app.route("/auswahl")
@@ -93,7 +92,7 @@ def register():
 		session["logged_in"] = True
 		session["username"] = un
 
-		uid = funcs.find_in_coll(login, {"username": un})["_id"]
+		uid = funcs.find_in_coll(logreg, {"username": un})["_id"]
 
 		session["user_id"] = uid
 		return redirect("/profil")
