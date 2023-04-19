@@ -309,10 +309,8 @@ button{
     position: relative;
 }
 
-<<<<<<< HEAD
 /* SHOP Anfang */
 
-=======
 .stift-wrap{
     background-color: var(--ac);
     aspect-ratio: 1 / 1;
@@ -338,7 +336,6 @@ button{
 .stift-wrap:hover{
     filter: brightness(0.9);
 }
->>>>>>> 30b4998e03ab0eda1f851c13bdadc1384a814ea4
 
 .feld1 {
 color: black;
