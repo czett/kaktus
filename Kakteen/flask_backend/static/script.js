@@ -55,4 +55,49 @@ function triggerMenu(){
 
 //================/Notification alert\================\\
 
-const bell = document.getElementById('bell');
+const bell = document.querySelector('#bell');
+const ctnt = document.querySelector('#content');
+var ausgeklappt = false;
+
+function ausklappen(){
+    if(ausgeklappt == false) {
+        ctnt.classList.add('her');
+        ausgeklappt = true;
+    }else {
+        ctnt.classList.remove('her');
+        ausgeklappt = false;
+    }
+}
+
+//================/Notification alert [end]\==========\\
+
+/* login */
+
+var login_vis = false;
+const login_window = document.querySelector(".logreg-box");
+
+function trigger_logreg(){
+    if(ausgeklappt == false) {
+        login_window.style.visibility = "visible"
+        ausgeklappt = true;
+    }else {
+        login_window.style.visibility = "hidden"
+        ausgeklappt = false;
+    }
+}
+
+var login_displayed = true;
+
+function switchLogregOptions(){
+	if (login_displayed == true){
+		document.querySelector("#login-form").style.display = "none";
+		document.querySelector("#register-form").style.display = "flex";
+		login_displayed = false;
+	}else{
+		document.querySelector("#register-form").style.display = "none";
+		document.querySelector("#login-form").style.display = "flex";
+		login_displayed = true;
+	}
+}
+
+/* login ende */

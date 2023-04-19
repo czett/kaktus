@@ -193,7 +193,7 @@ button{
 }
 
 .overview{
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
     margin-top: calc(1.5 * var(--lrpad));
 }
@@ -270,8 +270,7 @@ button{
     transform: scale(1.1);
     box-shadow: 0px 0px 10px 1px var(--ac);
     border-radius: 50%;
-
-}r
+}
 
 .profile-icon{
     transition: 500ms;
@@ -282,18 +281,15 @@ button{
     min-height: 100%;
 }
 
-
 .profile-change{
     width: 20vh;
 	height: 20vh;
-    overflow: hidden;
-    /* border: 2px solid var(--ac); */
-    object-fit: cover;
+    overflow: visible;
+    border: 2px solid var(--ac);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-
 }
 
 .profile-change:hover{
@@ -301,17 +297,48 @@ button{
     transform: scale(1.1);
     box-shadow: 0px 0px 10px 1px var(--ac);
     border-radius: 50%;
+}
 
-
+.profile-change-img-wrap{
+    overflow: hidden;
+    border-radius: 50%;
 }
 
 .profile-change{
-
-    transition 500ms;
+    transition: 500ms;
+    position: relative;
 }
 
+<<<<<<< HEAD
 /* SHOP Anfang */
 
+=======
+.stift-wrap{
+    background-color: var(--ac);
+    aspect-ratio: 1 / 1;
+    width: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+
+    top: 83.5%;
+    left: 83.5%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 275ms;
+}
+
+.profile-change:hover .stift-wrap{
+    opacity: 1;
+}
+
+.stift-wrap:hover{
+    filter: brightness(0.9);
+}
+>>>>>>> 30b4998e03ab0eda1f851c13bdadc1384a814ea4
 
 .feld1 {
 color: black;
@@ -493,11 +520,212 @@ color: black;
     opacity: 0.8;
 }
 
+#content {
+    position: absolute;
+    border-radius: 0 0 0 5vh;
+    background-color: var(--bg);
+    width: 0;
+    height: 100%;
+    max-height: 40vh;
+    margin-right: 0.5vw;
+    overflow: hidden;
+}
+#content.her {
+    color: var(--ac);
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: scroll; 
+    border: 2px solid var(--ac);
+    border-top: none;
+    border-right: none;
+    width: 22vw;
+    height: 50vh;
+    z-index: 10000;
+    top: 0;
+    left: 100%;
+    transform: translate(-100%, calc(7.5vh - 1px));
+}
 
+#content.her ::-webkit-scrollbar {
+    display: none;
+}
+
+.contentBoxText {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+}
+
+.contentBoxText:hover {
+    background-color: rgb(59, 59, 59);
+    padding-bottom: 0.5vh;
+}
+
+.contentBoxText2 {
+    white-space: nowrap;
+    transition: 250ms;
+}
+
+.contentBoxText3 {
+    width: 0;
+    height: 0;
+    margin: 0;
+    margin-top: 0.8vh;
+    padding: 0;
+    visibility: hidden;
+    overflow: hidden;
+    animation: none;
+    font-size: smaller;
+}
+.contentBoxText:hover .contentBoxText3 {
+    width: auto;
+    height: auto;
+    margin-bottom: 2vh;
+    animation-name: notification-desc;
+    animation-duration: 750ms;
+    animation-iteration-count: 1;
+    visibility: visible;
+}
+.contentBoxText:hover .contentBoxText2 {
+    transition: 150ms;
+    margin-top: 0.5vh;
+    margin-bottom: 0.1vh;
+}
+
+@keyframes notification-desc{
+    0%{
+        visibility: visible;
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+    }
+}
 
 
 /*==============/Notifikation alert [end]\==============*/
 
+/*=============Log in Box anfang=============*/
+
+.logreg-box{
+    position: absolute;
+    background-color: var(--bg);
+    display: flex;
+    border: 1px solid var(--ac);
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: calc(0.5 * var(--lrpad));
+
+    top: calc(-1px + 7.5vh);
+    left: 100%;
+    transform: translateX(-100%);
+
+    visibility: hidden;
+}
+
+.logreg-box form{
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.75 * var(--lrpad));
+    padding: calc(0.5 * var(--lrpad)) var(--lrpad);
+}
+
+.logreg-box form input{
+    border: 1px solid var(--ac);
+    background: transparent;
+    padding: 0.66vw;
+    border-radius: 0.5vw;
+    color: var(--fg);
+    width: 15vw;
+    box-sizing: border-box;
+}
+
+.logreg-box form button[type="submit"]{
+    background-color: var(--ac);
+    border: none;
+    border-radius: 0.5vw;
+    padding: 0.75vw;
+    width: 15vw;
+    box-sizing: border-box;
+}
+
+.gradient-text{
+    background: linear-gradient(90deg, var(--ac), var(--ac2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.logreg-header{
+    font-size: 22px;
+}
+
+@keyframes out{
+	0%{
+		visibility: visible;
+		transform: translate(-50%, -50%);
+		left: 50%;
+		top: 50%;
+	}
+	100%{
+		visibility: hidden;
+		left: -50%;
+		/*transform: translate(-50%, -50%) rotate(-25deg);*/
+        transform: translate(-50%, -50%);
+	}
+}
+
+@keyframes in{
+	0%{
+		visibility: hidden;
+		left: 100%;
+		top: 50%;
+		/* transform: translate(-50%, -50%) rotate(-10deg); */
+        transform: translate(-50%, -50%);
+	}
+	100%{
+		visibility: visible;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+#register-form{
+    display: none;
+}
+
+.switch-options{
+    font-size: 12px;
+    display: block;
+    margin: auto;
+    transition: 250ms;
+}
+
+.switch-options:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.logreg-warning{
+    width: 100%;
+    background: #EB6E6E;
+    display: flex;
+    padding: .35vw .75vw;
+    box-sizing: border-box;
+    align-items: center;
+    gap: .5vw;
+    border-radius: .5vw;
+    border: 2px solid #DB0000;
+}
+
+.logreg-warning p{
+    font-size: 10px;
+}
+
+/*=============log in box ende=============*/
 
 /*NICHT MEHR HIER DRUNTER ÄNDERN!!!!!!*/
 

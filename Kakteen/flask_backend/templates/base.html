@@ -27,19 +27,139 @@
             <a href="/shop" class="link">Shop</a>
             <a href="/entdecken" class="link">Entdecken</a>
             <a href="/support" class="link">Kakteen-Support</a>
-            <i id="bell" class="fa-solid fa-bell"></i>
+            <i onmousedown="ausklappen()" id="bell" class="fa-solid fa-bell"></i>
 
            
-            <a href="/profil">
-                <div class="profile-icon">
+            {% if logged_in == True %}
+                <a href="/profil">
+                    <div class="profile-icon">
+                        <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
+                        <img src="{{  url_for('static', filename='img/d.jpg')  }}" alt="" class="profile-image">
+                    </div>
+                </a>
+            {% else %}
+                <div class="profile-icon" onmousedown="trigger_logreg()">
                     <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
-                    <img src="{{  url_for('static', filename='img/d.jpg')  }}" alt="" class="profile-image">
+                    <img src="{{  url_for('static', filename='img/1.jpg')  }}" alt="" class="profile-image">
                 </div>
-            </a>
+                <div class="logreg-box">
+                    <form action="/login" class="logreg-form" id="login-form" method="post" enctype="multipart/form-data">
+                        <h3 class="logreg-header">Anmelden bei <span class="gradient-text">MrKaktus</span></h3>
+                        <input type="text" name="username" placeholder="Benutzername">
+                        <input type="password" name="password" placeholder="Passwort">
+                        
+                        {% if warning is defined and warning[0] == "e" and warning[1] == "l" %}
+                        
+                        <div class="logreg-warning">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <p class="warning-text">Das Benutzerkonto existiert nicht.</p>
+                        </div>
+                        <style>
+                            .logreg-box{
+                                visibility: visible;
+                            }
+                        </style>
+
+                        {% elif warning is defined and warning[0] == "p" and warning[1] == "l" %}
+                        
+                        <div class="logreg-warning">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <p class="warning-text">Das eingegebene Passwort war falsch.</p>
+                        </div>
+                        <style>
+                            .logreg-box{
+                                visibility: visible;
+                            }
+                        </style>
+
+                        {% endif %}
+
+                        <button type="submit">Anmelden</button>
+                        <p class="switch-options" onmousedown="switchLogregOptions()">Ich möchte mich lieber registrieren</p>
+                    </form>
+                    <form action="/register" class="logreg-form" id="register-form" method="post" enctype="multipart/form-data">
+                        <h3 class="logreg-header">Registrieren bei <span class="gradient-text">MrKaktus</span></h3>
+                        <input type="text" name="username" placeholder="Benutzername">
+                        <input type="password" name="password" placeholder="Passwort">
+                        
+                        {% if warning is defined and warning[0] == "e" and warning[1] == "r" %}
+                        
+                        <div class="logreg-warning">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <p class="warning-text">Dieses Benutzerkonto existiert bereits.</p>
+                        </div>
+                        <style>
+                            .logreg-box{
+                                visibility: visible;
+                            }
+
+                            #login-form{
+                                display: none;
+                            }
+
+                            #register-form{
+                                display: flex;
+                            }
+                        </style>
+
+                        {% endif %}
+
+                        <button type="submit">Registrieren</button>
+                        <p class="switch-options" onmousedown="switchLogregOptions()">Ich möchte mich lieber anmelden</p>
+                    </form>
+                </div>
+            {% endif %}
         </div>
     </div>
     
     <div class="content">
+
+    <!---/Notifikation alert\-------------------------------------------------->  
+
+        <div id="content">
+
+            <div class="contentBoxText">
+                <p class="contentBoxText2">_Place Holder_
+                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
+                </p>
+            </div>
+
+            <div class="contentBoxText">
+                <p class="contentBoxText2">_Place Holder_
+                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
+                </p>
+            </div>
+
+            <div class="contentBoxText">
+                <p class="contentBoxText2">_Place Holder_
+                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
+                </p>
+            </div>
+
+            <div class="contentBoxText">
+                <p class="contentBoxText2">_Place Holder_
+                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
+                </p>
+            </div>
+
+            <div class="contentBoxText">
+                <p class="contentBoxText2">_Place Holder_
+                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
+                </p>
+            </div>
+
+            <div class="contentBoxText">
+                <p class="contentBoxText2">_Place Holder_
+                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
+                </p>
+            </div>
+
+        </div>
+
+
+    <!---/Notifikation alert [end]\-------------------------------------------->
+
+
         {% block content %}
         {% endblock %}
     </div>
