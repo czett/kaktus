@@ -28,7 +28,6 @@ def check_for_session(session_var_name, **kwargs):
 @app.route("/")
 def start():
 	check_if_logged_in()
-	return str(session["logged_in"])
 	check_for_session("warning", create_empty=True)
 	return render_template("index.html", logged_in=session["logged_in"], warning=session["warning"])
 
