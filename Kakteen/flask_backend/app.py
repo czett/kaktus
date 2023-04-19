@@ -1,13 +1,8 @@
 from flask import Flask, render_template, redirect, session, request
-import pymongo, funcs
-from pymongo import MongoClient
+import funcs
 
 app = Flask(__name__)
 app.secret_key = "qwerizfugwoegfliugdshkg"
-cluster = MongoClient("mongodb+srv://kaktusmensch:kaktusdevgobrr@mrkaktus.icfdq08.mongodb.net/?retryWrites=true&w=majority")
-
-db = cluster["mrkaktus"]
-login = db["login"]
 
 def check_if_logged_in():
 	try:

@@ -7,8 +7,6 @@ cluster = MongoClient("mongodb+srv://kaktusmensch:kaktusdevgobrr@mrkaktus.icfdq0
 db = cluster["mrkaktus"]
 logreg = db["login"]
 
-#login.insert_one({"_id": random.randint(1, 100), "name": "hallo"})
-
 def create_id(length):
 	letter_list = []
 	
