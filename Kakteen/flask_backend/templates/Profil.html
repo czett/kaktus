@@ -4,70 +4,29 @@
 <!-- <img src="{{  url_for('static', filename='img/1.jpg')  }}" alt=""> -->
 <h1 class="ueberschrift">Profil</h1>
 
-
-<br><br><br>
-
-
-
-
-
-<div class="profile-change">
-    <div class="profile-change-img-wrap">
-        <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
-        <img src="{{  url_for('static', filename='img/fabio.jpg')  }}" class="profile-image">
+<div class="top-leiste">
+    <div class="profile-change">
+        <div class="profile-change-img-wrap">
+            <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
+            <img src="{{  url_for('static', filename='img/fabio.jpg')  }}" class="profile-image">
+        </div>
+        <div class="stift-wrap" onmousedown="newUrl('/auswahl')">
+            <i class="fa-solid fa-pencil"></i>
+        </div>
     </div>
-    <div class="stift-wrap" onmousedown="newUrl('/auswahl')">
-        <i class="fa-solid fa-pencil"></i>
+
+    <div class="info-leiste">
+        <div class="info">
+            <p class="name">{{  username  }}</p>
+            <p class="id-tag">#{{  user_id  }}</p>
+            <p class="freunde">{{  friends  }}</p>
+        </div>
+        <div class="interaction-options">
+            <p class="add">Freund hinzufügen</p>
+            <p class="report"><i class="fa-solid fa-flag report"></i> Melden</p>
+        </div>
     </div>
 </div>
-
-<!-- <form action="momogus">
-    <input type="radio" name="profilbild" id="1">
-    <input type="radio" name="profilbild" id="2">
-    <input type="radio" name="profilbild" id="3">
-
-    <div class="bilder">
-        <label for="1">
-            <img src="{{  url_for('static', filename='img/1.jpg')  }}" alt="">
-        </label>
-        <label for="2">
-            <img src="{{  url_for('static', filename='img/2.jpg')  }}" alt="">
-        </label>
-        <label for="3">
-            <img src="{{  url_for('static', filename='img/3.jpg')  }}" alt="">
-        </label>
-    </div>
-</form>
-
-<style>
-    body, html{
-        background-color: black;
-    }
-
-    input[type="radio"]{
-        visibility: hidden;
-    }
-
-    label, img{
-        width: 12vw;
-        height: 12vw;
-        overflow: hidden;
-        border-radius: 50%;
-    }
-
-    .bilder{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 75vw;
-
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-</style> -->
-
 
 
 {% endblock %}

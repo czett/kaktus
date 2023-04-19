@@ -82,7 +82,8 @@ body, html{
 .ueberschrift{
     font-family: 'Unbounded';
     letter-spacing: 0.1em;
-    text-decoration: dashed underline;
+    text-decoration: none;
+    font-size: 48px;
 }
 
 /* Cycler */
@@ -279,11 +280,33 @@ button{
     border-radius: 50%;
 }
 
+.submit-wrap{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.submit-wrap .image-selector-submit{
+    background-color: var(--ac);
+    padding: calc(0.5 * var(--lrpad));
+    border: none;
+    height: auto;
+    width: auto;
+    border-radius: 1vw;
+    font-size: 16px;
+    transition: 500ms;
+}
+
+.submit-wrap .image-selector-submit:hover{
+    filter: brightness(1.1);
+}
+
 .profile-icon{
     transition: 500ms;
 }
 
-.profile-image{
+ .profile-image{
     min-width: 100%;
     min-height: 100%;
     max-width: 200%;
@@ -322,8 +345,6 @@ button{
     border: 2px solid var(--ac);
 }
 
-<<<<<<< HEAD
-=======
 .profilbildoption:hover{
 
     transition: 500ms;
@@ -332,11 +353,37 @@ button{
     border-radius: 50%;
 }
 .profilbildoption{
-
     transition: 500ms;
 }
 
+.auswahl-back {
 
+display: inline-block;
+
+}
+
+.auswahl-back:hover{
+    filter: brightness(1.2);
+    transform: translate(0px, 0px) scale(1.05);
+    animation-duration: 1000ms;
+    animation-name: blinken;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blinken{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    50%{
+        transform: scale(.85);
+        opacity: 0.75;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 /* .profilbildoption{
     animation-name: bild;
@@ -355,7 +402,6 @@ button{
 
 /* SHOP Anfang */
 
->>>>>>> 6a521622b06f5be889ec0d1287630cf96be18c66
 .stift-wrap{
     background-color: var(--ac);
     aspect-ratio: 1 / 1;
@@ -381,25 +427,16 @@ button{
 .stift-wrap:hover{
     filter: brightness(0.9);
 }
-<<<<<<< HEAD
 
 /* SHOP Anfang */
 
-
-=======
->>>>>>> 6a521622b06f5be889ec0d1287630cf96be18c66
-
 .feld1 {
-color: black;
+    color: black;
 }
 
 .form1 {
-
     color: blue;
 }
-
-
-
 
 .card-s {
     transition: 500ms;
@@ -717,6 +754,61 @@ text-decoration-color: #EB6E6E;
 
 /*==============/Notifikation alert [end]\==============*/
 
+/* Profilseite anfang */
+
+.top-leiste{
+    display: flex;
+    gap: 2vw;
+    height: calc(2px + 20vh);
+}
+
+.top-leiste .info-leiste{
+    backdrop-filter: brightness(1.75);
+    box-sizing: border-box;
+    border-radius: calc(var(--lrpad) * 0.5);
+    display: flex;
+    width: 40vw;
+    overflow: hidden;
+    align-items: center;
+}
+
+.top-leiste .info-leiste div{
+    width: 50%;
+    padding: calc(0.5 * var(--lrpad));
+    display: flex;
+    flex-direction: column;
+}
+
+.top-leiste .info-leiste .info .name{
+    font-size: 20px;
+}
+
+.top-leiste .info-leiste .info .id-tag{
+    font-size: 12px;
+}
+
+.top-leiste .info-leiste .info .freunde{
+    font-size: 16px;
+}
+
+/* .top-leiste .info-leiste .interaction-options .add{
+    font-size: 16px;
+    display: inline-flex;
+    max-resolution: ;
+    border-radius: 1vh;
+    background-color: var(--ac);
+} */
+
+.top-leiste .info-leiste .interaction-options .report{
+    color: #EA3434;
+}
+
+/* profilseite ende */
+/* 
+*{
+    filter: blur(0.05vh);
+} */
+
 /*=============Log in Box anfang=============*/
 
 .logreg-box{
@@ -835,6 +927,71 @@ text-decoration-color: #EB6E6E;
 }
 
 /*=============log in box ende=============*/
+
+/*===============/Kaktus Quiz\===================*/
+
+#qustSec {
+    margin: 0;
+    width: 100vw;
+    height: 40vh;
+}
+
+#qustBox {
+    margin: 0;
+    margin-top: 5vh;
+    width: 50vw;
+    height: 30vh;
+    border: 2px solid var(--ac);
+    border-radius: 2vh;
+    position: absolute;
+    left: 100%;
+    transform: translate(-150%, -0%);
+}
+
+#question {
+    margin-top: 10vh;
+    text-align: center;
+    font-size: larger;
+}
+
+/* Fragen */
+
+#allover {
+    left: 100%;
+    transform: translate(5%, 0);
+}
+
+#answSec {
+    margin: 0;
+    width: 100vw;
+    height: 43vh;
+}
+
+.AnswBox {
+    display: inline-flex;
+    margin: 0;
+    margin-top: 5vh;
+    width: 40vw;
+    height: 5vh;
+    border: 2px solid var(--ac);
+    border-radius: 2vh;
+    align-items: center;
+    cursor: pointer;
+}
+
+.AnswBoxL {
+    margin-right: 5vw;
+}
+
+.paragrahQuiz {
+    align-items: center;
+    margin: 0;
+    margin-left: 1.5vw;
+    display: block;
+}
+
+
+/*===============/Kaktus Quiz [ende]\===================*/
 
 /*NICHT MEHR HIER DRUNTER ÄNDERN!!!!!!*/
 
