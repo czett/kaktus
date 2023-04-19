@@ -1,27 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form action="momogus">
+
+    <br><br><br> 
+ 
+
+   
+    <form action="/auswahl/bestaetigen">
     <input type="radio" name="profilbild" id="1">
     <input type="radio" name="profilbild" id="2">
     <input type="radio" name="profilbild" id="3">
 
     <div class="bilder">
-        <label for="1">
+        <label for="1" class="profilbildoption" onmousedown="profilbildAuswaehlen(this)">
             <img src="{{  url_for('static', filename='img/1.jpg')  }}" alt="">
         </label>
-        <label for="2">
+        <label for="2" class="profilbildoption" onmousedown="profilbildAuswaehlen(this)">
             <img src="{{  url_for('static', filename='img/2.jpg')  }}" alt="">
         </label>
-        <label for="3">
+        <label for="3" class="profilbildoption" onmousedown="profilbildAuswaehlen(this)">
             <img src="{{  url_for('static', filename='img/3.jpg')  }}" alt="">
         </label>
     </div>
+    
+    <div class="submit-wrap">
+        <button class="image-selector-submit">Auswählen</button>
+    </div>
 </form>
+
+<div class="auswahl-back"><a href="/profil" class="fa-solid fa-arrow-right fa-rotate-180 fa-xl"></a></div>
 
 <style>
     body, html{
-        background-color: black;
+        background-color: var(--bg);
     }
 
     input[type="radio"]{
@@ -45,6 +56,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    a{
+        text-decoration: none;
     }
 </style>
 

@@ -26,6 +26,13 @@
     --lrpad: 2.5vw;
 }
 
+img{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+}
+
 body, html{
     margin: 0px;
     padding: 0px;
@@ -75,7 +82,8 @@ body, html{
 .ueberschrift{
     font-family: 'Unbounded';
     letter-spacing: 0.1em;
-    text-decoration: dashed underline;
+    text-decoration: none;
+    font-size: 48px;
 }
 
 /* Cycler */
@@ -272,21 +280,46 @@ button{
     border-radius: 50%;
 }
 
+.submit-wrap{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.submit-wrap .image-selector-submit{
+    background-color: var(--ac);
+    padding: calc(0.5 * var(--lrpad));
+    border: none;
+    height: auto;
+    width: auto;
+    border-radius: 1vw;
+    font-size: 16px;
+    transition: 500ms;
+}
+
+.submit-wrap .image-selector-submit:hover{
+    filter: brightness(1.1);
+}
+
 .profile-icon{
     transition: 500ms;
 }
 
-.profile-image{
+ .profile-image{
     min-width: 100%;
     min-height: 100%;
+    max-width: 200%;
+    max-height: 200%;
+    overflow: visible;
 }
 
 .profile-change{
     width: 20vh;
 	height: 20vh;
-    overflow: visible;
     border: 2px solid var(--ac);
     display: flex;
+    overflow: visible;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
@@ -300,14 +333,73 @@ button{
 }
 
 .profile-change-img-wrap{
-    overflow: hidden;
+    position: relative;
     border-radius: 50%;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 
 .profile-change{
     transition: 500ms;
-    position: relative;
+    border: 2px solid var(--ac);
 }
+
+.profilbildoption:hover{
+
+    transition: 500ms;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 1px var(--ac);
+    border-radius: 50%;
+}
+.profilbildoption{
+    transition: 500ms;
+}
+
+.auswahl-back {
+
+display: inline-block;
+
+}
+
+.auswahl-back:hover{
+    filter: brightness(1.2);
+    transform: translate(0px, 0px) scale(1.05);
+    animation-duration: 1000ms;
+    animation-name: blinken;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blinken{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    50%{
+        transform: scale(.85);
+        opacity: 0.75;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* .profilbildoption{
+    animation-name: bild;
+    animation-duration: 120s;
+    animation-iteration-count: infinite;
+} */
+
+/* @keyframes bild{
+    0%{
+        transform: scaleX(1);
+    }
+    100%{
+        transform: scaleX(10000);
+    }
+} */
+
 /* SHOP Anfang */
 
 .stift-wrap{
@@ -336,26 +428,23 @@ button{
     filter: brightness(0.9);
 }
 
+/* SHOP Anfang */
+
 .feld1 {
-color: black;
+    color: black;
 }
 
 .form1 {
-
     color: blue;
 }
-
-
-
 
 .card-s {
     transition: 500ms;
     user-select: none;
-    overflow: hidden;
+    /* overflow: hidden; */
     white-space: wrap;
     min-width: 35vh;
     box-sizing: border-box;
-
 }
 
  .card-s:hover{
@@ -432,10 +521,9 @@ color: black;
     
 }
 
-
 .card-s:first-of-type(){
     background-color: red;
-}
+} 
 
 .card-s .gradient-s p{
     font-size: 18px;
@@ -468,6 +556,8 @@ color: black;
 
     aspect-ratio: 1 / 1;
     width: 100%;
+    position: relative;
+    overflow: visible;
 }
 
 .cards{
@@ -501,6 +591,32 @@ color: black;
     
 }
 
+.warenkorb-icon-wrap{
+    width: 3vw;
+    aspect-ratio: 1 / 1;
+    background-color: #592C59;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1vw;
+    visibility: hidden;
+
+    position: absolute;
+    z-index: 1000;
+    top: 95%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+}
+
+.warenkorb-icon-wrap i{
+    font-size: 1.25vw;
+    color: turquoise;
+    
+}
+
+.card-s:hover .warenkorb-icon-wrap{
+    visibility: visible;
+}
 
 
 /* SHOP Ende */
@@ -603,6 +719,61 @@ color: black;
 
 
 /*==============/Notifikation alert [end]\==============*/
+
+/* Profilseite anfang */
+
+.top-leiste{
+    display: flex;
+    gap: 2vw;
+    height: calc(2px + 20vh);
+}
+
+.top-leiste .info-leiste{
+    backdrop-filter: brightness(1.75);
+    box-sizing: border-box;
+    border-radius: calc(var(--lrpad) * 0.5);
+    display: flex;
+    width: 40vw;
+    overflow: hidden;
+    align-items: center;
+}
+
+.top-leiste .info-leiste div{
+    width: 50%;
+    padding: calc(0.5 * var(--lrpad));
+    display: flex;
+    flex-direction: column;
+}
+
+.top-leiste .info-leiste .info .name{
+    font-size: 20px;
+}
+
+.top-leiste .info-leiste .info .id-tag{
+    font-size: 12px;
+}
+
+.top-leiste .info-leiste .info .freunde{
+    font-size: 16px;
+}
+
+/* .top-leiste .info-leiste .interaction-options .add{
+    font-size: 16px;
+    display: inline-flex;
+    max-resolution: ;
+    border-radius: 1vh;
+    background-color: var(--ac);
+} */
+
+.top-leiste .info-leiste .interaction-options .report{
+    color: #EA3434;
+}
+
+/* profilseite ende */
+/* 
+*{
+    filter: blur(0.05vh);
+} */
 
 /*=============Log in Box anfang=============*/
 
