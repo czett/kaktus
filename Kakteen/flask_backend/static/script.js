@@ -101,3 +101,11 @@ function switchLogregOptions(){
 }
 
 /* login ende */
+
+/* new url methode */
+
+function newUrl(url){
+	window.location.href = url;
+}
+
+/* endöööööö */
