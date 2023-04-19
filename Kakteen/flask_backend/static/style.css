@@ -306,7 +306,7 @@ button{
     transition: 500ms;
 }
 
-.profile-image{
+ .profile-image{
     min-width: 100%;
     min-height: 100%;
     max-width: 200%;
@@ -356,14 +356,33 @@ button{
     transition: 500ms;
 }
 
+.auswahl-back {
 
+display: inline-block;
+
+}
 
 .auswahl-back:hover{
+    filter: brightness(1.2);
+    transform: translate(0px, 0px) scale(1.05);
+    animation-duration: 1000ms;
+    animation-name: blinken;
+    animation-iteration-count: infinite;
+}
 
-    transition: 500ms;
-    transform: translate(0px, 0px) scale(2.0);
-    
-    
+@keyframes blinken{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    50%{
+        transform: scale(.85);
+        opacity: 0.75;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /* .profilbildoption{
