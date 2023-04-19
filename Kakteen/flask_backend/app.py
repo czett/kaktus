@@ -28,33 +28,34 @@ def check_for_session(session_var_name, **kwargs):
 @app.route("/")
 def start():
 	check_if_logged_in()
+	return str(session["logged_in"])
 	check_for_session("warning", create_empty=True)
 	return render_template("index.html", logged_in=session["logged_in"], warning=session["warning"])
 
 @app.route("/shop")
 def shop():
 	check_if_logged_in()
-	return render_template("Shop.html")
+	return render_template("Shop.html", logged_in=session["logged_in"])
 
 @app.route("/entdecken")
 def entdecken():
 	check_if_logged_in()
-	return render_template("Entdecken.html")
+	return render_template("Entdecken.html", logged_in=session["logged_in"])
 
 @app.route("/support")
 def support():
 	check_if_logged_in()
-	return render_template("Support.html")
+	return render_template("Support.html", logged_in=session["logged_in"])
 
 @app.route("/profil")
 def profil():
 	check_if_logged_in()
-	return render_template("Profil.html")
+	return render_template("Profil.html", logged_in=session["logged_in"])
 
 @app.route("/auswahl")
 def auswahl():
 	check_if_logged_in()
-	return render_template("Auswahl.html")
+	return render_template("Auswahl.html", logged_in=session["logged_in"])
 
 @app.route("/login", methods=["POST"])
 def login():
@@ -65,7 +66,7 @@ def login():
 
 	if log_return == True:
 		session["logged_in"] = True
-		return redirect("/")
+		return redirect("/profil")
 	else:
 		session["warning"] = [log_return[1], "l"]
 		return redirect("/")
@@ -79,7 +80,7 @@ def register():
 
 	if reg_return == True:
 		session["logged_in"] = True
-		return redirect("/")
+		return redirect("/profil")
 	else:
 		session["warning"] = [reg_return[1], "r"]
 		return redirect("/")

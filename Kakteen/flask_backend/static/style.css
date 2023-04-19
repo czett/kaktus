@@ -82,7 +82,8 @@ body, html{
 .ueberschrift{
     font-family: 'Unbounded';
     letter-spacing: 0.1em;
-    text-decoration: dashed underline;
+    text-decoration: none;
+    font-size: 48px;
 }
 
 /* Cycler */
@@ -330,7 +331,6 @@ button{
     border-radius: 50%;
 }
 .profilbildoption{
-
     transition: 500ms;
 }
 
