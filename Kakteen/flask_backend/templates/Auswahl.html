@@ -22,15 +22,17 @@
             <img src="{{  url_for('static', filename='img/3.jpg')  }}" alt="">
         </label>
     </div>
-
+    
     <div class="submit-wrap">
         <button class="image-selector-submit">Auswählen</button>
     </div>
 </form>
 
+<div class="auswahl-back"><a href="/profil" class="fa-solid fa-arrow-right fa-rotate-180 fa-xl"></a></div>
+
 <style>
     body, html{
-        background-color: black;
+        background-color: var(--bg);
     }
 
     input[type="radio"]{
@@ -55,7 +57,10 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    a{
+        text-decoration: none;
+    }
 </style>
-<div class="auswahl-back"><a href="/profil" class="fa-solid fa-arrow-right fa-rotate-180 fa-xl"></a></div>
 
 {% endblock %}
