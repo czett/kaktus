@@ -7,13 +7,13 @@
     <input type="radio" name="profilbild" id="3">
 
     <div class="bilder">
-        <label for="1">
+        <label for="1" class="profilbildoption" onmousedown="profilbildAuswaehlen(this)">
             <img src="{{  url_for('static', filename='img/1.jpg')  }}" alt="">
         </label>
-        <label for="2">
+        <label for="2" class="profilbildoption" onmousedown="profilbildAuswaehlen(this)">
             <img src="{{  url_for('static', filename='img/2.jpg')  }}" alt="">
         </label>
-        <label for="3">
+        <label for="3" class="profilbildoption" onmousedown="profilbildAuswaehlen(this)">
             <img src="{{  url_for('static', filename='img/3.jpg')  }}" alt="">
         </label>
     </div>

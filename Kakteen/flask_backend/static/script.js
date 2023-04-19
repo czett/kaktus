@@ -109,3 +109,25 @@ function newUrl(url){
 }
 
 /* endöööööö */
+
+/* profilbilder auswählen */
+
+function profilbildAuswaehlen(bild){
+	//document.querySelectorAll(".profilbildoption").style.border = "none";
+
+	var optionen = document.querySelectorAll('.profilbildoption');
+	var r = document.querySelector(':root');
+	var rs = getComputedStyle(r);
+	var ac = rs.getPropertyValue('--ac');
+
+	[].forEach.call(optionen, function(option) {
+		// end me
+		option.style.border = "5px solid transparent";
+	});
+
+	bild.style.border = "10px solid rgb(255,99,125)";
+
+	//bild.style.display = "none";
+}
+
+// ende 
