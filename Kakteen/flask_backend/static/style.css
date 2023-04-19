@@ -280,6 +280,28 @@ button{
     border-radius: 50%;
 }
 
+.submit-wrap{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.submit-wrap .image-selector-submit{
+    background-color: var(--ac);
+    padding: calc(0.5 * var(--lrpad));
+    border: none;
+    height: auto;
+    width: auto;
+    border-radius: 1vw;
+    font-size: 16px;
+    transition: 500ms;
+}
+
+.submit-wrap .image-selector-submit:hover{
+    filter: brightness(1.1);
+}
+
 .profile-icon{
     transition: 500ms;
 }

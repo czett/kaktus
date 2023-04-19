@@ -6,7 +6,7 @@
  
 
    
-    <form action="momogus">
+    <form action="/auswahl/bestaetigen">
     <input type="radio" name="profilbild" id="1">
     <input type="radio" name="profilbild" id="2">
     <input type="radio" name="profilbild" id="3">
@@ -21,6 +21,10 @@
         <label for="3" class="profilbildoption" onmousedown="profilbildAuswaehlen(this)">
             <img src="{{  url_for('static', filename='img/3.jpg')  }}" alt="">
         </label>
+    </div>
+
+    <div class="submit-wrap">
+        <button class="image-selector-submit">Auswählen</button>
     </div>
 </form>
 
