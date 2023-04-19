@@ -41,6 +41,11 @@ def entdecken():
 	check_if_logged_in()
 	return render_template("Entdecken.html")
 
+@app.route("/agb")
+def agb():
+	check_if_logged_in()
+	return render_template("agb.html")
+
 @app.route("/support")
 def support():
 	check_if_logged_in()
