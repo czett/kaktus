@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!-- Frage -->
+
+<section id="qustSec">
+<div id="qustBox">
+    <p id="question">Wie viele Stacheln hat ein Kaktus im Durchschnitt?</p>
+</div>
+</section>
+
+<!-- Antworten A-D -->
+
+<section id="answSec">
+
+<div id="allover">
+    <div onmousedown="Answer(this, 'answBox3')" id="answBox1" class="AnswBox AnswBoxL">
+        <p class="paragrahQuiz"> A: 1.000.000 </p>
+    </div>
+
+    <div onmousedown="Answer(this, 'answBox3')" id="answBox2" class="AnswBox AnswBoxR">
+        <p class="paragrahQuiz"> B: 10.000 </p>
+    </div>
+
+    <div onmousedown="Answer(this, 'answBox3')"id="answBox3" class="AnswBox AnswBoxL">
+        <p class="paragrahQuiz"> C: 0 </p>
+    </div>
+
+    <div onmousedown="Answer(this, 'answBox3')" id="answBox4" class="AnswBox AnswBoxR">
+        <p class="paragrahQuiz"> D: 100.000 </p>
+    </div>
+</div>
+</section>
+
+
+
+{% endblock %}

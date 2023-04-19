@@ -49,6 +49,11 @@ def entdecken():
 	check_if_logged_in()
 	return render_template("Entdecken.html", logged_in=session["logged_in"], pimg=session["pimg"])
 
+@app.route("/agb")
+def agb():
+	check_if_logged_in()
+	return render_template("agb.html")
+
 @app.route("/support")
 def support():
 	check_if_logged_in()
@@ -77,6 +82,11 @@ def auswahlbestaetigen():
 	session["pimg"] = bild
 
 	return redirect("/profil")
+
+@app.route("/quiz")
+def quiz():
+	check_if_logged_in()
+	return render_template("quiz.html")
 
 @app.route("/login", methods=["POST"])
 def login():
