@@ -14,40 +14,23 @@
 <div class="profile-change">
     <div class="profile-change-img-wrap">
         <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
-        <img src="{{  url_for('static', filename='img/d.jpg')  }}" alt="" class="profile-image">
-        <a href="/auswahl" class="fa-solid fa-pencil">
-            <div class="stift-wrap">
-                <i class="fa-solid fa-pencil"></i>
-            </div>
-        </a>
+        <img src="{{  url_for('static', filename='img/fabio.jpg')  }}" alt="" class="profile-image">
+        <div class="stift-wrap" onmousedown="newUrl('/auswahl')">
+            <i class="fa-solid fa-pencil"></i>
+        </div>
     </div>
 
 </div>
 
 <br><br><br><br>
 
-<div class ="anmeldung">
-<form action="/action_page.php">
-    <div class="form1"> 
-<p style="color:lightgreen"> <label for="fname">E-Mail:</label> </p>
-    
-    </div> 
+
     
     <br>
    
-    <div class ="feld1"> 
     
-        <p style="color:lightgreen"> <input type="text" id="E-Mail" name="E-Mail" value=""> </p>
-
-    </div> 
 
     <br> 
-    
-<label for="lname">Passwort:</label><br>
-    
-<input type="text" id="Passwort" name="Passwort" value=""><br><br>
-    
-<input type="submit" value="Anmelden">
   
 </form>
 
