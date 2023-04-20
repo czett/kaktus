@@ -47,6 +47,19 @@
                                 color: #f00;
                             }
                         </style>
+                    {% elif warnings["search"] is defined and warnings["search"] == False %}
+                        <style>
+                            .such-form-items input[type="text"]{
+                                border: 1px solid var(--ac);
+                                outline: none;
+                                display: none;
+                            }
+
+                            .such-form-items .search-icon-wrap i{
+                                color: var(--ac);
+                                display: none;
+                            }
+                        </style>
                     {% endif %}
                 </div>
             </form>

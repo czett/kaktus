@@ -153,7 +153,7 @@ def profilsuche():
 
 	res = funcs.find_in_coll(logreg, {"username": profil})
 	if res != None:
-		session["warning"] = {}
+		session["warning"]["search"] = False
 		session.modified = True
 		return redirect(f"/profil/{profil}")
 	else:
@@ -164,6 +164,9 @@ def profilsuche():
 
 @app.route("/profil/<profil>")
 def anderesprofil(profil):
+	session["warnings"] = {}
+	session.modified = True
+
 	uid = funcs.find_in_coll(logreg, {"username": profil})["_id"]
 	user_ud = funcs.find_in_coll(userdata, {"_id": uid})
 
@@ -180,4 +183,4 @@ def logout():
 	return redirect("/")
 
 if __name__ == "__main__":
-	app.run(debug=False, port=5000)
+	app.run(debug=True, port=5000)
