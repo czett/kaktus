@@ -76,6 +76,8 @@ body, html{
 
 .content{
     margin-top: 7.5vh;
+    height: calc(100vh - 7.5vh);
+    box-sizing: border-box;
     padding: calc(0.5 * var(--lrpad)) var(--lrpad);
 }
 
@@ -311,7 +313,7 @@ button{
 
 .submit-wrap{
     position: absolute;
-    top: 80%;
+    top: 130%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -773,37 +775,52 @@ input[type="radio"]{
     visibility: hidden;
 }
 
-form{
-    border: 2px solid firebrick;
+.form-wrap-profile-change{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .bilder{
-    border: 2px solid beige;
+    flex-direction: column;
 }
 
-.pimg-form .profilbildoption{
-    width: 10vw;
-    height: 10vw;
+.fa-solid{
+    text-decoration: none;
+}
+
+.bilder .reihe{
+    display: flex;
+    width: 35vw;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5vw;
+}
+
+.pimg-form .reihe .profilbildoption{
+    width: 7vw;
+    height: 7vw;
     border: 2px solid darkblue;
     overflow: hidden;
     border-radius: 50%;
+    transition: 150ms ease-out;
 }
 
 .profilbildoption:hover{
     transition: 500ms;
-    transform: scale(1.1);
     box-shadow: 0px 0px 10px 1px var(--ac);
     border-radius: 50%;
 }
 
-.profilbildoption{
-    transition: 500ms;
-}
-
-/* .profilbildoption img{
+.profilbildoption img{
     height: 100%;
     width: 100%;
-} */
+}
 
 /*==============/Notifikation alert [end]\==============*/
 
