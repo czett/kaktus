@@ -34,13 +34,18 @@
                 <a href="/profil">
                     <div class="profile-icon">
                         <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
-                        <img src="{{  url_for('static', filename='img/No-user.jpg')  }}" alt="" class="profile-image">
+                        {% if pimg != None %}
+                            {% set pimg_url = 'img/' ~ pimg ~ '.jpg' %}
+                            <img src="{{  url_for('static', filename=pimg_url)  }}" alt="" class="profile-image">
+                        {% else %}
+                            <img src="{{  url_for('static', filename='img/No-user.jpg')  }}" alt="" class="profile-image">
+                        {% endif %}
                     </div>
                 </a>
             {% else %}
                 <div class="profile-icon" onmousedown="trigger_logreg()">
                     <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
-                    <img src="{{  url_for('static', filename='img/1.jpg')  }}" alt="" class="profile-image">
+                    <img src="{{  url_for('static', filename='img/No-user.jpg')  }}" alt="" class="profile-image">
                 </div>
                 <div class="logreg-box">
                     <form action="/login" class="logreg-form" id="login-form" method="post" enctype="multipart/form-data">
@@ -112,6 +117,12 @@
         </div>
     </div>
     
+    <style>
+        body, html{
+            transform: rotate(0deg);
+        }
+    </style>
+
     <div class="content">
 
     <!---/Notifikation alert\-------------------------------------------------->  

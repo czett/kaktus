@@ -198,10 +198,11 @@ function profilbildAuswaehlen(bild){
 
 	[].forEach.call(optionen, function(option) {
 		// end me
-		option.style.border = "5px solid transparent";
+		option.style.border = "none";
 	});
 
-	bild.style.border = "10px solid rgb(255,99,125)";
+	//bild.style.border = "10px solid rgb(255,99,125)";
+	bild.style.border = "5px solid " + ac;
 
 	//bild.style.display = "none";
 }
