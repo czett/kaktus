@@ -536,12 +536,8 @@ display: inline-block;
     /* overflow: hidden; */
     white-space: wrap;
     min-width: 35vh;
-    box-sizing: border-box;
-<<<<<<< HEAD
- 
-=======
+    box-sizing: border-box; 
     margin-left: 0.4vw;
->>>>>>> 77fe0636fd8935a2c5f355525c8b7e09958b9dc8
 }
 
  .card-s:hover{
