@@ -690,11 +690,11 @@ display: inline-block;
     /* transform: translate(500px,0px); */
 }
 
- .card-p1:hover{
+ /* .card-p1:hover{
     filter: brightness(1.2);
-    transform: scale(1.05);
+    transform: scale(1.05); */
     
-} 
+
 
 
  #one-p1{
@@ -841,6 +841,7 @@ display: inline-block;
     font-size: 30px;
     overflow: hidden;
     display: inline-block;
+    
 
 }
 
@@ -881,7 +882,7 @@ display: inline-block;
 
 .zahl-p1 {
 
-    transform: translate(845px,-695px);
+    transform: translate(815px,-695px);
     font-size: 50px;
 
 
