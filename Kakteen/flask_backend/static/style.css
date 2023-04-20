@@ -189,27 +189,28 @@ body, html{
     /* v.d. ende */
 }
 
-
+.card p{
+    max-width: 50%;
+    line-height: 1.1em;
+    font-size: 20px;
+}
 
 .card:hover{
     filter: brightness(1.15);
 }
 
 #one{
-<<<<<<< HEAD
-=======
 
->>>>>>> b269e59824f584f438096c70a6f9d8de03e13350
+
+
     background-image: url(img/kaktuseis2.png);
-    background-position: 700px -310px;
+    background-position: 100% 45%;
     background-size: 55%;
 
-<<<<<<< HEAD
-    background-image: url(img/Lemur.jpg);
-    background-position: 0% 20%;
-=======
+
     
->>>>>>> b269e59824f584f438096c70a6f9d8de03e13350
+    
+
 
 }
 
@@ -230,7 +231,8 @@ body, html{
 
 #four{
     background-image: url(img/topdown.jpg);
-    background-position: 0% 40%;
+    background-position: -20% 40%;
+    background-size: 55%;
 }
 
 #five{
