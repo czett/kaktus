@@ -199,13 +199,26 @@ body, html{
 }
 
 #two{
-    background-image: url(img/flowers.jpg);
+    background-image: url(img/16.jpg);
+    background-position: 0% 45%;
 }
 
 #three{
-    background-image: url(img/topdown.jpg);
-    background-position: 0% 50%;
+    background-image: url(img/Cat.jpg);
+    background-position: 0% 30%;
 }
+
+
+#four{
+    background-image: url(img/Cat2.png);
+    background-position: 0% 40%;
+}
+
+#five{
+    background-image: url(img/Toast.jpg);
+    background-position: 0% 45%;
+}
+
 
 button{
 	width: 100px;
