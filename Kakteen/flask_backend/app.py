@@ -20,6 +20,8 @@ def check_if_logged_in():
 		session["warnings"] = {}
 		session["data"]["pimg"] = None
 
+		session.modified = True
+
 def check_for_session(session_var_name, **kwargs):
 	if kwargs["create_empty"] == True:
 		try:
@@ -38,8 +40,6 @@ def check_for_session(session_var_name, **kwargs):
 @app.route("/")
 def start():
 	check_if_logged_in()
-	#return session["warnings"]
-	#return str(session["warnings"])
 	return render_template("index.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/shop")
