@@ -158,3 +158,26 @@ function clickonplus(){
 }
 
 //==============/Shop plus minus [ende]\=============\\
+
+// Settings
+
+var settingsVisible = false;
+
+function openSettings(){
+	if (settingsVisible == true){
+		document.getElementById("settings").style.display = "none";
+		settingsVisible = false;
+	}else{
+		document.getElementById("settings-menu").style.display = "block";
+		document.getElementById("password-change").style.display = "none";
+		document.getElementById("settings").style.display = "block";
+		settingsVisible = true;
+	}
+}
+
+function togglePasswordChange(){
+	document.getElementById("settings-menu").style.display = "none";
+	document.getElementById("password-change").style.display = "block";
+}
+
+// Settings Ende

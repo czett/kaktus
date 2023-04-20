@@ -14,6 +14,7 @@
     width: 5px;
 }
 
+
 ::-webkit-scrollbar-thumb{
     background: var(--ac);
 }
@@ -188,23 +189,47 @@ body, html{
     /* v.d. ende */
 }
 
+
+
 .card:hover{
     filter: brightness(1.15);
 }
 
 #one{
+
     background-image: url(img/kaktuseis2.png);
-    background-position: 0% 50%;
+    background-position: 700px -310px;
+    background-size: 55%;
+
+    
+
 }
 
 #two{
     background-image: url(img/flowers.jpg);
+    background-position: 0% 70%;
 }
 
 #three{
-    background-image: url(img/topdown.jpg);
-    background-position: 0% 50%;
+
+    background-image: url(img/dark.jpg);
+    background-position: 30% 50%;
+
+  
+
 }
+
+
+#four{
+    background-image: url(img/topdown.jpg);
+    background-position: 0% 40%;
+}
+
+#five{
+    background-image: url(img/Natur.jpg);
+    background-position: 0% 45%;
+}
+
 
 button{
 	width: 100px;
@@ -961,22 +986,24 @@ text-decoration-color: #EB6E6E;
     min-width: 40vh;
     min-height: 10vh;
     transform: translate(235px,100px);
-    color: #A0CE40;
+    color: white;
     
-    /* background-image: url(img/neon.webp); */
+    background-color: var(--ac); 
     border-radius: 1vw;
     overflow: visible;
     border: 3px solid var(--ac);
+    
+    
 }
 
 .button-p2:hover {
 
-    
+    background-image: url(img/wagen.png);
+    background-position: 10%, 40%;
+    background-size: 100%;
     background-color: var(--ac); 
     color: white; 
-    text-decoration: underline;
-    text-decoration-color: var(--ac);
-    text-decoration-thickness: 2px;
+    font-size: 0%;
     
     animation: warenkorb;
     animation-iteration-count: infinite;
@@ -985,6 +1012,9 @@ text-decoration-color: #EB6E6E;
 }
 
 /* Profil Warenkorb Ende */
+
+/* Mein Warenkorb Anfang */
+/* Mein Warenkrob Ende */
 
 
 #bell {
@@ -1149,6 +1179,7 @@ input[type="radio"]{
     width: 40vw;
     overflow: hidden;
     align-items: center;
+    position: relative;
 }
 
 .top-leiste .info-leiste div{
@@ -1193,6 +1224,102 @@ input[type="radio"]{
     border-radius: 50%;
     width: auto;
     height: auto;
+}
+
+.settings-icon-wrap{
+    position: absolute;
+    left: 100%;
+    top: 0%;
+    transform: translate(calc(-60%), 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings{
+    position: absolute;
+    background-color: var(--bg);
+    border: 1px solid var(--ac);
+    border-radius: 1vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* padding: var(--lrpad); */
+    width: 25vw;
+    height: auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: none;
+}
+
+.settings .option{
+    padding: calc(.5 * var(--lrpad)) calc(1 * var(--lrpad));
+    transition: 150ms;
+    box-sizing: border-box;
+}
+
+.settings .heading{
+    border-bottom: 1px solid var(--ac);
+    box-sizing: border-box;
+    padding: calc(.15 * var(--lrpad)) calc(1 * var(--lrpad));
+    position: relative;
+}
+
+.settings .heading .close-icon-wrap{
+    position: absolute;
+    top: 15%;
+    left: 93.5%;
+    transform: translate(0%, 0%);
+}
+
+.settings .heading .close-icon-wrap i{
+    font-size: 20px;
+    color: var(--fg);
+}
+
+.settings .option:hover{
+    backdrop-filter: brightness(1.375);
+}
+
+.settings .heading .close-icon-wrap i:hover, .settings-icon-wrap i:hover{
+    filter: brightness(0.75);
+}
+
+.settings .heading .close-icon-wrap i, .settings-icon-wrap i{
+    transition: 200ms;
+}
+
+/* .settings-menu{
+    display: none;
+} */
+
+.password-change{
+    display: none;
+}
+
+.password-change form{
+    padding: var(--lrpad);
+}
+
+.password-change form input, .password-change form button{
+    display: block;
+    width: 50%;
+    box-sizing: border-box;
+    padding: calc(0.33 * var(--lrpad));
+    border-radius: 0.5vw;
+    outline: none;
+}
+
+.password-change form input{
+    border: 1px solid var(--ac);
+    background-color: transparent;
+    margin-bottom: 1vw;
+}
+
+.password-change form button{
+    background-color: var(--ac);
+    border: 1px solid transparent;
+    font-size: 16px;
 }
 
 /* profilseite ende */

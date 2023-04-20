@@ -153,7 +153,7 @@ def profilsuche():
 
 	res = funcs.find_in_coll(logreg, {"username": profil})
 	if res != None:
-		session["warning"]["search"] = False
+		session["warnings"]["search"] = False
 		session.modified = True
 		return redirect(f"/profil/{profil}")
 	else:
@@ -176,6 +176,26 @@ def anderesprofil(profil):
 		profile_data = {"user_id": uid, "username": profil, "friends": user_ud["friends"], "pimg": user_ud["pimg"], "own_profile": False}
 
 	return render_template("Profil.html", data=profile_data, warnings=session["warnings"])
+
+@app.route("/delete-account")
+def delete_account():
+	uid = session["data"]["user_id"]
+
+	userdata.delete_one({"_id": uid})
+	logreg.delete_one({"_id": uid})
+
+	return redirect("/logout")
+
+@app.route("/change-password", methods=["POST"])
+def change_password():
+	uid = session["data"]["user_id"]
+	newpw = request.form.get("newpw")
+
+	query = {"_id": uid}
+	newvals = {"$set": {"password": newpw}}
+	logreg.update_one(query, newvals)
+
+	return redirect("/profil")
 
 @app.route("/logout")
 def logout():

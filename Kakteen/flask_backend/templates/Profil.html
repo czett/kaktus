@@ -35,17 +35,57 @@
 
         </div>
         <div class="interaction-options">
-            {% if data["search"] == True %}
+            {% if data["own_profile"] == True %}
             <p class="logout" onmousedown="newUrl('/logout')">Logout</p>
             {% else %}
             <p class="add">Freund hinzufügen</p>
             <p class="report"><i class="fa-solid fa-flag report"></i> Melden</p>
             {% endif %}
         </div>
+        {% if data["own_profile"] == True %}
+            <div class="settings-icon-wrap" onmousedown="openSettings()">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+        {% endif %}
     </div>
 </div>
 
 <a href="/warenkorb">
     <button class="button-p2">Mein Warenkorb</button>
 </a>
+
+{% if data["own_profile"] == True %}
+    <div class="settings" id="settings">
+        <div class="settings-menu" id="settings-menu">
+            <div class="heading">
+                <p class="settings-title">Einstellungen</p>
+                <div class="close-icon-wrap" onmousedown="openSettings()">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <div class="option">
+                <p class="option-text" onmousedown="togglePasswordChange()">Passwort ändern</p>
+            </div>
+            <div class="option" onmousedown="newUrl('/delete-account')">
+                <p class="option-text">Lightmode aktivieren</p>
+            </div>
+            <div class="option" onmousedown="newUrl('/logout')">
+                <p class="option-text" style="color: red;">Logout</p>
+            </div>
+        </div>
+        <div class="password-change" id="password-change">
+            <div class="heading">
+                <p class="settings-title">Passwort ändern</p>
+                <div class="close-icon-wrap" onmousedown="openSettings()">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <form method="post" enctype="multipart/form-data" action="/change-password">
+                <input type="text" name="newpw" id="newpw">
+                <button type="submit" class="pw-change-btn">Ändern</button>
+            </form>
+        </div>
+    </div>
+{% endif %}
+
 {% endblock %}
