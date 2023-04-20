@@ -329,10 +329,16 @@ button{
     transition: 500ms;
 }
 
+.submit-wrap .image-selector-submit i{
+    display: none;
+}
+
+.submit-wrap .image-selector-submit:hover i{
+    display: inline;
+}
+
 .submit-wrap .image-selector-submit:hover{
-    filter: brightness(1.1);
-    right: -20px;
-    transition: 0.5s;
+    filter: brightness(1.2);
 }
 
 .image-selector-submit span{
