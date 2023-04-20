@@ -15,9 +15,11 @@
                 <img src="{{  url_for('static', filename='img/No-user.jpg')  }}" class="page-profile-image">
             {% endif %}
         </div>
+        {% if data["own_profile"] == True %}
         <div class="stift-wrap" onmousedown="newUrl('/auswahl')">
             <i class="fa-solid fa-pencil"></i>
         </div>
+        {% endif %}
     </div>
 
     <div class="info-leiste">
@@ -33,9 +35,12 @@
 
         </div>
         <div class="interaction-options">
-            <p class="add">Freund hinzufügen</p>
+            {% if data["own_profile"] == True %}
             <p class="logout" onmousedown="newUrl('/logout')">Logout</p>
+            {% else %}
+            <p class="add">Freund hinzufügen</p>
             <p class="report"><i class="fa-solid fa-flag report"></i> Melden</p>
+            {% endif %}
         </div>
     </div>
 </div>
