@@ -35,13 +35,18 @@
 
         </div>
         <div class="interaction-options">
-            {% if data["search"] == True %}
+            {% if data["own_profile"] == True %}
             <p class="logout" onmousedown="newUrl('/logout')">Logout</p>
             {% else %}
             <p class="add">Freund hinzufügen</p>
             <p class="report"><i class="fa-solid fa-flag report"></i> Melden</p>
             {% endif %}
         </div>
+        {% if data["own_profile"] == True %}
+            <div class="settings-icon-wrap">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+        {% endif %}
     </div>
 </div>
 
