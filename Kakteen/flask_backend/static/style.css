@@ -189,6 +189,8 @@ body, html{
     /* v.d. ende */
 }
 
+
+
 .card:hover{
     filter: brightness(1.15);
 }
