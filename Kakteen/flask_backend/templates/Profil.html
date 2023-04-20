@@ -5,14 +5,14 @@
 <h1 class="ueberschrift">Profil</h1>
 
 <div class="top-leiste">
-    <div class="profile-change">
-        <div class="profile-change-img-wrap">
+    <div class="profile-image-container">
+        <div class="direct-img-container">
             <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
             {% if pimg != None %}
                 {% set pimg_url = 'img/' ~ pimg ~ '.jpg' %}
-                <img src="{{  url_for('static', filename=pimg_url)  }}" class="profile-image">
+                <img src="{{  url_for('static', filename=pimg_url)  }}" class="page-profile-image">
             {% else %}
-                <img src="{{  url_for('static', filename='img/No-user.jpg')  }}" class="profile-image">
+                <img src="{{  url_for('static', filename='img/No-user.jpg')  }}" class="page-profile-image">
             {% endif %}
         </div>
         <div class="stift-wrap" onmousedown="newUrl('/auswahl')">
