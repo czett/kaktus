@@ -967,22 +967,24 @@ text-decoration-color: #EB6E6E;
     min-width: 40vh;
     min-height: 10vh;
     transform: translate(235px,100px);
-    color: #A0CE40;
+    color: white;
     
-    /* background-image: url(img/neon.webp); */
+    background-color: var(--ac); 
     border-radius: 1vw;
     overflow: visible;
     border: 3px solid var(--ac);
+    
+    
 }
 
 .button-p2:hover {
 
-    
+    background-image: url(img/wagen.png);
+    background-position: 10%, 40%;
+    background-size: 100%;
     background-color: var(--ac); 
     color: white; 
-    text-decoration: underline;
-    text-decoration-color: var(--ac);
-    text-decoration-thickness: 2px;
+    font-size: 0%;
     
     animation: warenkorb;
     animation-iteration-count: infinite;
@@ -991,6 +993,15 @@ text-decoration-color: #EB6E6E;
 }
 
 /* Profil Warenkorb Ende */
+
+/* Mein Warenkorb Anfang */
+
+.table {
+
+th
+
+}
+/* Mein Warenkrob Ende */
 
 
 #bell {
