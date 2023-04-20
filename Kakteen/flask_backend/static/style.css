@@ -977,7 +977,7 @@ text-decoration-color: #EB6E6E;
     transform: translate(235px,100px);
     color: #A0CE40;
     
-    background-image: url(img/neon.webp);
+    /* background-image: url(img/neon.webp); */
     border-radius: 1vw;
     overflow: visible;
     border: 3px solid var(--ac);
