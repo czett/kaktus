@@ -6,6 +6,7 @@ cluster = MongoClient("mongodb+srv://kaktusmensch:kaktusdevgobrr@mrkaktus.icfdq0
 
 db = cluster["mrkaktus"]
 logreg = db["login"]
+userdata = db["userdata"]
 
 def create_id(length):
 	letter_list = []

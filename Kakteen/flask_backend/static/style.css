@@ -621,7 +621,41 @@ display: inline-block;
 
 /* SHOP Ende */
 
-/*===============/Notification alert\===================*/
+/* Support anfang */
+
+.schrift1 {
+
+font-size: 40px;
+color: green;
+
+}
+
+.schrift2 {
+
+font-size: 20px;
+
+}
+
+.tel1 {
+
+font-size: 20px;
+text-decoration: underline;
+text-decoration-color: #EB6E6E;
+}
+
+.tel {
+
+    font-size: 20px;
+    border:groove;
+    border-color: #A0CE40;
+    border-radius: 5%;
+    border-width: 3px;
+    display: inline-block;
+}
+
+
+
+/* Support Ende */
 
 #bell {
     transition: 150ms;
