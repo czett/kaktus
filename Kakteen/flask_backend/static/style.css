@@ -194,14 +194,13 @@ body, html{
 }
 
 #one{
-<<<<<<< HEAD
     background-image: url(img/kaktuseis2.png);
     background-position: 700px -310px;
     background-size: 55%;
-=======
+
     background-image: url(img/Lemur.jpg);
     background-position: 0% 20%;
->>>>>>> a033737c2070d10ad79795783c01a5eab87f52d8
+
 }
 
 #two{
@@ -830,13 +829,17 @@ display: inline-block;
     font-size: 30px;
     min-width: 60vh;
     min-height: 10vh;
-    transform: translate(600px,-700px);
     color: #A0CE40;
     
     background-color: transparent;
     border-radius: 1vw;
     overflow: visible;
     border: 3px solid var(--ac);
+
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .button-p1:hover {
@@ -870,8 +873,6 @@ display: inline-block;
 }
 
 .minus {
-
-    transform: translate(670px,-790px);
     font-size: 30px;
     overflow: hidden;
     display: inline-block;
@@ -888,13 +889,9 @@ display: inline-block;
 }
 
 .plus {
-
-    transform: translate(990px,-800px);
-    margin-left: 1.3vw;
     font-size: 30px;
     overflow: visible;
     display: inline-block;
-
 }
 
 .plus:hover{
@@ -907,17 +904,31 @@ display: inline-block;
 }
 
 .text2-p1 {
-
-    transform: translate(810px,-695px);
     font-size: 30px;
     text-decoration: underline;
     text-decoration-color: var(--ac);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .zahl-p1 {
-
-    transform: translate(815px,-695px);
     font-size: 50px;
+}
+
+.zahl-und-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 /* Produkt 1 Ende */
 
@@ -1000,7 +1011,7 @@ text-decoration-color: #EB6E6E;
 
 .table {
 
-th
+
 
 }
 /* Mein Warenkrob Ende */
