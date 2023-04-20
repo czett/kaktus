@@ -88,6 +88,40 @@ body, html{
     font-size: 48px;
 }
 
+.such-form-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.such-form-items button{
+    visibility: hidden;
+}
+
+.such-form-items input[type="text"]{
+    padding: .5vw;
+    padding-left: 2vw;
+    border-radius: .5vw;
+    border: 1px solid var(--ac);
+    outline: none;
+    background-color: transparent;
+}
+
+.such-form-items .search-icon-wrap{
+    color: white;
+    display: block;
+    visibility: visible;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(75%, -50%);
+}
+
+.such-form-items .search-icon-wrap i{
+    color: var(--ac);
+}
+
 /*============/Animation with side change\===================*/
 
 #animateBall {
@@ -844,7 +878,6 @@ input[type="radio"]{
 .pimg-form .reihe .profilbildoption{
     width: 7vw;
     height: 7vw;
-    border: 2px solid darkblue;
     overflow: hidden;
     border-radius: 50%;
     transition: 150ms ease-out;
