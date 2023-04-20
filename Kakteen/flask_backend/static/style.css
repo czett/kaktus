@@ -347,7 +347,7 @@ button{
 
 .submit-wrap{
     position: absolute;
-    top: 130%;
+    top: 110%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -383,17 +383,6 @@ button{
     transition: 0.5s; 
 }
 
-.image-selector-submit span:after {
-
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;  
-}
-
-
 .image-selector-submit:hover span{
 
     opacity: 1;
@@ -402,6 +391,11 @@ button{
 
 }
 
+
+.image-selector-submit{
+
+    transition: 500ms;
+}
 
 
 
@@ -1108,7 +1102,7 @@ input[type="radio"]{
     width: 100%;
     height: auto;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -1130,8 +1124,8 @@ input[type="radio"]{
 }
 
 .pimg-form .reihe .profilbildoption{
-    width: 7vw;
-    height: 7vw;
+    width: 6vw;
+    height: 6vw;
     overflow: hidden;
     border-radius: 50%;
     transition: 150ms ease-out;
@@ -1145,7 +1139,7 @@ input[type="radio"]{
 
 .profilbildoption img{
     height: 100%;
-    width: 100%;
+    width: 100;
 }
 
 /*==============/Notifikation alert [end]\==============*/

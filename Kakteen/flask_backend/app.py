@@ -20,6 +20,8 @@ def check_if_logged_in():
 		session["warnings"] = {}
 		session["data"]["pimg"] = None
 
+		session.modified = True
+
 def check_for_session(session_var_name, **kwargs):
 	if kwargs["create_empty"] == True:
 		try:
@@ -38,8 +40,6 @@ def check_for_session(session_var_name, **kwargs):
 @app.route("/")
 def start():
 	check_if_logged_in()
-	#return session["warnings"]
-	#return str(session["warnings"])
 	return render_template("index.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/shop")
@@ -147,24 +147,26 @@ def register():
 
 @app.route("/profil/suche", methods=["POST"])
 def profilsuche():
-	return "hallo ich mag zuege"
 	check_if_logged_in()
 	
 	profil = request.form.get("profil")
 
 	res = funcs.find_in_coll(logreg, {"username": profil})
 	if res != None:
-		session["warning"] = {}
+		session["warnings"]["search"] = False
 		session.modified = True
 		return redirect(f"/profil/{profil}")
 	else:
-		return str(session["warnings"])
+		#return str(session["warnings"])
 		session["warnings"]["search"] = True
 		session.modified = True
 		return redirect("/")
 
 @app.route("/profil/<profil>")
 def anderesprofil(profil):
+	session["warnings"] = {}
+	session.modified = True
+
 	uid = funcs.find_in_coll(logreg, {"username": profil})["_id"]
 	user_ud = funcs.find_in_coll(userdata, {"_id": uid})
 
@@ -181,4 +183,4 @@ def logout():
 	return redirect("/")
 
 if __name__ == "__main__":
-	app.run(debug=False, port=5000)
+	app.run(debug=True, port=5000)
