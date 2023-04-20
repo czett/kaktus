@@ -76,6 +76,8 @@ body, html{
 
 .content{
     margin-top: 7.5vh;
+    height: calc(100vh - 7.5vh);
+    box-sizing: border-box;
     padding: calc(0.5 * var(--lrpad)) var(--lrpad);
 }
 
@@ -85,6 +87,37 @@ body, html{
     text-decoration: none;
     font-size: 48px;
 }
+
+/*============/Animation with side change\===================*/
+
+#animateBall {
+    width: 0vw;
+    height: 0vw;
+    visibility: hidden;
+    position: absolute;
+    z-index: 100000;
+    background-color: var(--bg);
+    border-radius: 50vh;
+    border: 2px solid var(--ac);
+}
+
+#shopPress {
+    cursor: pointer;
+}
+
+#homePress {
+    cursor: pointer;
+}
+
+#discoverPress {
+    cursor: pointer;
+}
+
+#supportPress {
+    cursor: pointer;
+}
+
+/*===========/Animation with side change [end]\==============*/
 
 /* Cycler */
 
@@ -259,7 +292,6 @@ button{
     display: none;
 }
 
-
 .profile-icon{
     width: 4.5vh;
 	height: 4.5vh;
@@ -270,7 +302,6 @@ button{
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-
 }
 
 .profile-icon:hover{
@@ -282,7 +313,7 @@ button{
 
 .submit-wrap{
     position: absolute;
-    top: 80%;
+    top: 130%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -298,9 +329,47 @@ button{
     transition: 500ms;
 }
 
-.submit-wrap .image-selector-submit:hover{
-    filter: brightness(1.1);
+.submit-wrap .image-selector-submit i{
+    display: none;
 }
+
+.submit-wrap .image-selector-submit:hover i{
+    display: inline;
+}
+
+.submit-wrap .image-selector-submit:hover{
+    filter: brightness(1.2);
+}
+
+.image-selector-submit span{
+
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s; 
+}
+
+.image-selector-submit span:after {
+
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;  
+}
+
+
+.image-selector-submit:hover span{
+
+    opacity: 1;
+    right: 1;
+
+
+}
+
+
+
 
 .profile-icon{
     transition: 500ms;
@@ -343,17 +412,6 @@ button{
 .profile-change{
     transition: 500ms;
     border: 2px solid var(--ac);
-}
-
-.profilbildoption:hover{
-
-    transition: 500ms;
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px 1px var(--ac);
-    border-radius: 50%;
-}
-.profilbildoption{
-    transition: 500ms;
 }
 
 .auswahl-back {
@@ -410,13 +468,13 @@ display: inline-block;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    
     position: absolute;
-
     top: 83.5%;
     left: 83.5%;
     z-index: 100;
     transform: translate(-50%, -50%);
-    opacity: 0;
+    opacity: 1;
     transition: 275ms;
 }
 
@@ -445,7 +503,11 @@ display: inline-block;
     white-space: wrap;
     min-width: 35vh;
     box-sizing: border-box;
+<<<<<<< HEAD
  
+=======
+    margin-left: 0.4vw;
+>>>>>>> 77fe0636fd8935a2c5f355525c8b7e09958b9dc8
 }
 
  .card-s:hover{
@@ -960,6 +1022,56 @@ text-decoration-color: #EB6E6E;
     }
 }
 
+input[type="radio"]{
+    visibility: hidden;
+}
+
+.form-wrap-profile-change{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bilder{
+    flex-direction: column;
+}
+
+.fa-solid{
+    text-decoration: none;
+}
+
+.bilder .reihe{
+    display: flex;
+    width: 35vw;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5vw;
+}
+
+.pimg-form .reihe .profilbildoption{
+    width: 7vw;
+    height: 7vw;
+    border: 2px solid darkblue;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: 150ms ease-out;
+}
+
+.profilbildoption:hover{
+    transition: 500ms;
+    box-shadow: 0px 0px 10px 1px var(--ac);
+    border-radius: 50%;
+}
+
+.profilbildoption img{
+    height: 100%;
+    width: 100%;
+}
 
 /*==============/Notifikation alert [end]\==============*/
 
@@ -1000,16 +1112,29 @@ text-decoration-color: #EB6E6E;
     font-size: 16px;
 }
 
-/* .top-leiste .info-leiste .interaction-options .add{
-    font-size: 16px;
-    display: inline-flex;
-    max-resolution: ;
-    border-radius: 1vh;
-    background-color: var(--ac);
-} */
-
 .top-leiste .info-leiste .interaction-options .report{
     color: #EA3434;
+}
+
+.top-leiste .profile-image-container{
+    position: relative;
+    height: calc(2px + 20vh);
+    width: calc(2px + 20vh);
+}
+
+.top-leiste .profile-image-container .direct-img-container{
+    overflow: hidden;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.top-leiste .profile-image-container .direct-img-container img{
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 50%;
+    width: auto;
+    height: auto;
 }
 
 /* profilseite ende */
