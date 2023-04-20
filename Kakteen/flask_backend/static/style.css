@@ -445,6 +445,7 @@ display: inline-block;
     white-space: wrap;
     min-width: 35vh;
     box-sizing: border-box;
+ 
 }
 
  .card-s:hover{
@@ -532,18 +533,7 @@ display: inline-block;
     color: red;
 }
 
-/*.gradient-s{
-    background: linear-gradient(90deg, var(--ac) 20%, transparent 60%);
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-60%, 30%);
-    padding: var(--lrpad);
-    box-sizing: border-box;
-    color: white;
-}*/
+
 
 .gradient-s{
     border: thick;
@@ -568,6 +558,7 @@ display: inline-block;
     width: auto;
     height: 50vw;
     white-space: nowrap;
+    /* overflow-x: visible; */
 }
 
 .card-s p, .card-s h2{
@@ -575,11 +566,130 @@ display: inline-block;
     white-space: normal;
 }
 
-
-    
-
+.fa-solid{
+    text-decoration: none;
+}
 
 .preis-s {
+
+    text-align:center;
+    font-size: 60px;
+    letter-spacing: 0.5px;
+    border-radius: 50%;
+    border:dotted;
+    border-color: rgb(255, 99, 125);
+    overflow: visible;
+    
+}
+
+.warenkorb-icon-wrap{
+    width: 3vw;
+    aspect-ratio: 1 / 1;
+    background-color: #592C59;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1vw;
+    visibility: hidden;
+
+    position: absolute;
+    z-index: 1000;
+    top: 95%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.warenkorb-icon-wrap i{
+    font-size: 1.25vw;
+    color: turquoise;
+    
+}
+
+.card-s:hover .warenkorb-icon-wrap{
+    visibility: visible;
+}
+
+
+/* SHOP Ende */
+
+
+
+/* Produkt 1 Anfang */
+
+.card-p1 {
+    transition: 500ms;
+    user-select: none;
+    /* overflow: hidden; */
+    white-space: wrap;
+    max-width: 60vh;
+    box-sizing: border-box;
+    position: absolute;
+    /* transform: translate(500px,0px); */
+}
+
+ .card-p1:hover{
+    filter: brightness(1.2);
+    transform: scale(1.05);
+    
+} 
+
+
+ #one-p1{
+    background-image: url(img/kaktuseis2.png);
+    background-position: 50% 45%;
+    background-size: 250%;
+    
+} 
+
+.card-p1:first-of-type(){
+    background-color: red;
+} 
+
+.card-p1 .gradient-p1 p{
+    font-size: 18px;
+    line-height: 1.1rem;
+    max-width: 100%;
+    color: red;
+}
+
+
+
+.gradient-p1{
+    border: thick;
+    border-color:#ff7e93;
+    border-style:solid;
+    background-color:white;
+    border-radius: 10%;
+    box-sizing: border-box;
+
+
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    position: relative;
+    overflow: visible;
+}
+
+.cards-p1{
+    display: flex;
+    gap: calc(2.5 * var(--lrpad));
+    align-items: center;
+    overflow-x: scroll;
+    width: auto;
+    height: 50vw;
+    white-space: nowrap;
+}
+
+.card-p1 p, .card-p1 h2{
+    max-width: 100%;
+    white-space: normal;
+}
+
+.fa-solid{
+    text-decoration: none;
+}
+
+.preis-p1 {
 
     text-align:center;
     font-size: 60px;
@@ -614,12 +724,111 @@ display: inline-block;
     
 }
 
-.card-s:hover .warenkorb-icon-wrap{
-    visibility: visible;
+.card-p1:hover .warenkorb-icon-wrap{
+    visibility: hidden;
 }
 
 
-/* SHOP Ende */
+.button-p1 {
+    transition-duration: 0.4s;
+    font-size: 30px;
+    min-width: 60vh;
+    min-height: 10vh;
+    transform: translate(600px,-700px);
+    color: #A0CE40;
+    
+    background-color: transparent;
+    border-radius: 1vw;
+    overflow: visible;
+    border: 3px solid var(--ac);
+}
+
+.button-p1:hover {
+
+    
+        background-color: var(--ac); 
+        color: white; 
+        text-decoration: underline;
+        text-decoration-color: var(--ac);
+        text-decoration-thickness: 2px;
+        
+        animation: warenkorb;
+        animation-iteration-count: infinite;
+        animation-duration: 1000ms;
+        animation-delay: 10ms;
+       
+}
+
+@keyframes warenkorb{
+
+0% {
+    filter: opacity(1);
+}
+50% {
+    filter: opacity(0.7);
+}
+
+100% {
+    filter: opacity(1);
+}
+}
+
+.minus {
+
+    transform: translate(670px,-790px);
+    font-size: 30px;
+    overflow: hidden;
+    display: inline-block;
+
+}
+
+.minus:hover{
+
+    animation: warenkorb;
+    animation-iteration-count: infinite;
+    animation-duration: 1000ms;
+    animation-delay: 10ms;
+
+}
+
+.plus {
+
+    transform: translate(990px,-800px);
+    font-size: 30px;
+    overflow: visible;
+    display: inline-block;
+
+}
+
+.plus:hover{
+
+    animation: warenkorb;
+    animation-iteration-count: infinite;
+    animation-duration: 1000ms;
+    animation-delay: 10ms;
+
+}
+
+.text2-p1 {
+
+    transform: translate(810px,-695px);
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-color: var(--ac);
+}
+
+.zahl-p1 {
+
+    transform: translate(845px,-695px);
+    font-size: 50px;
+
+
+}
+/* Produkt 1 Ende */
+
+
+
+
 
 /* Support anfang */
 
