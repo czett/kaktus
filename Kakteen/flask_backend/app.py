@@ -37,9 +37,10 @@ def check_for_session(session_var_name, **kwargs):
 
 @app.route("/")
 def start():
-	check_if_logged_in()
-	check_for_session("warning", create_empty=True)
-	return render_template("index.html", logged_in=session["logged_in"], warning=session["warning"], data=session["data"], warnings=session["warnings"])
+	#check_if_logged_in()
+	#return session["warnings"]
+	#return str(session["warnings"])
+	return render_template("index.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/shop")
 def shop():
@@ -115,10 +116,11 @@ def login():
 		pimg = funcs.find_in_coll(userdata, {"_id": uid})["pimg"]
 		friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
 
-		session["data"] = {"user_id": uid, "username": un, "pimg": pimg, "friends": friends}
+		session["data"] = {"user_id": uid, "username": un, "pimg": pimg, "friends": friends, "own_profile": True}
 		return redirect("/profil")
 	else:
 		session["warnings"]["logreg"] = [log_return[1], "l"]
+		session.modified = True
 		return redirect("/")
 
 @app.route("/register", methods=["POST"])
@@ -140,6 +142,7 @@ def register():
 		return redirect("/profil")
 	else:
 		session["warnings"]["logreg"] = [reg_return[1], "r"]
+		session.modified = True
 		return redirect("/")
 
 @app.route("/profil/suche", methods=["POST"])
@@ -153,7 +156,8 @@ def profilsuche():
 	if res != None:
 		return redirect(f"/profil/{profil}")
 	else:
-		session["warnings"]["search"] = "Account existiert nicht."
+		session["warnings"]["search"] = True
+		session.modified = True
 		return redirect("/")
 
 @app.route("/profil/<profil>")

@@ -536,14 +536,8 @@ display: inline-block;
     /* overflow: hidden; */
     white-space: wrap;
     min-width: 35vh;
-<<<<<<< HEAD
     box-sizing: border-box;
     margin-left: 0.4vw;
-
-=======
-    box-sizing: border-box; 
-    margin-left: 0.4vw;
->>>>>>> 9f4be320c66163e8afca2028c1f9e78011b8ea8e
 }
 
  .card-s:hover{
@@ -877,7 +871,6 @@ display: inline-block;
     font-size: 30px;
     overflow: hidden;
     display: inline-block;
-    
 
 }
 
@@ -893,6 +886,7 @@ display: inline-block;
 .plus {
 
     transform: translate(990px,-800px);
+    margin-left: 1.3vw;
     font-size: 30px;
     overflow: visible;
     display: inline-block;
@@ -920,11 +914,7 @@ display: inline-block;
 
     transform: translate(815px,-695px);
     font-size: 50px;
-
-
 }
-
-
 /* Produkt 1 Ende */
 
 

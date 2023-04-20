@@ -32,10 +32,22 @@
             <form action="/profil/suche" method="post" enctype="multipart/form-data">
                 <div class="such-form-items">
                     <div class="search-icon-wrap">
-                        <i class="fa-solid fa-jet-fighter-up"></i>
+                        <i class="fa-solid fa-drumstick-bite"></i>
                     </div>
                     <input type="text" placeholder="Profilsuche..." name="profil">
                     <button type="submit"></button>
+                    {% if warnings["search"] == True %}
+                        <style>
+                            .such-form-items input[type="text"]{
+                                border: 1px solid #f00;
+                                outline: none;
+                            }
+
+                            .such-form-items .search-icon-wrap i{
+                                color: #f00;
+                            }
+                        </style>
+                    {% endif %}
                 </div>
             </form>
         </div>
