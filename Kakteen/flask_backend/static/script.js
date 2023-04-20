@@ -1,3 +1,4 @@
+
 function cycle(){
 	const active = document.querySelector(".act");
 	const index = Number(active.dataset.index);
