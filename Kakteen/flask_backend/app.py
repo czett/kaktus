@@ -153,7 +153,7 @@ def profilsuche():
 
 	res = funcs.find_in_coll(logreg, {"username": profil})
 	if res != None:
-		session["warning"]["search"] = False
+		session["warnings"]["search"] = False
 		session.modified = True
 		return redirect(f"/profil/{profil}")
 	else:
