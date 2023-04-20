@@ -204,14 +204,32 @@ body, html{
 }
 
 #two{
-    background-image: url(img/flowers.jpg);
+    background-image: url(img/16.jpg);
+    background-position: 0% 45%;
 }
 
 #three{
+<<<<<<< HEAD
+    background-image: url(img/Cat.jpg);
+    background-position: 0% 30%;
+=======
     background-image: url(img/topdown.jpg);
     background-position: 800px -150px;
     background-size: 55%;
+>>>>>>> 00644fe391ca11b0e22c77ff888e7632fd5d664e
 }
+
+
+#four{
+    background-image: url(img/Cat2.png);
+    background-position: 0% 40%;
+}
+
+#five{
+    background-image: url(img/Toast.jpg);
+    background-position: 0% 45%;
+}
+
 
 button{
 	width: 100px;
@@ -1008,12 +1026,15 @@ text-decoration-color: #EB6E6E;
 /* Profil Warenkorb Ende */
 
 /* Mein Warenkorb Anfang */
+<<<<<<< HEAD
 
 .table {
 
 
 
 }
+=======
+>>>>>>> bab186da4b2589e48c11e0c39d8625217b20295c
 /* Mein Warenkrob Ende */
 
 
