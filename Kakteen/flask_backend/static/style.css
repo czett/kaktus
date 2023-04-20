@@ -194,7 +194,8 @@ body, html{
 
 #one{
     background-image: url(img/kaktuseis2.png);
-    background-position: 0% 50%;
+    background-position: 700px -310px;
+    background-size: 55%;
 }
 
 #two{
@@ -203,7 +204,8 @@ body, html{
 
 #three{
     background-image: url(img/topdown.jpg);
-    background-position: 0% 50%;
+    background-position: 800px -150px;
+    background-size: 55%;
 }
 
 button{
