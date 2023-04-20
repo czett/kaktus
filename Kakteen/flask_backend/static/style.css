@@ -1287,6 +1287,39 @@ input[type="radio"]{
     transition: 200ms;
 }
 
+/* .settings-menu{
+    display: none;
+} */
+
+.password-change{
+    display: none;
+}
+
+.password-change form{
+    padding: var(--lrpad);
+}
+
+.password-change form input, .password-change form button{
+    display: block;
+    width: 50%;
+    box-sizing: border-box;
+    padding: calc(0.33 * var(--lrpad));
+    border-radius: 0.5vw;
+    outline: none;
+}
+
+.password-change form input{
+    border: 1px solid var(--ac);
+    background-color: transparent;
+    margin-bottom: 1vw;
+}
+
+.password-change form button{
+    background-color: var(--ac);
+    border: 1px solid transparent;
+    font-size: 16px;
+}
+
 /* profilseite ende */
 /* 
 *{

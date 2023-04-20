@@ -177,6 +177,26 @@ def anderesprofil(profil):
 
 	return render_template("Profil.html", data=profile_data, warnings=session["warnings"])
 
+@app.route("/delete-account")
+def delete_account():
+	uid = session["data"]["user_id"]
+
+	userdata.delete_one({"_id": uid})
+	logreg.delete_one({"_id": uid})
+
+	return redirect("/logout")
+
+@app.route("/change-password", methods=["POST"])
+def change_password():
+	uid = session["data"]["user_id"]
+	newpw = request.form.get("newpw")
+
+	query = {"_id": uid}
+	newvals = {"$set": {"password": newpw}}
+	logreg.update_one(query, newvals)
+
+	return redirect("/profil")
+
 @app.route("/logout")
 def logout():
 	session.clear()
