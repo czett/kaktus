@@ -259,7 +259,6 @@ button{
     display: none;
 }
 
-
 .profile-icon{
     width: 4.5vh;
 	height: 4.5vh;
@@ -409,13 +408,13 @@ display: inline-block;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    
     position: absolute;
-
     top: 83.5%;
     left: 83.5%;
     z-index: 100;
     transform: translate(-50%, -50%);
-    opacity: 0;
+    opacity: 1;
     transition: 275ms;
 }
 
@@ -790,16 +789,29 @@ text-decoration-color: #EB6E6E;
     font-size: 16px;
 }
 
-/* .top-leiste .info-leiste .interaction-options .add{
-    font-size: 16px;
-    display: inline-flex;
-    max-resolution: ;
-    border-radius: 1vh;
-    background-color: var(--ac);
-} */
-
 .top-leiste .info-leiste .interaction-options .report{
     color: #EA3434;
+}
+
+.top-leiste .profile-image-container{
+    position: relative;
+    height: calc(2px + 20vh);
+    width: calc(2px + 20vh);
+}
+
+.top-leiste .profile-image-container .direct-img-container{
+    overflow: hidden;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.top-leiste .profile-image-container .direct-img-container img{
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 50%;
+    width: auto;
+    height: auto;
 }
 
 /* profilseite ende */
