@@ -194,40 +194,37 @@ body, html{
 }
 
 #one{
-<<<<<<< HEAD
+
     background-image: url(img/kaktuseis2.png);
     background-position: 700px -310px;
     background-size: 55%;
-=======
-    background-image: url(img/Lemur.jpg);
-    background-position: 0% 20%;
->>>>>>> a033737c2070d10ad79795783c01a5eab87f52d8
+
+    
+
 }
 
 #two{
-    background-image: url(img/16.jpg);
-    background-position: 0% 45%;
+    background-image: url(img/flowers.jpg);
+    background-position: 0% 70%;
 }
 
 #three{
-<<<<<<< HEAD
-    background-image: url(img/Cat.jpg);
-    background-position: 0% 30%;
-=======
-    background-image: url(img/topdown.jpg);
-    background-position: 800px -150px;
-    background-size: 55%;
->>>>>>> 00644fe391ca11b0e22c77ff888e7632fd5d664e
+
+    background-image: url(img/dark.jpg);
+    background-position: 30% 50%;
+
+  
+
 }
 
 
 #four{
-    background-image: url(img/Cat2.png);
+    background-image: url(img/topdown.jpg);
     background-position: 0% 40%;
 }
 
 #five{
-    background-image: url(img/Toast.jpg);
+    background-image: url(img/topf.jpg);
     background-position: 0% 45%;
 }
 
