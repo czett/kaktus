@@ -29,12 +29,12 @@
             </div>
         </div>
         <div class="suchleiste">
-            <form action="/profil/suche" method="post">
+            <form action="/profil/suche" method="post" enctype="multipart/form-data">
                 <div class="such-form-items">
                     <div class="search-icon-wrap">
                         <i class="fa-solid fa-drumstick-bite"></i>
                     </div>
-                    <input type="text" placeholder="Profilsuche...">
+                    <input type="text" placeholder="Profilsuche..." name="profil">
                     <button type="submit"></button>
                 </div>
             </form>
@@ -70,7 +70,7 @@
                         <input type="text" name="username" placeholder="Benutzername" required>
                         <input type="password" name="password" placeholder="Passwort" required>
                         
-                        {% if warning is defined and warning[0] == "e" and warning[1] == "l" %}
+                        {% if warnings["logreg"] is defined and warning["logreg"][0] == "e" and warning["logreg"][1] == "l" %}
                         
                         <div class="logreg-warning">
                             <i class="fa-solid fa-triangle-exclamation"></i>
@@ -82,7 +82,7 @@
                             }
                         </style>
 
-                        {% elif warning is defined and warning[0] == "p" and warning[1] == "l" %}
+                        {% elif warnings["logreg"] is defined and warning["logreg"][0] == "p" and warning["logreg"][1] == "l" %}
                         
                         <div class="logreg-warning">
                             <i class="fa-solid fa-triangle-exclamation"></i>
@@ -104,7 +104,7 @@
                         <input type="text" name="username" placeholder="Benutzername" required>
                         <input type="password" name="password" placeholder="Passwort" required>
                         
-                        {% if warning is defined and warning[0] == "e" and warning[1] == "r" %}
+                        {% if warnings["logreg"] is defined and warning["logreg"][0] == "e" and warning["logreg"][1] == "r" %}
                         
                         <div class="logreg-warning">
                             <i class="fa-solid fa-triangle-exclamation"></i>

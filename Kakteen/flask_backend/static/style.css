@@ -724,11 +724,11 @@ display: inline-block;
     /* transform: translate(500px,0px); */
 }
 
- .card-p1:hover{
+ /* .card-p1:hover{
     filter: brightness(1.2);
-    transform: scale(1.05);
+    transform: scale(1.05); */
     
-} 
+
 
 
  #one-p1{
@@ -890,6 +890,7 @@ display: inline-block;
 .plus {
 
     transform: translate(990px,-800px);
+    margin-left: 1.3vw;
     font-size: 30px;
     overflow: visible;
     display: inline-block;
@@ -915,10 +916,8 @@ display: inline-block;
 
 .zahl-p1 {
 
-    transform: translate(845px,-695px);
+    transform: translate(815px,-695px);
     font-size: 50px;
-
-
 }
 /* Produkt 1 Ende */
 
@@ -961,6 +960,40 @@ text-decoration-color: #EB6E6E;
 
 
 /* Support Ende */
+
+/* Profil Warenkorb Anfang */
+
+.button-p2 {
+    transition-duration: 0.4s;
+    font-size: 30px;
+    min-width: 40vh;
+    min-height: 10vh;
+    transform: translate(235px,100px);
+    color: #A0CE40;
+    
+    background-image: url(img/neon.webp);
+    border-radius: 1vw;
+    overflow: visible;
+    border: 3px solid var(--ac);
+}
+
+.button-p2:hover {
+
+    
+    background-color: var(--ac); 
+    color: white; 
+    text-decoration: underline;
+    text-decoration-color: var(--ac);
+    text-decoration-thickness: 2px;
+    
+    animation: warenkorb;
+    animation-iteration-count: infinite;
+    animation-duration: 1000ms;
+    animation-delay: 10ms;
+}
+
+/* Profil Warenkorb Ende */
+
 
 #bell {
     transition: 150ms;
@@ -1345,6 +1378,11 @@ input[type="radio"]{
     align-items: center;
     cursor: pointer;
 }
+
+.AnswBox:hover {
+    transform: scale(1.05);
+}
+
 
 .AnswBoxL {
     margin-right: 5vw;

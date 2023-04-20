@@ -17,6 +17,7 @@ def check_if_logged_in():
 	except:
 		session["logged_in"] = False
 		session["data"] = {}
+		session["warnings"] = {}
 		session["data"]["pimg"] = None
 
 def check_for_session(session_var_name, **kwargs):
@@ -38,37 +39,42 @@ def check_for_session(session_var_name, **kwargs):
 def start():
 	check_if_logged_in()
 	check_for_session("warning", create_empty=True)
-	return render_template("index.html", logged_in=session["logged_in"], warning=session["warning"], data=session["data"])
+	return render_template("index.html", logged_in=session["logged_in"], warning=session["warning"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/shop")
 def shop():
 	check_if_logged_in()
-	return render_template("Shop.html", logged_in=session["logged_in"], data=session["data"])
+	return render_template("Shop.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/entdecken")
 def entdecken():
 	check_if_logged_in()
-	return render_template("Entdecken.html", logged_in=session["logged_in"], data=session["data"])
+	return render_template("Entdecken.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/agb")
 def agb():
 	check_if_logged_in()
-	return render_template("agb.html", logged_in=session["logged_in"], data=session["data"])
+	return render_template("agb.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/support")
 def support():
 	check_if_logged_in()
-	return render_template("Support.html", logged_in=session["logged_in"], data=session["data"])
+	return render_template("Support.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/profil")
 def profil():
 	check_if_logged_in()
-	return render_template("Profil.html", logged_in=session["logged_in"], data=session["data"])
+	return render_template("Profil.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/auswahl")
 def auswahl():
 	check_if_logged_in()
-	return render_template("Auswahl.html", logged_in=session["logged_in"], data=session["data"])
+	return render_template("Auswahl.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
+@app.route("/warenkorb")
+def warenkorb():
+	check_if_logged_in()
+	return render_template("warenkorb.html", logged_in=session["logged_in"], data=session["data"])
 
 @app.route("/auswahl/bestaetigen", methods=["POST"])
 def auswahlbestaetigen():
@@ -88,12 +94,12 @@ def auswahlbestaetigen():
 @app.route("/quiz")
 def quiz():
 	check_if_logged_in()
-	return render_template("quiz.html", logged_in=session["logged_in"], data=session["data"])
+	return render_template("quiz.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/p1")
 def p1():
 	check_if_logged_in()
-	return render_template("p1.html", logged_in=session["logged_in"], data=session["data"])
+	return render_template("p1.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/login", methods=["POST"])
 def login():
@@ -112,7 +118,7 @@ def login():
 		session["data"] = {"user_id": uid, "username": un, "pimg": pimg, "friends": friends}
 		return redirect("/profil")
 	else:
-		session["warning"] = [log_return[1], "l"]
+		session["warnings"]["logreg"] = [log_return[1], "l"]
 		return redirect("/")
 
 @app.route("/register", methods=["POST"])
@@ -133,8 +139,34 @@ def register():
 
 		return redirect("/profil")
 	else:
-		session["warning"] = [reg_return[1], "r"]
+		session["warnings"]["logreg"] = [reg_return[1], "r"]
 		return redirect("/")
+
+@app.route("/profil/suche", methods=["POST"])
+def profilsuche():
+	check_if_logged_in()
+	
+	profil = request.form.get("profil")
+
+	res = funcs.find_in_coll(logreg, {"username": profil})
+
+	if res != None:
+		return redirect(f"/profil/{profil}")
+	else:
+		session["warnings"]["search"] = "Account existiert nicht."
+		return redirect("/")
+
+@app.route("/profil/<profil>")
+def anderesprofil(profil):
+	uid = funcs.find_in_coll(logreg, {"username": profil})["_id"]
+	user_ud = funcs.find_in_coll(userdata, {"_id": uid})
+
+	if session["logged_in"] == True and session["data"]["user_id"] == uid:
+		profile_data = {"user_id": uid, "username": profil, "friends": user_ud["friends"], "pimg": user_ud["pimg"], "own_profile": True}
+	else:
+		profile_data = {"user_id": uid, "username": profil, "friends": user_ud["friends"], "pimg": user_ud["pimg"], "own_profile": False}
+
+	return render_template("Profil.html", data=profile_data, warnings=session["warnings"])
 
 @app.route("/logout")
 def logout():
@@ -142,4 +174,4 @@ def logout():
 	return redirect("/")
 
 if __name__ == "__main__":
-	app.run(debug=True, port=5000)
+	app.run(debug=False, port=5000)
