@@ -1,6 +1,7 @@
 //==============/Animation with side change\===============\\
 
 var balli = document.getElementById('animateBall');
+var boxi = document.getElementById('anim-uebergang');
 
 document.addEventListener('DOMContentLoaded', function () {
 	var move = [
@@ -63,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         
 ];
-
 	
     document.querySelector('#shopPress').addEventListener('click', function() {
             balli.animate(move, {

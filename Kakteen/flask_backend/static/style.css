@@ -465,6 +465,7 @@ display: inline-block;
     white-space: wrap;
     min-width: 35vh;
     box-sizing: border-box;
+    margin-left: 0.4vw;
 }
 
  .card-s:hover{
