@@ -536,8 +536,12 @@ display: inline-block;
     /* overflow: hidden; */
     white-space: wrap;
     min-width: 35vh;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+<<<<<<< HEAD
+ 
+=======
     margin-left: 0.4vw;
+>>>>>>> 77fe0636fd8935a2c5f355525c8b7e09958b9dc8
 }
 
  .card-s:hover{
@@ -871,7 +875,6 @@ display: inline-block;
     font-size: 30px;
     overflow: hidden;
     display: inline-block;
-    
 
 }
 
@@ -887,6 +890,7 @@ display: inline-block;
 .plus {
 
     transform: translate(990px,-800px);
+    margin-left: 1.3vw;
     font-size: 30px;
     overflow: visible;
     display: inline-block;
@@ -914,8 +918,6 @@ display: inline-block;
 
     transform: translate(815px,-695px);
     font-size: 50px;
-
-
 }
 /* Produkt 1 Ende */
 
@@ -958,6 +960,40 @@ text-decoration-color: #EB6E6E;
 
 
 /* Support Ende */
+
+/* Profil Warenkorb Anfang */
+
+.button-p2 {
+    transition-duration: 0.4s;
+    font-size: 30px;
+    min-width: 40vh;
+    min-height: 10vh;
+    transform: translate(235px,100px);
+    color: #A0CE40;
+    
+    background-image: url(img/neon.webp);
+    border-radius: 1vw;
+    overflow: visible;
+    border: 3px solid var(--ac);
+}
+
+.button-p2:hover {
+
+    
+    background-color: var(--ac); 
+    color: white; 
+    text-decoration: underline;
+    text-decoration-color: var(--ac);
+    text-decoration-thickness: 2px;
+    
+    animation: warenkorb;
+    animation-iteration-count: infinite;
+    animation-duration: 1000ms;
+    animation-delay: 10ms;
+}
+
+/* Profil Warenkorb Ende */
+
 
 #bell {
     transition: 150ms;

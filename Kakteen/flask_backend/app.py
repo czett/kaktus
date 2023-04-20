@@ -72,6 +72,11 @@ def auswahl():
 	check_if_logged_in()
 	return render_template("Auswahl.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
+@app.route("/warenkorb")
+def warenkorb():
+	check_if_logged_in()
+	return render_template("warenkorb.html", logged_in=session["logged_in"], data=session["data"])
+
 @app.route("/auswahl/bestaetigen", methods=["POST"])
 def auswahlbestaetigen():
 	check_if_logged_in()
@@ -173,4 +178,4 @@ def logout():
 	return redirect("/")
 
 if __name__ == "__main__":
-	app.run(debug=True, port=5000)
+	app.run(debug=False, port=5000)

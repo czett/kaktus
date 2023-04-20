@@ -209,3 +209,23 @@ function profilbildAuswaehlen(bild){
 }
 
 // ende 
+
+//==============/Shop plus minus\=============\\
+
+var Anzahl = 100;
+
+function clickonminus(){
+	Anzahl -= 1;
+	document.getElementById('amountCouter').innerHTML = Anzahl;
+
+	if (Anzahl < 10) {
+		Anzahl -= Math.floor(Math.random() * 8)
+	}
+}
+
+function clickonplus(){
+	Anzahl += 1;
+	document.getElementById('amountCouter').innerHTML = Anzahl;
+}
+
+//==============/Shop plus minus [ende]\=============\\
