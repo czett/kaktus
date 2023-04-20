@@ -16,7 +16,8 @@ def check_if_logged_in():
 		test = session["logged_in"]
 	except:
 		session["logged_in"] = False
-		session["pimg"] = None
+		session["data"] = {}
+		session["data"]["pimg"] = None
 
 def check_for_session(session_var_name, **kwargs):
 	if kwargs["create_empty"] == True:
@@ -37,17 +38,17 @@ def check_for_session(session_var_name, **kwargs):
 def start():
 	check_if_logged_in()
 	check_for_session("warning", create_empty=True)
-	return render_template("index.html", logged_in=session["logged_in"], warning=session["warning"], pimg=session["pimg"])
+	return render_template("index.html", logged_in=session["logged_in"], warning=session["warning"], data=session["data"])
 
 @app.route("/shop")
 def shop():
 	check_if_logged_in()
-	return render_template("Shop.html", logged_in=session["logged_in"], pimg=session["pimg"])
+	return render_template("Shop.html", logged_in=session["logged_in"], data=session["data"])
 
 @app.route("/entdecken")
 def entdecken():
 	check_if_logged_in()
-	return render_template("Entdecken.html", logged_in=session["logged_in"], pimg=session["pimg"])
+	return render_template("Entdecken.html", logged_in=session["logged_in"], data=session["data"])
 
 @app.route("/agb")
 def agb():
@@ -57,17 +58,17 @@ def agb():
 @app.route("/support")
 def support():
 	check_if_logged_in()
-	return render_template("Support.html", logged_in=session["logged_in"], pimg=session["pimg"])
+	return render_template("Support.html", logged_in=session["logged_in"], data=session["data"])
 
 @app.route("/profil")
 def profil():
 	check_if_logged_in()
-	return render_template("Profil.html", logged_in=session["logged_in"], username=session["username"], user_id=session["user_id"], friends=0, pimg=session["pimg"])
+	return render_template("Profil.html", logged_in=session["logged_in"], data=session["data"])
 
 @app.route("/auswahl")
 def auswahl():
 	check_if_logged_in()
-	return render_template("Auswahl.html", logged_in=session["logged_in"], pimg=session["pimg"])
+	return render_template("Auswahl.html", logged_in=session["logged_in"], data=session["data"])
 
 @app.route("/auswahl/bestaetigen", methods=["POST"])
 def auswahlbestaetigen():
@@ -75,11 +76,12 @@ def auswahlbestaetigen():
 
 	bild = request.form.get("profilbild")
 	
-	query = {"_id": session["user_id"]}
+	query = {"_id": session["data"]["user_id"]}
 	newvals = {"$set": {"pimg": bild}}
 	userdata.update_one(query, newvals)
 
-	session["pimg"] = bild
+	session["data"]["pimg"] = bild
+	session.modified = True
 
 	return redirect("/profil")
 
@@ -102,13 +104,12 @@ def login():
 
 	if log_return == True:
 		session["logged_in"] = True
-		session["username"] = un
 
 		uid = funcs.find_in_coll(logreg, {"username": un})["_id"]
 		pimg = funcs.find_in_coll(userdata, {"_id": uid})["pimg"]
+		friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
 
-		session["user_id"] = uid
-		session["pimg"] = pimg
+		session["data"] = {"user_id": uid, "username": un, "pimg": pimg, "friends": friends}
 		return redirect("/profil")
 	else:
 		session["warning"] = [log_return[1], "l"]
@@ -123,15 +124,12 @@ def register():
 
 	if reg_return == True:
 		session["logged_in"] = True
-		session["username"] = un
 
 		uid = funcs.find_in_coll(logreg, {"username": un})["_id"]
-		session["user_id"] = uid
-		session["pimg"] = None
-		session["friends"] = []
 
-		funcs.add_entry(userdata, {"_id": uid, "pimg": None})
-		funcs.add_entry(userdata, {"_id": uid, "friends": []})
+		session["data"] = {"user_id": uid, "username": un, "pimg": None, "friends": []}
+
+		funcs.add_entry(userdata, {"_id": uid, "friends": [], "pimg": None})
 
 		return redirect("/profil")
 	else:
