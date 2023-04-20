@@ -1101,6 +1101,11 @@ input[type="radio"]{
     cursor: pointer;
 }
 
+.AnswBox:hover {
+    transform: scale(1.05);
+}
+
+
 .AnswBoxL {
     margin-right: 5vw;
 }
