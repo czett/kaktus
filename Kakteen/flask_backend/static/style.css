@@ -1464,7 +1464,7 @@ input[type="radio"]{
     border-radius: 2vh;
     position: absolute;
     left: 100%;
-    transform: translate(-150%, -0%);
+    transform: translate(-152%, -0%);
 }
 
 #question {
@@ -1499,7 +1499,8 @@ input[type="radio"]{
 }
 
 .AnswBox:hover {
-    transform: scale(1.05);
+    transition: 150ms;
+    transform: scale(1.02);
 }
 
 
