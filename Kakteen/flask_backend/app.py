@@ -147,7 +147,6 @@ def register():
 
 @app.route("/profil/suche", methods=["POST"])
 def profilsuche():
-	return "hallo ich mag zuege"
 	check_if_logged_in()
 	
 	profil = request.form.get("profil")
@@ -158,7 +157,7 @@ def profilsuche():
 		session.modified = True
 		return redirect(f"/profil/{profil}")
 	else:
-		return str(session["warnings"])
+		#return str(session["warnings"])
 		session["warnings"]["search"] = True
 		session.modified = True
 		return redirect("/")
