@@ -29,18 +29,20 @@
 
 <button class="button-p1">In den Warenkorb</button>
 
-
+<div id="amountDiv">
 <p class="text2-p1"><b>Anzahl</b></p>
 
 <!-- Veränderbare Zahl für Produktanzahl: -->
-<p class="zahl-p1"><b>0</b></p>
+<p id="amountCouter" class="zahl-p1"><b>100</b></p>
 
-<div class="minus">
+<div class="minus" onmousedown="clickonminus()">
 <i class="fa-solid fa-minus"></i>
 </div>
 
-<div class="plus">
+<div class="plus" onmousedown="clickonplus()">
     <i class="fa-solid fa-plus fa-beat"></i>
+</div>
+
 </div>
 
 

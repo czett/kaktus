@@ -537,11 +537,7 @@ display: inline-block;
     white-space: wrap;
     min-width: 35vh;
     box-sizing: border-box;
-<<<<<<< HEAD
- 
-=======
-    margin-left: 0.4vw;
->>>>>>> 77fe0636fd8935a2c5f355525c8b7e09958b9dc8
+     margin-left: 0.4vw;
 }
 
  .card-s:hover{
@@ -875,7 +871,6 @@ display: inline-block;
     font-size: 30px;
     overflow: hidden;
     display: inline-block;
-
 }
 
 .minus:hover{
@@ -890,6 +885,7 @@ display: inline-block;
 .plus {
 
     transform: translate(990px,-800px);
+    margin-left: 1.3vw;
     font-size: 30px;
     overflow: visible;
     display: inline-block;
@@ -917,9 +913,8 @@ display: inline-block;
 
     transform: translate(845px,-695px);
     font-size: 50px;
-
-
 }
+
 /* Produkt 1 Ende */
 
 
