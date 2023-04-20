@@ -329,9 +329,47 @@ button{
     transition: 500ms;
 }
 
-.submit-wrap .image-selector-submit:hover{
-    filter: brightness(1.1);
+.submit-wrap .image-selector-submit i{
+    display: none;
 }
+
+.submit-wrap .image-selector-submit:hover i{
+    display: inline;
+}
+
+.submit-wrap .image-selector-submit:hover{
+    filter: brightness(1.2);
+}
+
+.image-selector-submit span{
+
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s; 
+}
+
+.image-selector-submit span:after {
+
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;  
+}
+
+
+.image-selector-submit:hover span{
+
+    opacity: 1;
+    right: 1;
+
+
+}
+
+
+
 
 .profile-icon{
     transition: 500ms;

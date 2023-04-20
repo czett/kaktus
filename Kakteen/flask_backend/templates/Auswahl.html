@@ -16,6 +16,10 @@
         <input type="radio" name="profilbild" id="10" value="10">
         <input type="radio" name="profilbild" id="11" value="11">
         <input type="radio" name="profilbild" id="12" value="12">
+        <input type="radio" name="profilbild" id="13" value="13">
+        <input type="radio" name="profilbild" id="14" value="14">
+        <input type="radio" name="profilbild" id="15" value="15">
+        <input type="radio" name="profilbild" id="16" value="16">
     
     
         <div class="bilder">
@@ -63,10 +67,25 @@
                     <img src="{{  url_for('static', filename='img/12.jpg')  }}" alt="">
                 </label>
             </div>
+
+            <div class="reihe">
+                <label for="9" class="profilbildoption" onmousedown="profilbildAuswaehlen(this)">
+                    <img src="{{  url_for('static', filename='img/13.png')  }}" alt="">
+                </label>
+                <label for="10" class="profilbildoption" onmousedown="profilbildAuswaehlen(this)">
+                    <img src="{{  url_for('static', filename='img/fabio.jpg')  }}" alt="">
+                </label>
+                <label for="11" class="profilbildoption" onmousedown="profilbildAuswaehlen(this)">
+                    <img src="{{  url_for('static', filename='img/kappe.jpg')  }}" alt="">
+                </label>
+                <label for="12" class="profilbildoption" onmousedown="profilbildAuswaehlen(this)">
+                    <img src="{{  url_for('static', filename='img/hut.jpg')  }}" alt="">
+                </label>
+            </div>
         </div>
         
         <div class="submit-wrap">
-            <button class="image-selector-submit">Auswählen</button>
+            <button class="image-selector-submit">Auswählen <i class="fa-solid fa-bread-slice"></i></button>
         </div>
     </form>
 </div>
@@ -105,5 +124,6 @@
         text-decoration: none;
     }
 </style> -->
+
 
 {% endblock %}
