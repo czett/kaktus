@@ -9,7 +9,7 @@
         <div class="direct-img-container">
             <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
             {% if pimg != None %}
-                {% set pimg_url = 'img/' ~ pimg ~ '.jpg' %}
+                {% set pimg_url = 'img/' ~ data["pimg"] ~ '.jpg' %}
                 <img src="{{  url_for('static', filename=pimg_url)  }}" class="page-profile-image">
             {% else %}
                 <img src="{{  url_for('static', filename='img/No-user.jpg')  }}" class="page-profile-image">
@@ -22,9 +22,15 @@
 
     <div class="info-leiste">
         <div class="info">
-            <p class="name">{{  username  }}</p>
-            <p class="id-tag">#{{  user_id  }}</p>
-            <p class="freunde">{{  friends  }}</p>
+            <p class="name">{{  data["username"]  }}</p>
+            <p class="id-tag">#{{  data["user_id"]  }}</p>
+
+            {% if data["friends"] is defined and data["friends"]|length > 0 %}
+                <p class="freunde">{{  data["friends"]  }}</p>
+            {% else %}
+                <p class="freunde">0 Freunde</p>
+            {% endif %}
+
         </div>
         <div class="interaction-options">
             <p class="add">Freund hinzufügen</p>
