@@ -37,7 +37,7 @@ def check_for_session(session_var_name, **kwargs):
 
 @app.route("/")
 def start():
-	#check_if_logged_in()
+	check_if_logged_in()
 	#return session["warnings"]
 	#return str(session["warnings"])
 	return render_template("index.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
@@ -75,7 +75,7 @@ def auswahl():
 @app.route("/warenkorb")
 def warenkorb():
 	check_if_logged_in()
-	return render_template("warenkorb.html", logged_in=session["logged_in"], data=session["data"])
+	return render_template("warenkorb.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/auswahl/bestaetigen", methods=["POST"])
 def auswahlbestaetigen():
@@ -147,17 +147,18 @@ def register():
 
 @app.route("/profil/suche", methods=["POST"])
 def profilsuche():
+	return "hallo ich mag zuege"
 	check_if_logged_in()
 	
 	profil = request.form.get("profil")
 
 	res = funcs.find_in_coll(logreg, {"username": profil})
-
 	if res != None:
 		session["warning"] = {}
 		session.modified = True
 		return redirect(f"/profil/{profil}")
 	else:
+		return str(session["warnings"])
 		session["warnings"]["search"] = True
 		session.modified = True
 		return redirect("/")
