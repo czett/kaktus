@@ -136,9 +136,9 @@ function Answer(clicked, correct) {
 		document.getElementById('question').innerHTML = "Wie groß ist ein Kaktus nach 50 Jahren?";
 
 		document.getElementById('answBox1').innerHTML = "4 - 5 Meter";
-		document.getElementById('answBox2').innerHTML = "3 - 4 Meter";
-		document.getElementById('answBox3').innerHTML = "6 - 7 Meter";
-		document.getElementById('answBox4').innerHTML = "1 - 2 Meter";
+		document.getElementById('answBox2').innerHTML = "5 - 6 Meter";
+		document.getElementById('answBox3').innerHTML = "3 - 4 Meter";
+		document.getElementById('answBox4').innerHTML = "1 - 2 Meter"
 
 		// document.getElementById('answBox1').setAttribute('onmousedown', 'Answer(this, answBox2');
 		// document.getElementById('answBox2').setAttribute('onmousedown', 'Answer(this, answBox2');
