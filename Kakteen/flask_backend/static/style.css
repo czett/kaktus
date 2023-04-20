@@ -86,6 +86,37 @@ body, html{
     font-size: 48px;
 }
 
+/*============/Animation with side change\===================*/
+
+#animateBall {
+    width: 0vw;
+    height: 0vw;
+    visibility: hidden;
+    position: absolute;
+    z-index: 100000;
+    background-color: var(--bg);
+    border-radius: 50vh;
+    border: 2px solid var(--ac);
+}
+
+#shopPress {
+    cursor: pointer;
+}
+
+#homePress {
+    cursor: pointer;
+}
+
+#discoverPress {
+    cursor: pointer;
+}
+
+#supportPress {
+    cursor: pointer;
+}
+
+/*===========/Animation with side change [end]\==============*/
+
 /* Cycler */
 
 .cycler{
