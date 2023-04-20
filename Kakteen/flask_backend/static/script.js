@@ -229,3 +229,19 @@ function clickonplus(){
 }
 
 //==============/Shop plus minus [ende]\=============\\
+
+// Settings
+
+var settingsVisible = false;
+
+function openSettings(){
+	if (settingsVisible == true){
+		document.getElementById("settings").style.display = "none";
+		settingsVisible = false;
+	}else{
+		document.getElementById("settings").style.display = "block";
+		settingsVisible = true;
+	}
+}
+
+// Settings Ende

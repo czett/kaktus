@@ -43,7 +43,7 @@
             {% endif %}
         </div>
         {% if data["own_profile"] == True %}
-            <div class="settings-icon-wrap">
+            <div class="settings-icon-wrap" onmousedown="openSettings()">
                 <i class="fa-solid fa-gear"></i>
             </div>
         {% endif %}
@@ -53,4 +53,25 @@
 <a href="/warenkorb">
     <button class="button-p2">Mein Warenkorb</button>
 </a>
+
+{% if data["own_profile"] == True %}
+    <div class="settings" id="settings">
+        <div class="heading">
+            <p class="settings-title">Einstellungen</p>
+            <div class="close-icon-wrap" onmousedown="openSettings()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="option">
+            <p class="option-text">Passwort ändern</p>
+        </div>
+        <div class="option">
+            <p class="option-text">Lightmode aktivieren</p>
+        </div>
+        <div class="option">
+            <p class="option-text" style="color: red;">Logout</p>
+        </div>
+    </div>
+{% endif %}
+
 {% endblock %}
