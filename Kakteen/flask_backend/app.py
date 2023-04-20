@@ -128,8 +128,10 @@ def register():
 		uid = funcs.find_in_coll(logreg, {"username": un})["_id"]
 		session["user_id"] = uid
 		session["pimg"] = None
+		session["friends"] = []
 
 		funcs.add_entry(userdata, {"_id": uid, "pimg": None})
+		funcs.add_entry(userdata, {"_id": uid, "friends": []})
 
 		return redirect("/profil")
 	else:
