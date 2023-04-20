@@ -50,7 +50,7 @@ def entdecken():
 @app.route("/agb")
 def agb():
 	check_if_logged_in()
-	return render_template("agb.html")
+	return render_template("agb.html", logged_in=session["logged_in"])
 
 @app.route("/support")
 def support():
@@ -70,7 +70,12 @@ def auswahl():
 @app.route("/quiz")
 def quiz():
 	check_if_logged_in()
-	return render_template("quiz.html")
+	return render_template("quiz.html", logged_in=session["logged_in"])
+
+@app.route("/p1")
+def p1():
+	check_if_logged_in()
+	return render_template("p1.html", logged_in=session["logged_in"])
 
 @app.route("/login", methods=["POST"])
 def login():
