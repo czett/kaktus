@@ -536,7 +536,15 @@ display: inline-block;
     /* overflow: hidden; */
     white-space: wrap;
     min-width: 35vh;
+<<<<<<< HEAD
     box-sizing: border-box;
+=======
+<<<<<<< HEAD
+    box-sizing: border-box; 
+=======
+    box-sizing: border-box;
+>>>>>>> 68d7580ec4126a09a4ccf737d67118b2d03e0643
+>>>>>>> a5b11877d8d59600a79de548b8c7d2fa543d89d8
     margin-left: 0.4vw;
 }
 
@@ -967,7 +975,7 @@ text-decoration-color: #EB6E6E;
     transform: translate(235px,100px);
     color: #A0CE40;
     
-    background-image: url(img/neon.webp);
+    /* background-image: url(img/neon.webp); */
     border-radius: 1vw;
     overflow: visible;
     border: 3px solid var(--ac);
