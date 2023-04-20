@@ -194,8 +194,14 @@ body, html{
 }
 
 #one{
+<<<<<<< HEAD
+    background-image: url(img/kaktuseis2.png);
+    background-position: 700px -310px;
+    background-size: 55%;
+=======
     background-image: url(img/Lemur.jpg);
     background-position: 0% 20%;
+>>>>>>> a033737c2070d10ad79795783c01a5eab87f52d8
 }
 
 #two{
@@ -204,7 +210,8 @@ body, html{
 
 #three{
     background-image: url(img/topdown.jpg);
-    background-position: 0% 50%;
+    background-position: 800px -150px;
+    background-size: 55%;
 }
 
 button{
