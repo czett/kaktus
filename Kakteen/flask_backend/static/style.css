@@ -189,7 +189,11 @@ body, html{
     /* v.d. ende */
 }
 
-
+.card p{
+    max-width: 50%;
+    line-height: 1.1em;
+    font-size: 20px;
+}
 
 .card:hover{
     filter: brightness(1.15);
@@ -197,11 +201,16 @@ body, html{
 
 #one{
 
+
+
     background-image: url(img/kaktuseis2.png);
-    background-position: 700px -310px;
+    background-position: 100% 45%;
     background-size: 55%;
 
+
     
+    
+
 
 }
 
@@ -222,7 +231,8 @@ body, html{
 
 #four{
     background-image: url(img/topdown.jpg);
-    background-position: 0% 40%;
+    background-position: -20% 40%;
+    background-size: 55%;
 }
 
 #five{
@@ -847,13 +857,17 @@ display: inline-block;
     font-size: 30px;
     min-width: 60vh;
     min-height: 10vh;
-    transform: translate(600px,-700px);
     color: #A0CE40;
     
     background-color: transparent;
     border-radius: 1vw;
     overflow: visible;
     border: 3px solid var(--ac);
+
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .button-p1:hover {
@@ -887,8 +901,6 @@ display: inline-block;
 }
 
 .minus {
-
-    transform: translate(670px,-790px);
     font-size: 30px;
     overflow: hidden;
     display: inline-block;
@@ -905,13 +917,9 @@ display: inline-block;
 }
 
 .plus {
-
-    transform: translate(990px,-800px);
-    margin-left: 1.3vw;
     font-size: 30px;
     overflow: visible;
     display: inline-block;
-
 }
 
 .plus:hover{
@@ -924,17 +932,31 @@ display: inline-block;
 }
 
 .text2-p1 {
-
-    transform: translate(810px,-695px);
     font-size: 30px;
     text-decoration: underline;
     text-decoration-color: var(--ac);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .zahl-p1 {
-
-    transform: translate(815px,-695px);
     font-size: 50px;
+}
+
+.zahl-und-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 /* Produkt 1 Ende */
 
@@ -1014,6 +1036,180 @@ text-decoration-color: #EB6E6E;
 /* Profil Warenkorb Ende */
 
 /* Mein Warenkorb Anfang */
+
+
+.content-w{
+    margin-top: 7.5vh;
+    height: calc(100vh - 7.5vh);
+    box-sizing: border-box;
+    padding: calc(0.5 * var(--lrpad)) var(--lrpad);
+    
+}
+
+#content-w {
+    position: absolute;
+    border-radius: 0 0 0 5vh;
+    background-color: var(--ac);
+    width: 0;
+    height: 100%;
+    max-height: 40vh;
+    margin-right: 0.5vw;
+    overflow: hidden;
+}
+#content-w.her {
+    color: var(--ac);
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: scroll; 
+    border: 2px solid var(--ac);
+    border-top: none;
+    border-right: none;
+    width: 22vw;
+    height: 50vh;
+    z-index: 10000;
+    top: 0;
+    left: 100%;
+    transform: translate(-100%, calc(7.5vh - 1px));
+}
+
+#content-w.her ::-webkit-scrollbar {
+    display: none;
+}
+
+.contentBoxText-w {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+}
+
+.contentBoxText-w:hover {
+    background-color: rgb(59, 59, 59);
+    padding-bottom: 0.5vh;
+}
+
+.contentBoxText2-w {
+    white-space: nowrap;
+    transition: 250ms;
+}
+
+.contentBoxText3-w {
+    width: 0;
+    height: 0;
+    margin: 0;
+    margin-top: 0.8vh;
+    padding: 0;
+    visibility: hidden;
+    overflow: hidden;
+    animation: none;
+    font-size: smaller;
+    
+
+    
+}
+.contentBoxText-w:hover .contentBoxText3-w {
+    width: auto;
+    height: auto;
+    margin-bottom: 2vh;
+    animation-name: notification-desc;
+    animation-duration: 750ms;
+    animation-iteration-count: 1;
+    visibility: visible;
+}
+.contentBoxText-w:hover .contentBoxText2-w {
+    transition: 150ms;
+    margin-top: 0.5vh;
+    margin-bottom: 0.1vh;
+}
+
+.text2-w {
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-color: var(--ac);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:  26%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.text2-w2 {
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-color: var(--ac);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:  26%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text2-w3 {
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-color: var(--ac);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:  26%;
+    left: 9.5%;
+    transform: translate(-50%, -50%);
+}
+
+.img-w {
+
+    background-image: url(img/kappe2.png);
+    background-size: 280%;
+    background-position: 54% 50%;
+    text-align: right;
+    color: transparent;
+    overflow: hidden;
+    border: 2px solid var(--ac);
+    border-radius: 10vw;
+    border-width: 50%;
+   
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 90%;
+    left: 92%;
+    transform: translate(-50%, -863%);
+}
+
+.img-w2 {
+
+    background-image: url(img/kaktuseis2.png);
+    background-size: 230%;
+    background-position: 55% 50%;
+    text-align: right;
+    color: transparent;
+    overflow: hidden;
+    border: 2px solid var(--ac);
+    border-radius: 10vw;
+    border-width: 50%;
+   
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 90%;
+    left: 92%;
+    transform: translate(-50%, -713%);
+}
+
+
+
+
 /* Mein Warenkrob Ende */
 
 
