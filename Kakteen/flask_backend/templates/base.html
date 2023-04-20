@@ -10,6 +10,12 @@
     <link rel="shortcut icon" href="{{  url_for('static', filename='fav/favicon-32x32.png')  }}" type="image/x-icon">
 </head>
 <body>
+
+                            <!-------Animation------------------>
+
+                                <div id="animateBall"></div>
+
+                            <!-------Animation [end]------------>
     
     <div class="nav">
         <div class="pc">
@@ -23,10 +29,10 @@
             </div>
         </div>
         <div class="link-box">
-            <a href="/" class="link">Home</a>
-            <a href="/shop" class="link">Shop</a>
-            <a href="/entdecken" class="link">Entdecken</a>
-            <a href="/support" class="link">Kakteen-Support</a>
+            <a id="homePress" class="link">Home</a>
+            <a id="shopPress" class="link">Shop</a>
+            <a id="discoverPress" class="link">Entdecken</a>
+            <a id="supportPress" class="link">Kakteen-Support</a>
             <i onmousedown="ausklappen()" id="bell" class="fa-solid fa-bell"></i>
 
            
@@ -176,6 +182,7 @@
     </div>
     
     <script src="{{  url_for('static', filename='script.js')  }}"></script>
+    <script src="{{  url_for('static', filename='animation_js.js')  }}"></script>
 
 </body>
 </html>
