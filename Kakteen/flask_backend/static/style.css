@@ -189,6 +189,8 @@ body, html{
     /* v.d. ende */
 }
 
+
+
 .card:hover{
     filter: brightness(1.15);
 }
@@ -232,7 +234,7 @@ body, html{
 }
 
 #five{
-    background-image: url(img/topf.jpg);
+    background-image: url(img/Natur.jpg);
     background-position: 0% 45%;
 }
 
@@ -1422,7 +1424,96 @@ input[type="radio"]{
     position: absolute;
     left: 100%;
     top: 0%;
+    transform: translate(calc(-60%), 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings{
+    position: absolute;
+    background-color: var(--bg);
+    border: 1px solid var(--ac);
+    border-radius: 1vw;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    /* padding: var(--lrpad); */
+    width: 25vw;
+    height: auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: none;
+}
+
+.settings .option{
+    padding: calc(.5 * var(--lrpad)) calc(1 * var(--lrpad));
+    transition: 150ms;
+    box-sizing: border-box;
+}
+
+.settings .heading{
+    border-bottom: 1px solid var(--ac);
+    box-sizing: border-box;
+    padding: calc(.15 * var(--lrpad)) calc(1 * var(--lrpad));
+    position: relative;
+}
+
+.settings .heading .close-icon-wrap{
+    position: absolute;
+    top: 15%;
+    left: 93.5%;
+    transform: translate(0%, 0%);
+}
+
+.settings .heading .close-icon-wrap i{
+    font-size: 20px;
+    color: var(--fg);
+}
+
+.settings .option:hover{
+    backdrop-filter: brightness(1.375);
+}
+
+.settings .heading .close-icon-wrap i:hover, .settings-icon-wrap i:hover{
+    filter: brightness(0.75);
+}
+
+.settings .heading .close-icon-wrap i, .settings-icon-wrap i{
+    transition: 200ms;
+}
+
+/* .settings-menu{
+    display: none;
+} */
+
+.password-change{
+    display: none;
+}
+
+.password-change form{
+    padding: var(--lrpad);
+}
+
+.password-change form input, .password-change form button{
+    display: block;
+    width: 50%;
+    box-sizing: border-box;
+    padding: calc(0.33 * var(--lrpad));
+    border-radius: 0.5vw;
+    outline: none;
+}
+
+.password-change form input{
+    border: 1px solid var(--ac);
+    background-color: transparent;
+    margin-bottom: 1vw;
+}
+
+.password-change form button{
+    background-color: var(--ac);
+    border: 1px solid transparent;
+    font-size: 16px;
 }
 
 /* profilseite ende */
@@ -1567,7 +1658,7 @@ input[type="radio"]{
     border-radius: 2vh;
     position: absolute;
     left: 100%;
-    transform: translate(-150%, -0%);
+    transform: translate(-152%, -0%);
 }
 
 #question {
@@ -1602,7 +1693,8 @@ input[type="radio"]{
 }
 
 .AnswBox:hover {
-    transform: scale(1.05);
+    transition: 150ms;
+    transform: scale(1.02);
 }
 
 

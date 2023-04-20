@@ -8,7 +8,7 @@
     <div class="profile-image-container">
         <div class="direct-img-container">
             <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
-            {% if pimg != None %}
+            {% if data["pimg"] != None %}
                 {% set pimg_url = 'img/' ~ data["pimg"] ~ '.jpg' %}
                 <img src="{{  url_for('static', filename=pimg_url)  }}" class="page-profile-image">
             {% else %}
@@ -43,7 +43,7 @@
             {% endif %}
         </div>
         {% if data["own_profile"] == True %}
-            <div class="settings-icon-wrap">
+            <div class="settings-icon-wrap" onmousedown="openSettings()">
                 <i class="fa-solid fa-gear"></i>
             </div>
         {% endif %}
@@ -53,4 +53,39 @@
 <a href="/warenkorb">
     <button class="button-p2">Mein Warenkorb</button>
 </a>
+
+{% if data["own_profile"] == True %}
+    <div class="settings" id="settings">
+        <div class="settings-menu" id="settings-menu">
+            <div class="heading">
+                <p class="settings-title">Einstellungen</p>
+                <div class="close-icon-wrap" onmousedown="openSettings()">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <div class="option">
+                <p class="option-text" onmousedown="togglePasswordChange()">Passwort ändern</p>
+            </div>
+            <div class="option" onmousedown="newUrl('/delete-account')">
+                <p class="option-text">Lightmode aktivieren</p>
+            </div>
+            <div class="option" onmousedown="newUrl('/logout')">
+                <p class="option-text" style="color: red;">Logout</p>
+            </div>
+        </div>
+        <div class="password-change" id="password-change">
+            <div class="heading">
+                <p class="settings-title">Passwort ändern</p>
+                <div class="close-icon-wrap" onmousedown="openSettings()">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <form method="post" enctype="multipart/form-data" action="/change-password">
+                <input type="text" name="newpw" id="newpw">
+                <button type="submit" class="pw-change-btn">Ändern</button>
+            </form>
+        </div>
+    </div>
+{% endif %}
+
 {% endblock %}
