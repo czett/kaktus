@@ -36,7 +36,7 @@
                     </div>
                     <input type="text" placeholder="Profilsuche..." name="profil">
                     <button type="submit"></button>
-                    {% if warnings["search"] == True %}
+                    {% if warnings["search"] is defined and warnings["search"] == True %}
                         <style>
                             .such-form-items input[type="text"]{
                                 border: 1px solid #f00;
