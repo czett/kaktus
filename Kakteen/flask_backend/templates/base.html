@@ -36,6 +36,18 @@
                     </div>
                     <input type="text" placeholder="Profilsuche..." name="profil">
                     <button type="submit"></button>
+                    {% if warnings["search"] == True %}
+                        <style>
+                            .such-form-items input[type="text"]{
+                                border: 1px solid #f00;
+                                outline: none;
+                            }
+
+                            .such-form-items .search-icon-wrap i{
+                                color: #f00;
+                            }
+                        </style>
+                    {% endif %}
                 </div>
             </form>
         </div>
