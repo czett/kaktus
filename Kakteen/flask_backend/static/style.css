@@ -194,22 +194,40 @@ body, html{
 }
 
 #one{
+
     background-image: url(img/kaktuseis2.png);
     background-position: 700px -310px;
     background-size: 55%;
-    background-image: url(img/Lemur.jpg);
-    background-position: 0% 20%;
+
+    
+
 }
 
 #two{
     background-image: url(img/flowers.jpg);
+    background-position: 0% 70%;
 }
 
 #three{
-    background-image: url(img/topdown.jpg);
-    background-position: 800px -150px;
-    background-size: 55%;
+
+    background-image: url(img/dark.jpg);
+    background-position: 30% 50%;
+
+  
+
 }
+
+
+#four{
+    background-image: url(img/topdown.jpg);
+    background-position: 0% 40%;
+}
+
+#five{
+    background-image: url(img/Natur.jpg);
+    background-position: 0% 45%;
+}
+
 
 button{
 	width: 100px;
