@@ -75,8 +75,7 @@ def auswahl():
 @app.route("/warenkorb")
 def warenkorb():
 	check_if_logged_in()
-	return "hi"
-	return render_template("warenkorb.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+	return render_template("warenkorb.html", logged_in=session["logged_in"], data=session["data"])
 
 @app.route("/auswahl/bestaetigen", methods=["POST"])
 def auswahlbestaetigen():
