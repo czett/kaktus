@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var move = [
 
         {
-            transform: 'translate(65vw, 2vh)',
+            transform: 'translate(64vw, 2vh)',
             width: '5vw',
             height: '5vh',
             borderRadius: '100vw',
@@ -67,13 +67,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	
     document.querySelector('#shopPress').addEventListener('click', function() {
             balli.animate(move, {
-				duration: 1500,
+				duration: 1000,
 				iterations: 1,
 				fill: 'forwards'
 			});
             setTimeout(function(){
                 window.location.href = "/shop";
-            }, 1550);
+            }, 1050);
         } 
 );
 
@@ -146,13 +146,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	
     document.querySelector('#homePress').addEventListener('click', function() {
             balli.animate(move2, {
-				duration: 1500,
+				duration: 1000,
 				iterations: 1,
 				fill: 'forwards'
 			});
             setTimeout(function(){
                 window.location.href = "/";
-            }, 1550);
+            }, 1050);
         } 
 );
 
@@ -225,13 +225,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	
     document.querySelector('#discoverPress').addEventListener('click', function() {
             balli.animate(move3, {
-				duration: 1500,
+				duration: 1000,
 				iterations: 1,
 				fill: 'forwards'
 			});
             setTimeout(function(){
                 window.location.href = "/entdecken";
-            }, 1550);
+            }, 1050);
         } 
 );
 
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var move4 = [
 
         {
-            transform: 'translate(65vw, 0vh)',
+            transform: 'translate(79vw, 2vh)',
             width: '5vw',
             height: '5vh',
             borderRadius: '100vw',
@@ -304,13 +304,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	
     document.querySelector('#supportPress').addEventListener('click', function() {
             balli.animate(move4, {
-				duration: 1500,
+				duration: 1000,
 				iterations: 1,
 				fill: 'forwards'
 			});
             setTimeout(function(){
                 window.location.href = "/support";
-            }, 1550);
+            }, 1050);
         } 
 );
 
