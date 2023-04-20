@@ -65,6 +65,8 @@ def support():
 @app.route("/profil")
 def profil():
 	check_if_logged_in()
+	session["data"]["own_profile"] = True
+	session.modified = True
 	return render_template("Profil.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/auswahl")
