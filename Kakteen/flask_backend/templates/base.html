@@ -203,7 +203,7 @@
 
     <!---/Notifikation alert [end]\-------------------------------------------->
 
-    {% if "struppi" in data["username"].lower() %}
+    {% if data["username"] is defined and "struppi" in data["username"].lower() %}
         <style>
             body, html{
                 filter: blur(1px);
