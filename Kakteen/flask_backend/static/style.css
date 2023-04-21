@@ -544,7 +544,7 @@ display: inline-block;
     filter: brightness(0.9);
 }
 
-/* SHOP Anfang */
+
 
 .feld1 {
     color: black;
@@ -557,7 +557,7 @@ display: inline-block;
 .card-s {
     transition: 500ms;
     user-select: none;
-    /* overflow: hidden; */
+   
     white-space: wrap;
     min-width: 35vh;
     box-sizing: border-box;
@@ -744,6 +744,13 @@ display: inline-block;
     visibility: visible;
 }
 
+.link-s {
+
+    top: 80%;
+    left: 100%;
+    transform: translate(-50px -90px);
+
+}
 
 /* SHOP Ende */
 
@@ -1072,7 +1079,6 @@ display: inline-block;
     height: calc(100vh - 7.5vh);
     box-sizing: border-box;
     padding: calc(0.5 * var(--lrpad)) var(--lrpad);
-    
 }
 
 #content-w {
@@ -1084,6 +1090,7 @@ display: inline-block;
     max-height: 40vh;
     margin-right: 0.5vw;
     overflow: hidden;
+   
 }
 #content-w.her {
     color: var(--ac);
@@ -1211,6 +1218,19 @@ display: inline-block;
 
 }
 
+.text2-w5 {
+    font-size: 25px;
+   
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top:  90%;
+    left: 50.5%;
+    transform: translate(-50%, -50%);
+}
+
 .img-w {
 
     background-image: url(img/kappe2.png);
@@ -1230,14 +1250,14 @@ display: inline-block;
     position: absolute;
     top: 90%;
     left: 92%;
-    transform: translate(-50%, -810%);
+    transform: translate(-50%, -830%);
 }
 
 .img-w2 {
 
     background-image: url(img/kaktuseis2.png);
     background-size: 230%;
-    background-position: 55% 50%;
+    background-position: 50% 45%;
     text-align: right;
     color: transparent;
     overflow: hidden;
@@ -1252,7 +1272,7 @@ display: inline-block;
     position: absolute;
     top: 90%;
     left: 92%;
-    transform: translate(-50%, -660%);
+    transform: translate(-50%, -680%);
 }
 
 
