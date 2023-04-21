@@ -1476,8 +1476,15 @@ input[type="radio"]{
 /* Fragen */
 
 #allover {
-    left: 100%;
-    transform: translate(5%, 0);
+    display: flex;
+    width: calc(100vw - 2 * var(--lrpad));
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+#allover .side-with-options{
+    width: 45%;
 }
 
 #answSec {
@@ -1490,7 +1497,7 @@ input[type="radio"]{
     display: inline-flex;
     margin: 0;
     margin-top: 5vh;
-    width: 40vw;
+    width: calc(100% * 1);
     height: 5vh;
     border: 2px solid var(--ac);
     border-radius: 2vh;
@@ -1511,9 +1518,63 @@ input[type="radio"]{
 .paragrahQuiz {
     align-items: center;
     margin: 0;
-    margin-left: 1.5vw;
     display: block;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    width: 100%;
+    background-color: transparent;
 }
+
+.navigation {
+    display: inline-flex;
+    margin: 0;
+    margin-top: 5vh;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 30%);
+}
+
+.result {
+    height: 1.5vh;
+    text-align: center;
+    margin-left: -5vw;
+    margin-top: 7vh;
+    color: #A0CE40;
+}
+
+.navigation button{
+    box-sizing: border-box;
+    display: block;
+    width: 40%;
+    margin: auto 0;
+}
+
+.next {
+    background-color: transparent;
+    padding: 1vh 0 1vh 0;
+    display: inline-flex;
+    margin: 0;
+    margin-top: 5vh;
+    width: auto;
+    height: auto;
+    border: 2px solid var(--ac);
+    border-radius: 2vh;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
 
 
 /*===============/Kaktus Quiz [ende]\===================*/

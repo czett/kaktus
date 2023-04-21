@@ -1,117 +1,415 @@
-//==============/Kaktus Quiz\====================\\
 
-var rounds = 0;
-var points = 0;
 
-if (rounds == 0) {
-function Answer1() {
-    document.getElementById('answBox1').style.border = "2px solid #DB0000";
-    rounds = 1;
+const Questions = [{
+    id: 0,
+    q: "Wie viele Stacheln haben Kakteen im Durchschnitt?",
+    a: [{ text: "1.000.000", isCorrect: false },
+        { text: "10.000", isCorrect: false },
+        { text: "0", isCorrect: true },
+        { text: "100.000", isCorrect: false }
+    ]
 
-    console.log(rounds);
+},
+{
+    id: 1,
+    q: "Wie groß werden Kakteen im Durchschnitt nach 50 Jahren?",
+    a: [{ text: "5 - 6 Meter", isCorrect: false, isSelected: false },
+        { text: "1 - 2 Meter", isCorrect: false },
+        { text: "2 - 3 Meter", isCorrect: false },
+        { text: "3 - 4 Meter", isCorrect: true }
+    ]
 
-    setTimeout(function(){
+},
+{
+    id: 2,
+    q: "Welches Tier ist bekannt Kakteen zu fressen?",
+    a: [{ text: "Löwe", isCorrect: false },
+        { text: "Bär", isCorrect: false },
+        { text: "Kamel", isCorrect: true },
+        { text: "Lama", isCorrect: false }
+    ]
 
-         //remove onclick elements
-         document.getElementById('answBox1').style.border = "2px solid #A0CE40";
-         document.getElementById('answBox3').style.backgroundColor = "#202020";
-         document.getElementById('answBox2').style.border = "2px solid #A0CE40";
-         document.getElementById('answBox4').style.border = "2px solid #A0CE40";
- 
-         // new content
-         document.getElementById('question').innerHTML = 'Wie groß wird ein Kaktus nach 50 Jahren';
+},
+{
+    id: 3,
+    q: "Wie viel Wasser braucht ein Kaktus in einem Monat um zu überleben?",
+    a: [{ text: "", isCorrect: false },
+        { text: "", isCorrect: true },
+        { text: "", isCorrect: false },
+        { text: "", isCorrect: false }
+    ]
 
-         document.getElementById('para1').innerHTML = 'A: 5 - 6 Meter';A: 
-         document.getElementById('para2').innerHTML = 'B: 1 - 2 Meter';
-         document.getElementById('para3').innerHTML = 'C: 3 - 4 Meter';
-         document.getElementById('para4').innerHTML = 'D: 4 - 5 Meter';
+},
+{
+    id: 4,
+    q: "",
+    a: [{ text: "", isCorrect: true },
+        { text: "", isCorrect: false },
+        { text: "", isCorrect: false },
+        { text: "", isCorrect: false }
+    ]
 
-    }, 600);
+},
+{
+    id: 5,
+    q: "",
+    a: [{ text: "", isCorrect: false },
+        { text: "", isCorrect: false },
+        { text: "", isCorrect: true },
+        { text: "", isCorrect: false }
+    ]
+
+},
+
+]
+
+// Set start
+var start = true;
+
+// Iterate
+function iterate(id) {
+
+// Getting the result display section
+var result = document.getElementsByClassName("result");
+result[0].innerText = "";
+
+// Getting the question
+const question = document.getElementById("question");
+
+
+// Setting the question text
+question.innerText = Questions[id].q;
+
+// Getting the options
+const op1 = document.getElementById('op1');
+const op2 = document.getElementById('op2');
+const op3 = document.getElementById('op3');
+const op4 = document.getElementById('op4');
+
+
+// Getting the divs from the options
+const div1 = document.getElementById('answBox1');
+const div2 = document.getElementById('answBox2');
+const div3 = document.getElementById('answBox3');
+const div4 = document.getElementById('answBox4');
+
+
+// Providing option text 
+op1.innerText = Questions[id].a[0].text;
+op2.innerText = Questions[id].a[1].text;
+op3.innerText = Questions[id].a[2].text;
+op4.innerText = Questions[id].a[3].text;
+
+// Providing the true or false value to the options
+op1.value = Questions[id].a[0].isCorrect;
+op2.value = Questions[id].a[1].isCorrect;
+op3.value = Questions[id].a[2].isCorrect;
+op4.value = Questions[id].a[3].isCorrect;
+
+var selected = "";
+
+// Show selection for op1
+op1.addEventListener("click", () => {
+    // op1.style.scale = "1.3";
+    // op4.style.scale = "1";
+    // op2.style.scale = "1";
+    // op3.style.scale = "1";
+
+    div1.style.scale = "1.05";
+    div2.style.scale = "1";
+    div3.style.scale = "1";
+    div4.style.scale = "1";
+
+    div1.style.border = "2px solid #A0CE40";
+    div2.style.border = "2px solid gray";
+    div3.style.border = "2px solid gray";
+    div4.style.border = "2px solid gray";
+
+
+    // op2.style.backgroundColor = "";
+    // op3.style.backgroundColor = "";
+    // op4.style.backgroundColor = "";
+    selected = op1.value;
+
+    if (selected == "true") {
+        result[0].innerHTML = "Richtig!!!"
+        result[0].style.color = "#A0CE40";
+
+        div1.style.border = "2px solid #A0CE40";
+
+        next.addEventListener("click", () => {
+            
+            
+            div1.style.scale = "1";
+            div2.style.scale = "1";
+            div3.style.scale = "1";
+            div4.style.scale = "1";
     
+            div1.style.border = "2px solid #A0CE40";
+            div2.style.border = "2px solid #A0CE40";
+            div3.style.border = "2px solid #A0CE40";
+            div4.style.border = "2px solid #A0CE40";
+    
+            result[0].innerHTML = "";
+    
+            })
+
+    } else {
+        result[0].innerHTML = "Falsch!!!";
+        result[0].style.color = "red";
+
+        div1.style.border = "2px solid red";
+
+        next.addEventListener("click", () => {
+            
+            
+        div1.style.scale = "1";
+        div2.style.scale = "1";
+        div3.style.scale = "1";
+        div4.style.scale = "1";
+
+        div1.style.border = "2px solid #A0CE40";
+        div2.style.border = "2px solid #A0CE40";
+        div3.style.border = "2px solid #A0CE40";
+        div4.style.border = "2px solid #A0CE40";
+
+        result[0].innerHTML = "";
+
+        })
+
+    }
+})
+
+// Show selection for op2
+op2.addEventListener("click", () => {
+    // op1.style.backgroundColor = "lightskyblue";
+    // op2.style.scale = "1.3";
+    // op1.style.scale = "1";
+    // op4.style.scale = "1";
+    // op3.style.scale = "1";
+
+    div1.style.scale = "1";
+    div2.style.scale = "1.05";
+    div3.style.scale = "1";
+    div4.style.scale = "1";
+
+    div2.style.border = "2px solid #A0CE40";
+    div1.style.border = "2px solid gray";
+    div3.style.border = "2px solid gray";
+    div4.style.border = "2px solid gray";
+    // op3.style.backgroundColor = "lightskyblue";
+    // op4.style.backgroundColor = "lightskyblue";
+    selected = op2.value;
+
+    if (selected == "true") {
+        result[0].innerHTML = "Richtig!!!"
+        result[0].style.color = "#A0CE40";
+
+        div1.style.border = "2px solid green";
+
+        next.addEventListener("click", () => {
+            
+            
+            div1.style.scale = "1";
+            div2.style.scale = "1";
+            div3.style.scale = "1";
+            div4.style.scale = "1";
+    
+            div1.style.border = "2px solid #A0CE40";
+            div2.style.border = "2px solid #A0CE40";
+            div3.style.border = "2px solid #A0CE40";
+            div4.style.border = "2px solid #A0CE40";
+    
+            result[0].innerHTML = "";
+    
+            });
+
+    } else {
+        result[0].innerHTML = "Falsch!!!";
+        result[0].style.color = "red";
+
+        div2.style.border = "2px solid red";
+
+        next.addEventListener("click", () => {
+            
+            
+        div1.style.scale = "1";
+        div2.style.scale = "1";
+        div3.style.scale = "1";
+        div4.style.scale = "1";
+
+        div1.style.border = "2px solid #A0CE40";
+        div2.style.border = "2px solid #A0CE40";
+        div3.style.border = "2px solid #A0CE40";
+        div4.style.border = "2px solid #A0CE40";
+
+        result[0].innerHTML = "";
+
+        });
+
+    }
+})
+
+// Show selection for op3
+op3.addEventListener("click", () => {
+    // op1.style.backgroundColor = "lightskyblue";
+    // op2.style.backgroundColor = "lightskyblue";
+    // op1.style.scale = "1";
+    // op2.style.scale = "1";
+    // op4.style.scale = "1";
+    // op3.style.scale = "1.3";
+
+    div3.style.border = "2px solid #A0CE40";
+    div2.style.border = "2px solid gray";
+    div1.style.border = "2px solid gray";
+    div4.style.border = "2px solid gray";
+
+    div1.style.scale = "1";
+    div2.style.scale = "1";
+    div3.style.scale = "1.05";
+    div4.style.scale = "1";
+    // op4.style.backgroundColor = "lightskyblue";
+    selected = op3.value;
+
+    if (selected == "true") {
+        result[0].innerHTML = "Richtig!!!"
+        result[0].style.color = "#A0CE40";
+
+        div3.style.border = "2px solid #A0CE40";
+
+        next.addEventListener("click", () => {
+            
+            
+            div1.style.scale = "1";
+            div2.style.scale = "1";
+            div3.style.scale = "1";
+            div4.style.scale = "1";
+    
+            div1.style.border = "2px solid #A0CE40";
+            div2.style.border = "2px solid #A0CE40";
+            div3.style.border = "2px solid #A0CE40";
+            div4.style.border = "2px solid #A0CE40";
+    
+            result[0].innerHTML = "";
+    
+            })
+
+    } else {
+        result[0].innerHTML = "Falsch!!!";
+        result[0].style.color = "red";
+
+        div3.style.border = "2px solid red";
+
+        next.addEventListener("click", () => {
+            
+            
+        div1.style.scale = "1";
+        div2.style.scale = "1";
+        div3.style.scale = "1";
+        div4.style.scale = "1";
+
+        div1.style.border = "2px solid #A0CE40";
+        div2.style.border = "2px solid #A0CE40";
+        div3.style.border = "2px solid #A0CE40";
+        div4.style.border = "2px solid #A0CE40";
+
+        result[0].innerHTML = "";
+
+        })
+
+    }
+})
+
+// Show selection for op4
+op4.addEventListener("click", () => {
+    // op1.style.backgroundColor = "lightskyblue";
+    // op2.style.backgroundColor = "lightskyblue";
+    // op3.style.backgroundColor = "lightskyblue";
+    // op1.style.scale = "1";
+    // op2.style.scale = "1";
+    // op3.style.scale = "1";
+    // op4.style.scale = "1.3";
+
+    div4.style.border = "2px solid #A0CE40";
+    div2.style.border = "2px solid gray";
+    div3.style.border = "2px solid gray";
+    div1.style.border = "2px solid gray";
+
+    div1.style.scale = "1";
+    div2.style.scale = "1";
+    div3.style.scale = "1";
+    div4.style.scale = "1.05";
+    selected = op4.value;
+
+    if (selected == "true") {
+        result[0].innerHTML = "Richtig!!!"
+        result[0].style.color = "#A0CE40";
+
+        div4.style.border = "2px solid #A0CE40";
+
+        next.addEventListener("click", () => {
+            
+            
+            div1.style.scale = "1";
+            div2.style.scale = "1";
+            div3.style.scale = "1";
+            div4.style.scale = "1";
+    
+            div1.style.border = "2px solid #A0CE40";
+            div2.style.border = "2px solid #A0CE40";
+            div3.style.border = "2px solid #A0CE40";
+            div4.style.border = "2px solid #A0CE40";
+    
+            result[0].innerHTML = "";
+    
+            })
+
+    } else {
+        result[0].innerHTML = "Falsch!!!";
+        result[0].style.color = "red";
+
+        div4.style.border = "2px solid red";
+
+        next.addEventListener("click", () => {
+            
+            
+        div1.style.scale = "1";
+        div2.style.scale = "1";
+        div3.style.scale = "1";
+        div4.style.scale = "1";
+
+        div1.style.border = "2px solid #A0CE40";
+        div2.style.border = "2px solid #A0CE40";
+        div3.style.border = "2px solid #A0CE40";
+        div4.style.border = "2px solid #A0CE40";
+
+        result[0].innerHTML = "";
+
+        })
+
+    }
+})
+
+
 }
+
+if (start) {
+iterate("0");
 }
 
-if (rounds == 0) {
-function Answer2() {
-    document.getElementById('answBox2').style.border = "2px solid #DB0000";
-    rounds = 1;
+// Next button and method
+const next = document.getElementsByClassName('next')[0];
+var id = 0;
 
-    console.log(rounds);
-
-    setTimeout(function(){
-
-        //remove onclick elements
-        document.getElementById('answBox1').style.border = "2px solid #A0CE40";
-        document.getElementById('answBox3').style.backgroundColor = "#202020";
-        document.getElementById('answBox2').style.border = "2px solid #A0CE40";
-        document.getElementById('answBox4').style.border = "2px solid #A0CE40";
-
-        // new content
-        document.getElementById('question').innerHTML = 'Wie groß wird ein Kaktus nach 50 Jahren';
-
-        document.getElementById('para1').innerHTML = 'A: 5 - 6 Meter';
-        document.getElementById('para2').innerHTML = 'B: 1 - 2 Meter';
-        document.getElementById('para3').innerHTML = 'C: 3 - 4 Meter';
-        document.getElementById('para4').innerHTML = 'D: 4 - 5 Meter';
-
-    }, 600);
-}
+next.addEventListener("click", () => {
+start = false;
+if (id < 5) {
+    id++;
+    iterate(id);
+    console.log(id);
 }
 
-if (rounds == 0) {
-function Answer3() {
-    document.getElementById('answBox3').style.backgroundColor = "#A0CE40";
-    rounds = 1;
-    points += 1;
-
-    console.log(rounds);
-
-    setTimeout(function(){
-
-         //remove onclick elements
-        document.getElementById('answBox1').style.border = "2px solid #A0CE40";
-        document.getElementById('answBox3').style.backgroundColor = "#202020";
-        document.getElementById('answBox2').style.border = "2px solid #A0CE40";
-        document.getElementById('answBox4').style.border = "2px solid #A0CE40";
-
-        // new content
-        document.getElementById('question').innerHTML = 'Wie groß wird ein Kaktus nach 50 Jahren';
-
-        document.getElementById('para1').innerHTML = 'A: 5 - 6 Meter';
-        document.getElementById('para2').innerHTML = 'B: 1 - 2 Meter';
-        document.getElementById('para3').innerHTML = 'C: 3 - 4 Meter';
-        document.getElementById('para4').innerHTML = 'D: 4 - 5 Meter';
-
-    }, 600);
-}
-}
-
-if (rounds == 0) {
-function Answer4() {
-    document.getElementById('answBox4').style.border = "2px solid #DB0000";
-    rounds = 1;
-
-    console.log(rounds);
-
-    setTimeout(function(){
-
-         //remove onclick elements
-        document.getElementById('answBox1').style.border = "2px solid #A0CE40";
-        document.getElementById('answBox3').style.backgroundColor = "#202020";
-        document.getElementById('answBox2').style.border = "2px solid #A0CE40";
-        document.getElementById('answBox4').style.border = "2px solid #A0CE40";
-
-        // new content
-        document.getElementById('question').innerHTML = 'Wie groß wird ein Kaktus nach 50 Jahren';
-
-        document.getElementById('para1').innerHTML = 'A: 5 - 6 Meter';
-        document.getElementById('para2').innerHTML = 'B: 1 - 2 Meter';
-        document.getElementById('para3').innerHTML = 'C: 3 - 4 Meter';
-        document.getElementById('para4').innerHTML = 'D: 4 - 5 Meter';
-
-    }, 600);
-}
-}
+})
 
 
 //==============/Kaktus Quiz [ende]\=============\\
