@@ -211,10 +211,6 @@ body, html{
 
 
 
-    
-    
-
-
 }
 
 #two{
@@ -1211,6 +1207,17 @@ text-decoration-color: #EB6E6E;
 /* Mein Warenkrob Ende */
 
 
+
+.settings:hover{
+
+    cursor: pointer;
+
+}
+
+
+/* Notification alert anfang */
+
+
 #bell {
     transition: 150ms;
 }
@@ -1229,6 +1236,7 @@ text-decoration-color: #EB6E6E;
     max-height: 40vh;
     margin-right: 0.5vw;
     overflow: hidden;
+
 }
 #content.her {
     color: var(--ac);
@@ -1244,6 +1252,7 @@ text-decoration-color: #EB6E6E;
     top: 0;
     left: 100%;
     transform: translate(-100%, calc(7.5vh - 1px));
+    cursor: pointer;
 }
 
 #content.her ::-webkit-scrollbar {
