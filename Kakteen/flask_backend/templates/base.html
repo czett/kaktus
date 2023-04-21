@@ -69,7 +69,12 @@
             <a id="shopPress" class="link">Shop</a>
             <a id="discoverPress" class="link">Entdecken</a>
             <a id="supportPress" class="link">Kakteen-Support</a>
-            <i onmousedown="ausklappen()" id="bell" class="fa-solid fa-bell"></i>
+            <div class="bell-wrap">
+                <i onmousedown="ausklappen()" id="bell" class="fa-solid fa-bell"></i>
+                {% if data["notifications"] is defined and data["notifications"]|length > 0 %}
+                    <div class="bell-new-dot"></div>
+                {% endif %}
+            </div>
 
            
             {% if logged_in == True %}

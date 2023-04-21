@@ -252,6 +252,7 @@ def handle_freq(action, person):
 		newvals = {"$set": {"friends": friends}}
 		userdata.update_one(query, newvals)
 
+	session["data"]["notifications"].remove(person)
 	session["data"]["friends"] = friends
 	session.modified = True
 
