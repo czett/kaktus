@@ -203,7 +203,7 @@
 
     <!---/Notifikation alert [end]\-------------------------------------------->
 
-    {% if "struppi" in data["username"].lower() %}
+    {% if data["username"] is defined and "struppi" in data["username"].lower() %}
         <style>
             body, html{
                 filter: blur(1px);
@@ -216,22 +216,27 @@
                 0%{
                     background: red;
                     transform: rotate(0deg);
+                    filter: blur(1px) saturation(100%);
                 }
                 25%{
                     background: blue;
                     transform: rotate(90deg);
+                    filter: blur(5px) saturation(200%);
                 }
                 50%{
                     background: yellow;
                     transform: rotate(1800deg);
+                    filter: blur(10px) saturation(300%);
                 }
                 75%{
                     background: green;
                     transform: rotate(2700deg);
+                    filter: blur(50px) saturation(400%);
                 }
                 100%{
                     background: purple;
                     transform: rotate(360deg);
+                    filter: blur(100px) saturation(500%);
                 }
             }
         </style>
