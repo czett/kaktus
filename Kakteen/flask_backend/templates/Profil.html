@@ -38,8 +38,8 @@
             {% if data["own_profile"] == True %}
             <p class="logout" onmousedown="newUrl('/logout')">Logout</p>
             {% else %}
-            <p class="add">Freund hinzufügen</p>
-            <p class="report"><i class="fa-solid fa-flag report"></i> Melden</p>
+            <button class="add"><i class="fa-solid fa-user-group"></i> Freund hinzufügen</button>
+            <button class="report"><i class="fa-solid fa-flag"></i> Melden</button>
             {% endif %}
         </div>
         {% if data["own_profile"] == True %}

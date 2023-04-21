@@ -239,12 +239,6 @@ body, html{
     background-position: 0% 45%;
 }
 
-
-button{
-	width: 100px;
-	height: 50px;
-}
-
 .act{
 	visibility: visible;
 	animation-name: cardanim;
@@ -568,6 +562,7 @@ display: inline-block;
     box-sizing: border-box; 
     box-sizing: border-box;
     margin-left: 0.4vw;
+    filter: blur(1px);
 }
 
  .card-s:hover{
@@ -1386,15 +1381,12 @@ input[type="radio"]{
     display: flex;
     width: 40vw;
     overflow: hidden;
-    align-items: center;
     position: relative;
 }
 
 .top-leiste .info-leiste div{
     width: 50%;
     padding: calc(0.5 * var(--lrpad));
-    display: flex;
-    flex-direction: column;
 }
 
 .top-leiste .info-leiste .info .name{
@@ -1407,10 +1399,6 @@ input[type="radio"]{
 
 .top-leiste .info-leiste .info .freunde{
     font-size: 16px;
-}
-
-.top-leiste .info-leiste .interaction-options .report{
-    color: #EA3434;
 }
 
 .top-leiste .profile-image-container{
@@ -1432,6 +1420,42 @@ input[type="radio"]{
     border-radius: 50%;
     width: auto;
     height: auto;
+}
+
+.top-leiste .interaction-options button{
+    padding: 1vw 2vw;
+    border-radius: 1vw;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    margin-bottom: 0.5vw;
+    font-size: 16px;
+}
+
+.top-leiste .interaction-options .report, .top-leiste .interaction-options .report i{
+    color: #DB0000;
+}
+
+.top-leiste .interaction-options .report{
+    border: 1px solid #DB0000;
+    background: #EB6E6E;
+}
+
+.top-leiste .interaction-options .add{
+    border: 1px solid var(--ac2);
+    background: var(--ac);
+}
+
+.top-leiste .interaction-options button{
+    transition: 175ms;
+}
+
+.top-leiste .interaction-options button:hover{
+    filter: brightness(1.175);
+    cursor: pointer;
 }
 
 .settings-icon-wrap{
