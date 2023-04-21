@@ -1237,38 +1237,37 @@ display: inline-block;
 
 .img-w {
     float: right;
-    width: 3vw;
-    height: 3vw;
+    width: 7vh;
+    height: 7vh;
     border: 2px solid var(--ac);
     border-width: 50%;
    
-    font-size: 55px;
+    /* font-size: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 90%;
     left: 92%;
-    transform: translate(-50%, -890%);
-    border-radius: 50%;
+    transform: translate(-50%, -890%); */
+    border-radius: 50%; 
 }
 
 .img-w2 {
     float: right;
-    width: 3vw;
-    height: 3vw;
+    width: 7vh;
+    height: 7vh;
     border: 2px solid var(--ac);
-    border-radius: 10vw;
     border-width: 50%;
    
-    font-size: 55px;
+    /* font-size: 55px;
     display: flex;
     justify-content: center;
     align-items: right;
     position:fixed;
     top: 90%;
     left: 92%;
-    transform: translate(-50%, -740%);
+    transform: translate(-50%, -740%); */
     
     border-radius: 50%;
 }
