@@ -480,14 +480,16 @@ body, html{
 
 display: inline-block;
 
+
 }
 
 .auswahl-back:hover{
     filter: brightness(1.2);
-    transform: translate(0px, 0px) scale(1.05);
+    transform: translate(0%, 0%) scale(1.05);
     animation-duration: 1000ms;
     animation-name: blinken;
     animation-iteration-count: infinite;
+   
 }
 
 @keyframes blinken{
