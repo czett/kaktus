@@ -799,8 +799,9 @@ display: inline-block;
     align-items: center;
     overflow-x: scroll;
     width: auto;
-    height: 50vw;
+    height: 140%;
     white-space: nowrap;
+
 }
 
 .card-p1 p, .card-p1 h2{
@@ -1021,17 +1022,21 @@ text-decoration-color: #EB6E6E;
 .button-p2:hover {
 
     background-image: url(img/wagen.png);
-    background-position: 10%, 40%;
-    background-size: 100%;
+    background-position: 30%, 40%;
+    background-size: 120%;
     background-color: var(--ac); 
-    color: white; 
-    font-size: 0%;
+    color: transparent; 
+   
     
     animation: warenkorb;
     animation-iteration-count: infinite;
     animation-duration: 1000ms;
     animation-delay: 10ms;
 }
+
+
+
+
 
 /* Profil Warenkorb Ende */
 
@@ -1163,6 +1168,25 @@ text-decoration-color: #EB6E6E;
     transform: translate(-50%, -50%);
 }
 
+.text2-w4 {
+    font-size: 30px;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:  7.7%;
+    left: 6.5%;
+    transform: translate(-50%, -50%);
+}
+
+.text2-w4:hover {
+
+    text-decoration: underline;
+    text-decoration-color: darkgray;
+
+}
+
 .img-w {
 
     background-image: url(img/kappe2.png);
@@ -1182,7 +1206,7 @@ text-decoration-color: #EB6E6E;
     position: absolute;
     top: 90%;
     left: 92%;
-    transform: translate(-50%, -863%);
+    transform: translate(-50%, -810%);
 }
 
 .img-w2 {
@@ -1200,17 +1224,108 @@ text-decoration-color: #EB6E6E;
     font-size: 55px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: right;
     position: absolute;
     top: 90%;
     left: 92%;
-    transform: translate(-50%, -713%);
+    transform: translate(-50%, -660%);
 }
 
 
 
 
 /* Mein Warenkrob Ende */
+
+/* Entdecken Anfang */
+
+.text-e1 {
+
+font-size: 40px;
+text-align: center;
+transform: translate(0%, -45%);
+}
+
+.text-e2 {
+
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid var(--ac);
+    padding: 2vw;
+    box-sizing: border-box;
+    padding-top: 6vw;
+    overflow: visible;
+    transform: translate(0%, -40%);
+    border-radius: 5vw;
+}
+
+
+.img-e1 {
+    
+    background-image: url(img/kakteenland.png);
+    border: 2px solid var(--ac);
+    border-radius: 5vw;
+    font-size: 30px;
+    text-align: center;
+    display: inline-block;
+    color: transparent;
+    box-sizing: border-box;
+    transform: translate(100%, -890%);
+    padding-top: 1.5vw;
+    padding-right: 2vw;
+    background-size: 220%;
+    background-position: 0% 50%;
+    visibility: visible;
+    
+}
+
+.img-e1:hover {
+    
+    padding-top: 15vw;
+    padding-right: 94vw;
+    transform: translate(0%, -50%);
+    background-position: 0% 70%;
+    background-size: 100%;
+} 
+
+
+
+    
+    .img-e2 {
+        
+        background-image: url(img/topfkakteen.png);
+        border: 2px solid var(--ac);
+        border-radius: 5vw;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        color: transparent;
+        box-sizing: border-box;
+        transform: translate(100%, -850%);
+        padding-top: 1.5vw;
+        padding-right: 2vw;
+        background-size: 220%;
+        background-position: 0% 50%;
+        visibility: visible;
+        
+    }
+    
+    .img-e2:hover {
+        
+        padding-top: 15vw;
+        padding-right: 94vw;
+        transform: translate(0%, -50%);
+        background-position: 0% 70%;
+        background-size: 40%;
+    } 
+
+    .text-hidden {
+
+        visibility: hidden;
+    }
+
+
+/* Entdecken Ende */
 
 
 #bell {
