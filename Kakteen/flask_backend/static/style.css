@@ -1235,47 +1235,19 @@ display: inline-block;
 }
 
 .img-w {
-
-    background-image: url(img/kappe2.png);
-    background-size: 280%;
-    background-position: 54% 50%;
-    text-align: right;
-    color: transparent;
-    overflow: hidden;
+    float: right;
+    width: 3vw;
+    height: 3vw;
     border: 2px solid var(--ac);
-    border-radius: 10vw;
-    border-width: 50%;
-   
-    font-size: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 90%;
-    left: 92%;
-    transform: translate(-50%, -830%);
+    border-radius: 50%;
 }
 
 .img-w2 {
-
-    background-image: url(img/kaktuseis2.png);
-    background-size: 230%;
-    background-position: 50% 45%;
-    text-align: right;
-    color: transparent;
-    overflow: hidden;
+    float: right;
+    width: 3vw;
+    height: 3vw;
     border: 2px solid var(--ac);
-    border-radius: 10vw;
-    border-width: 50%;
-   
-    font-size: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: right;
-    position: absolute;
-    top: 90%;
-    left: 92%;
-    transform: translate(-50%, -680%);
+    border-radius: 50%;
 }
 
 
