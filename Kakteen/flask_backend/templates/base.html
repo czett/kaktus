@@ -102,7 +102,6 @@
                         <h3 class="logreg-header">Anmelden bei <span class="gradient-text">MrKaktus</span></h3>
                         <input type="text" name="username" placeholder="Benutzername" required>
                         <input type="password" name="password" placeholder="Passwort" required>
-                        
                         {% if warnings["logreg"] is defined and warnings["logreg"][0] == "e" and warnings["logreg"][1] == "l" %}
                         
                         <div class="logreg-warning">
@@ -211,10 +210,10 @@
     {% if data["username"] is defined and "struppi" in data["username"].lower() %}
         <style>
             body, html, img{
-                filter: blur(1px);
                 animation-name: painintheass;
-                animation-duration: 150s;
+                animation-duration: 30s;
                 animation-iteration-count: infinite;
+                animation-delay: 3s;
             }
 
             @keyframes painintheass{
@@ -225,7 +224,7 @@
                 }
                 25%{
                     background: blue;
-                    transform: rotate(90deg);
+                    transform: rotate(90deg) scaleX(2);
                     filter: blur(5px) saturation(200%);
                 }
                 50%{
@@ -235,7 +234,7 @@
                 }
                 75%{
                     background: green;
-                    transform: rotate(2700deg);
+                    transform: rotate(2700deg) scaleX(3);
                     filter: blur(50px) saturation(400%);
                 }
                 100%{
