@@ -28,10 +28,14 @@ def check_if_logged_in():
 	except:
 		session["logged_in"] = False
 		session["data"] = {}
-		session["warnings"] = {}
 		session["data"]["pimg"] = None
 
 		session.modified = True
+
+	try:
+		war = session["warnings"]
+	except:
+		session["warnings"] = {}
 
 def check_for_session(session_var_name, **kwargs):
 	if kwargs["create_empty"] == True:
@@ -152,7 +156,7 @@ def register():
 
 		uid = funcs.find_in_coll(logreg, {"username": un})["_id"]
 
-		session["data"] = {"user_id": uid, "username": un, "pimg": None, "friends": []}
+		session["data"] = {"user_id": uid, "username": un, "pimg": None, "friends": [], "own_profile": True}
 
 		funcs.add_entry(userdata, {"_id": uid, "friends": [], "pimg": None, "friend_requests": []})
 
