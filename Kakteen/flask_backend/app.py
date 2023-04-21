@@ -98,6 +98,11 @@ def warenkorb():
 	check_if_logged_in()
 	return render_template("warenkorb.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
+@app.route("/kaufen")
+def kaufen():
+	check_if_logged_in()
+	return render_template("kaufen.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
 @app.route("/auswahl/bestaetigen", methods=["POST"])
 def auswahlbestaetigen():
 	check_if_logged_in()

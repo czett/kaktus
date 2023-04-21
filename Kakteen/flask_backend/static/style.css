@@ -333,6 +333,7 @@ body, html{
     padding: calc(0.33 * var(--lrpad));
     margin: auto;
     transition: 500ms;
+    cursor: pointer;
 }
 
 .overview .icons .icon .icon-circle i{
@@ -479,14 +480,16 @@ body, html{
 
 display: inline-block;
 
+
 }
 
 .auswahl-back:hover{
     filter: brightness(1.2);
-    transform: translate(0px, 0px) scale(1.05);
+    transform: translate(0%, 0%) scale(1.05);
     animation-duration: 1000ms;
     animation-name: blinken;
     animation-iteration-count: infinite;
+   
 }
 
 @keyframes blinken{
@@ -1241,15 +1244,15 @@ display: inline-block;
     border: 2px solid var(--ac);
     border-width: 50%;
    
-    font-size: 55px;
+    /* font-size: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 90%;
     left: 92%;
-    transform: translate(-50%, -890%);
-    border-radius: 50%;
+    transform: translate(-50%, -890%); */
+    border-radius: 50%; 
 }
 
 .img-w2 {
@@ -1257,17 +1260,16 @@ display: inline-block;
     width: 7vh;
     height: 7vh;
     border: 2px solid var(--ac);
-    border-radius: 10vw;
     border-width: 50%;
    
-    font-size: 55px;
+    /* font-size: 55px;
     display: flex;
     justify-content: center;
     align-items: right;
     position:fixed;
     top: 90%;
     left: 92%;
-    transform: translate(-50%, -740%);
+    transform: translate(-50%, -740%); */
     
     border-radius: 50%;
 }
@@ -1438,7 +1440,7 @@ transform: translate(0%, -45%);
     } 
 
     .eintrag2 {
-        transform: translate(0%, -25%);
+        transform: translate(0%, -20%);
 
     }
 
@@ -1495,7 +1497,7 @@ transform: translate(0%, -45%);
         background-position: 0% 70%;
         background-size: 50%;
 
-        background-image: url(img/kaktusstreifen.jpg);
+        background-image: url(img/kaktusstreifen.png);
         border: 2px solid var(--ac);
         border-radius: 5vw;
         font-size: 30px;
@@ -1515,10 +1517,14 @@ transform: translate(0%, -45%);
     .eintrag3 {
     
       
-       transform: translate(0%, -60%);
+       transform: translate(0%, -55%);
 
     }
     
+    .link-e {
+
+        color: black;
+    }
     
 
 /* Entdecken Ende */
