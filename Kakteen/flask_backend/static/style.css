@@ -1239,6 +1239,16 @@ display: inline-block;
     width: 7vh;
     height: 7vh;
     border: 2px solid var(--ac);
+    border-width: 50%;
+   
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 90%;
+    left: 92%;
+    transform: translate(-50%, -890%);
     border-radius: 50%;
 }
 
@@ -1247,6 +1257,18 @@ display: inline-block;
     width: 7vh;
     height: 7vh;
     border: 2px solid var(--ac);
+    border-radius: 10vw;
+    border-width: 50%;
+   
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    position:fixed;
+    top: 90%;
+    left: 92%;
+    transform: translate(-50%, -740%);
+    
     border-radius: 50%;
 }
 
@@ -1298,16 +1320,59 @@ transform: translate(0%, -45%);
     
 }
 
-.img-e1:hover {
+.img-e1:hover{
+
+    cursor: pointer;
+}
+
+.img-e11 {
     
-    padding-top: 15vw;
-    padding-right: 94vw;
-    transform: translate(0%, -50%);
-    background-position: 0% 70%;
-    background-size: 100%;
+    background-image: url(img/kakteenland.png);
+    border: 0px solid var(--ac);
+    border-radius: 0vw;
+    font-size: 0px;
+    text-align: center;
+    display: inline-block;
+    color: transparent;
+    box-sizing: border-box;
+   
+    
+    
+    visibility: visible;
+    
+
+    padding-top: 0vw;
+    padding-right: 0vw;
+    transform: translate(0%, 0%);
+    background-position: 0% 0%;
+    background-size: 0%;
+    visibility: hidden;
 } 
 
+.img-e11.img {
 
+    background-image: url(img/kakteenland.png);
+    border: 2px solid var(--ac);
+    border-radius: 5vw;
+    font-size: 30px;
+    text-align: center;
+    display: inline-block;
+    color: transparent;
+    box-sizing: border-box;
+    
+    
+    
+    visibility: visible;
+    
+
+    padding-top: 15vw;
+    padding-right: 94vw;
+    transform: translate(0%, -90%);
+    background-position: 0% 70%;
+    background-size: 100%;
+    visibility: visible;
+
+}
 
     
     .img-e2 {
@@ -1328,21 +1393,133 @@ transform: translate(0%, -45%);
         visibility: visible;
         
     }
+
+    .img-e2:hover{
+
+        cursor: pointer;
+    }
     
-    .img-e2:hover {
+    .img-e22 {
         
         padding-top: 15vw;
         padding-right: 94vw;
-        transform: translate(0%, -50%);
+        transform: translate(0%, -90%);
         background-position: 0% 70%;
         background-size: 40%;
+
+        background-image: url(img/topfkakteen.png);
+        border: 2px solid var(--ac);
+        border-radius: 5vw;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        color: transparent;
+        box-sizing: border-box;
+        visibility: hidden;
     } 
 
-    .text-hidden {
+    .img-e22.img2 {
+        
+        padding-top: 14vw;
+        padding-right: 94vw;
+        transform: translate(0%, -90%);
+        background-position: 0% 70%;
+        background-size: 40%;
 
-        visibility: hidden;
+        background-image: url(img/topfkakteen.png);
+        border: 2px solid var(--ac);
+        border-radius: 5vw;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        color: transparent;
+        box-sizing: border-box;
+        visibility: visible;
+    } 
+
+    .eintrag2 {
+        transform: translate(0%, -25%);
+
     }
 
+    .img-e3 {
+        
+        background-image: url(img/kaktusstreifen.jpg);
+        border: 2px solid var(--ac);
+        border-radius: 5vw;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        color: transparent;
+        box-sizing: border-box;
+        transform: translate(100%, -1280%);
+        padding-top: 1.5vw;
+        padding-right: 2vw;
+        background-size: 220%;
+        background-position: 50% 50%;
+        visibility: visible;
+        
+    }
+
+    .img-e3:hover{
+
+        cursor: pointer;
+    }
+
+    .img-e33 {
+        
+        padding-top: 15vw;
+        padding-right: 94vw;
+        transform: translate(0%, -90%);
+        background-position: 0% 70%;
+        background-size: 20%;
+
+        background-image: url(img/topfkakteen.png);
+        border: 2px solid var(--ac);
+        border-radius: 5vw;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        color: transparent;
+        box-sizing: border-box;
+        visibility: hidden;
+    } 
+
+    
+
+    .img-e33.img3 {
+        
+        padding-top: 23vw;
+        padding-right: 94vw;
+        transform: translate(0%, -80%);
+        background-position: 0% 70%;
+        background-size: 50%;
+
+        background-image: url(img/kaktusstreifen.jpg);
+        border: 2px solid var(--ac);
+        border-radius: 5vw;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        color: transparent;
+        box-sizing: border-box;
+        visibility: visible;
+    } 
+
+
+    .text-e33 {
+        font-size: 40px;
+        text-align: center;
+        transform: translate(0%, -190%);
+    }
+    .eintrag3 {
+    
+      
+       transform: translate(0%, -60%);
+
+    }
+    
+    
 
 /* Entdecken Ende */
 
