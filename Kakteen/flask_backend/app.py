@@ -214,15 +214,35 @@ def change_password():
 def freund_hinzufuegen(profil):
 	uid = funcs.find_in_coll(logreg, {"username": profil})["_id"]
 	freqs = funcs.find_in_coll(userdata, {"_id": uid})["friend_requests"]
+	friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
 
-	if str(session["data"]["username"]) not in freqs:
+	if str(session["data"]["username"]) not in freqs and str(session["data"]["username"]) not in friends:
 		freqs.append(session["data"]["username"])
 
 		query = {"_id": uid}
 		newvals = {"$set": {"friend_requests": freqs}}
 		userdata.update_one(query, newvals)
 
-	return redirect(f"/profil/{profil}")
+	return redirect("/profil")
+
+@app.route("/freq/<action>/<person>")
+def handle_freq(action, person):
+	uid = session["data"]["user_id"]
+	freqs = funcs.find_in_coll(userdata, {"_id": uid})["friend_requests"]
+
+	freqs.remove(person)
+
+	if action == "accept":
+		friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
+		friends.append(person)
+
+		query = {"_id": uid}
+		newvals = {"$set": {"friends": friends}}
+		userdata.update_one(query, newvals)
+
+	return redirect(f"/profil")
+
+	return str(f"{action}, {person}")
 
 @app.route("/logout")
 def logout():

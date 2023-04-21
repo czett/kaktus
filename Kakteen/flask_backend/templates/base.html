@@ -178,7 +178,10 @@
                 {% for name in data["notifications"] %}
                     <div class="contentBoxText">
                         <p class="contentBoxText2">{{  name  }} hat dich als Freund hinzugefügt!
-                            <br> <p class="contentBoxText3"> Möchtest du die Anfrage annehmen? </p>
+                            <br> <p class="contentBoxText3"> Möchtest du die Anfrage annehmen? 
+                                <i class="fa-solid fa-circle-xmark decline-icon" onmousedown="newUrl('/freq/decline/{{  name  }}')"></i>
+                                <i class="fa-solid fa-circle-check accept-icon" onmousedown="newUrl('/freq/accept/{{  name  }}')"></i>
+                            </p>
                         </p>
                     </div>
                 {% endfor %}
