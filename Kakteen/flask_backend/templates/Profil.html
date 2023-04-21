@@ -28,7 +28,7 @@
             <p class="id-tag">#{{  data["user_id"]  }}</p>
 
             {% if data["friends"] is defined and data["friends"]|length > 0 %}
-                <p class="freunde">Hat {{  data["friends"]|length  }} Freunde</p>
+                <p class="freunde">Freunde: {{  data["friends"]|length  }}</p>
             {% else %}
                 <p class="freunde">Hat keine Freunde</p>
             {% endif %}

@@ -229,16 +229,27 @@ def freund_hinzufuegen(profil):
 def handle_freq(action, person):
 	uid = session["data"]["user_id"]
 	freqs = funcs.find_in_coll(userdata, {"_id": uid})["friend_requests"]
+	friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
 
 	freqs.remove(person)
 
-	if action == "accept":
+	if action == "accept" and str(person) not in friends:
 		friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
 		friends.append(person)
 
 		query = {"_id": uid}
 		newvals = {"$set": {"friends": friends}}
 		userdata.update_one(query, newvals)
+
+		friends = funcs.find_in_coll(userdata, {"_id": funcs.find_in_coll(logreg, {"username": person})["_id"]})["friends"]
+		friends.append(funcs.find_in_coll(logreg, {"_id": uid})["username"])
+
+		query = {"_id": funcs.find_in_coll(logreg, {"username": person})["_id"]}
+		newvals = {"$set": {"friends": friends}}
+		userdata.update_one(query, newvals)
+
+	session["data"]["friends"] = friends
+	session.modified = True
 
 	return redirect(f"/profil")
 
