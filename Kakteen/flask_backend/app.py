@@ -11,9 +11,20 @@ db = cluster["mrkaktus"]
 logreg = db["login"]
 userdata = db["userdata"]
 
+def fill_notification_box():
+	freqs = funcs.find_in_coll(userdata, {"_id": session["data"]["user_id"]})["friend_requests"]
+	
+	session["data"]["notifications"] = []
+
+	for req in freqs:
+		session["data"]["notifications"].append(req)
+		session.modified = True
+
 def check_if_logged_in():
 	try:
 		test = session["logged_in"]
+
+		fill_notification_box()
 	except:
 		session["logged_in"] = False
 		session["data"] = {}
@@ -65,6 +76,8 @@ def support():
 @app.route("/profil")
 def profil():
 	check_if_logged_in()
+	session["data"]["own_profile"] = True
+	session.modified = True
 	return render_template("Profil.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/auswahl")
@@ -137,7 +150,7 @@ def register():
 
 		session["data"] = {"user_id": uid, "username": un, "pimg": None, "friends": []}
 
-		funcs.add_entry(userdata, {"_id": uid, "friends": [], "pimg": None})
+		funcs.add_entry(userdata, {"_id": uid, "friends": [], "pimg": None, "friend_requests": []})
 
 		return redirect("/profil")
 	else:
@@ -196,6 +209,51 @@ def change_password():
 	logreg.update_one(query, newvals)
 
 	return redirect("/profil")
+
+@app.route("/freund-hinzufuegen/<profil>")
+def freund_hinzufuegen(profil):
+	uid = funcs.find_in_coll(logreg, {"username": profil})["_id"]
+	freqs = funcs.find_in_coll(userdata, {"_id": uid})["friend_requests"]
+	friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
+
+	if str(session["data"]["username"]) not in freqs and str(session["data"]["username"]) not in friends:
+		freqs.append(session["data"]["username"])
+
+		query = {"_id": uid}
+		newvals = {"$set": {"friend_requests": freqs}}
+		userdata.update_one(query, newvals)
+
+	return redirect("/profil")
+
+@app.route("/freq/<action>/<person>")
+def handle_freq(action, person):
+	uid = session["data"]["user_id"]
+	freqs = funcs.find_in_coll(userdata, {"_id": uid})["friend_requests"]
+	friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
+
+	freqs.remove(person)
+
+	if action == "accept" and str(person) not in friends:
+		friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
+		friends.append(person)
+
+		query = {"_id": uid}
+		newvals = {"$set": {"friends": friends}}
+		userdata.update_one(query, newvals)
+
+		friends = funcs.find_in_coll(userdata, {"_id": funcs.find_in_coll(logreg, {"username": person})["_id"]})["friends"]
+		friends.append(funcs.find_in_coll(logreg, {"_id": uid})["username"])
+
+		query = {"_id": funcs.find_in_coll(logreg, {"username": person})["_id"]}
+		newvals = {"$set": {"friends": friends}}
+		userdata.update_one(query, newvals)
+
+	session["data"]["friends"] = friends
+	session.modified = True
+
+	return redirect(f"/profil")
+
+	return str(f"{action}, {person}")
 
 @app.route("/logout")
 def logout():

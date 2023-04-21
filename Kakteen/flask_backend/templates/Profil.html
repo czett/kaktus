@@ -8,7 +8,7 @@
     <div class="profile-image-container">
         <div class="direct-img-container">
             <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
-            {% if pimg != None %}
+            {% if data["pimg"] != None %}
                 {% set pimg_url = 'img/' ~ data["pimg"] ~ '.jpg' %}
                 <img src="{{  url_for('static', filename=pimg_url)  }}" class="page-profile-image">
             {% else %}
@@ -28,9 +28,9 @@
             <p class="id-tag">#{{  data["user_id"]  }}</p>
 
             {% if data["friends"] is defined and data["friends"]|length > 0 %}
-                <p class="freunde">{{  data["friends"]  }}</p>
+                <p class="freunde">Freunde: {{  data["friends"]|length  }}</p>
             {% else %}
-                <p class="freunde">0 Freunde</p>
+                <p class="freunde">Hat keine Freunde</p>
             {% endif %}
 
         </div>
@@ -38,8 +38,9 @@
             {% if data["own_profile"] == True %}
             <p class="logout" onmousedown="newUrl('/logout')">Logout</p>
             {% else %}
-            <p class="add">Freund hinzufügen</p>
-            <p class="report"><i class="fa-solid fa-flag report"></i> Melden</p>
+            {% set uname = data["username"] %}
+            <button class="add" onmousedown="newUrl('/freund-hinzufuegen/{{  uname  }}')"><i class="fa-solid fa-user-group"></i> Freund hinzufügen</button>
+            <button class="report"><i class="fa-solid fa-flag"></i> Melden</button>
             {% endif %}
         </div>
         {% if data["own_profile"] == True %}
@@ -50,9 +51,11 @@
     </div>
 </div>
 
+{% if data["own_profile"] == True %}
 <a href="/warenkorb">
     <button class="button-p2">Mein Warenkorb</button>
 </a>
+{% endif %}
 
 {% if data["own_profile"] == True %}
     <div class="settings" id="settings">
@@ -81,7 +84,7 @@
                 </div>
             </div>
             <form method="post" enctype="multipart/form-data" action="/change-password">
-                <input type="text" name="newpw" id="newpw">
+                <input type="password" name="newpw" id="newpw">
                 <button type="submit" class="pw-change-btn">Ändern</button>
             </form>
         </div>

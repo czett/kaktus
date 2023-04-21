@@ -76,7 +76,7 @@
                 <a href="/profil">
                     <div class="profile-icon">
                         <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
-                        {% if pimg != None %}
+                        {% if data["pimg"] != None %}
                             {% set pimg_url = 'img/' ~ data["pimg"] ~ '.jpg' %}
                             <img src="{{  url_for('static', filename=pimg_url)  }}" alt="" class="profile-image">
                         {% else %}
@@ -166,47 +166,35 @@
     </style>
 
     <div class="content">
+        <div class="girlanden-icons">
+            {% for i in range(666) %}
+                <i style="font-size: 25px; letter-spacing: 20px; line-height: 45px; ;" class="kaktus-icon ki-{{  i  }}">&#127797;</i>
+            {% endfor %}
+        
+        </div>
 
+        <div class="slideshow">
+        <div class="slideshow-container">
+                </div>
+
+        </div>
+
+        
     <!---/Notifikation alert\-------------------------------------------------->  
 
         <div id="content">
-
-            <div class="contentBoxText">
-                <p class="contentBoxText2">_Place Holder_
-                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
-                </p>
-            </div>
-
-            <div class="contentBoxText">
-                <p class="contentBoxText2">_Place Holder_
-                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
-                </p>
-            </div>
-
-            <div class="contentBoxText">
-                <p class="contentBoxText2">_Place Holder_
-                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
-                </p>
-            </div>
-
-            <div class="contentBoxText">
-                <p class="contentBoxText2">_Place Holder_
-                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
-                </p>
-            </div>
-
-            <div class="contentBoxText">
-                <p class="contentBoxText2">_Place Holder_
-                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
-                </p>
-            </div>
-
-            <div class="contentBoxText">
-                <p class="contentBoxText2">_Place Holder_
-                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
-                </p>
-            </div>
-
+            {% if data["notifications"] is defined %}
+                {% for name in data["notifications"] %}
+                    <div class="contentBoxText">
+                        <p class="contentBoxText2">{{  name  }} hat dich als Freund hinzugefügt!
+                            <br> <p class="contentBoxText3"> Möchtest du die Anfrage annehmen? 
+                                <i class="fa-solid fa-circle-xmark decline-icon" onmousedown="newUrl('/freq/decline/{{  name  }}')"></i>
+                                <i class="fa-solid fa-circle-check accept-icon" onmousedown="newUrl('/freq/accept/{{  name  }}')"></i>
+                            </p>
+                        </p>
+                    </div>
+                {% endfor %}
+            {% endif %}
         </div>
 
 
