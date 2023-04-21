@@ -1239,8 +1239,6 @@ display: inline-block;
     width: 3vw;
     height: 3vw;
     border: 2px solid var(--ac);
-<<<<<<< HEAD
-    border-radius: 10vw;
     border-width: 50%;
    
     font-size: 55px;
@@ -1251,9 +1249,7 @@ display: inline-block;
     top: 90%;
     left: 92%;
     transform: translate(-50%, -890%);
-=======
     border-radius: 50%;
->>>>>>> b0dad20ce8621924eddf84ea25f56210c4a93425
 }
 
 .img-w2 {
@@ -1261,7 +1257,6 @@ display: inline-block;
     width: 3vw;
     height: 3vw;
     border: 2px solid var(--ac);
-<<<<<<< HEAD
     border-radius: 10vw;
     border-width: 50%;
    
@@ -1274,9 +1269,7 @@ display: inline-block;
     left: 92%;
     transform: translate(-50%, -740%);
     
-=======
     border-radius: 50%;
->>>>>>> b0dad20ce8621924eddf84ea25f56210c4a93425
 }
 
 
