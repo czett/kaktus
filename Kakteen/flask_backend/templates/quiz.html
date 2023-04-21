@@ -3,6 +3,13 @@
 {% block content %}
 
 
+<!-- Popup Fenster -->
+
+<div id="popup">
+    <p></p>
+    <button id="clickOK">OK</button>
+</div>
+
 <!-- Frage -->
 
 <section id="qustSec">
@@ -16,22 +23,33 @@
 <section id="answSec">
 
 <div id="allover">
-    <div onmousedown="Answer1()" id="answBox1" class="AnswBox AnswBoxL">
-        <p id="para1" class="paragrahQuiz"> A: 1.000.000 </p>
-    </div>
+    <div class="side-with-options">
+        <div id="answBox1" class="AnswBox AnswBoxL">
+            <button id="op1" class="paragrahQuiz option"> A: 1.000.000 </button>
+        </div>
 
-    <div onmousedown="Answer2()" id="answBox2" class="AnswBox AnswBoxR">
-        <p id="para2" class="paragrahQuiz"> B: 10.000 </p>
+        <div id="answBox3" class="AnswBox AnswBoxL">
+            <button id="op3" class="paragrahQuiz option"> C: 0 </button>
+        </div>
     </div>
+    
+    <div class="side-with-options">
+        <div id="answBox2" class="AnswBox AnswBoxR">
+            <button id="op2" class="paragrahQuiz option"> B: 10.000 </button>
+        </div>
 
-    <div onmousedown="Answer3()"id="answBox3" class="AnswBox AnswBoxL">
-        <p id="para3" class="paragrahQuiz"> C: 0 </p>
-    </div>
-
-    <div onmousedown="Answer4()" id="answBox4" class="AnswBox AnswBoxR">
-        <p id="para4" class="paragrahQuiz"> D: 100.000 </p>
+        <div id="answBox4" class="AnswBox AnswBoxR">
+            <button id="op4" class="paragrahQuiz option"> D: 100.000 </button>
+        </div>
     </div>
 </div>
+
+<div class="result"></div>
+
+        <div class="navigation">
+            <button class="next">Nächste</button>
+        </div>
+
 </section>
 
 <script src="{{  url_for('static', filename='quiz_js.js')}}"></script>

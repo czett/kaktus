@@ -69,14 +69,22 @@
             <a id="shopPress" class="link">Shop</a>
             <a id="discoverPress" class="link">Entdecken</a>
             <a id="supportPress" class="link">Kakteen-Support</a>
-            <i onmousedown="ausklappen()" id="bell" class="fa-solid fa-bell"></i>
+            <div class="bell-wrap">
+                <i onmousedown="ausklappen()" id="bell" class="fa-solid fa-bell"></i>
+                {% if data["notifications"] is defined and data["notifications"]|length > 0 %}
+                    <div class="bell-new-dot"></div>
+                {% endif %}
+            </div>
 
            
             {% if logged_in == True %}
                 <a href="/profil">
                     <div class="profile-icon">
                         <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
-                        {% if data["pimg"] != None %}
+                        {% if own_pimg is defined %}
+                            {% set pimg_url = 'img/' ~ own_pimg ~ '.jpg' %}
+                            <img src="{{  url_for('static', filename=pimg_url)  }}" alt="" class="profile-image">
+                        {% elif data["pimg"] != None %}
                             {% set pimg_url = 'img/' ~ data["pimg"] ~ '.jpg' %}
                             <img src="{{  url_for('static', filename=pimg_url)  }}" alt="" class="profile-image">
                         {% else %}
@@ -170,7 +178,16 @@
             {% for i in range(666) %}
                 <i style="font-size: 25px; letter-spacing: 20px; line-height: 45px; ;" class="kaktus-icon ki-{{  i  }}">&#127797;</i>
             {% endfor %}
+        
         </div>
+
+        <div class="slideshow">
+        <div class="slideshow-container">
+                </div>
+
+        </div>
+
+        
     <!---/Notifikation alert\-------------------------------------------------->  
 
         <div id="content">
@@ -178,7 +195,10 @@
                 {% for name in data["notifications"] %}
                     <div class="contentBoxText">
                         <p class="contentBoxText2">{{  name  }} hat dich als Freund hinzugefügt!
-                            <br> <p class="contentBoxText3"> Möchtest du die Anfrage annehmen? </p>
+                            <br> <p class="contentBoxText3"> Möchtest du die Anfrage annehmen? 
+                                <i class="fa-solid fa-circle-xmark decline-icon" onmousedown="newUrl('/freq/decline/{{  name  }}')"></i>
+                                <i class="fa-solid fa-circle-check accept-icon" onmousedown="newUrl('/freq/accept/{{  name  }}')"></i>
+                            </p>
                         </p>
                     </div>
                 {% endfor %}
@@ -188,6 +208,44 @@
 
     <!---/Notifikation alert [end]\-------------------------------------------->
 
+    {% if data["username"] is defined and "struppi" in data["username"].lower() %}
+        <style>
+            body, html{
+                filter: blur(1px);
+                animation-name: painintheass;
+                animation-duration: 150s;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes painintheass{
+                0%{
+                    background: red;
+                    transform: rotate(0deg);
+                    filter: blur(1px) saturation(100%);
+                }
+                25%{
+                    background: blue;
+                    transform: rotate(90deg);
+                    filter: blur(5px) saturation(200%);
+                }
+                50%{
+                    background: yellow;
+                    transform: rotate(1800deg);
+                    filter: blur(10px) saturation(300%);
+                }
+                75%{
+                    background: green;
+                    transform: rotate(2700deg);
+                    filter: blur(50px) saturation(400%);
+                }
+                100%{
+                    background: purple;
+                    transform: rotate(360deg);
+                    filter: blur(100px) saturation(500%);
+                }
+            }
+        </style>
+    {% endif %}
 
         {% block content %}
         {% endblock %}
@@ -195,6 +253,7 @@
     
     <script src="{{  url_for('static', filename='script.js')  }}"></script>
     <script src="{{  url_for('static', filename='animation_js.js')  }}"></script>
+
 
 </body>
 </html>

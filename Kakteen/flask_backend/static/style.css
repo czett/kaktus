@@ -87,6 +87,9 @@ body, html{
     letter-spacing: 0.1em;
     text-decoration: none;
     font-size: 48px;
+    background-color: var(--bg);
+    box-shadow: 0px 0px 10px 5px var(--bg);
+    display: inline-block;
 }
 
 .such-form-items{
@@ -1232,14 +1235,11 @@ display: inline-block;
 }
 
 .img-w {
-
-    background-image: url(img/kappe2.png);
-    background-size: 280%;
-    background-position: 54% 50%;
-    text-align: right;
-    color: transparent;
-    overflow: hidden;
+    float: right;
+    width: 3vw;
+    height: 3vw;
     border: 2px solid var(--ac);
+<<<<<<< HEAD
     border-radius: 10vw;
     border-width: 50%;
    
@@ -1251,17 +1251,17 @@ display: inline-block;
     top: 90%;
     left: 92%;
     transform: translate(-50%, -890%);
+=======
+    border-radius: 50%;
+>>>>>>> b0dad20ce8621924eddf84ea25f56210c4a93425
 }
 
 .img-w2 {
-
-    background-image: url(img/kaktuseis2.png);
-    background-size: 230%;
-    background-position: 50% 45%;
-    text-align: right;
-    color: transparent;
-    overflow: hidden;
+    float: right;
+    width: 3vw;
+    height: 3vw;
     border: 2px solid var(--ac);
+<<<<<<< HEAD
     border-radius: 10vw;
     border-width: 50%;
    
@@ -1274,6 +1274,9 @@ display: inline-block;
     left: 92%;
     transform: translate(-50%, -740%);
     
+=======
+    border-radius: 50%;
+>>>>>>> b0dad20ce8621924eddf84ea25f56210c4a93425
 }
 
 
@@ -1541,11 +1544,30 @@ transform: translate(0%, -45%);
 
 #bell {
     transition: 150ms;
+    font-size: 20px;
 }
 
 #bell:hover {
     cursor: pointer;
     opacity: 0.8;
+}
+
+.bell-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.bell-new-dot{
+    width: 0.5vw;
+    height: 0.5vw;
+    border-radius: 50%;
+    background-color: var(--ac);
+    position: absolute;
+    top: 70%;
+    left: 80%;
+    transform: translate(-50%, -50%);
 }
 
 #content {
@@ -1635,6 +1657,16 @@ transform: translate(0%, -45%);
     }
 }
 
+.decline-icon{
+    color: #DB0000;
+    font-size: 16px;
+}
+
+.accept-icon{
+    color: var(--ac);
+    font-size: 16px;
+}
+
 input[type="radio"]{
     visibility: hidden;
 }
@@ -1686,6 +1718,14 @@ input[type="radio"]{
 }
 
 /*==============/Notifikation alert [end]\==============*/
+
+
+
+
+
+
+
+
 
 /* Profilseite anfang */
 
@@ -2019,6 +2059,8 @@ input[type="radio"]{
     position: absolute;
     left: 100%;
     transform: translate(-152%, -0%);
+    background-color: var(--bg);
+    box-shadow: 0px 0 10px 2px greenyellow;
 }
 
 #question {
@@ -2030,8 +2072,15 @@ input[type="radio"]{
 /* Fragen */
 
 #allover {
-    left: 100%;
-    transform: translate(5%, 0);
+    display: flex;
+    width: calc(100vw - 2 * var(--lrpad));
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+#allover .side-with-options{
+    width: 45%;
 }
 
 #answSec {
@@ -2044,12 +2093,14 @@ input[type="radio"]{
     display: inline-flex;
     margin: 0;
     margin-top: 5vh;
-    width: 40vw;
+    width: calc(100% * 1);
     height: 5vh;
     border: 2px solid var(--ac);
     border-radius: 2vh;
     align-items: center;
     cursor: pointer;
+    background-color: var(--bg);
+    box-shadow: 0px 0 5px 1px greenyellow;
 }
 
 .AnswBox:hover {
@@ -2065,9 +2116,72 @@ input[type="radio"]{
 .paragrahQuiz {
     align-items: center;
     margin: 0;
-    margin-left: 1.5vw;
     display: block;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    width: 100%;
+    background-color: transparent;
+    cursor: pointer;
 }
+
+.navigation {
+    display: inline-flex;
+    margin: 0;
+    margin-top: 5vh;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 30%);
+}
+
+.result {
+    height: 1.5vh;
+    text-align: center;
+    margin-left: -5vw;
+    margin-top: 7vh;
+    color: #A0CE40;
+}
+
+.navigation button{
+    box-sizing: border-box;
+    display: block;
+    width: 40%;
+    margin: auto 0;
+}
+
+.next {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 1vh 0 1vh 0;
+    display: inline-flex;
+    margin: 0;
+    margin-top: 5vh;
+    width: auto;
+    height: auto;
+    border: 2px solid var(--ac);
+    border-radius: 2vh;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--bg);
+    box-shadow: 0px 0 3px 0.5px greenyellow;
+}
+
+.next:hover {
+    transition: 250ms;
+    transform: scale(1.1);
+}
+
 
 
 /*===============/Kaktus Quiz [ende]\===================*/

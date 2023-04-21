@@ -28,7 +28,7 @@
             <p class="id-tag">#{{  data["user_id"]  }}</p>
 
             {% if data["friends"] is defined and data["friends"]|length > 0 %}
-                <p class="freunde">{{  data["friends"]  }}</p>
+                <p class="freunde">Freunde: {{  data["friends"]|length  }}</p>
             {% else %}
                 <p class="freunde">Hat keine Freunde</p>
             {% endif %}
@@ -51,9 +51,11 @@
     </div>
 </div>
 
+{% if data["own_profile"] == True %}
 <a href="/warenkorb">
     <button class="button-p2">Mein Warenkorb</button>
 </a>
+{% endif %}
 
 {% if data["own_profile"] == True %}
     <div class="settings" id="settings">
