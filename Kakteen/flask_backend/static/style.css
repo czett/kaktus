@@ -1236,16 +1236,16 @@ display: inline-block;
 
 .img-w {
     float: right;
-    width: 3vw;
-    height: 3vw;
+    width: 7vh;
+    height: 7vh;
     border: 2px solid var(--ac);
     border-radius: 50%;
 }
 
 .img-w2 {
     float: right;
-    width: 3vw;
-    height: 3vw;
+    width: 7vh;
+    height: 7vh;
     border: 2px solid var(--ac);
     border-radius: 50%;
 }
