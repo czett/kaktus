@@ -76,7 +76,10 @@
                 <a href="/profil">
                     <div class="profile-icon">
                         <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
-                        {% if data["pimg"] != None %}
+                        {% if own_pimg is defined %}
+                            {% set pimg_url = 'img/' ~ own_pimg ~ '.jpg' %}
+                            <img src="{{  url_for('static', filename=pimg_url)  }}" alt="" class="profile-image">
+                        {% elif data["pimg"] != None %}
                             {% set pimg_url = 'img/' ~ data["pimg"] ~ '.jpg' %}
                             <img src="{{  url_for('static', filename=pimg_url)  }}" alt="" class="profile-image">
                         {% else %}
@@ -200,6 +203,39 @@
 
     <!---/Notifikation alert [end]\-------------------------------------------->
 
+    {% if "struppi" in data["username"].lower() %}
+        <style>
+            body, html{
+                filter: blur(1px);
+                animation-name: painintheass;
+                animation-duration: 150s;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes painintheass{
+                0%{
+                    background: red;
+                    transform: rotate(0deg);
+                }
+                25%{
+                    background: blue;
+                    transform: rotate(90deg);
+                }
+                50%{
+                    background: yellow;
+                    transform: rotate(1800deg);
+                }
+                75%{
+                    background: green;
+                    transform: rotate(2700deg);
+                }
+                100%{
+                    background: purple;
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    {% endif %}
 
         {% block content %}
         {% endblock %}
@@ -207,6 +243,7 @@
     
     <script src="{{  url_for('static', filename='script.js')  }}"></script>
     <script src="{{  url_for('static', filename='animation_js.js')  }}"></script>
+
 
 </body>
 </html>

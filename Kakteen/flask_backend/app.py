@@ -76,7 +76,11 @@ def support():
 @app.route("/profil")
 def profil():
 	check_if_logged_in()
-	session["data"]["own_profile"] = True
+	uid = session["data"]["user_id"]
+	pimg = funcs.find_in_coll(userdata, {"_id": uid})["pimg"]
+	friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
+
+	session["data"]["friends"] = friends
 	session.modified = True
 	return render_template("Profil.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
@@ -188,7 +192,7 @@ def anderesprofil(profil):
 	else:
 		profile_data = {"user_id": uid, "username": profil, "friends": user_ud["friends"], "pimg": user_ud["pimg"], "own_profile": False}
 
-	return render_template("Profil.html", data=profile_data, warnings=session["warnings"])
+	return render_template("Profil.html", data=profile_data, warnings=session["warnings"], own_pimg=session["data"]["pimg"], logged_in=session["logged_in"])
 
 @app.route("/delete-account")
 def delete_account():
