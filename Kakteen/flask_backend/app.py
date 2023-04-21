@@ -11,9 +11,20 @@ db = cluster["mrkaktus"]
 logreg = db["login"]
 userdata = db["userdata"]
 
+def fill_notification_box():
+	freqs = funcs.find_in_coll(userdata, {"_id": session["data"]["user_id"]})["friend_requests"]
+	
+	session["data"]["notifications"] = []
+
+	for req in freqs:
+		session["data"]["notifications"].append(req)
+		session.modified = True
+
 def check_if_logged_in():
 	try:
 		test = session["logged_in"]
+
+		fill_notification_box()
 	except:
 		session["logged_in"] = False
 		session["data"] = {}
@@ -139,7 +150,7 @@ def register():
 
 		session["data"] = {"user_id": uid, "username": un, "pimg": None, "friends": []}
 
-		funcs.add_entry(userdata, {"_id": uid, "friends": [], "pimg": None})
+		funcs.add_entry(userdata, {"_id": uid, "friends": [], "pimg": None, "friend_requests": []})
 
 		return redirect("/profil")
 	else:
@@ -198,6 +209,20 @@ def change_password():
 	logreg.update_one(query, newvals)
 
 	return redirect("/profil")
+
+@app.route("/freund-hinzufuegen/<profil>")
+def freund_hinzufuegen(profil):
+	uid = funcs.find_in_coll(logreg, {"username": profil})["_id"]
+	freqs = funcs.find_in_coll(userdata, {"_id": uid})["friend_requests"]
+
+	if str(session["data"]["username"]) not in freqs:
+		freqs.append(session["data"]["username"])
+
+		query = {"_id": uid}
+		newvals = {"$set": {"friend_requests": freqs}}
+		userdata.update_one(query, newvals)
+
+	return redirect(f"/profil/{profil}")
 
 @app.route("/logout")
 def logout():

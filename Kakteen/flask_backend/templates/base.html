@@ -166,47 +166,23 @@
     </style>
 
     <div class="content">
-
+        <div class="girlanden-icons">
+            {% for i in range(666) %}
+                <i style="font-size: 25px; letter-spacing: 20px; line-height: 45px; ;" class="kaktus-icon ki-{{  i  }}">&#127797;</i>
+            {% endfor %}
+        </div>
     <!---/Notifikation alert\-------------------------------------------------->  
 
         <div id="content">
-
-            <div class="contentBoxText">
-                <p class="contentBoxText2">_Place Holder_
-                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
-                </p>
-            </div>
-
-            <div class="contentBoxText">
-                <p class="contentBoxText2">_Place Holder_
-                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
-                </p>
-            </div>
-
-            <div class="contentBoxText">
-                <p class="contentBoxText2">_Place Holder_
-                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
-                </p>
-            </div>
-
-            <div class="contentBoxText">
-                <p class="contentBoxText2">_Place Holder_
-                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
-                </p>
-            </div>
-
-            <div class="contentBoxText">
-                <p class="contentBoxText2">_Place Holder_
-                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
-                </p>
-            </div>
-
-            <div class="contentBoxText">
-                <p class="contentBoxText2">_Place Holder_
-                    <br> <p class="contentBoxText3"> Hier könnte Ihre Werbung stehen </p>
-                </p>
-            </div>
-
+            {% if data["notifications"] is defined %}
+                {% for name in data["notifications"] %}
+                    <div class="contentBoxText">
+                        <p class="contentBoxText2">{{  name  }} hat dich als Freund hinzugefügt!
+                            <br> <p class="contentBoxText3"> Möchtest du die Anfrage annehmen? </p>
+                        </p>
+                    </div>
+                {% endfor %}
+            {% endif %}
         </div>
 
 
