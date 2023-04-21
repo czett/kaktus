@@ -315,6 +315,8 @@ body, html{
 .overview .icons .icon .icon-desc{
     font-size: 16px;
     line-height: 1.75em;
+    background-color: var(--bg);
+    box-shadow: 0px 0px 10px 5px var(--bg);
 }
 
 .overview .icons .icon .icon-circle{
@@ -562,6 +564,7 @@ display: inline-block;
     box-sizing: border-box; 
     box-sizing: border-box;
     margin-left: 0.4vw;
+    
 }
 
  .card-s:hover{
@@ -570,12 +573,26 @@ display: inline-block;
     
 } 
 
+.text-s{
+
+    background-color: var(--bg);
+    box-shadow: 0px 0px 10px 5px var(--bg);
+    border-radius: 5vw;
+}
+
+.card-title-s{
+
+    background-color: var(--bg);
+    box-shadow: 0px 0px 10px 5px var(--bg);
+    border-radius: 5vw;
+}
+
 
  #two-s{
     background-image: url(img/kaktuseis2.png);
     background-position: 50% 45%;
     background-size: 250%;
-    
+
 } 
 
 #three-s{
@@ -600,6 +617,7 @@ display: inline-block;
     background-image: url(img/kaktuseis\ im\ becher.png);
     background-position: 50% 50%;
     background-size: 80%;
+ 
     
 
 
@@ -609,7 +627,7 @@ display: inline-block;
     background-image: url(img/kissen.jpg);
     background-position: 0% 50%;
     background-size: 98%;
-    
+  
 
 
 } 
@@ -618,7 +636,7 @@ display: inline-block;
     background-image: url(img/neon.webp);
     background-position: 45% 45%;
     background-size: 110%;
-    
+  
     
 }
 
@@ -691,7 +709,7 @@ display: inline-block;
     text-align:center;
     font-size: 60px;
     letter-spacing: 0.5px;
-    border-radius: 50%;
+    border-radius: 1vw;
     border:dotted;
     border-color: rgb(255, 99, 125);
     overflow: visible;
@@ -963,12 +981,19 @@ display: inline-block;
 
 font-size: 40px;
 color: green;
+background-color: var(--bg);
+box-shadow: 0px 0px 10px 5px var(--bg);
+display: inline-block;
+
 
 }
 
 .schrift2 {
 
 font-size: 20px;
+background-color: var(--bg);
+box-shadow: 0px 0px 10px 5px var(--bg);
+display: inline-block;
 
 }
 
@@ -977,6 +1002,9 @@ font-size: 20px;
 font-size: 20px;
 text-decoration: underline;
 text-decoration-color: #EB6E6E;
+background-color: var(--bg);
+box-shadow: 0px 0px 10px 5px var(--bg);
+display: inline-block;
 }
 
 .tel {
@@ -986,6 +1014,9 @@ text-decoration-color: #EB6E6E;
     border-color: #A0CE40;
     border-radius: 5%;
     border-width: 3px;
+    display: inline-block;
+    background-color: var(--bg);
+    box-shadow: 0px 0px 10px 5px var(--bg);
     display: inline-block;
 }
 
@@ -1374,13 +1405,14 @@ input[type="radio"]{
 }
 
 .top-leiste .info-leiste{
-    backdrop-filter: brightness(1.75);
+    backdrop-filter: brightness(0);
     box-sizing: border-box;
     border-radius: calc(var(--lrpad) * 0.5);
     display: flex;
     width: 40vw;
     overflow: hidden;
     position: relative;
+    background-color: #303030;
 }
 
 .top-leiste .info-leiste div{
@@ -1749,6 +1781,16 @@ input[type="radio"]{
 
 /*===============/Kaktus Quiz [ende]\===================*/
 
+/* komische icons girlande */
+
+.girlanden-icons{
+    position: absolute;
+    width: calc(100vw - 2 * var(--lrpad));
+    z-index: -10;
+    opacity: 0.1;
+}
+
+/* girlENDE */
 /*NICHT MEHR HIER DRUNTER ÄNDERN!!!!!!*/
 
 /* MOBILE YAY */
