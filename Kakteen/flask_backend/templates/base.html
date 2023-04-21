@@ -76,7 +76,7 @@
                 <a href="/profil">
                     <div class="profile-icon">
                         <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
-                        {% if pimg != None %}
+                        {% if data["pimg"] != None %}
                             {% set pimg_url = 'img/' ~ data["pimg"] ~ '.jpg' %}
                             <img src="{{  url_for('static', filename=pimg_url)  }}" alt="" class="profile-image">
                         {% else %}
@@ -95,7 +95,7 @@
                         <input type="text" name="username" placeholder="Benutzername" required>
                         <input type="password" name="password" placeholder="Passwort" required>
                         
-                        {% if warnings["logreg"] is defined and warning["logreg"][0] == "e" and warning["logreg"][1] == "l" %}
+                        {% if warnings["logreg"] is defined and warnings["logreg"][0] == "e" and warnings["logreg"][1] == "l" %}
                         
                         <div class="logreg-warning">
                             <i class="fa-solid fa-triangle-exclamation"></i>
@@ -107,7 +107,7 @@
                             }
                         </style>
 
-                        {% elif warnings["logreg"] is defined and warning["logreg"][0] == "p" and warning["logreg"][1] == "l" %}
+                        {% elif warnings["logreg"] is defined and warnings["logreg"][0] == "p" and warnings["logreg"][1] == "l" %}
                         
                         <div class="logreg-warning">
                             <i class="fa-solid fa-triangle-exclamation"></i>
@@ -129,7 +129,7 @@
                         <input type="text" name="username" placeholder="Benutzername" required>
                         <input type="password" name="password" placeholder="Passwort" required>
                         
-                        {% if warnings["logreg"] is defined and warning["logreg"][0] == "e" and warning["logreg"][1] == "r" %}
+                        {% if warnings["logreg"] is defined and warnings["logreg"][0] == "e" and warnings["logreg"][1] == "r" %}
                         
                         <div class="logreg-warning">
                             <i class="fa-solid fa-triangle-exclamation"></i>
