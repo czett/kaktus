@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, session, request
+from flask import Flask, render_template, redirect, session, request, jsonify
 import funcs, pymongo, certifi
 from pymongo import MongoClient
 
@@ -264,6 +264,10 @@ def handle_freq(action, person):
 def logout():
 	session.clear()
 	return redirect("/")
+
+@app.route("/ip")
+def ip():
+	return jsonify({'ip': request.remote_addr}), 200
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)
