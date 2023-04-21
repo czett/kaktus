@@ -38,7 +38,8 @@
             {% if data["own_profile"] == True %}
             <p class="logout" onmousedown="newUrl('/logout')">Logout</p>
             {% else %}
-            <button class="add"><i class="fa-solid fa-user-group"></i> Freund hinzufügen</button>
+            {% set uname = data["username"] %}
+            <button class="add" onmousedown="newUrl('/freund-hinzufuegen/{{  uname  }}')"><i class="fa-solid fa-user-group"></i> Freund hinzufügen</button>
             <button class="report"><i class="fa-solid fa-flag"></i> Melden</button>
             {% endif %}
         </div>
