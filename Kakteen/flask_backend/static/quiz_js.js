@@ -33,20 +33,20 @@ const Questions = [{
 {
     id: 3,
     q: "Wie viel Wasser braucht ein Kaktus in einem Monat um zu überleben?",
-    a: [{ text: "", isCorrect: false },
-        { text: "", isCorrect: true },
-        { text: "", isCorrect: false },
-        { text: "", isCorrect: false }
+    a: [{ text: "2 mal gießen", isCorrect: false },
+        { text: "1 mal gießen", isCorrect: true },
+        { text: "4 mal gießen", isCorrect: false },
+        { text: "3 mal gießen", isCorrect: false }
     ]
 
 },
 {
     id: 4,
-    q: "",
-    a: [{ text: "", isCorrect: true },
-        { text: "", isCorrect: false },
-        { text: "", isCorrect: false },
-        { text: "", isCorrect: false }
+    q: "Zu welcher Pflanzenart gehören Kakteen",
+    a: [{ text: "Sukkulenten", isCorrect: true },
+        { text: "Kürbisgewächs", isCorrect: false },
+        { text: "Knöterichgewächse", isCorrect: false },
+        { text: "Liliengewächse", isCorrect: false }
     ]
 
 },
@@ -62,6 +62,9 @@ const Questions = [{
 },
 
 ]
+
+// points
+var points = 0;
 
 // Set start
 var start = true;
@@ -149,6 +152,11 @@ op1.addEventListener("click", () => {
             div2.style.border = "2px solid #A0CE40";
             div3.style.border = "2px solid #A0CE40";
             div4.style.border = "2px solid #A0CE40";
+
+            div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
     
             result[0].innerHTML = "";
     
@@ -159,6 +167,7 @@ op1.addEventListener("click", () => {
         result[0].style.color = "red";
 
         div1.style.border = "2px solid red";
+        div1.style.boxShadow = "0px 0 3px 0.5px red";
 
         next.addEventListener("click", () => {
             
@@ -172,6 +181,11 @@ op1.addEventListener("click", () => {
         div2.style.border = "2px solid #A0CE40";
         div3.style.border = "2px solid #A0CE40";
         div4.style.border = "2px solid #A0CE40";
+
+        div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+        div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+        div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+        div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
 
         result[0].innerHTML = "";
 
@@ -219,6 +233,11 @@ op2.addEventListener("click", () => {
             div2.style.border = "2px solid #A0CE40";
             div3.style.border = "2px solid #A0CE40";
             div4.style.border = "2px solid #A0CE40";
+
+            div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
     
             result[0].innerHTML = "";
     
@@ -229,6 +248,8 @@ op2.addEventListener("click", () => {
         result[0].style.color = "red";
 
         div2.style.border = "2px solid red";
+
+        div2.style.boxShadow = "0px 0 3px 0.5px red";
 
         next.addEventListener("click", () => {
             
@@ -242,6 +263,11 @@ op2.addEventListener("click", () => {
         div2.style.border = "2px solid #A0CE40";
         div3.style.border = "2px solid #A0CE40";
         div4.style.border = "2px solid #A0CE40";
+
+        div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+        div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+        div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+        div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
 
         result[0].innerHTML = "";
 
@@ -300,6 +326,8 @@ op3.addEventListener("click", () => {
 
         div3.style.border = "2px solid red";
 
+        div3.style.boxShadow = "0px 0 3px 0.5px red";
+
         next.addEventListener("click", () => {
             
             
@@ -312,6 +340,11 @@ op3.addEventListener("click", () => {
         div2.style.border = "2px solid #A0CE40";
         div3.style.border = "2px solid #A0CE40";
         div4.style.border = "2px solid #A0CE40";
+
+        div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+        div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+        div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+        div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
 
         result[0].innerHTML = "";
 
@@ -359,6 +392,11 @@ op4.addEventListener("click", () => {
             div2.style.border = "2px solid #A0CE40";
             div3.style.border = "2px solid #A0CE40";
             div4.style.border = "2px solid #A0CE40";
+
+            div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
     
             result[0].innerHTML = "";
     
@@ -369,6 +407,8 @@ op4.addEventListener("click", () => {
         result[0].style.color = "red";
 
         div4.style.border = "2px solid red";
+
+        div4.style.boxShadow = "0px 0 3px 0.5px red";
 
         next.addEventListener("click", () => {
             
@@ -382,6 +422,11 @@ op4.addEventListener("click", () => {
         div2.style.border = "2px solid #A0CE40";
         div3.style.border = "2px solid #A0CE40";
         div4.style.border = "2px solid #A0CE40";
+
+        div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+        div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+        div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+        div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
 
         result[0].innerHTML = "";
 
