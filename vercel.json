@@ -13,3 +13,18 @@
         }
     ]
 }
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "Kakteen/flask_backend/app.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "Kakteen/flask_backend/app.py"
+        }
+    ]
+}
