@@ -12,9 +12,13 @@
 </div>
 
 <div class="new-post-form">
+    <h2 style="margin-bottom: 2.5vw;">Neuen Beitrag erstellen</h2>
     <form action="/forum/neuer-beitrag" enctype="multipart/form-data" method="post">
-        <input type="text">
+        <input type="text" placeholder="Titel vom Post">
+        <textarea name="description" placeholder="Beschreibung/Fragestellung"></textarea>
+        <button type="submit">Erstellen</button>
     </form>
+    .
 </div>
 
 <div class="new-posts-container">
