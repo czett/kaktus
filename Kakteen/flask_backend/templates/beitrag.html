@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="top-forum-bar">
+    <div class="forum-heading">
+        <h2>Forum</h2>
+    </div>
+</div>
+
+<div class="post-container">
+    {% set postid = post["_id"] %}
+    <div class="post post-new-block" onmousedown="newUrl('forum/beitrag/{{  postid  }}')">
+        <h3 class="post-title">{{  post["title"]  }}
+            <p class="post-creator">{{  post["creator"]  }}, am {{  post["date"].strftime("%d/%m/%Y %H:%M:%S")  }}</p>
+        </h3>
+        <p class="post-question">{{  post["desc"]  }}</p>
+        <div class="post-side-icons">
+            {% if post["hot"] == True%}
+                <p class="hot-post"><i class="fa-solid fa-fire-flame-curved"></i> heißer Beitrag!</p>
+            {% else %}
+                <p class="cold-post"><i class="fa-solid fa-snowflake"></i> kalter Beitrag!</p>
+            {% endif %}
+            <p class="post-views"><i class="fa-regular fa-eye"></i> {{  post["clicks"]  }}</p>
+        </div>
+
+        <div class="post-interaction-options">
+            <div class="like-post" onmousedown="newUrl('/forum/beitrag-liken/{{  postid  }}')">
+                
+                {% if data["user_id"] in post["likes"] %}
+                    <i class="fa-solid fa-heart liked-heart" style="color: #DB0000;"></i>
+                {% else %}
+                    <i class="fa-regular fa-heart"></i>
+                {% endif %}
+                <div class="interaction-option-count">
+                    <p class="count">{{  post["likes"]|length  }}</p>
+                </div>
+            </div>
+            <div class="share-post">
+                <i class="fa-regular fa-share-from-square"></i>
+                <div class="interaction-option-count">
+                    <p class="count">{{  post["shares"]  }}</p>
+                </div>
+            </div>
+            <div class="report-post">
+                <i class="fa-regular fa-flag"></i>
+            </div>
+            {% if data["username"] == post["creator"] %}
+                <div class="delete-post" onmousedown="newUrl('/forum/beitrag-loeschen/{{  postid  }}')">
+                    <i class="fa-regular fa-trash-can"></i>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="post-new-block add-comment">
+        <form action="/forum/beitrag/{{  postid  }}/kommentar-hinzufuegen" method="post" enctype="multipart/form-data">
+            <textarea name="comment" id="comment" required placeholder="Kommentar hinzufügen"></textarea>
+            <button type="submit">Kommentieren</button>
+        </form>
+    </div>
+
+    {% if post["comments"]|length > 0 %}
+    
+    <div class="comments post-new-block">
+        <h2>Kommentare</h2>
+        {% for comment in post["comments"] %}
+            <div class="comment">
+                <div class="comment-self">
+                    <p class="username-comment">{{  comment["creator"]  }}</p>
+                    <p class="comment-text">{{  comment["text"]  }}</p>
+                    {% set comment_id = comment["_id"] %}
+
+                    {% if comment["creator_id"] == data["user_id"] %}
+                    <i class="fa-regular fa-trash-can comment-like-icon" onmousedown="newUrl('/forum/beitrag/{{  postid  }}/kommentar-loeschen/{{  comment_id  }}')"></i>
+                    {% else %}
+                    <i class="fa-regular fa-heart comment-like-icon" onmousedown="newUrl('/forum/beitrag/{{  postid  }}/kommentar-liken/{{  comment_id  }}')"></i>
+                    {% endif %}
+                </div>
+                <!-- <div class="replies">
+                    <div class="reply">
+                        <p class="username-comment">Kamelhändler</p>
+                        <p class="comment-reply">Kein Hate</p>
+                        <i class="fa-regular fa-heart comment-like-icon"></i>
+                    </div>
+                </div> -->
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}
