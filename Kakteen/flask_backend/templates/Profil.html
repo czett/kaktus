@@ -22,13 +22,29 @@
         {% endif %}
     </div>
 
+    {% if data["friends"] is defined and data["friends"]|length > 0 %}
+        <div class="flp">
+            <div class="flp-heading">
+                <p>Freunde von {{  data["username"]  }}</p>
+                <div class="close-friends-tab" onmousedown="toggleFriendList()">
+                    <i class="fa-solid fa-mug-hot"></i>
+                </div>
+            </div>
+            {% for friend in data["friends"] %}
+            <div class="flp-friend" onmousedown="newUrl('/profil/{{  friend  }}')">
+                <p class="friend">{{  friend  }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     <div class="info-leiste">
         <div class="info">
             <p class="name">{{  data["username"]  }}</p>
             <p class="id-tag">#{{  data["user_id"]  }}</p>
 
             {% if data["friends"] is defined and data["friends"]|length > 0 %}
-                <p class="freunde">Freunde: {{  data["friends"]|length  }}</p>
+                <p class="freunde" onmousedown="toggleFriendList()">Freunde: {{  data["friends"]|length  }}</p>
             {% else %}
                 <p class="freunde">Hat keine Freunde</p>
             {% endif %}

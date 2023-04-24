@@ -139,19 +139,7 @@ body, html{
     border: 2px solid var(--ac);
 }
 
-#shopPress {
-    cursor: pointer;
-}
-
-#homePress {
-    cursor: pointer;
-}
-
-#discoverPress {
-    cursor: pointer;
-}
-
-#supportPress {
+.nav .link{
     cursor: pointer;
 }
 
@@ -2050,7 +2038,7 @@ input[type="radio"]{
 
 #qustBox {
     margin: 0;
-    margin-top: 5vh;
+    margin-top: 7vh;
     width: 50vw;
     height: 30vh;
     border: 2px solid var(--ac);
@@ -2083,7 +2071,7 @@ input[type="radio"]{
 }
 
 #answSec {
-    margin: 0;
+    margin: 2vh 0;
     width: 100vw;
     height: 43vh;
 }
@@ -2181,7 +2169,60 @@ input[type="radio"]{
     transform: scale(1.1);
 }
 
+/* friends list popup */
 
+/* wehe du kopierst das adrian */
+
+.flp{ /*friends list popup*/
+    position: absolute;
+    width: 25vw;
+    max-height: 25vw;
+    border-radius: 2vh;
+    background-color: var(--bg);
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    border: 1px solid var(--ac);
+    overflow: hidden;
+    overflow-y: scroll;
+    visibility: hidden;
+}
+
+.flp .flp-heading{
+    width: 100%;
+    box-sizing: border-box;
+    padding: .5vw 0;
+    border-bottom: 1px solid var(--ac);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.flp .flp-friend{
+    padding: 0.5vw 2vw;
+    transition: 200ms;
+}
+
+.flp .flp-friend:hover{
+    backdrop-filter: brightness(1.25);
+}
+
+.flp .close-friends-tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3vw;
+    height: 3vw;
+    position: absolute;
+    top: 5%;
+    left: 95%;
+    transform: translate(-50%, -25%);
+}
+
+/* flp ende */
 
 /*===============/Kaktus Quiz [ende]\===================*/
 
@@ -2195,6 +2236,108 @@ input[type="radio"]{
 }
 
 /* girlENDE */
+
+/* forum anfang */
+
+.new-posts-container{
+    display: block;
+    background-color: var(--bg);
+    padding: 0;
+    margin: 0;
+    border-radius: 2vh;
+    overflow: hidden;
+    border: 1px solid var(--ac);
+    position: relative;
+}
+
+.new-posts-container .post-preview{
+    padding: calc(0.25 * var(--lrpad)) var(--lrpad) calc(0.66 * var(--lrpad)) var(--lrpad);
+    transition: 175ms;
+    position: relative;
+}
+
+.new-posts-container .post-preview:hover{
+    backdrop-filter: brightness(1.2);
+}
+
+.new-posts-container .post-preview:not(:last-of-type){
+    border-bottom: 1px solid var(--ac);
+}
+
+.new-posts-container .post-preview .post-title{
+    font-size: 2.5vh;
+}
+
+.new-posts-container .post-preview .post-creator{
+    font-size: 1.25vh;
+    line-height: 1.25vh;
+    font-weight: 400;
+}
+
+.new-posts-container .post-preview .post-question{
+    font-size: 1.75vh;
+    line-height: 2.75vh;
+}
+
+.new-posts-container .post-preview .post-views{
+    font-size: 1.75vh;
+    position: absolute;
+    top: 5%;
+    left: 95%;
+    transform: translateY(50%);
+}
+
+.new-posts-container .post-preview .post-interaction-options div:not([class="interaction-option-count"]){
+    position: relative;
+    transition: 200ms;
+}
+
+.new-posts-container .post-preview .post-interaction-options div:not([class="interaction-option-count"]):hover{
+    transform: scale(1.1);
+}
+
+.new-posts-container .post-preview .post-interaction-options{
+    display: flex;
+    width: 12.5%;
+    justify-content: space-between;
+    margin-top: 1.5vw;
+}
+
+.new-posts-container .post-preview .post-interaction-options i{
+    font-size: 2.25vh;
+    transition: 175ms;
+}
+
+.new-posts-container .post-preview .post-interaction-options .like-post i:hover{
+    color: #DB0000;
+}
+
+.new-posts-container .post-preview .post-interaction-options .share-post i:hover{
+    color: #4795D6;
+}
+
+.new-posts-container .post-preview .post-interaction-options .comment-post i:hover{
+    color: var(--ac);
+}
+
+.new-posts-container .post-preview .post-interaction-options .report-post i:hover{
+    color: #DB0000;
+}
+
+.new-posts-container .post-preview .post-interaction-options .interaction-option-count{
+    position: absolute;
+    top: 100%;
+    left: 130%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.new-posts-container .post-preview .post-interaction-options .interaction-option-count p{
+    font-size: 1vh;
+}
+
+/* forum ende */
+
 /*NICHT MEHR HIER DRUNTER ÄNDERN!!!!!!*/
 
 /* MOBILE YAY */

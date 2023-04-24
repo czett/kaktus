@@ -197,6 +197,14 @@ def anderesprofil(profil):
 	uid = funcs.find_in_coll(logreg, {"username": profil})["_id"]
 	user_ud = funcs.find_in_coll(userdata, {"_id": uid})
 
+	usersfriends = funcs.find_in_coll(userdata, {"_id": funcs.find_in_coll(logreg, {"username": profil})["_id"]})["friends"]
+
+	for friend in usersfriends:
+		if funcs.find_in_coll(logreg, {"username": friend}) == None:
+			usersfriends.remove(friend)
+	
+	userdata.update_one({"_id": str(funcs.find_in_coll(logreg, {"username": profil})["_id"])}, {"$set": {"friends": usersfriends}})
+
 	if session["logged_in"] == True and session["data"]["user_id"] == uid:
 		profile_data = {"user_id": uid, "username": profil, "friends": user_ud["friends"], "pimg": user_ud["pimg"], "own_profile": True}
 	else:
@@ -246,6 +254,7 @@ def handle_freq(action, person):
 	friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
 
 	freqs.remove(person)
+	userdata.update_one(funcs.find_in_coll(userdata, {"_id": uid}), {"$set": {"friend_requests": freqs}})
 
 	if action == "accept" and str(person) not in friends:
 		friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
@@ -262,22 +271,35 @@ def handle_freq(action, person):
 		newvals = {"$set": {"friends": friends}}
 		userdata.update_one(query, newvals)
 
-	session["data"]["notifications"].remove(person)
+	try:
+		session["data"]["notifications"].remove(person)
+	except:
+		pass
+
 	session["data"]["friends"] = friends
 	session.modified = True
 
 	return redirect(f"/profil")
-
-	return str(f"{action}, {person}")
 
 @app.route("/logout")
 def logout():
 	session.clear()
 	return redirect("/")
 
-@app.route("/ip")
-def ip():
-	return jsonify({'ip': request.remote_addr}), 200
+@app.route("/baukasten")
+def kaubasten():
+	check_if_logged_in()
+	return render_template("Kaktus_baukasten.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
+@app.route("/snake")
+def snake():
+	check_if_logged_in()
+	return render_template("startspiel.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
+@app.route("/forum")
+def forum():
+	check_if_logged_in()
+	return render_template("forum.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)
