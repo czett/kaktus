@@ -292,7 +292,7 @@ def kaubasten():
 
 @app.route("/forum")
 def forum():
-	return "forum"
+	return render_template("forum.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)

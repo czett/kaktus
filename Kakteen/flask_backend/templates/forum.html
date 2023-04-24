@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="new-posts-container">
+    <div class="post-preview">
+        <h3 class="post-title">Ich mag Kakteen</h3>
+        <p class="post-creator">MrOger</p>
+        <p class="clicks">34</p>
+
+        <div class="post-interaction-options">
+            <div class="like-post">
+                <i class="fa-regular fa-heart"></i>
+            </div>
+            <div class="comment-post">
+                <i class="fa-regular fa-message"></i>
+            </div>
+            <div class="share-post">
+                <i class="fa-regular fa-share-from-square"></i>
+            </div>
+            <div class="report-post">
+                <i class="fa-regular fa-flag"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
