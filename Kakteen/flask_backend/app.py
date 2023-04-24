@@ -286,9 +286,9 @@ def logout():
 	session.clear()
 	return redirect("/")
 
-@app.route("/ip")
-def ip():
-	return jsonify({'ip': request.remote_addr}), 200
+@app.route("/forum")
+def forum():
+	return "forum"
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)
