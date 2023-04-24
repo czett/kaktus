@@ -2175,31 +2175,55 @@ input[type="radio"]{
 
 #navKitDiv {
     margin: 0;
-    width: 13vw;
+    width: 10vw;
     height: 89.9vh;
+    overflow-x: hidden;
     overflow-y: scroll;
     position: fixed;
     background-color: var(--bg);
     border: 1px solid var(--ac);
     border-radius: 2vh;
     margin-left: -1.5vw;
-    overflow: visible;
-    padding: 1vw;
-    box-sizing: border-box;
 }
 #navKitDiv::-webkit-scrollbar {
     display: none;
 }
 
+.KitHeadline {
+    margin-top: 1vh;
+    text-align: center;
+    padding-bottom: 0.5vh;
+    border-bottom: 1px solid var(--ac);
+    border-radius: 5%;
+}
+
 .objKit {
     margin: 0 auto 3vh auto;
-    width: 10vw;
-    height: 10vh;
+    width: 7vw;
+    height: 7vw;
+    cursor: pointer;
+    transition: 150ms;
+    opacity: 0.9;
+}
+.objKit:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.ColorSelecter {
+    background-color: var(--bg);
+    z-index: 100;
+}
+
+.KitImg {
+    width: 7vw;
+    height: 7vw;
+    border-radius: 15%;
 }
 
 #mainDiv {
     margin: 0;
-    margin-left: 12vw;
+    margin-left: 11vw;
     height: 88.2vh;
 }
 
