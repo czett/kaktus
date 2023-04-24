@@ -2171,6 +2171,18 @@ input[type="radio"]{
 
 /*===============/Kaktus Quiz [ende]\===================*/
 
+/*===============/Kaktus Baukasten\===================*/
+
+#navKitDiv {
+    width: 10vw;
+    height: 100vh;
+    overflow-y: scroll;
+    position: fixed;
+    background-color: var(--bg);
+}
+
+/*===============/Kaktus Baukasten [ende]\============*/
+
 /* friends list popup */
 
 /* wehe du kopierst das adrian */
