@@ -233,6 +233,22 @@ function imgHover3(){
 
 // Shop System Anfang
 
-
+// adrian dein shop ist schei**e
 
 // Shop System Ende
+
+// friends list popup
+
+var friend_list_vis = false;
+
+function toggleFriendList(){
+	if (friend_list_vis){
+		document.querySelector(".flp").style.visibility = "hidden";
+		friend_list_vis = false;
+	}else{
+		document.querySelector(".flp").style.visibility = "visible";
+		friend_list_vis = true;
+	}
+}
+
+// flp ende

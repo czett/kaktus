@@ -2181,7 +2181,60 @@ input[type="radio"]{
     transform: scale(1.1);
 }
 
+/* friends list popup */
 
+/* wehe du kopierst das adrian */
+
+.flp{ /*friends list popup*/
+    position: absolute;
+    width: 25vw;
+    max-height: 25vw;
+    border-radius: 2vh;
+    background-color: var(--bg);
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    border: 1px solid var(--ac);
+    overflow: hidden;
+    overflow-y: scroll;
+    visibility: hidden;
+}
+
+.flp .flp-heading{
+    width: 100%;
+    box-sizing: border-box;
+    padding: .5vw 0;
+    border-bottom: 1px solid var(--ac);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.flp .flp-friend{
+    padding: 0.5vw 2vw;
+    transition: 200ms;
+}
+
+.flp .flp-friend:hover{
+    backdrop-filter: brightness(1.25);
+}
+
+.flp .close-friends-tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3vw;
+    height: 3vw;
+    position: absolute;
+    top: 5%;
+    left: 95%;
+    transform: translate(-50%, -25%);
+}
+
+/* flp ende */
 
 /*===============/Kaktus Quiz [ende]\===================*/
 
