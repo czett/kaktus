@@ -215,6 +215,41 @@ document.querySelector('#goToQuiz').addEventListener('click', function() {
 
 });
 
+// Baukasten
+
+document.addEventListener('DOMContentLoaded', function () {
+	var remove6 = [
+
+        {
+            transform: 'translate(64vw, 2vh)',
+            width: '5vw',
+            height: '5vh',
+            borderRadius: '100vw',
+			visibility: 'hidden',
+        },
+
+		{
+            transform: 'translate(0vw, 0vh)',
+            width: '0vw',
+            height: '0vh',
+            borderRadius: '0vw',
+			visibility: 'hidden',
+        },    
+];
+
+document.querySelector('#goToKit').addEventListener('click', function() {
+    setTimeout(function(){
+        balli.animate(remove6, {
+            duration: 100,
+            iterations: 1,
+            fill: 'forwards'
+        });
+    }, 1050);
+} 
+);
+
+});
+
 // Animation with side change
 
 // Shop

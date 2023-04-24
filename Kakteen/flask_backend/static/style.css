@@ -2169,6 +2169,20 @@ input[type="radio"]{
     transform: scale(1.1);
 }
 
+/*===============/Kaktus Quiz [ende]\===================*/
+
+/*===============/Kaktus Baukasten\===================*/
+
+#navKitDiv {
+    width: 10vw;
+    height: 100vh;
+    overflow-y: scroll;
+    position: fixed;
+    background-color: var(--bg);
+}
+
+/*===============/Kaktus Baukasten [ende]\============*/
+
 /* friends list popup */
 
 /* wehe du kopierst das adrian */
@@ -2224,7 +2238,6 @@ input[type="radio"]{
 
 /* flp ende */
 
-/*===============/Kaktus Quiz [ende]\===================*/
 
 /* komische icons girlande */
 
@@ -2258,6 +2271,7 @@ input[type="radio"]{
 
 .new-posts-container .post-preview:hover{
     backdrop-filter: brightness(1.2);
+    cursor: pointer;
 }
 
 .new-posts-container .post-preview:not(:last-of-type){
@@ -2334,6 +2348,61 @@ input[type="radio"]{
 
 .new-posts-container .post-preview .post-interaction-options .interaction-option-count p{
     font-size: 1vh;
+}
+
+.top-forum-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-forum-bar .forum-heading h2{
+    font-size: 3.75vh;
+    font-family: 'Unbounded';
+}
+
+.top-forum-bar .new-post button, .new-post-form button{
+    background-color: var(--ac);
+    padding: calc(var(--lrpad) * 0.35);
+    border: none;
+    outline: none;
+    border-radius: 1vh;
+}
+
+textarea{
+    resize: none;
+}
+
+.new-post-form{
+    position: absolute;
+    overflow-y: scroll;
+    width: 25vw;
+    height: auto;
+    max-height: 30vw;
+    border-radius: 2vh;
+    border: 1px solid var(--ac);
+    background: var(--bg);
+    padding: calc(0.75 * var(--lrpad)) var(--lrpad);
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.new-post-form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.new-post-form input, .new-post-form textarea{
+    margin-bottom: 1.5vw;
+    border: 1px solid var(--ac);
+    color: var(--fg);
+    padding: calc(var(--lrpad) * 0.25);
+    background-color: transparent;
+    border-radius: 1vh;
 }
 
 /* forum ende */

@@ -2,6 +2,25 @@
 
 {% block content %}
 
+<div class="top-forum-bar">
+    <div class="forum-heading">
+        <h2>Forum</h2>
+    </div>
+    <div class="new-post">
+        <button>Neuer Beitrag</button>
+    </div>
+</div>
+
+<div class="new-post-form">
+    <h2 style="margin-bottom: 2.5vw;">Neuen Beitrag erstellen</h2>
+    <form action="/forum/neuer-beitrag" enctype="multipart/form-data" method="post">
+        <input type="text" placeholder="Titel vom Post">
+        <textarea name="description" placeholder="Beschreibung/Fragestellung"></textarea>
+        <button type="submit">Erstellen</button>
+    </form>
+    .
+</div>
+
 <div class="new-posts-container">
     <div class="post-preview">
         <h3 class="post-title">Ich mag Kakteen
