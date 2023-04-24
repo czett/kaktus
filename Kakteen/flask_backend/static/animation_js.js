@@ -3,6 +3,185 @@
 var balli = document.getElementById('animateBall');
 var boxi = document.getElementById('anim-uebergang');
 
+// Animation back
+
+// shop
+
+document.addEventListener('DOMContentLoaded', function () {
+	var remove = [
+
+        {
+            transform: 'translate(64vw, 2vh)',
+            width: '5vw',
+            height: '5vh',
+            borderRadius: '100vw',
+			visibility: 'hidden',
+        },
+
+		{
+            transform: 'translate(0vw, 0vh)',
+            width: '0vw',
+            height: '0vh',
+            borderRadius: '0vw',
+			visibility: 'hidden',
+        },    
+];
+
+document.querySelector('#shopPress').addEventListener('click', function() {
+    setTimeout(function(){
+        balli.animate(remove, {
+            duration: 100,
+            iterations: 1,
+            fill: 'forwards'
+        });
+    }, 250);
+} 
+);
+
+});
+
+// home
+
+document.addEventListener('DOMContentLoaded', function () {
+	var remove1 = [
+
+        {
+            transform: 'translate(64vw, 2vh)',
+            width: '5vw',
+            height: '5vh',
+            borderRadius: '100vw',
+			visibility: 'hidden',
+        },
+
+		{
+            transform: 'translate(0vw, 0vh)',
+            width: '0vw',
+            height: '0vh',
+            borderRadius: '0vw',
+			visibility: 'hidden',
+        },    
+];
+
+document.querySelector('#homePress').addEventListener('click', function() {
+    setTimeout(function(){
+        balli.animate(remove1, {
+            duration: 100,
+            iterations: 1,
+            fill: 'forwards'
+        });
+    }, 250);
+} 
+);
+
+});
+
+// Entdecken 
+
+document.addEventListener('DOMContentLoaded', function () {
+	var remove2 = [
+
+        {
+            transform: 'translate(64vw, 2vh)',
+            width: '5vw',
+            height: '5vh',
+            borderRadius: '100vw',
+			visibility: 'hidden',
+        },
+
+		{
+            transform: 'translate(0vw, 0vh)',
+            width: '0vw',
+            height: '0vh',
+            borderRadius: '0vw',
+			visibility: 'hidden',
+        },    
+];
+
+document.querySelector('#discoverPress').addEventListener('click', function() {
+    setTimeout(function(){
+        balli.animate(remove2, {
+            duration: 100,
+            iterations: 1,
+            fill: 'forwards'
+        });
+    }, 250);
+} 
+);
+
+});
+
+// Kakteen Support
+
+document.addEventListener('DOMContentLoaded', function () {
+	var remove3 = [
+
+        {
+            transform: 'translate(64vw, 2vh)',
+            width: '5vw',
+            height: '5vh',
+            borderRadius: '100vw',
+			visibility: 'hidden',
+        },
+
+		{
+            transform: 'translate(0vw, 0vh)',
+            width: '0vw',
+            height: '0vh',
+            borderRadius: '0vw',
+			visibility: 'hidden',
+        },    
+];
+
+document.querySelector('#supportPress').addEventListener('click', function() {
+    setTimeout(function(){
+        balli.animate(remove3, {
+            duration: 100,
+            iterations: 1,
+            fill: 'forwards'
+        });
+    }, 250);
+} 
+);
+
+});
+
+// Quiz 
+
+document.addEventListener('DOMContentLoaded', function () {
+	var remove4 = [
+
+        {
+            transform: 'translate(64vw, 2vh)',
+            width: '5vw',
+            height: '5vh',
+            borderRadius: '100vw',
+			visibility: 'hidden',
+        },
+
+		{
+            transform: 'translate(0vw, 0vh)',
+            width: '0vw',
+            height: '0vh',
+            borderRadius: '0vw',
+			visibility: 'hidden',
+        },    
+];
+
+document.querySelector('#goToQuiz').addEventListener('click', function() {
+    setTimeout(function(){
+        balli.animate(remove4, {
+            duration: 100,
+            iterations: 1,
+            fill: 'forwards'
+        });
+    }, 1050);
+} 
+);
+
+});
+
+// Animation with side change
+
 // Shop
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -221,7 +400,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
             setTimeout(function(){
                 window.location.href = "/quiz";
-            }, 1050);
+            }, 900);
         } 
 );
 
