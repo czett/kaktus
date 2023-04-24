@@ -110,6 +110,41 @@ document.querySelector('#discoverPress').addEventListener('click', function() {
 
 });
 
+// Forum
+
+document.addEventListener('DOMContentLoaded', function () {
+	var remove5 = [
+
+        {
+            transform: 'translate(64vw, 2vh)',
+            width: '5vw',
+            height: '5vh',
+            borderRadius: '100vw',
+			visibility: 'hidden',
+        },
+
+		{
+            transform: 'translate(0vw, 0vh)',
+            width: '0vw',
+            height: '0vh',
+            borderRadius: '0vw',
+			visibility: 'hidden',
+        },    
+];
+
+document.querySelector('#forumPress').addEventListener('click', function() {
+    setTimeout(function(){
+        balli.animate(remove5, {
+            duration: 100,
+            iterations: 1,
+            fill: 'forwards'
+        });
+    }, 250);
+} 
+);
+
+});
+
 // Kakteen Support
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -285,6 +320,41 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
             setTimeout(function(){
                 window.location.href = "/entdecken";
+            }, 230);
+        } 
+);
+});
+
+// Entdechen
+
+document.addEventListener('DOMContentLoaded', function () {
+	var moveE = [
+
+        {
+            transform: 'translate(72vw, 2vh)',
+            width: '5vw',
+            height: '5vh',
+            borderRadius: '100vw',
+			visibility: 'visible',
+        },
+
+		{
+            transform: 'translate(0vw, 0vh)',
+            width: '100vw',
+            height: '100vh',
+            borderRadius: '0vw',
+			visibility: 'visible',
+        },    
+];
+	
+    document.querySelector('#forumPress').addEventListener('click', function() {
+            balli.animate(moveE, {
+				duration: 220,
+				iterations: 1,
+				fill: 'forwards'
+			});
+            setTimeout(function(){
+                window.location.href = "/forum";
             }, 230);
         } 
 );
