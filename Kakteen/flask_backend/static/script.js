@@ -261,8 +261,11 @@ function firmen(){
     }
 }
 
+// adrian dein shop ist schei**e
 
+// Shop System Ende
 
+<<<<<<< HEAD
 const adressek = document.querySelector('.adresse2');
 var adrvis = false;
 
@@ -279,3 +282,36 @@ function adressevis(){
 
 
 // Bezahl Ende
+=======
+// friends list popup
+
+var friend_list_vis = false;
+
+function toggleFriendList(){
+	if (friend_list_vis){
+		document.querySelector(".flp").style.visibility = "hidden";
+		friend_list_vis = false;
+	}else{
+		document.querySelector(".flp").style.visibility = "visible";
+		friend_list_vis = true;
+	}
+}
+
+// flp ende
+
+// new post forum
+
+var new_post_vis = false;
+
+function toggleNewPostForm(){
+	if (new_post_vis){
+		document.querySelector(".new-post-form").style.visibility = "hidden";
+		new_post_vis = false;
+	}else{
+		document.querySelector(".new-post-form").style.visibility = "visible";
+		new_post_vis = true;
+	}
+}
+
+// new post forum ende
+>>>>>>> 0c40a3d8cf586713e549dbe636d126dc98f4f263

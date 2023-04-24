@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="top-forum-bar">
+    <div class="forum-heading">
+        <h2>Forum</h2>
+    </div>
+    <div class="new-post" onmousedown="toggleNewPostForm()">
+        <button>Neuer Beitrag</button>
+    </div>
+</div>
+
+<div class="new-post-form">
+    <h2 style="margin-bottom: 2.5vw;">Neuen Beitrag erstellen</h2>
+    <form action="/forum/neuer-beitrag" enctype="multipart/form-data" method="post">
+        <input required name="title" type="text" placeholder="Titel vom Post">
+        <textarea required name="description" placeholder="Beschreibung/Fragestellung"></textarea>
+        <button type="submit">Erstellen</button>
+    </form>
+    <div class="close-new-post-form" onmousedown="toggleNewPostForm()">
+        <i class="fa-solid fa-xmark"></i>
+    </div>
+</div>
+
+<div class="new-posts-container">
+    {% for post in posts %}
+        <div class="post-preview">
+            <h3 class="post-title">{{  post["title"]  }}
+                <p class="post-creator">{{  post["creator"]  }}, am {{  post["date"].strftime("%d/%m/%Y %H:%M:%S")  }}</p>
+            </h3>
+            <p class="post-question">{{  post["desc"]  }}</p>
+            <div class="post-side-icons">
+                {% if post["hot"] == True%}
+                    <p class="hot-post"><i class="fa-solid fa-fire-flame-curved"></i> heißer Beitrag!</p>
+                {% else %}
+                    <p class="cold-post"><i class="fa-solid fa-snowflake"></i> kalter Beitrag!</p>
+                {% endif %}
+                <p class="post-views"><i class="fa-regular fa-eye"></i> {{  post["clicks"]  }}</p>
+            </div>
+
+            <div class="post-interaction-options">
+                <div class="like-post">
+                    <i class="fa-regular fa-heart"></i>
+                    <div class="interaction-option-count">
+                        <p class="count">{{  post["likes"]|length  }}</p>
+                    </div>
+                </div>
+                <div class="comment-post">
+                    <i class="fa-regular fa-message"></i>
+                    <div class="interaction-option-count">
+                        <p class="count">{{  post["comments"]|length  }}</p>
+                    </div>
+                </div>
+                <div class="share-post">
+                    <i class="fa-regular fa-share-from-square"></i>
+                    <div class="interaction-option-count">
+                        <p class="count">{{  post["shares"]  }}</p>
+                    </div>
+                </div>
+                <div class="report-post">
+                    <i class="fa-regular fa-flag"></i>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
