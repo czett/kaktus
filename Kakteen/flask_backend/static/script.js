@@ -265,7 +265,7 @@ function firmen(){
 
 // Shop System Ende
 
-<<<<<<< HEAD
+
 const adressek = document.querySelector('.adresse2');
 var adrvis = false;
 
@@ -282,7 +282,7 @@ function adressevis(){
 
 
 // Bezahl Ende
-=======
+
 // friends list popup
 
 var friend_list_vis = false;
@@ -314,4 +314,3 @@ function toggleNewPostForm(){
 }
 
 // new post forum ende
->>>>>>> 0c40a3d8cf586713e549dbe636d126dc98f4f263
