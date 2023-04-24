@@ -2174,11 +2174,33 @@ input[type="radio"]{
 /*===============/Kaktus Baukasten\===================*/
 
 #navKitDiv {
-    width: 10vw;
-    height: 100vh;
+    margin: 0;
+    width: 13vw;
+    height: 89.9vh;
     overflow-y: scroll;
     position: fixed;
     background-color: var(--bg);
+    border: 1px solid var(--ac);
+    border-radius: 2vh;
+    margin-left: -1.5vw;
+    overflow: visible;
+    padding: 1vw;
+    box-sizing: border-box;
+}
+#navKitDiv::-webkit-scrollbar {
+    display: none;
+}
+
+.objKit {
+    margin: 0 auto 3vh auto;
+    width: 10vw;
+    height: 10vh;
+}
+
+#mainDiv {
+    margin: 0;
+    margin-left: 12vw;
+    height: 88.2vh;
 }
 
 /*===============/Kaktus Baukasten [ende]\============*/
