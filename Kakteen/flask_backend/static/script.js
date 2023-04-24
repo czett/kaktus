@@ -231,8 +231,51 @@ function imgHover3(){
 
 // Image Klicken Ende
 
-// Shop System Anfang
+// Bezahl Anfang
+
+const adress = document.querySelector('.Rechnungsadresse');
+var adr = false;
+adress.classList.add('show');
+
+function adresse(){
+    if(adr == true) {
+        adress.classList.add('show');
+        adr = false;
+    }else {
+        adress.classList.remove('show');
+        adr = true;
+    }
+}
+
+
+const firm = document.querySelector('.firma');
+var firmvis = false;
+
+function firmen(){
+    if(firmvis == false) {
+        firm.classList.add('vis');
+        firmvis = true;
+    }else {
+        firm.classList.remove('vis');
+        firmvis = false;
+    }
+}
 
 
 
-// Shop System Ende
+const adressek = document.querySelector('.adresse2');
+var adrvis = false;
+
+function adressevis(){
+    if(adrvis == false) {
+        adressek.classList.add('look');
+        adrvis = true;
+    }else {
+        adressek.classList.remove('look');
+        adrvis = false;
+    }
+}
+
+
+
+// Bezahl Ende
