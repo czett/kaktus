@@ -9,8 +9,17 @@
 </head>
 
 <body>
+    <style>
+    canvas{
+        float: right;
+    }
 
-    <canvas id="canvas" width="1900" height="910"></canvas>
+    </style>
+    
+    <canvas id="canvas" width="1800" height="810"></canvas>
+    <button onmousedown="startSnake()" id="startBtn">
+        starten
+    </button>
 
     <script>
         let canvas = document.getElementById('canvas');
@@ -34,13 +43,17 @@
         setInterval(gameLoop, 100);
         document.addEventListener('keydown', keyDown);
 
+        function startSnake(){
+            document.getElementById("startBtn").style.visibility = "hidden";
+            draw();
+        }
 
-        draw();
-
+        
         function draw() {
             ctx.fillStyle = 'black';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = 'green';
+            
 
 
             snake.forEach(part => add(part.x, part.y));

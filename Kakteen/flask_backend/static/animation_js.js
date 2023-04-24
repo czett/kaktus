@@ -592,4 +592,84 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+// Snakespiel Animation
+var balli = document.getElementById('animateBall');
+var boxi = document.getElementById('anim-uebergang');
+
+document.addEventListener('DOMContentLoaded', function () {
+	var moveToCon = [
+
+        {
+            transform: 'translate(9vw, 69vh)',
+            width: '5vw',
+            height: '5vh',
+            borderRadius: '100vw',
+			visibility: 'visible',
+        },
+
+		{
+            transform: 'translate(45vw, 95vh)',
+            width: '5vw',
+            height: '5vh',
+            borderRadius: '100vw',
+			visibility: 'visible',
+        },
+
+        {
+            transform: 'translate(90vw, 45vh)',
+            width: '10vw',
+            height: '10vh',
+            borderRadius: '100vw',
+			visibility: 'visible',
+        },
+
+        {
+            transform: 'translate(45vw, 0vh)',
+            width: '15vw',
+            height: '15vh',
+            borderRadius: '5vw',
+			visibility: 'visible',
+        },
+
+        {
+            transform: 'translate(0vw, 85vh)',
+            width: '15vw',
+            height: '15vh',
+            borderRadius: '50vw',
+			visibility: 'visible',
+        },
+
+        {
+            transform: 'translate(45vw, 0vh)',
+            width: '25vw',
+            height: '25vh',
+            borderRadius: '50vw',
+			visibility: 'visible',
+        },
+
+        {
+            transform: 'translate(0, 0)',
+            width: '100vw',
+            height: '100vh',
+            borderRadius: '0vw',
+			visibility: 'visible',
+        },
+
+        
+];
+	
+    document.querySelector('#goToCon').addEventListener('click', function() {
+            balli.animate(moveToCon, {
+				duration: 800,
+				iterations: 1,
+				fill: 'forwards'
+			});
+            setTimeout(function(){
+                window.location.href = "/snake";
+            }, 900);
+        } 
+);
+
+});
+
 //==============/Animation with side change [end]\==========\\

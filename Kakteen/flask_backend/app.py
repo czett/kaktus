@@ -294,7 +294,7 @@ def kaubasten():
 @app.route("/snake")
 def snake():
 	check_if_logged_in()
-	return render_template("startspiel.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+	return render_template("startespiel.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/forum")
 def forum():
