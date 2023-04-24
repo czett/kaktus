@@ -288,6 +288,8 @@ def logout():
 	session.clear()
 	return redirect("/")
 
+
+
 @app.route("/baukasten")
 def kaubasten():
 	check_if_logged_in()
@@ -338,6 +340,7 @@ def neuer_beitrag():
 	funcs.add_entry(forum, post_dict)
 
 	return redirect("/forum")
+
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)

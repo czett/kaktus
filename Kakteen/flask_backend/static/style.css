@@ -1106,14 +1106,169 @@ display: inline-block;
     display: none;
 }
 
-.contentBoxText-w {
+.contentBoxText-w1 {
     margin: 0;
     padding: 0.9vh 1vw 0.9vh 1.75vw;
     display: block;
     align-items: center;
     transition: 150ms;
     border: 2px solid var(--ac);
+    visibility: hidden;
 }
+.contentBoxText-w2 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: hidden;
+}
+
+.contentBoxText-w3 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: hidden;
+}
+
+.contentBoxText-w4 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: hidden;
+}
+
+.contentBoxText-w5 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: hidden;
+}
+
+.contentBoxText-w6 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: hidden;
+}
+
+.contentBoxText-w7 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: hidden;
+}
+
+.contentBoxText-w8 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: hidden;
+}
+
+
+
+.contentBoxText-w1.visible1 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+
+.contentBoxText-w2.visible2 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+
+
+.contentBoxText-w3.visible3 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+
+
+.contentBoxText-w4.bell-new-dot {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+
+.contentBoxText-w5.visible5 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+.contentBoxText-w6.visible6 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+
+.contentBoxText-w7.visible7 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+
+.contentBoxText-w8.visible8 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+
+
 
 .contentBoxText-w:hover {
     background-color: rgb(59, 59, 59);
@@ -1262,7 +1417,39 @@ display: inline-block;
     border-radius: 50%;
 }
 
+.button-profil {
+    transition-duration: 0.4s;
+    font-size: 30px;
+    min-width: 40vh;
+    min-height: 10vh;
+    transform: translate(200%,70%);
+    color: white;
+    
+    background-color: var(--ac); 
+    border-radius: 1vw;
+    overflow: visible;
+    border: 3px solid var(--ac);
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    display: inline-block;
+    
+}
 
+.button-profil:hover {
+
+    background-image: url(img/bezahlen.png);
+    background-position: 50%, 50%;
+    background-size: 200%;
+    background-color: var(--ac); 
+    color: transparent; 
+   
+    
+    animation: warenkorb;
+    animation-iteration-count: infinite;
+    animation-duration: 1000ms;
+    animation-delay: 10ms;
+}
 
 
 /* Mein Warenkrob Ende */
@@ -1442,7 +1629,7 @@ transform: translate(0%, -45%);
         display: inline-block;
         color: transparent;
         box-sizing: border-box;
-        transform: translate(100%, -1280%);
+        transform: translate(100%, -1180%);
         padding-top: 1.5vw;
         padding-right: 2vw;
         background-size: 220%;
@@ -1516,6 +1703,190 @@ transform: translate(0%, -45%);
     
 
 /* Entdecken Ende */
+
+/* Kaufen anfang */
+
+.bezahlart {
+
+font-size: 30px;
+color: black;
+text-align: center;
+font-weight: bold;
+
+
+}
+
+
+.auswaehlen1{
+
+color: black;
+font-size: 30px;
+text-align: center;
+
+}
+
+.auswaehlen2 {
+
+color: black;
+font-size: 30px;
+text-align: center;
+}
+
+.button-k {
+    transition-duration: 0.4s;
+    font-size: 30px;
+    min-width: 40vh;
+    min-height: 10vh;
+    transform: translate(235px,100px);
+    color: white;
+    
+    background-color: var(--ac); 
+    border-radius: 1vw;
+    overflow: visible;
+    border: 3px solid var(--ac);
+    font-weight: bold;
+    
+    
+}
+
+.button-k:hover {
+
+    background-image: url(img/geld.png);
+    background-position: 50%, 50%;
+    background-size: 150%;
+    background-color: var(--ac); 
+    color: transparent; 
+   
+    
+    animation: warenkorb;
+    animation-iteration-count: infinite;
+    animation-duration: 1000ms;
+    animation-delay: 10ms;
+}
+
+label::after {
+	content: "";
+	display: block;
+}
+
+input:checked {
+  outline: 2px solid var(--ac2);
+}
+
+input:checked + label {
+  color: var(--ac2);
+  font-weight: bold;
+}
+
+.text-k{
+
+text-decoration: underline;
+font-size: 30px;
+text-decoration-color: #EB6E6E;
+font-weight: bold;
+}
+
+.text-k2 {
+
+    font-size: 25px;
+
+}
+
+
+.news {
+
+font-size: 30px;
+
+}
+
+.kartenangaben {
+
+    font-size: 30px;
+    
+
+}
+
+.ang {
+
+background-color: #303030;
+border: 2px solid var(--ac);
+font-size: 30px;
+border-radius: 0.5vw;
+
+}
+
+.Rechnungsadresse {
+
+display: none;
+
+
+
+}
+
+.Rechnungsadresse.show {
+
+display: block;
+
+}
+
+.firma {
+
+    display: none;
+
+
+
+}
+
+.firma.vis {
+
+    display: block;
+
+}
+
+.adresse2 {
+
+    display: none;
+
+}
+
+.adresse2.look {
+
+    display: block;
+
+}
+
+.text-k3 {
+
+    text-decoration: underline;
+    font-size: 30px;
+    text-decoration-color: #EB6E6E;
+    font-weight: bold;
+    text-align: center;
+    
+    align-items: right;
+
+
+}
+
+
+
+/* .betrag {
+
+    
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    display: inline-block;
+   
+
+
+
+} */
+
+/* Kaufen Ende */
+
+
 
 
 
@@ -1748,6 +2119,17 @@ input[type="radio"]{
 
 .top-leiste .info-leiste .info .freunde{
     font-size: 16px;
+}
+
+.freunde {
+
+    cursor: pointer;
+}
+
+.logout {
+
+
+    cursor: pointer;
 }
 
 .top-leiste .profile-image-container{
