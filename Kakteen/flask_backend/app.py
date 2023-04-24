@@ -197,6 +197,14 @@ def anderesprofil(profil):
 	uid = funcs.find_in_coll(logreg, {"username": profil})["_id"]
 	user_ud = funcs.find_in_coll(userdata, {"_id": uid})
 
+	usersfriends = funcs.find_in_coll(userdata, {"_id": funcs.find_in_coll(logreg, {"username": profil})["_id"]})["friends"]
+
+	for friend in usersfriends:
+		if funcs.find_in_coll(logreg, {"username": friend}) == None:
+			usersfriends.remove(friend)
+	
+	userdata.update_one({"_id": str(funcs.find_in_coll(logreg, {"username": profil})["_id"])}, {"$set": {"friends": usersfriends}})
+
 	if session["logged_in"] == True and session["data"]["user_id"] == uid:
 		profile_data = {"user_id": uid, "username": profil, "friends": user_ud["friends"], "pimg": user_ud["pimg"], "own_profile": True}
 	else:
