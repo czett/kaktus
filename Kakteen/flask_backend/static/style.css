@@ -139,19 +139,7 @@ body, html{
     border: 2px solid var(--ac);
 }
 
-#shopPress {
-    cursor: pointer;
-}
-
-#homePress {
-    cursor: pointer;
-}
-
-#discoverPress {
-    cursor: pointer;
-}
-
-#supportPress {
+.nav .link{
     cursor: pointer;
 }
 
