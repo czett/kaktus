@@ -2050,7 +2050,7 @@ input[type="radio"]{
 
 #qustBox {
     margin: 0;
-    margin-top: 5vh;
+    margin-top: 7vh;
     width: 50vw;
     height: 30vh;
     border: 2px solid var(--ac);
@@ -2083,7 +2083,7 @@ input[type="radio"]{
 }
 
 #answSec {
-    margin: 0;
+    margin: 2vh 0;
     width: 100vw;
     height: 43vh;
 }
