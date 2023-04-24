@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, session, request, jsonify
 import funcs as funcs
 import pymongo, certifi
+from datetime import datetime
 from pymongo import MongoClient
 
 app = Flask(__name__)
@@ -11,6 +12,7 @@ cluster = MongoClient("mongodb+srv://kaktusmensch:kaktusdevgobrr@mrkaktus.icfdq0
 db = cluster["mrkaktus"]
 logreg = db["login"]
 userdata = db["userdata"]
+forum = db["forum"]
 
 def fill_notification_box():
 	freqs = funcs.find_in_coll(userdata, {"_id": session["data"]["user_id"]})["friend_requests"]
@@ -297,9 +299,45 @@ def snake():
 	return render_template("startspiel.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/forum")
-def forum():
+def forum_render():
 	check_if_logged_in()
-	return render_template("forum.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
+	posts = []
+
+	for post in forum.find():
+		posts.append(post)
+
+		if (datetime.now() - post["date"]).total_seconds() > 10:
+			post["hot"] = False
+		else:
+			post["hot"] = True
+
+	posts.reverse() # neue posts oben
+
+	return render_template("forum.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], posts=posts)
+
+@app.route("/forum/neuer-beitrag", methods=["POST"])
+def neuer_beitrag():
+	title = request.form.get("title")
+	desc = request.form.get("description")
+	post_id_exists = True
+
+	while post_id_exists:
+		post_id = funcs.create_id(16)
+
+		if funcs.find_in_coll(forum, {"_id": post_id}) == None:
+			post_id_exists = False
+		else:
+			post_id_exists = True
+	
+	username = session["data"]["username"]
+	user_id = session["data"]["user_id"]
+	
+	post_dict = {"_id": post_id, "title": title, "desc": desc, "date": datetime.now(), "creator": username, "creator_id": user_id, "likes": [], "comments": [], "shares": 0, "reports": 0, "clicks": 0}
+
+	funcs.add_entry(forum, post_dict)
+
+	return redirect("/forum")
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)

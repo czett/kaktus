@@ -2281,12 +2281,54 @@ input[type="radio"]{
     line-height: 2.75vh;
 }
 
-.new-posts-container .post-preview .post-views{
+.new-posts-container .post-preview .post-side-icons{
     font-size: 1.75vh;
+    display: flex;
+    justify-content: space-between;
     position: absolute;
-    top: 5%;
-    left: 95%;
+    top: 0%;
+    left: 85%;
+    width: 12.5%;
     transform: translateY(50%);
+}
+
+.new-posts-container .post-preview .hot-post, .new-posts-container .post-preview .hot-post i{
+    background: linear-gradient(135deg, #ED5F14, #F79B1D);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bold;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.new-posts-container .post-preview .post-views, .new-posts-container .post-preview .post-views i{
+    background: linear-gradient(135deg, var(--ac), var(--ac2));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bold;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.new-posts-container .post-preview .cold-post, .new-posts-container .post-preview .cold-post i{
+    background: linear-gradient(135deg, #4FB8ED, #ACEBFC);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bold;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .new-posts-container .post-preview .post-interaction-options div:not([class="interaction-option-count"]){
@@ -2377,6 +2419,8 @@ textarea{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
+
+    visibility: hidden;
 }
 
 .new-post-form form{
@@ -2391,6 +2435,27 @@ textarea{
     padding: calc(var(--lrpad) * 0.25);
     background-color: transparent;
     border-radius: 1vh;
+    height: auto;
+    outline: none;
+}
+
+.close-new-post-form{
+    position: absolute;
+    top: 5%;
+    left: 95%;
+}
+
+.close-new-post-form i{
+    font-size: 2vh;
+    transition: 150ms;
+}
+
+.close-new-post-form i:hover{
+    transform: rotate(90deg);
+}
+
+.new-post-form textarea{
+    height: 10vh;
 }
 
 /* forum ende */

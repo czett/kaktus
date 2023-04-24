@@ -252,3 +252,19 @@ function toggleFriendList(){
 }
 
 // flp ende
+
+// new post forum
+
+var new_post_vis = false;
+
+function toggleNewPostForm(){
+	if (new_post_vis){
+		document.querySelector(".new-post-form").style.visibility = "hidden";
+		new_post_vis = false;
+	}else{
+		document.querySelector(".new-post-form").style.visibility = "visible";
+		new_post_vis = true;
+	}
+}
+
+// new post forum ende
