@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, session, request, jsonify
-import funcs, pymongo, certifi
+import funcs as funcs
+import pymongo, certifi
 from pymongo import MongoClient
 
 app = Flask(__name__)
