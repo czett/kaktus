@@ -2,6 +2,21 @@
 
 {% block content %}
 
+<div class="top-forum-bar">
+    <div class="forum-heading">
+        <h2>Forum</h2>
+    </div>
+    <div class="new-post">
+        <button>Neuer Beitrag</button>
+    </div>
+</div>
+
+<div class="new-post-form">
+    <form action="/forum/neuer-beitrag" enctype="multipart/form-data" method="post">
+        <input type="text">
+    </form>
+</div>
+
 <div class="new-posts-container">
     <div class="post-preview">
         <h3 class="post-title">Ich mag Kakteen
