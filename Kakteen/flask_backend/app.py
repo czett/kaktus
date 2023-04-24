@@ -288,11 +288,18 @@ def logout():
 
 @app.route("/baukasten")
 def kaubasten():
+	check_if_logged_in()
 	return render_template("Kaktus_baukasten.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
+@app.route("/snake")
+def snake():
+	check_if_logged_in()
+	return render_template("startspiel.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/forum")
 def forum():
-	return "forum"
+	check_if_logged_in()
+	return render_template("forum.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)
