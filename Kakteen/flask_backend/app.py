@@ -286,6 +286,10 @@ def logout():
 	session.clear()
 	return redirect("/")
 
+@app.route("/baukasten")
+def kaubasten():
+	return render_template("Kaktus_baukasten.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
 @app.route("/forum")
 def forum():
 	return "forum"
