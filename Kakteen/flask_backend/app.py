@@ -245,6 +245,7 @@ def handle_freq(action, person):
 	friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
 
 	freqs.remove(person)
+	userdata.update_one(funcs.find_in_coll(userdata, {"_id": uid}), {"$set": {"friend_requests": freqs}})
 
 	if action == "accept" and str(person) not in friends:
 		friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
@@ -261,13 +262,15 @@ def handle_freq(action, person):
 		newvals = {"$set": {"friends": friends}}
 		userdata.update_one(query, newvals)
 
-	session["data"]["notifications"].remove(person)
+	try:
+		session["data"]["notifications"].remove(person)
+	except:
+		pass
+
 	session["data"]["friends"] = friends
 	session.modified = True
 
 	return redirect(f"/profil")
-
-	return str(f"{action}, {person}")
 
 @app.route("/logout")
 def logout():
