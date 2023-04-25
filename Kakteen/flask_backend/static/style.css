@@ -496,6 +496,27 @@ display: inline-block;
     }
 }
 
+
+.auswahl-back2 {
+
+    display: inline-block;
+    color: black;
+    background-color: black;
+    border: 2px solid black;
+    
+    }
+    
+    .auswahl-back2:hover{
+        filter: brightness(1.2);
+        transform: translate(0%, 0%) scale(1.05);
+        animation-duration: 1000ms;
+        animation-name: blinken;
+        animation-iteration-count: infinite;
+        color: black;
+        cursor: pointer;
+       
+    }
+
 /* .profilbildoption{
     animation-name: bild;
     animation-duration: 120s;
