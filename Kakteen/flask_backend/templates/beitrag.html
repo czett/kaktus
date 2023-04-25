@@ -54,7 +54,11 @@
 
     <div class="post-new-block add-comment">
         <form action="/forum/beitrag/{{  postid  }}/kommentar-hinzufuegen" method="post" enctype="multipart/form-data">
+            {% if action is defined and action == "comment" %}
+            <textarea name="comment" id="comment" required autofocus placeholder="Kommentar hinzufügen"></textarea>
+            {% else %}
             <textarea name="comment" id="comment" required placeholder="Kommentar hinzufügen"></textarea>
+            {% endif %}
             <button type="submit">Kommentieren</button>
         </form>
     </div>

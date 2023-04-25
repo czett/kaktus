@@ -288,8 +288,6 @@ def logout():
 	session.clear()
 	return redirect("/")
 
-
-
 @app.route("/baukasten")
 def kaubasten():
 	check_if_logged_in()
@@ -341,11 +339,15 @@ def neuer_beitrag():
 
 	return redirect("/forum")
 
-@app.route("/forum/beitrag/<beitrag_id>")
-def forum_beitrag(beitrag_id):
+@app.route("/forum/beitrag/<beitrag_id>/<action>")
+def forum_beitrag(beitrag_id, action):
 	if funcs.find_in_coll(forum, {"_id": beitrag_id}) != None:
 		post = funcs.find_in_coll(forum, {"_id": beitrag_id})
-		return render_template("beitrag.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
+
+		if action == "view":
+			return render_template("beitrag.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
+		else:
+			return render_template("beitrag.html", action=action, logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
 	else:
 		return redirect("/forum")
 

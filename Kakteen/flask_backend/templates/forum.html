@@ -27,7 +27,7 @@
     {% for post in posts %}
     {% set postid = post["_id"] %}
         <div class="post-preview">
-            <h3 class="post-title" onmousedown="newUrl('forum/beitrag/{{  postid  }}')">{{  post["title"]  }}
+            <h3 class="post-title" onmousedown="newUrl('forum/beitrag/{{  postid  }}/view')">{{  post["title"]  }}
                 <p class="post-creator">{{  post["creator"]  }}, am {{  post["date"].strftime("%d/%m/%Y %H:%M:%S")  }}</p>
             </h3>
             <p class="post-question">{{  post["desc"]  }}</p>
@@ -52,7 +52,7 @@
                         <p class="count">{{  post["likes"]|length  }}</p>
                     </div>
                 </div>
-                <div class="comment-post">
+                <div class="comment-post" onmousedown="newUrl('forum/beitrag/{{  postid  }}/comment')">
                     <i class="fa-regular fa-message"></i>
                     <div class="interaction-option-count">
                         <p class="count">{{  post["comments"]|length  }}</p>
