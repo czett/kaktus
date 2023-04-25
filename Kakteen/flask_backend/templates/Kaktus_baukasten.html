@@ -4,32 +4,48 @@
 
 <div id="navKitDiv">
 
-
+    <!--Töpfe----------------------------------------------------------------------------->
     <div id="KitToepfe">
         <p class="KitHeadline">Töpfe</p>
 
-        <div onmousedown="clickOnObj()" class="objKit">
-            <img class="KitImg" src="../static/img/1.jpg">
-        </div>
-        <div class="ColorSelecter">
-            <p id="KitColor1" class="KitColor">Grün</p>
-            <p id="KitColor2" class="KitColor">Blau</p>
-            <p id="KitColor3" class="KitColor">Ror</p>
-            <p id="KitColor4" class="KitColor">Lila</p>
-        </div>
-
-        <div onmousedown="clickOnObj()" class="objKit">
-            <img class="KitImg" src="../static/img/1.jpg">
+        <div class="objKit">
+            <img id="kitImg1" class="KitImg" src="../static/img/1.jpg">
+            <div id="CS1" class="ColorSelecter">
+                <p onmousedown="clickColor1()" class="KitColor">Grün</p>
+                <p onmousedown="clickColor2()" class="KitColor">Blau</p>
+                <p onmousedown="clickColor3()" class="KitColor">Rot</p>
+                <p onmousedown="clickColor4()" class="KitColor">Gelb</p>
+            </div>
         </div>
 
-        <div onmousedown="clickOnObj()" class="objKit">
-            <img class="KitImg" src="../static/img/1.jpg">
+        <div class="objKit">
+            <img id="kitImg2" class="KitImg" src="../static/img/1.jpg">
+            <div id="CS2" class="ColorSelecter">
+                <p onmousedown="clickColor1()" class="KitColor">Grün</p>
+                <p onmousedown="clickColor2()" class="KitColor">Blau</p>
+                <p onmousedown="clickColor3()" class="KitColor">Rot</p>
+                <p onmousedown="clickColor4()" class="KitColor">Gelb</p>
+            </div>
         </div>
 
-        <div onmousedown="clickOnObj()" class="objKit">
-            <img class="KitImg" src="../static/img/1.jpg">
+        <div class="objKit">
+            <img id="kitImg3" class="KitImg" src="../static/img/1.jpg">
+            <div id="CS3" class="ColorSelecter">
+                <p onmousedown="clickColor1()" class="KitColor">Grün</p>
+                <p onmousedown="clickColor2()" class="KitColor">Blau</p>
+                <p onmousedown="clickColor3()" class="KitColor">Rot</p>
+                <p onmousedown="clickColor4()" class="KitColor">Gelb</p>
+            </div>
         </div>
 
+        <div class="objKit">
+            <img id="kitImg4" class="KitImg" src="../static/img/1.jpg">
+            <div id="CS4" class="ColorSelecter">
+                <p onmousedown="clickColor1()" class="KitColor">Grün</p>
+                <p onmousedown="clickColor2()" class="KitColor">Blau</p>
+                <p onmousedown="clickColor3()" class="KitColor">Rot</p>
+                <p onmousedown="clickColor4()" class="KitColor">Gelb</p>
+        </div>
     </div>
 
     <div id="KitKoeper">
@@ -56,12 +72,29 @@
         </div>
     </div>
 
+    </div>
 </div>
+
 
 <div id="mainDiv">
-    <p>Halölo</p>
+    <div id="kitTopf">
+        <img id="importImg1" class="KitImgGame" src="../static/img/Toast.jpg">
+    </div>
+    <div id="kitBody">
+        <img id="importImg2" class="KitImgGame" src="../static/img/Toast.jpg">
+    </div>
+    <div id="kitArms">
+        <img id="importImg3" class="KitImgGame" src="../static/img/Toast.jpg">
+    </div>
+    <div id="kitHead">
+        <img id="importImg4" class="KitImgGame" src="../static/img/Toast.jpg">
+    </div>
+    <div id="kitHat">
+        <img id="importImg5" class="KitImgGame" src="../static/img/Toast.jpg">
+    </div>
 </div>
 
-{% endblock %}
 
-<script src="{{  url_for('static', 'Kaktus_baukasten.html')  }}"></script>
+<script src="{{  url_for('static', filename='/Kaktus_baukasten.js')  }}"></script>
+
+{% endblock %}
