@@ -106,6 +106,16 @@ def kaufen():
 	check_if_logged_in()
 	return render_template("kaufen.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
+@app.route("/weiter1")
+def weiter1():
+	check_if_logged_in()
+	return render_template("weiter1.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
+@app.route("/weiter2")
+def weiter2():
+	check_if_logged_in()
+	return render_template("weiter2.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
 @app.route("/auswahl/bestaetigen", methods=["POST"])
 def auswahlbestaetigen():
 	check_if_logged_in()
