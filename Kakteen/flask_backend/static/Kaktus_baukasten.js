@@ -5,10 +5,19 @@ var kitImg2move = document.getElementById('kitImg2');
 var kitImg3move = document.getElementById('kitImg3');
 var kitImg4move = document.getElementById('kitImg4');
 
+// getting the picutures
+
+// töpfe
 const importImg1 = document.querySelector('#importImg1');
 const importImg2 = document.querySelector('#importImg2');
 const importImg3 = document.querySelector('#importImg3');
 const importImg4 = document.querySelector('#importImg4');
+
+// Körper
+const importBody1 = document.querySelector('#importBody1');
+const importBody2 = document.querySelector('#importBody2');
+const importBody3 = document.querySelector('#importBody3');
+const importBody4 = document.querySelector('#importBody4');
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -184,4 +193,22 @@ function clickColor4444() {
     importImg2.classList.remove('importIMG');
     importImg3.classList.remove('importIMG');
     importImg1.classList.remove('importIMG');
+}
+
+
+// body
+function clickBody1() {
+    importBody1.classList.add('importIMG');
+}
+
+function clickBody2() {
+    importBody2.classList.add('importIMG');
+}
+
+function clickBody3() {
+    importBody3.classList.add('importIMG');
+}
+
+function clickBody4() {
+    importBody4.classList.add('importIMG');
 }
