@@ -89,7 +89,7 @@ def profil():
 
 	session["data"]["friends"] = friends
 	session.modified = True
-	return render_template("Profil.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+	return render_template("Profil.html", logged_in=session["logged_in"], data=session["data"], profile_data=session["data"], warnings=session["warnings"])
 
 @app.route("/auswahl")
 def auswahl():
@@ -176,7 +176,7 @@ def register():
 
 		session["data"] = {"user_id": uid, "username": un, "pimg": None, "friends": [], "own_profile": True}
 
-		funcs.add_entry(userdata, {"_id": uid, "friends": [], "pimg": None, "notifications": []})
+		funcs.add_entry(userdata, {"_id": uid, "friends": [], "pimg": None, "notifications": [], "reports": 0})
 
 		return redirect("/profil")
 	else:
@@ -222,7 +222,7 @@ def anderesprofil(profil):
 	else:
 		profile_data = {"user_id": uid, "username": profil, "friends": user_ud["friends"], "pimg": user_ud["pimg"], "own_profile": False}
 
-	return render_template("Profil.html", data=profile_data, warnings=session["warnings"], own_pimg=session["data"]["pimg"], logged_in=session["logged_in"])
+	return render_template("Profil.html", profile_data=profile_data, warnings=session["warnings"], data=session["data"], logged_in=session["logged_in"])
 
 @app.route("/delete-account")
 def delete_account():

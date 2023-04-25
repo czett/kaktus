@@ -3389,6 +3389,14 @@ textarea{
 /* post page ende */
 /* forum ende */
 
+button:disabled{
+    filter: saturate(0);
+}
+
+button:disabled:hover{
+    filter: saturate(0);
+}
+
 /*NICHT MEHR HIER DRUNTER ÄNDERN!!!!!!*/
 
 /* MOBILE YAY */

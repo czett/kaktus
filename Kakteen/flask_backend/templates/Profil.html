@@ -15,22 +15,22 @@
                 <img src="{{  url_for('static', filename='img/No-user.jpg')  }}" class="page-profile-image">
             {% endif %}
         </div>
-        {% if data["own_profile"] == True %}
+        {% if profile_data["own_profile"] == True %}
         <div class="stift-wrap" onmousedown="newUrl('/auswahl')">
             <i class="fa-solid fa-pencil"></i>
         </div>
         {% endif %}
     </div>
 
-    {% if data["friends"] is defined and data["friends"]|length > 0 %}
+    {% if profile_data["friends"] is defined and data["friends"]|length > 0 %}
         <div class="flp">
             <div class="flp-heading">
-                <p>Freunde von {{  data["username"]  }}</p>
+                <p>Freunde von {{  profile_data["username"]  }}</p>
                 <div class="close-friends-tab" onmousedown="toggleFriendList()">
                     <i class="fa-solid fa-mug-hot"></i>
                 </div>
             </div>
-            {% for friend in data["friends"] %}
+            {% for friend in profile_data["friends"] %}
             <div class="flp-friend" onmousedown="newUrl('/profil/{{  friend  }}')">
                 <p class="friend">{{  friend  }}</p>
             </div>
@@ -40,26 +40,32 @@
 
     <div class="info-leiste">
         <div class="info">
-            <p class="name">{{  data["username"]  }}</p>
-            <p class="id-tag">#{{  data["user_id"]  }}</p>
+            <p class="name">{{  profile_data["username"]  }}</p>
+            <p class="id-tag">#{{  profile_data["user_id"]  }}</p>
 
-            {% if data["friends"] is defined and data["friends"]|length > 0 %}
-                <p class="freunde" onmousedown="toggleFriendList()">Freunde: {{  data["friends"]|length  }}</p>
+            {% if profile_data["friends"] is defined and profile_data["friends"]|length > 0 %}
+                <p class="freunde" onmousedown="toggleFriendList()">Freunde: {{  profile_data["friends"]|length  }}</p>
             {% else %}
                 <p class="freunde">Hat keine Freunde</p>
             {% endif %}
 
         </div>
         <div class="interaction-options">
-            {% if data["own_profile"] == True %}
+            {% if profile_data["own_profile"] == True %}
             <p class="logout" onmousedown="newUrl('/logout')">Logout</p>
             {% else %}
-            {% set uname = data["username"] %}
+            {% set uname = profile_data["username"] %}
+            
+            {% if profile_data["username"] not in data["friends"] %}
             <button class="add" onmousedown="newUrl('/freund-hinzufuegen/{{  uname  }}')"><i class="fa-solid fa-user-group"></i> Freund hinzufügen</button>
+            {% else %}
+            <button class="add" disabled onmousedown="newUrl('/freund-hinzufuegen/{{  uname  }}')"><i class="fa-solid fa-user-group"></i> Freund hinzugefügt</button>
+            {% endif %}
+
             <button class="report"><i class="fa-solid fa-flag"></i> Melden</button>
             {% endif %}
         </div>
-        {% if data["own_profile"] == True %}
+        {% if profile_data["own_profile"] == True %}
             <div class="settings-icon-wrap" onmousedown="openSettings()">
                 <i class="fa-solid fa-gear"></i>
             </div>
@@ -67,13 +73,13 @@
     </div>
 </div>
 
-{% if data["own_profile"] == True %}
+{% if profile_data["own_profile"] == True %}
 <a href="/warenkorb">
     <button class="button-p2">Mein Warenkorb</button>
 </a>
 {% endif %}
 
-{% if data["own_profile"] == True %}
+{% if profile_data["own_profile"] == True %}
     <div class="settings" id="settings">
         <div class="settings-menu" id="settings-menu">
             <div class="heading">
