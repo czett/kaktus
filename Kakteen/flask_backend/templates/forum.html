@@ -25,8 +25,9 @@
 
 <div class="new-posts-container">
     {% for post in posts %}
+    {% set postid = post["_id"] %}
         <div class="post-preview">
-            <h3 class="post-title">{{  post["title"]  }}
+            <h3 class="post-title" onmousedown="newUrl('forum/beitrag/{{  postid  }}')">{{  post["title"]  }}
                 <p class="post-creator">{{  post["creator"]  }}, am {{  post["date"].strftime("%d/%m/%Y %H:%M:%S")  }}</p>
             </h3>
             <p class="post-question">{{  post["desc"]  }}</p>
@@ -40,8 +41,13 @@
             </div>
 
             <div class="post-interaction-options">
-                <div class="like-post">
-                    <i class="fa-regular fa-heart"></i>
+                <div class="like-post" onmousedown="newUrl('/forum/beitrag-liken/{{  postid  }}')">
+                    
+                    {% if data["user_id"] in post["likes"] %}
+                        <i class="fa-solid fa-heart liked-heart" style="color: #DB0000;"></i>
+                    {% else %}
+                        <i class="fa-regular fa-heart"></i>
+                    {% endif %}
                     <div class="interaction-option-count">
                         <p class="count">{{  post["likes"]|length  }}</p>
                     </div>
@@ -61,6 +67,11 @@
                 <div class="report-post">
                     <i class="fa-regular fa-flag"></i>
                 </div>
+                {% if data["username"] == post["creator"] %}
+                    <div class="delete-post" onmousedown="newUrl('/forum/beitrag-loeschen/{{  postid  }}')">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </div>
+                {% endif %}
             </div>
         </div>
     {% endfor %}

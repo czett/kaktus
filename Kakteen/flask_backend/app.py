@@ -309,7 +309,7 @@ def forum_render():
 	for post in forum.find():
 		posts.append(post)
 
-		if (datetime.now() - post["date"]).total_seconds() > 10:
+		if (datetime.now() - post["date"]).total_seconds() > 120:
 			post["hot"] = False
 		else:
 			post["hot"] = True
@@ -341,6 +341,81 @@ def neuer_beitrag():
 
 	return redirect("/forum")
 
+@app.route("/forum/beitrag/<beitrag_id>")
+def forum_beitrag(beitrag_id):
+	if funcs.find_in_coll(forum, {"_id": beitrag_id}) != None:
+		post = funcs.find_in_coll(forum, {"_id": beitrag_id})
+		return render_template("beitrag.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
+	else:
+		return redirect("/forum")
+
+@app.route("/forum/beitrag-loeschen/<beitrag_id>")
+def beitrag_loeschen(beitrag_id):
+	if funcs.find_in_coll(forum, {"_id": beitrag_id})["creator_id"] == session["data"]["user_id"]:
+		forum.delete_one({"_id": beitrag_id})
+	
+	return redirect("/forum")
+
+@app.route("/forum/beitrag-liken/<beitrag_id>")
+def beitrag_like_toggle(beitrag_id):
+	if session["data"]["user_id"] not in funcs.find_in_coll(forum, {"_id": beitrag_id})["likes"]:
+		likes = funcs.find_in_coll(forum, {"_id": beitrag_id})["likes"]
+		likes.append(session["data"]["user_id"])
+		
+		forum.update_one({"_id": beitrag_id}, {"$set": {"likes": likes}})
+	else:
+		likes = funcs.find_in_coll(forum, {"_id": beitrag_id})["likes"]
+		likes.remove(session["data"]["user_id"])
+		
+		forum.update_one({"_id": beitrag_id}, {"$set": {"likes": likes}})
+	
+	return redirect("/forum")
+
+@app.route("/forum/beitrag/<postid>/kommentar-hinzufuegen", methods=["POST"])
+def kommentar_hinzufuegen(postid):
+	try:
+		text = request.form.get("comment")
+		comments = funcs.find_in_coll(forum, {"_id": postid})["comments"]
+
+		comment_id_exists = True
+
+		while comment_id_exists:
+			cid = funcs.create_id(16)
+			was_found = False
+
+			for comment in funcs.find_in_coll(forum, {"_id": postid})["comments"]:
+				if comment["_id"] == cid:
+					was_found = True
+
+			if was_found == True:
+				comment_id_exists = True
+			else:
+				comment_id_exists = False
+
+		comments.append({"_id": cid, "creator": session["data"]["username"], "creator_id": session["data"]["user_id"], "text": text, "likes": []})
+
+		forum.update_one({"_id": postid}, {"$set": {"comments": comments}})
+
+		return redirect(f"/forum/beitrag/{postid}")
+	except:
+		return redirect(f"/forum/beitrag/{postid}")
+
+@app.route("/forum/beitrag/<postid>/kommentar-loeschen/<comment_id>")
+def kommentar_loeschen(postid, comment_id):
+	comments = funcs.find_in_coll(forum, {"_id": postid})["comments"]
+	
+	for count, item in enumerate(comments):
+		if item["_id"] == comment_id:
+			comment_index = count
+			comment = item
+
+	if comment["creator_id"] == session["data"]["user_id"]:
+
+		comments.pop(comment_index)
+
+		forum.update_one({"_id": postid}, {"$set": {"comments": comments}})
+	
+	return redirect(f"/forum/beitrag/{postid}")
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)
