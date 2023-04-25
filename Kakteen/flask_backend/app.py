@@ -343,6 +343,10 @@ def neuer_beitrag():
 def forum_beitrag(beitrag_id, action):
 	if funcs.find_in_coll(forum, {"_id": beitrag_id}) != None:
 		post = funcs.find_in_coll(forum, {"_id": beitrag_id})
+		clicks = post["clicks"]
+		clicks += 1
+
+		forum.update_one({"_id": beitrag_id}, {"$set": {"clicks": clicks}})		
 
 		if action == "view":
 			return render_template("beitrag.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
@@ -398,9 +402,9 @@ def kommentar_hinzufuegen(postid):
 
 		forum.update_one({"_id": postid}, {"$set": {"comments": comments}})
 
-		return redirect(f"/forum/beitrag/{postid}")
+		return redirect(f"/forum/beitrag/{postid}/view")
 	except:
-		return redirect(f"/forum/beitrag/{postid}")
+		return redirect(f"/forum/beitrag/{postid}/view")
 
 @app.route("/forum/beitrag/<postid>/kommentar-loeschen/<comment_id>")
 def kommentar_loeschen(postid, comment_id):
@@ -417,7 +421,7 @@ def kommentar_loeschen(postid, comment_id):
 
 		forum.update_one({"_id": postid}, {"$set": {"comments": comments}})
 	
-	return redirect(f"/forum/beitrag/{postid}")
+	return redirect(f"/forum/beitrag/{postid}/view")
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)
