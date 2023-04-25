@@ -1,19 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tycoon</title>
-</head>
-<body>
-    
+{% extends "base.html" %}
+
+{% block alles %}{% endblock %}
+
+{% block content %}
 <div class="frame">
-    <div class="top-bar">
+    <div class="top-bar-tycoon">
         <h1 class="heading">Kaktus-Tycoon</h1>
+    </div>
+    <div class="pflanze">
+        <img src="{{  url_for('static', filename='img/tycoon_kaktus.png')  }}" class="pflanze-img">
     </div>
 </div>
 
-<script src="tycoon.js"></script>
+<script src="{{  url_for('static', filename='tycoon.js')  }}"></script>
+
+{% endblock %}
+
 </body>
 </html>

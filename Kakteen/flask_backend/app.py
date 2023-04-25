@@ -65,6 +65,11 @@ def shop():
 	check_if_logged_in()
 	return render_template("Shop.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
+@app.route("/tycoon")
+def tycoon():
+	check_if_logged_in()
+	return render_template("tycoon.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
 @app.route("/entdecken")
 def entdecken():
 	check_if_logged_in()

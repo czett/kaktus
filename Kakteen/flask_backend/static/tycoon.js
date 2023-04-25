@@ -1,6 +1,6 @@
 function foreverLoop(delay) {
     setInterval(() => {
-        document.querySelector(".hallo").innerHTML = Math.random();
+        document.querySelector(".pflanze-img").style.transform = "scale(" + 1 * Math.random() + ")";
     }, delay);
 }
   

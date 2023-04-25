@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="{{  url_for('static', filename='fav/favicon-32x32.png')  }}" type="image/x-icon">
 </head>
 <body>
-
+    {% block alles %}
     <!-------Animation------------------>
 
         <div id="animateBall"></div>
@@ -263,7 +263,7 @@
    
    {% endif %}
 
-   
+   {% endblock %}
 
         {% block content %}
         {% endblock %}
