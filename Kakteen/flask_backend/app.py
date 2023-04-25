@@ -15,7 +15,7 @@ userdata = db["userdata"]
 forum = db["forum"]
 
 def fill_notification_box():
-	freqs = funcs.find_in_coll(userdata, {"_id": session["data"]["user_id"]})["friend_requests"]
+	freqs = funcs.find_in_coll(userdata, {"_id": session["data"]["user_id"]})["notifications"]
 	
 	session["data"]["notifications"] = []
 
@@ -106,6 +106,16 @@ def kaufen():
 	check_if_logged_in()
 	return render_template("kaufen.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
+@app.route("/weiter1")
+def weiter1():
+	check_if_logged_in()
+	return render_template("weiter1.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
+@app.route("/weiter2")
+def weiter2():
+	check_if_logged_in()
+	return render_template("weiter2.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
 @app.route("/auswahl/bestaetigen", methods=["POST"])
 def auswahlbestaetigen():
 	check_if_logged_in()
@@ -166,7 +176,7 @@ def register():
 
 		session["data"] = {"user_id": uid, "username": un, "pimg": None, "friends": [], "own_profile": True}
 
-		funcs.add_entry(userdata, {"_id": uid, "friends": [], "pimg": None, "friend_requests": []})
+		funcs.add_entry(userdata, {"_id": uid, "friends": [], "pimg": None, "notifications": []})
 
 		return redirect("/profil")
 	else:
@@ -237,14 +247,21 @@ def change_password():
 @app.route("/freund-hinzufuegen/<profil>")
 def freund_hinzufuegen(profil):
 	uid = funcs.find_in_coll(logreg, {"username": profil})["_id"]
-	freqs = funcs.find_in_coll(userdata, {"_id": uid})["friend_requests"]
+	freqs = funcs.find_in_coll(userdata, {"_id": uid})["notifications"]
 	friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
 
-	if str(session["data"]["username"]) not in freqs and str(session["data"]["username"]) not in friends:
-		freqs.append(session["data"]["username"])
+	freq_exists = False
+
+	for index, item in enumerate(freqs):
+		if item["type"] == "freq":
+			if item["person"] == session["data"]["username"]:
+				freq_exists = True
+
+	if freq_exists == False and str(session["data"]["username"]) not in friends:
+		freqs.append({"type": "freq", "person": session["data"]["username"]})
 
 		query = {"_id": uid}
-		newvals = {"$set": {"friend_requests": freqs}}
+		newvals = {"$set": {"notifications": freqs}}
 		userdata.update_one(query, newvals)
 
 	return redirect("/profil")
@@ -252,11 +269,15 @@ def freund_hinzufuegen(profil):
 @app.route("/freq/<action>/<person>")
 def handle_freq(action, person):
 	uid = session["data"]["user_id"]
-	freqs = funcs.find_in_coll(userdata, {"_id": uid})["friend_requests"]
+	freqs = funcs.find_in_coll(userdata, {"_id": uid})["notifications"]
 	friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
 
-	freqs.remove(person)
-	userdata.update_one(funcs.find_in_coll(userdata, {"_id": uid}), {"$set": {"friend_requests": freqs}})
+	for index, notif in enumerate(freqs):
+		if notif["type"] == "freq":
+			if notif["person"] == person:
+				freqs.pop(index)	
+
+	userdata.update_one(funcs.find_in_coll(userdata, {"_id": uid}), {"$set": {"notifications": freqs}})
 
 	if action == "accept" and str(person) not in friends:
 		friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
@@ -274,7 +295,10 @@ def handle_freq(action, person):
 		userdata.update_one(query, newvals)
 
 	try:
-		session["data"]["notifications"].remove(person)
+		for index, notif in enumerate(session["data"]["notifications"]):
+			if notif["type"] == "freq":
+				if notif["person"] == person:
+					session["data"]["notifications"].pop(index)		
 	except:
 		pass
 
@@ -287,8 +311,6 @@ def handle_freq(action, person):
 def logout():
 	session.clear()
 	return redirect("/")
-
-
 
 @app.route("/baukasten")
 def kaubasten():
@@ -309,7 +331,7 @@ def forum_render():
 	for post in forum.find():
 		posts.append(post)
 
-		if (datetime.now() - post["date"]).total_seconds() > 10:
+		if (datetime.now() - post["date"]).total_seconds() > 120:
 			post["hot"] = False
 		else:
 			post["hot"] = True
@@ -341,6 +363,146 @@ def neuer_beitrag():
 
 	return redirect("/forum")
 
+@app.route("/forum/beitrag/<beitrag_id>/<action>")
+def forum_beitrag(beitrag_id, action):
+	if funcs.find_in_coll(forum, {"_id": beitrag_id}) != None:
+		post = funcs.find_in_coll(forum, {"_id": beitrag_id})
+		clicks = post["clicks"]
+		clicks += 1
+
+		forum.update_one({"_id": beitrag_id}, {"$set": {"clicks": clicks}})		
+
+		if (datetime.now() - post["date"]).total_seconds() > 120:
+			post["hot"] = False
+		else:
+			post["hot"] = True
+
+		if action == "view":
+			return render_template("beitrag.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
+		elif action == "sent":
+			own_notis = funcs.find_in_coll(userdata, {"_id": session["data"]["user_id"]})["notifications"]
+			for index, item in enumerate(own_notis):
+				#return "wöoifhwpöeuhgfuefwgöiwegf"
+				if item["type"] == "forum_post":
+					if item["post_id"] == beitrag_id:
+						own_notis.pop(index)
+
+			userdata.update_one({"_id": session["data"]["user_id"]}, {"$set": {"notifications": own_notis}})
+			session["data"]["notifications"] = own_notis
+			session.modified = True
+
+			return render_template("beitrag.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
+		else:
+			return render_template("beitrag.html", action=action, logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
+	else:
+		return redirect("/forum")
+
+@app.route("/forum/beitrag-loeschen/<beitrag_id>")
+def beitrag_loeschen(beitrag_id):
+	if funcs.find_in_coll(forum, {"_id": beitrag_id})["creator_id"] == session["data"]["user_id"]:
+		forum.delete_one({"_id": beitrag_id})
+	
+	return redirect("/forum")
+
+@app.route("/forum/beitrag-liken/<beitrag_id>")
+def beitrag_like_toggle(beitrag_id):
+	if session["data"]["user_id"] not in funcs.find_in_coll(forum, {"_id": beitrag_id})["likes"]:
+		likes = funcs.find_in_coll(forum, {"_id": beitrag_id})["likes"]
+		likes.append(session["data"]["user_id"])
+		
+		forum.update_one({"_id": beitrag_id}, {"$set": {"likes": likes}})
+	else:
+		likes = funcs.find_in_coll(forum, {"_id": beitrag_id})["likes"]
+		likes.remove(session["data"]["user_id"])
+		
+		forum.update_one({"_id": beitrag_id}, {"$set": {"likes": likes}})
+	
+	return redirect("/forum")
+
+@app.route("/forum/beitrag/<postid>/kommentar-hinzufuegen", methods=["POST"])
+def kommentar_hinzufuegen(postid):
+	try:
+		text = request.form.get("comment")
+		comments = funcs.find_in_coll(forum, {"_id": postid})["comments"]
+
+		comment_id_exists = True
+
+		while comment_id_exists:
+			cid = funcs.create_id(16)
+			was_found = False
+
+			for comment in funcs.find_in_coll(forum, {"_id": postid})["comments"]:
+				if comment["_id"] == cid:
+					was_found = True
+
+			if was_found == True:
+				comment_id_exists = True
+			else:
+				comment_id_exists = False
+
+		comments.append({"_id": cid, "creator": session["data"]["username"], "creator_id": session["data"]["user_id"], "text": text, "likes": [], "replies": []})
+
+		forum.update_one({"_id": postid}, {"$set": {"comments": comments}})
+
+		return redirect(f"/forum/beitrag/{postid}/view")
+	except:
+		return redirect(f"/forum/beitrag/{postid}/view")
+
+@app.route("/forum/beitrag/<postid>/kommentar-loeschen/<comment_id>")
+def kommentar_loeschen(postid, comment_id):
+	comments = funcs.find_in_coll(forum, {"_id": postid})["comments"]
+	
+	for count, item in enumerate(comments):
+		if item["_id"] == comment_id:
+			comment_index = count
+			comment = item
+
+	if comment["creator_id"] == session["data"]["user_id"]:
+
+		comments.pop(comment_index)
+
+		forum.update_one({"_id": postid}, {"$set": {"comments": comments}})
+	
+	return redirect(f"/forum/beitrag/{postid}/view")
+
+@app.route("/forum/beitrag/<beitrag_id>/<comment_id>/kommentar-antwort", methods=["POST"])
+def kommentar_antworten(beitrag_id, comment_id):
+	comment_reply_text = request.form.get("comment-reply")
+
+	comment_reply = {"text": comment_reply_text, "creator": session["data"]["username"], "creator_id": session["data"]["user_id"]}
+
+	comments = funcs.find_in_coll(forum, {"_id": beitrag_id})["comments"]
+
+	for index, item in enumerate(comments):
+		if item["_id"] == comment_id:
+			comments.pop(index)
+			comment = item
+
+	comment["replies"].append(comment_reply)
+	comments.append(comment)
+
+	forum.update_one({"_id": beitrag_id}, {"$set": {"comments": comments}})
+
+	return redirect(f"/forum/beitrag/{beitrag_id}/view")
+
+@app.route("/forum/beitrag-teilen/<post_id>/<receiver>")
+def beitrag_teilen(post_id, receiver):
+	if receiver in funcs.find_in_coll(userdata, {"_id": session["data"]["user_id"]})["friends"]:
+		receiver_id = funcs.find_in_coll(logreg, {"username": receiver})["_id"]
+		receiver_ud = funcs.find_in_coll(userdata, {"_id": receiver_id})
+		receiver_notifications = receiver_ud["notifications"]
+
+		receiver_notifications.append({"type": "forum_post", "sender": session["data"]["username"], "sender_id": session["data"]["user_id"], "post_id": post_id})
+		receiver_ud["notifications"] = receiver_notifications
+
+		userdata.update_one({"_id": receiver_id}, {"$set": {"notifications": receiver_notifications}})
+
+		post = funcs.find_in_coll(forum, {"_id": post_id})
+		shares = post["shares"]
+		shares += 1
+		forum.update_one({"_id": post_id}, {"$set": {"shares": shares}})
+
+	return redirect(f"/forum/beitrag/{post_id}/view")
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)

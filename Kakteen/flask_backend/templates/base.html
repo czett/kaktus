@@ -175,7 +175,7 @@
 
     <div class="content">
         <div class="girlanden-icons">
-            {#{% for i in range(666) %}
+            {#{% for i in range(1400) %}
                 <i style="font-size: 25px; letter-spacing: 20px; line-height: 45px; ;" class="kaktus-icon ki-{{  i  }}">&#127797;</i>
             {% endfor %}#}
         
@@ -192,14 +192,22 @@
 
         <div id="content">
             {% if data["notifications"] is defined %}
-                {% for name in data["notifications"] %}
+                {% for notification in data["notifications"] %}
                     <div class="contentBoxText">
-                        <p class="contentBoxText2">{{  name  }} hat dich als Freund hinzugefügt!
+                        {% if notification["type"] == "freq" %}
+                        <p class="contentBoxText2">{{  notification["person"]  }} hat dich als Freund hinzugefügt!
                             <br> <p class="contentBoxText3"> Möchtest du die Anfrage annehmen? 
+                                {% set name = notification["person"] %}
                                 <i class="fa-solid fa-circle-xmark decline-icon" onmousedown="newUrl('/freq/decline/{{  name  }}')"></i>
                                 <i class="fa-solid fa-circle-check accept-icon" onmousedown="newUrl('/freq/accept/{{  name  }}')"></i>
                             </p>
                         </p>
+                        {% elif notification["type"] == "forum_post" %}
+                        <p class="contentBoxText2">{{  notification["sender"]  }} hat einen Forum-Beitrag geteilt!
+                            {% set postid = notification["post_id"] %}
+                            <br> <p class="contentBoxText3" style="cursor: pointer;" onmousedown="newUrl('/forum/beitrag/{{postid}}/sent')"> Klick hier!</p>
+                        </p>
+                        {% endif %}
                     </div>
                 {% endfor %}
             {% endif %}
