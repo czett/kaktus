@@ -2704,14 +2704,14 @@ input[type="radio"]{
 #navKitDiv {
     margin: 0;
     width: 10vw;
-    height: 89.9vh;
+    height: 89.5vh;
     overflow-x: hidden;
     overflow-y: scroll;
     position: fixed;
     background-color: var(--bg);
     border: 1px solid var(--ac);
     border-radius: 2vh;
-    margin-left: -1.5vw;
+    /* margin-left: -1.5vw; */
 }
 #navKitDiv::-webkit-scrollbar {
     display: none;
@@ -2732,6 +2732,8 @@ input[type="radio"]{
     cursor: pointer;
     transition: 150ms;
     opacity: 0.9;
+    overflow: visible;
+    display: flex;
 }
 .objKit:hover {
     transform: scale(1.05);
@@ -2739,20 +2741,111 @@ input[type="radio"]{
 }
 
 .ColorSelecter {
+    margin-left: 2vw;
+    width: 7vw;
+    height: 7vw;
     background-color: var(--bg);
-    z-index: 100;
+    border: 1px solid var(--ac);
+    border-radius: 15%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.moveIn {
+    margin-left: 0;
+}
+
+.KitColor {
+    font-size: 0.8vw;
+    text-align: center;
+    display: block;
+    margin: auto auto;
+    margin: 0;
+    padding: 0.4vw 0 0.4vw 0;
+    transition: 150ms;
+}
+
+.KitColor:hover {
+    background-color: #363636;
 }
 
 .KitImg {
+    display: flex;
     width: 7vw;
     height: 7vw;
     border-radius: 15%;
 }
 
+/*main Div*/
+
 #mainDiv {
     margin: 0;
     margin-left: 11vw;
     height: 88.2vh;
+}
+
+#kitTopf {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    border: 1px solid var(--fg);
+    top: 70vh;
+    left: 50vw;
+    right: 50vw;
+}
+
+#kitBody {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    border: 1px solid red;
+    top: 55%;
+    left: 50%;
+    right: 50%;
+}
+
+#kitArms {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    border: 1px solid orange;
+    top: 45%;
+    left: 50%;
+    right: 50%;
+}
+
+#kitHead {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    border: 1px solid yellow;
+    top: 30vh;
+    left: 50%;
+    right: 50%;
+}
+
+#kitHat {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    border: 1px solid blue;
+    top: 17%;
+    left: 50%;
+    right: 50%;
+}
+
+.KitImgGame {
+    
+    position: absolute;
+    visibility: hidden;
+    width: 12vw;
+    min-height: 12vw;
+}
+
+.importIMG {
+    visibility: visible;
 }
 
 /*===============/Kaktus Baukasten [ende]\============*/
@@ -3295,6 +3388,14 @@ textarea{
 
 /* post page ende */
 /* forum ende */
+
+button:disabled{
+    filter: saturate(0);
+}
+
+button:disabled:hover{
+    filter: saturate(0);
+}
 
 /*NICHT MEHR HIER DRUNTER ÄNDERN!!!!!!*/
 
