@@ -398,7 +398,7 @@ def kommentar_hinzufuegen(postid):
 			else:
 				comment_id_exists = False
 
-		comments.append({"_id": cid, "creator": session["data"]["username"], "creator_id": session["data"]["user_id"], "text": text, "likes": []})
+		comments.append({"_id": cid, "creator": session["data"]["username"], "creator_id": session["data"]["user_id"], "text": text, "likes": [], "replies": []})
 
 		forum.update_one({"_id": postid}, {"$set": {"comments": comments}})
 
@@ -422,6 +422,26 @@ def kommentar_loeschen(postid, comment_id):
 		forum.update_one({"_id": postid}, {"$set": {"comments": comments}})
 	
 	return redirect(f"/forum/beitrag/{postid}/view")
+
+@app.route("/forum/beitrag/<beitrag_id>/<comment_id>/kommentar-antwort", methods=["POST"])
+def kommentar_antworten(beitrag_id, comment_id):
+	comment_reply_text = request.form.get("comment-reply")
+
+	comment_reply = {"text": comment_reply_text, "creator": session["data"]["username"], "creator_id": session["data"]["user_id"]}
+
+	comments = funcs.find_in_coll(forum, {"_id": beitrag_id})["comments"]
+
+	for index, item in enumerate(comments):
+		if item["_id"] == comment_id:
+			comments.pop(index)
+			comment = item
+
+	comment["replies"].append(comment_reply)
+	comments.append(comment)
+
+	forum.update_one({"_id": beitrag_id}, {"$set": {"comments": comments}})
+
+	return redirect(f"/forum/beitrag/{beitrag_id}/view")
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)

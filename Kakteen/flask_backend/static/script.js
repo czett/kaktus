@@ -314,3 +314,7 @@ function toggleNewPostForm(){
 }
 
 // new post forum ende
+
+function showReplyForm(comment_id){
+	document.querySelector(".reply-comment-form-" + comment_id).style.display = "block";
+}
