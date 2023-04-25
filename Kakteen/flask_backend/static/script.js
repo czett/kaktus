@@ -314,3 +314,13 @@ function toggleNewPostForm(){
 }
 
 // new post forum ende
+
+//Ladeanimation Anfang
+
+
+
+
+
+
+
+//Ladeanimation Ende

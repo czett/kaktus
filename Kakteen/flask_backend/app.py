@@ -106,6 +106,16 @@ def kaufen():
 	check_if_logged_in()
 	return render_template("kaufen.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
+@app.route("/weiter1")
+def weiter1():
+	check_if_logged_in()
+	return render_template("weiter1.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
+@app.route("/weiter2")
+def weiter2():
+	check_if_logged_in()
+	return render_template("weiter2.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
 @app.route("/auswahl/bestaetigen", methods=["POST"])
 def auswahlbestaetigen():
 	check_if_logged_in()
@@ -288,8 +298,6 @@ def logout():
 	session.clear()
 	return redirect("/")
 
-
-
 @app.route("/baukasten")
 def kaubasten():
 	check_if_logged_in()
@@ -341,11 +349,19 @@ def neuer_beitrag():
 
 	return redirect("/forum")
 
-@app.route("/forum/beitrag/<beitrag_id>")
-def forum_beitrag(beitrag_id):
+@app.route("/forum/beitrag/<beitrag_id>/<action>")
+def forum_beitrag(beitrag_id, action):
 	if funcs.find_in_coll(forum, {"_id": beitrag_id}) != None:
 		post = funcs.find_in_coll(forum, {"_id": beitrag_id})
-		return render_template("beitrag.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
+		clicks = post["clicks"]
+		clicks += 1
+
+		forum.update_one({"_id": beitrag_id}, {"$set": {"clicks": clicks}})		
+
+		if action == "view":
+			return render_template("beitrag.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
+		else:
+			return render_template("beitrag.html", action=action, logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
 	else:
 		return redirect("/forum")
 
@@ -396,9 +412,9 @@ def kommentar_hinzufuegen(postid):
 
 		forum.update_one({"_id": postid}, {"$set": {"comments": comments}})
 
-		return redirect(f"/forum/beitrag/{postid}")
+		return redirect(f"/forum/beitrag/{postid}/view")
 	except:
-		return redirect(f"/forum/beitrag/{postid}")
+		return redirect(f"/forum/beitrag/{postid}/view")
 
 @app.route("/forum/beitrag/<postid>/kommentar-loeschen/<comment_id>")
 def kommentar_loeschen(postid, comment_id):
@@ -415,7 +431,7 @@ def kommentar_loeschen(postid, comment_id):
 
 		forum.update_one({"_id": postid}, {"$set": {"comments": comments}})
 	
-	return redirect(f"/forum/beitrag/{postid}")
+	return redirect(f"/forum/beitrag/{postid}/view")
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)
