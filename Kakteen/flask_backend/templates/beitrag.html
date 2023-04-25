@@ -18,7 +18,8 @@
         <p class="post-question">
             {% for word in post["desc"].split() %}
                 {% if "@" in word %}
-                    <span class="account-tag">{{  word  }}</span>
+                    {% set cleaned = word.replace('@', '') %}
+                    <span class="account-tag" onmousedown="newUrl('/profil/{{  cleaned  }}')">{{  word  }}</span>
                 {% else %}
                     {{  word  }}
                 {% endif %}
