@@ -15,7 +15,7 @@ userdata = db["userdata"]
 forum = db["forum"]
 
 def fill_notification_box():
-	freqs = funcs.find_in_coll(userdata, {"_id": session["data"]["user_id"]})["friend_requests"]
+	freqs = funcs.find_in_coll(userdata, {"_id": session["data"]["user_id"]})["notifications"]
 	
 	session["data"]["notifications"] = []
 
@@ -176,7 +176,7 @@ def register():
 
 		session["data"] = {"user_id": uid, "username": un, "pimg": None, "friends": [], "own_profile": True}
 
-		funcs.add_entry(userdata, {"_id": uid, "friends": [], "pimg": None, "friend_requests": []})
+		funcs.add_entry(userdata, {"_id": uid, "friends": [], "pimg": None, "notifications": []})
 
 		return redirect("/profil")
 	else:
@@ -247,7 +247,7 @@ def change_password():
 @app.route("/freund-hinzufuegen/<profil>")
 def freund_hinzufuegen(profil):
 	uid = funcs.find_in_coll(logreg, {"username": profil})["_id"]
-	freqs = funcs.find_in_coll(userdata, {"_id": uid})["friend_requests"]
+	freqs = funcs.find_in_coll(userdata, {"_id": uid})["notifications"]
 	friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
 
 	freq_exists = False
@@ -261,7 +261,7 @@ def freund_hinzufuegen(profil):
 		freqs.append({"type": "freq", "person": session["data"]["username"]})
 
 		query = {"_id": uid}
-		newvals = {"$set": {"friend_requests": freqs}}
+		newvals = {"$set": {"notifications": freqs}}
 		userdata.update_one(query, newvals)
 
 	return redirect("/profil")
@@ -269,7 +269,7 @@ def freund_hinzufuegen(profil):
 @app.route("/freq/<action>/<person>")
 def handle_freq(action, person):
 	uid = session["data"]["user_id"]
-	freqs = funcs.find_in_coll(userdata, {"_id": uid})["friend_requests"]
+	freqs = funcs.find_in_coll(userdata, {"_id": uid})["notifications"]
 	friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
 
 	for index, notif in enumerate(freqs):
@@ -277,7 +277,7 @@ def handle_freq(action, person):
 			if notif["person"] == person:
 				freqs.pop(index)	
 
-	userdata.update_one(funcs.find_in_coll(userdata, {"_id": uid}), {"$set": {"friend_requests": freqs}})
+	userdata.update_one(funcs.find_in_coll(userdata, {"_id": uid}), {"$set": {"notifications": freqs}})
 
 	if action == "accept" and str(person) not in friends:
 		friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
@@ -372,7 +372,25 @@ def forum_beitrag(beitrag_id, action):
 
 		forum.update_one({"_id": beitrag_id}, {"$set": {"clicks": clicks}})		
 
+		if (datetime.now() - post["date"]).total_seconds() > 120:
+			post["hot"] = False
+		else:
+			post["hot"] = True
+
 		if action == "view":
+			return render_template("beitrag.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
+		elif action == "sent":
+			own_notis = funcs.find_in_coll(userdata, {"_id": session["data"]["user_id"]})["notifications"]
+			for index, item in enumerate(own_notis):
+				#return "wöoifhwpöeuhgfuefwgöiwegf"
+				if item["type"] == "forum_post":
+					if item["post_id"] == beitrag_id:
+						own_notis.pop(index)
+
+			userdata.update_one({"_id": session["data"]["user_id"]}, {"$set": {"notifications": own_notis}})
+			session["data"]["notifications"] = own_notis
+			session.modified = True
+
 			return render_template("beitrag.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
 		else:
 			return render_template("beitrag.html", action=action, logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
@@ -466,6 +484,25 @@ def kommentar_antworten(beitrag_id, comment_id):
 	forum.update_one({"_id": beitrag_id}, {"$set": {"comments": comments}})
 
 	return redirect(f"/forum/beitrag/{beitrag_id}/view")
+
+@app.route("/forum/beitrag-teilen/<post_id>/<receiver>")
+def beitrag_teilen(post_id, receiver):
+	if receiver in funcs.find_in_coll(userdata, {"_id": session["data"]["user_id"]})["friends"]:
+		receiver_id = funcs.find_in_coll(logreg, {"username": receiver})["_id"]
+		receiver_ud = funcs.find_in_coll(userdata, {"_id": receiver_id})
+		receiver_notifications = receiver_ud["notifications"]
+
+		receiver_notifications.append({"type": "forum_post", "sender": session["data"]["username"], "sender_id": session["data"]["user_id"], "post_id": post_id})
+		receiver_ud["notifications"] = receiver_notifications
+
+		userdata.update_one({"_id": receiver_id}, {"$set": {"notifications": receiver_notifications}})
+
+		post = funcs.find_in_coll(forum, {"_id": post_id})
+		shares = post["shares"]
+		shares += 1
+		forum.update_one({"_id": post_id}, {"$set": {"shares": shares}})
+
+	return redirect(f"/forum/beitrag/{post_id}/view")
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)

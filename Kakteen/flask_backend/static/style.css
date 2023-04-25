@@ -3281,6 +3281,18 @@ textarea{
     color: var(--bg);
 }
 
+.account-tag{
+    background-color: var(--ac);
+    border-radius: .5vh;
+    padding: .25vh;
+    font-size: 1.5vh;
+    transition: 175ms;
+}
+
+.account-tag:hover{
+    filter: brightness(1.1);
+}
+
 /* post page ende */
 /* forum ende */
 

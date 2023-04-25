@@ -15,7 +15,15 @@
         <h3 class="post-title">{{  post["title"]  }}
             <p class="post-creator" onmousedown="newUrl('/profil/{{  postcreator  }}')">{{  post["creator"]  }}, am {{  post["date"].strftime("%d/%m/%Y %H:%M:%S")  }}</p>
         </h3>
-        <p class="post-question">{{  post["desc"]  }}</p>
+        <p class="post-question">
+            {% for word in post["desc"].split() %}
+                {% if "@" in word %}
+                    <span class="account-tag">{{  word  }}</span>
+                {% else %}
+                    {{  word  }}
+                {% endif %}
+            {% endfor%}
+        </p>
         <div class="post-side-icons">
             {% if post["hot"] == True%}
                 <p class="hot-post"><i class="fa-solid fa-fire-flame-curved"></i> heißer Beitrag!</p>
@@ -60,31 +68,23 @@
                 <i class="fa-solid fa-xmark"></i>
             </div>
         </div>
+        {% for friend in data["friends"] %}
         <div class="friend">
-            <p class="friend-name">Momogus</p>
-            <div class="share-icon-wrap">
+            <p class="friend-name">{{  friend  }}</p>
+            <div class="share-icon-wrap" onmousedown="newUrl('/forum/beitrag-teilen/{{  postid  }}/{{  friend  }}')">
                 <i class="fa-solid fa-bomb"></i>
             </div>
         </div>
-        <div class="friend">
-            <p class="friend-name">Momogus</p>
-            <div class="share-icon-wrap">
-                <i class="fa-solid fa-bomb"></i>
-            </div>            
-        </div>
-        <div class="friend">
-            <p class="friend-name">Momogus</p>
-            <div class="share-icon-wrap">
-                <i class="fa-solid fa-bomb"></i>
-            </div>            
-        </div>
-        <div class="friend">
-            <p class="friend-name">Momogus</p>
-            <div class="share-icon-wrap">
-                <i class="fa-solid fa-bomb"></i>
-            </div>            
-        </div>
+        {% endfor %}
     </div>
+
+    {% if action is defined and action == "share" %}
+    <style>
+        .share-popup{
+            display: block;
+        }
+    </style>
+    {% endif %}
 
     <div class="post-new-block add-comment">
         <form action="/forum/beitrag/{{  postid  }}/kommentar-hinzufuegen" method="post" enctype="multipart/form-data">
@@ -111,8 +111,6 @@
 
                     {% if comment["creator_id"] == data["user_id"] %}
                     <i class="fa-regular fa-trash-can comment-like-icon" onmousedown="newUrl('/forum/beitrag/{{  postid  }}/kommentar-loeschen/{{  comment_id  }}')"></i>
-                    {% else %}
-                    <i class="fa-regular fa-heart comment-like-icon" onmousedown="newUrl('/forum/beitrag/{{  postid  }}/kommentar-liken/{{  comment_id  }}')"></i>
                     {% endif %}
 
                     <p class="reply-btn" onmousedown="showReplyForm('{{  comment_id  }}')">antworten</p>
