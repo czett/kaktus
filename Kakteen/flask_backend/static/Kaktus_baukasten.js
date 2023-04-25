@@ -13,6 +13,21 @@ const importImg2 = document.querySelector('#importImg2');
 const importImg3 = document.querySelector('#importImg3');
 const importImg4 = document.querySelector('#importImg4');
 
+const importImg11 = document.querySelector('#importImg11');
+const importImg22 = document.querySelector('#importImg22');
+const importImg33 = document.querySelector('#importImg33');
+const importImg44 = document.querySelector('#importImg44');
+
+const importImg111 = document.querySelector('#importImg111');
+const importImg222 = document.querySelector('#importImg222');
+const importImg333 = document.querySelector('#importImg333');
+const importImg444 = document.querySelector('#importImg444');
+
+const importImg1111 = document.querySelector('#importImg1111');
+const importImg2222 = document.querySelector('#importImg2222');
+const importImg3333 = document.querySelector('#importImg3333');
+const importImg4444 = document.querySelector('#importImg4444');
+
 // Körper
 const importBody1 = document.querySelector('#importBody1');
 const importBody2 = document.querySelector('#importBody2');
@@ -108,93 +123,100 @@ function clickColor4() {
 // 2. topf
 
 function clickColor11() {
-    importImg1.classList.add('importIMG');
-    importImg2.classList.remove('importIMG');
-    importImg3.classList.remove('importIMG');
-    importImg4.classList.remove('importIMG');
+    importImg11.classList.add('importIMG');
+    importImg22.classList.remove('importIMG');
+    importImg33.classList.remove('importIMG');
+    importImg44.classList.remove('importIMG');
 }
 
 function clickColor22() {
-    importImg2.classList.add('importIMG');
-    importImg1.classList.remove('importIMG');
-    importImg3.classList.remove('importIMG');
-    importImg4.classList.remove('importIMG');
+    importImg22.classList.add('importIMG');
+    importImg11.classList.remove('importIMG');
+    importImg33.classList.remove('importIMG');
+    importImg44.classList.remove('importIMG');
 }
 
 function clickColor33() {
-    importImg3.classList.add('importIMG');
-    importImg2.classList.remove('importIMG');
-    importImg1.classList.remove('importIMG');
-    importImg4.classList.remove('importIMG');
+    importImg33.classList.add('importIMG');
+    importImg22.classList.remove('importIMG');
+    importImg11.classList.remove('importIMG');
+    importImg44.classList.remove('importIMG');
 }
 
 function clickColor44() {
-    importImg4.classList.add('importIMG');
-    importImg2.classList.remove('importIMG');
-    importImg3.classList.remove('importIMG');
-    importImg1.classList.remove('importIMG');
+    importImg44.classList.add('importIMG');
+    importImg22.classList.remove('importIMG');
+    importImg33.classList.remove('importIMG');
+    importImg11.classList.remove('importIMG');
 }
 
 // 3. topf
 
 function clickColor111() {
-    importImg1.classList.add('importIMG');
-    importImg2.classList.remove('importIMG');
-    importImg3.classList.remove('importIMG');
-    importImg4.classList.remove('importIMG');
+    importImg111.classList.add('importIMG');
+    importImg222.classList.remove('importIMG');
+    importImg333.classList.remove('importIMG');
+    importImg444.classList.remove('importIMG');
 }
 
 function clickColor222() {
-    importImg2.classList.add('importIMG');
-    importImg1.classList.remove('importIMG');
-    importImg3.classList.remove('importIMG');
-    importImg4.classList.remove('importIMG');
+    importImg222.classList.add('importIMG');
+    importImg111.classList.remove('importIMG');
+    importImg333.classList.remove('importIMG');
+    importImg444.classList.remove('importIMG');
 }
 
 function clickColor333() {
-    importImg3.classList.add('importIMG');
-    importImg2.classList.remove('importIMG');
-    importImg1.classList.remove('importIMG');
-    importImg4.classList.remove('importIMG');
+    importImg333.classList.add('importIMG');
+    importImg222.classList.remove('importIMG');
+    importImg111.classList.remove('importIMG');
+    importImg444.classList.remove('importIMG');
 }
 
 function clickColor444() {
-    importImg4.classList.add('importIMG');
-    importImg2.classList.remove('importIMG');
-    importImg3.classList.remove('importIMG');
-    importImg1.classList.remove('importIMG');
+    importImg444.classList.add('importIMG');
+    importImg222.classList.remove('importIMG');
+    importImg333.classList.remove('importIMG');
+    importImg111.classList.remove('importIMG');
 }
 
 // 4. topf
 
 function clickColor1111() {
-    importImg1.classList.add('importIMG');
-    importImg2.classList.remove('importIMG');
-    importImg3.classList.remove('importIMG');
-    importImg4.classList.remove('importIMG');
+    importImg1111.classList.add('importIMG');
+    importImg2222.classList.remove('importIMG');
+    importImg3333.classList.remove('importIMG');
+    importImg4444.classList.remove('importIMG');
 }
 
 function clickColor2222() {
-    importImg2.classList.add('importIMG');
-    importImg1.classList.remove('importIMG');
-    importImg3.classList.remove('importIMG');
-    importImg4.classList.remove('importIMG');
+    importImg2222.classList.add('importIMG');
+    importImg1111.classList.remove('importIMG');
+    importImg3333.classList.remove('importIMG');
+    importImg4444.classList.remove('importIMG');
 }
 
 function clickColor3333() {
-    importImg3.classList.add('importIMG');
-    importImg2.classList.remove('importIMG');
-    importImg1.classList.remove('importIMG');
-    importImg4.classList.remove('importIMG');
+    importImg3333.classList.add('importIMG');
+    importImg2222.classList.remove('importIMG');
+    importImg1111.classList.remove('importIMG');
+    importImg4444.classList.remove('importIMG');
 }
 
 function clickColor4444() {
-    importImg4.classList.add('importIMG');
-    importImg2.classList.remove('importIMG');
-    importImg3.classList.remove('importIMG');
-    importImg1.classList.remove('importIMG');
+    importImg4444.classList.add('importIMG');
+    importImg2222.classList.remove('importIMG');
+    importImg333.classList.remove('importIMG');
+    importImg1111.classList.remove('importIMG');
 }
 
+function clearImg() {
+    var bilder = document.querySelectorAll('.KitImgGame');
+
+    [].forEach(bilder, function(bild){
+        bild.classList.remove('importIMG');
+    })
+}
 
 // body
 function clickBody1() {
