@@ -288,6 +288,8 @@ def logout():
 	session.clear()
 	return redirect("/")
 
+
+
 @app.route("/baukasten")
 def kaubasten():
 	check_if_logged_in()

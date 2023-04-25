@@ -358,6 +358,7 @@ body, html{
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .profile-icon:hover{
@@ -1106,14 +1107,169 @@ display: inline-block;
     display: none;
 }
 
-.contentBoxText-w {
+.contentBoxText-w1 {
     margin: 0;
     padding: 0.9vh 1vw 0.9vh 1.75vw;
     display: block;
     align-items: center;
     transition: 150ms;
     border: 2px solid var(--ac);
+    visibility: hidden;
 }
+.contentBoxText-w2 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: hidden;
+}
+
+.contentBoxText-w3 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: hidden;
+}
+
+.contentBoxText-w4 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: hidden;
+}
+
+.contentBoxText-w5 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: hidden;
+}
+
+.contentBoxText-w6 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: hidden;
+}
+
+.contentBoxText-w7 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: hidden;
+}
+
+.contentBoxText-w8 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: hidden;
+}
+
+
+
+.contentBoxText-w1.visible1 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+
+.contentBoxText-w2.visible2 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+
+
+.contentBoxText-w3.visible3 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+
+
+.contentBoxText-w4.bell-new-dot {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+
+.contentBoxText-w5.visible5 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+.contentBoxText-w6.visible6 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+
+.contentBoxText-w7.visible7 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+
+.contentBoxText-w8.visible8 {
+    margin: 0;
+    padding: 0.9vh 1vw 0.9vh 1.75vw;
+    display: block;
+    align-items: center;
+    transition: 150ms;
+    border: 2px solid var(--ac);
+    visibility: visible;
+}
+
+
 
 .contentBoxText-w:hover {
     background-color: rgb(59, 59, 59);
@@ -1262,7 +1418,39 @@ display: inline-block;
     border-radius: 50%;
 }
 
+.button-profil {
+    transition-duration: 0.4s;
+    font-size: 30px;
+    min-width: 40vh;
+    min-height: 10vh;
+    transform: translate(200%,70%);
+    color: white;
+    
+    background-color: var(--ac); 
+    border-radius: 1vw;
+    overflow: visible;
+    border: 3px solid var(--ac);
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    display: inline-block;
+    
+}
 
+.button-profil:hover {
+
+    background-image: url(img/bezahlen.png);
+    background-position: 50%, 50%;
+    background-size: 200%;
+    background-color: var(--ac); 
+    color: transparent; 
+   
+    
+    animation: warenkorb;
+    animation-iteration-count: infinite;
+    animation-duration: 1000ms;
+    animation-delay: 10ms;
+}
 
 
 /* Mein Warenkrob Ende */
@@ -1442,7 +1630,7 @@ transform: translate(0%, -45%);
         display: inline-block;
         color: transparent;
         box-sizing: border-box;
-        transform: translate(100%, -1280%);
+        transform: translate(100%, -1180%);
         padding-top: 1.5vw;
         padding-right: 2vw;
         background-size: 220%;
@@ -1516,6 +1704,190 @@ transform: translate(0%, -45%);
     
 
 /* Entdecken Ende */
+
+/* Kaufen anfang */
+
+.bezahlart {
+
+font-size: 30px;
+color: black;
+text-align: center;
+font-weight: bold;
+
+
+}
+
+
+.auswaehlen1{
+
+color: black;
+font-size: 30px;
+text-align: center;
+
+}
+
+.auswaehlen2 {
+
+color: black;
+font-size: 30px;
+text-align: center;
+}
+
+.button-k {
+    transition-duration: 0.4s;
+    font-size: 30px;
+    min-width: 40vh;
+    min-height: 10vh;
+    transform: translate(235px,100px);
+    color: white;
+    
+    background-color: var(--ac); 
+    border-radius: 1vw;
+    overflow: visible;
+    border: 3px solid var(--ac);
+    font-weight: bold;
+    
+    
+}
+
+.button-k:hover {
+
+    background-image: url(img/geld.png);
+    background-position: 50%, 50%;
+    background-size: 150%;
+    background-color: var(--ac); 
+    color: transparent; 
+   
+    
+    animation: warenkorb;
+    animation-iteration-count: infinite;
+    animation-duration: 1000ms;
+    animation-delay: 10ms;
+}
+
+label::after {
+	content: "";
+	display: block;
+}
+
+input:checked {
+  outline: 2px solid var(--ac2);
+}
+
+input:checked + label {
+  color: var(--ac2);
+  font-weight: bold;
+}
+
+.text-k{
+
+text-decoration: underline;
+font-size: 30px;
+text-decoration-color: #EB6E6E;
+font-weight: bold;
+}
+
+.text-k2 {
+
+    font-size: 25px;
+
+}
+
+
+.news {
+
+font-size: 30px;
+
+}
+
+.kartenangaben {
+
+    font-size: 30px;
+    
+
+}
+
+.ang {
+
+background-color: #303030;
+border: 2px solid var(--ac);
+font-size: 30px;
+border-radius: 0.5vw;
+
+}
+
+.Rechnungsadresse {
+
+display: none;
+
+
+
+}
+
+.Rechnungsadresse.show {
+
+display: block;
+
+}
+
+.firma {
+
+    display: none;
+
+
+
+}
+
+.firma.vis {
+
+    display: block;
+
+}
+
+.adresse2 {
+
+    display: none;
+
+}
+
+.adresse2.look {
+
+    display: block;
+
+}
+
+.text-k3 {
+
+    text-decoration: underline;
+    font-size: 30px;
+    text-decoration-color: #EB6E6E;
+    font-weight: bold;
+    text-align: center;
+    
+    align-items: right;
+
+
+}
+
+
+
+/* .betrag {
+
+    
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    display: inline-block;
+   
+
+
+
+} */
+
+/* Kaufen Ende */
+
+
 
 
 
@@ -1750,6 +2122,17 @@ input[type="radio"]{
     font-size: 16px;
 }
 
+.freunde {
+
+    cursor: pointer;
+}
+
+.logout {
+
+
+    cursor: pointer;
+}
+
 .top-leiste .profile-image-container{
     position: relative;
     height: calc(2px + 20vh);
@@ -1951,6 +2334,8 @@ input[type="radio"]{
     padding: 0.75vw;
     width: 15vw;
     box-sizing: border-box;
+    cursor: pointer;
+   
 }
 
 .gradient-text{
@@ -2175,31 +2560,55 @@ input[type="radio"]{
 
 #navKitDiv {
     margin: 0;
-    width: 13vw;
+    width: 10vw;
     height: 89.9vh;
+    overflow-x: hidden;
     overflow-y: scroll;
     position: fixed;
     background-color: var(--bg);
     border: 1px solid var(--ac);
     border-radius: 2vh;
     margin-left: -1.5vw;
-    overflow: visible;
-    padding: 1vw;
-    box-sizing: border-box;
 }
 #navKitDiv::-webkit-scrollbar {
     display: none;
 }
 
+.KitHeadline {
+    margin-top: 1vh;
+    text-align: center;
+    padding-bottom: 0.5vh;
+    border-bottom: 1px solid var(--ac);
+    border-radius: 5%;
+}
+
 .objKit {
     margin: 0 auto 3vh auto;
-    width: 10vw;
-    height: 10vh;
+    width: 7vw;
+    height: 7vw;
+    cursor: pointer;
+    transition: 150ms;
+    opacity: 0.9;
+}
+.objKit:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.ColorSelecter {
+    background-color: var(--bg);
+    z-index: 100;
+}
+
+.KitImg {
+    width: 7vw;
+    height: 7vw;
+    border-radius: 15%;
 }
 
 #mainDiv {
     margin: 0;
-    margin-left: 12vw;
+    margin-left: 11vw;
     height: 88.2vh;
 }
 

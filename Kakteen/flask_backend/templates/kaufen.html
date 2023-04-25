@@ -2,7 +2,161 @@
 
 {% block content %} 
 
-<h1 class="ueberschrift">Kaufen</h1>
-<br>
+<div class="auswahl-back"><a href="/warenkorb" class="fa-solid fa-arrow-right fa-rotate-180 fa-xl"></a></div>
+
+<h1 class="ueberschrift">Bezahlart wählen</h1><p class="text-k3"><b>Betrag:</b></p>
+<!-- <p class="Betrag"><b>----</b></p> -->
+
+<div class="text-k">
+    
+    <p class="text-k">Versandart*:  </p>
+
+    <input type="checkbox" id="meth1" onmousedown="adressevis()" name="Zahlmethode" value="Mastercard">
+          <label for="meth1"> Abholung</label> 
+          <input type="checkbox" checked required id="meth2" onmousedown="adresse()" name="Zahlmethode" value="Mastercard">
+          <label for="meth2"> Versand</label> 
+</div>
+
+
+
+    <form name="form" class="bezahlart">
+        <table>
+            <tbody>
+    </select>
+    
+    <tr>
+    <td class="text-k">Zahlungsart*:  </td> 
+    </tr>
+    <br>
+    <tr>
+    <td><select name="zahlung" size="1" class="auswaehlen2">
+    <option selected value="1" style="color: black" class="ang">American Express</option>
+    <option value="2" style="color: black" class="ang">Visa</option>
+    <option value="3" style="color: black" class="ang">PayPal</option>
+    <option value="4" style="color: black" class="ang">Mastercard</option>
+    <option value="5" style="color: black" class="ang">ApplePay</option>
+    </select></td>
+    </tr>
+
+    
+    </tbody>
+    </table>
+    </form>
+    <br>
+    <form class="kartenangaben">
+
+        
+        <div class="text-k">
+            <p><b> Kartenangaben*:</b></p>
+            </div>
+
+            <input type="checkbox" id="mann" name="Zahlmethode" value="Herr">
+          <label for="mann"> Herr </label>
+          <input type="checkbox" id="frau" name="Zahlmethode" value="Frau">
+          <label for="frau"> Frau</label> 
+          <input type="checkbox" id="divers" name="Zahlmethode" value="Divers">
+          <label for="divers"> Divers</label> 
+          <br>
+          
+   
+        <!-- <label for="num"><b> Kartennummer*:</b></label> -->
+        <input required type="number" id="num" style="color: black" class="ang" placeholder="Kartennummer*">     <input type="date" required id="num" style="color: black" class="ang" placeholder="Gültig bis*">
+        <br>
+        <br>
+     
+        <input required type="text" id="inh" style="color: black" class="ang" placeholder="Vorname*"> <input type="text" required id="nach" style="color: black" class="ang" placeholder="Nachname*">
+        <br>
+        <br>
+        <input required type="number" id="num" style="color: black" class="ang" placeholder="Sicherheitscode*"> <input type="email" required id="e-mail" style="color: black" class="ang" placeholder="E-Mail*">
+        
+       
+        <br>
+        <br>
+        <input required type="number" id="tel" style="color: black" class="ang" placeholder="Telefonnummer*">
+        <br>
+        <br>
+        
+      <div class="Rechnungsadresse">
+        <div class="text-k">
+        <p><b> Deine Rechnungsadresse*:</b></p>
+        </div>
+
+        <input type="checkbox" checked id="priv" name="Zahlmethode" value="Mastercard" class="news">  
+       
+        <label for="priv"> Privat</label>  
+         <input type="checkbox" id="firm" onmousedown="firmen()" name="Zahlmethode" value="Mastercard" class="news">
+         <label for="firm"> Firma</label>
+         <br>
+                               
+        <input type="number" required id="plz" style="color: black" class="ang" placeholder=" PLZ*">    <input type="text" required id="plz" style="color: black" class="ang" placeholder=" Ort*">         
+
+      
+        <br>
+        <br>
+     
+        <input type="text" required id="e-mail" style="color: black" class="ang" placeholder="Straße*"> <input type="number" required id="e-mail" style="color: black" class="ang" placeholder="Hausnummer*">
+
+        <br>
+        <br>
+     
+        <input type="text" id="e-mail" style="color: black" class="ang" placeholder="Klingelname"> <input type="text" id="e-mail" style="color: black" class="ang" placeholder="Zusatz-Info">
+
+        <br>
+        <br>
+        <div class="firma">
+
+        <input type="text" required id="e-mail" style="color: black" class="ang" placeholder="Firmenname*"> <input type="text" required id="e-mail" style="color: black" class="ang" placeholder="Firmen E-Mail*">
+    
+    </div></div>
+
+
+    <div class="adresse2">
+
+        <p class="text-k">Unsere Adresse:</p>
+    
+        <p class="text-k2">Adessoplatz 1<br>
+            44269 Dortmund <br>
+            Deutschland
+    
+        </p>
+    
+    
+        
+      </div>
+
+      <div class="news">
+       
+
+      
+        <input type="checkbox" checked id="mc" name="Zahlmethode" value="Mastercard">
+        <label for="mc"> Ich möchte den Kakteen Newsletter gratis dazu bekommen</label> 
+        
+  
+      </div>
+      
+      
+      <a href="/warenkorb">
+        <button class="button-k">Bestellen</button>
+    </a>
+
+
+
+    </form>
+   
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <p><b> Alle Felder mit einem * sind Pflichfelder und müssen zwingend ausgefüllt werden!</b></p>
+
+    <br>
+    <br>
+    
+    
 
 {% endblock %}
