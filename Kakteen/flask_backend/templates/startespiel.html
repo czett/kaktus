@@ -21,7 +21,9 @@
 
     </style>
     
-    <canvas id="canvas" width="1800" height="810"></canvas>
+    <canvas id="canvas" 
+    requestFullscreen();
+    </canvas>
    
 
     <script>
@@ -95,7 +97,9 @@
                 snake[0].y < 0 ||
                 snake[0].y > rows - 1 ||
                 duplicatePart
+               
             ) {
+                // window.location.href = "/startespiel";
                 placeFood();
                 snake = [{
                     x: 19,
@@ -132,6 +136,7 @@
 
         function gameLoop() {
             testGameOver();
+           
             if (foodCollected) {
                 snake = [{
                     x: snake[0].x,
@@ -139,6 +144,7 @@
                 }, ...snake];
 
                 foodCollected = false;
+                
             }
 
             shiftSnake();
