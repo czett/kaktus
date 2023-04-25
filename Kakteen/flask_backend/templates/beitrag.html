@@ -10,8 +10,8 @@
 
 <div class="post-container">
     {% set postid = post["_id"] %}
-    <div class="post post-new-block" onmousedown="newUrl('forum/beitrag/{{  postid  }}')">
-        <h3 class="post-title">{{  post["title"]  }}
+    <div class="post post-new-block">
+        <h3 class="post-title" onmousedown="newUrl('forum/beitrag/{{  postid  }}')">{{  post["title"]  }}
             <p class="post-creator">{{  post["creator"]  }}, am {{  post["date"].strftime("%d/%m/%Y %H:%M:%S")  }}</p>
         </h3>
         <p class="post-question">{{  post["desc"]  }}</p>
@@ -26,7 +26,6 @@
 
         <div class="post-interaction-options">
             <div class="like-post" onmousedown="newUrl('/forum/beitrag-liken/{{  postid  }}')">
-                
                 {% if data["user_id"] in post["likes"] %}
                     <i class="fa-solid fa-heart liked-heart" style="color: #DB0000;"></i>
                 {% else %}

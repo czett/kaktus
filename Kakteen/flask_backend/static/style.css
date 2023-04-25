@@ -2293,6 +2293,9 @@ input[type="radio"]{
 
 .new-posts-container .post-preview:hover{
     backdrop-filter: brightness(1.2);
+}
+
+.post-preview .post-title:hover{
     cursor: pointer;
 }
 

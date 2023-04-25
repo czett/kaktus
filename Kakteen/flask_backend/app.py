@@ -307,7 +307,7 @@ def forum_render():
 	for post in forum.find():
 		posts.append(post)
 
-		if (datetime.now() - post["date"]).total_seconds() > 10:
+		if (datetime.now() - post["date"]).total_seconds() > 120:
 			post["hot"] = False
 		else:
 			post["hot"] = True
