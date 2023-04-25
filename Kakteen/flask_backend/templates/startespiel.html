@@ -8,20 +8,25 @@
     <title>Snake</title>
 </head>
 
-<body>
+<body onkeyup="draw()">
     <style>
     canvas{
         float: right;
     }
 
+    
+
+
+
+
     </style>
     
     <canvas id="canvas" width="1800" height="810"></canvas>
-    <button onmousedown="startSnake()" id="startBtn">
-        starten
-    </button>
+   
 
     <script>
+        
+       
         let canvas = document.getElementById('canvas');
         let ctx = canvas.getContext('2d');
         let rows = 20;
@@ -43,10 +48,8 @@
         setInterval(gameLoop, 100);
         document.addEventListener('keydown', keyDown);
 
-        function startSnake(){
-            document.getElementById("startBtn").style.visibility = "hidden";
-            draw();
-        }
+        
+    
 
 
         function firstDraw() {
@@ -102,7 +105,7 @@
             }
 
         }
-
+        
 
         function placeFood() {
             let randomX = Math.floor(Math.random() * cols);
@@ -166,16 +169,16 @@
         }
 
         function keyDown(e) {
-            if (e.keyCode == 37) {
+            if (e.keyCode == 65) {
                 direction = 'LEFT';
             }
-            if (e.keyCode == 38) {
+            if (e.keyCode == 87) {
                 direction = 'UP';
             }
-            if (e.keyCode == 39) {
+            if (e.keyCode == 68) {
                 direction = 'RIGHT';
             }
-            if (e.keyCode == 40) {
+            if (e.keyCode == 83) {
                 direction = 'DOWN';
             }
         }
