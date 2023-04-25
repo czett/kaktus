@@ -9,6 +9,10 @@
 </head>
 
 <body onkeyup="draw()">
+
+    <p id="points" class="zahl-p1"><b>0</b></p>
+
+
     <style>
     canvas{
         float: right;
@@ -21,8 +25,8 @@
 
     </style>
     
-    <canvas id="canvas" 
-    requestFullscreen();
+    <canvas id="canvas">
+            requestFullscreen();
     </canvas>
    
 
@@ -85,11 +89,14 @@
             
         }
 
+      
+
         function testGameOver() {
 
             let firstPart = snake[0];
             let otherParts = snake.slice(1);
             let duplicatePart = otherParts.find(part => part.x == firstPart.x && part.y == firstPart.y);
+            var wand = false;
 
             // 1. Schlange läuft gegen die Wand
             if (snake[0].x < 0 ||
@@ -99,13 +106,20 @@
                 duplicatePart
                
             ) {
-                // window.location.href = "/startespiel";
+
+                
                 placeFood();
                 snake = [{
                     x: 19,
                     y: 3
                 }];
                 direction = 'LEFT';
+                wand = true;
+
+                point = 0;
+                document.getElementById('points').innerHTML = point;
+                
+         
             }
 
         }
@@ -136,6 +150,8 @@
 
         function gameLoop() {
             testGameOver();
+            score();
+            
            
             if (foodCollected) {
                 snake = [{
@@ -188,6 +204,29 @@
                 direction = 'DOWN';
             }
         }
+
+        var point = 0;
+         
+        function score() {
+        
+        if (foodCollected == true){
+
+        point += 1;
+	    document.getElementById('points').innerHTML = point;
+        }
+
+        //  if (wand == true && point>0){
+
+        // point == 0;
+	    // document.getElementById('points').innerHTML = point;
+        // wand = false;
+    
+        //     }
+         }
+
+         
+         
+
     </script>
 
 </body>
