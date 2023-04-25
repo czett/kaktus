@@ -315,12 +315,6 @@ function toggleNewPostForm(){
 
 // new post forum ende
 
-//Ladeanimation Anfang
-
-
-
-
-
-
-
-//Ladeanimation Ende
+function showReplyForm(comment_id){
+	document.querySelector(".reply-comment-form-" + comment_id).style.display = "block";
+}

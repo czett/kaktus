@@ -10,9 +10,10 @@
 
 <div class="post-container">
     {% set postid = post["_id"] %}
+    {% set postcreator = post["creator"] %}
     <div class="post post-new-block">
-        <h3 class="post-title" onmousedown="newUrl('forum/beitrag/{{  postid  }}')">{{  post["title"]  }}
-            <p class="post-creator">{{  post["creator"]  }}, am {{  post["date"].strftime("%d/%m/%Y %H:%M:%S")  }}</p>
+        <h3 class="post-title">{{  post["title"]  }}
+            <p class="post-creator" onmousedown="newUrl('/profil/{{  postcreator  }}')">{{  post["creator"]  }}, am {{  post["date"].strftime("%d/%m/%Y %H:%M:%S")  }}</p>
         </h3>
         <p class="post-question">{{  post["desc"]  }}</p>
         <div class="post-side-icons">
@@ -70,7 +71,8 @@
         {% for comment in post["comments"] %}
             <div class="comment">
                 <div class="comment-self">
-                    <p class="username-comment">{{  comment["creator"]  }}</p>
+                    {% set comment_creator = comment["creator"] %}
+                    <p class="username-comment" onmousedown="newUrl('/profil/{{  comment_creator  }}')">{{  comment["creator"]  }}</p>
                     <p class="comment-text">{{  comment["text"]  }}</p>
                     {% set comment_id = comment["_id"] %}
 
@@ -79,14 +81,28 @@
                     {% else %}
                     <i class="fa-regular fa-heart comment-like-icon" onmousedown="newUrl('/forum/beitrag/{{  postid  }}/kommentar-liken/{{  comment_id  }}')"></i>
                     {% endif %}
-                </div>
-                <!-- <div class="replies">
-                    <div class="reply">
-                        <p class="username-comment">Kamelhändler</p>
-                        <p class="comment-reply">Kein Hate</p>
-                        <i class="fa-regular fa-heart comment-like-icon"></i>
+
+                    <p class="reply-btn" onmousedown="showReplyForm('{{  comment_id  }}')">antworten</p>
+                
+                    <div class="add-comment reply-comment-form-{{  comment_id  }}" style="display: none;">
+                        <form action="/forum/beitrag/{{  postid  }}/{{  comment_id  }}/kommentar-antwort" method="post" enctype="multipart/form-data">
+                            <input name="comment-reply" id="comment" required placeholder="Kommentar hinzufügen">
+                            <button type="submit">Kommentieren</button>
+                        </form>
                     </div>
-                </div> -->
+
+                </div>
+                {% if comment["replies"]|length > 0 %}
+                <div class="replies">
+                    {% for reply in comment["replies"] %}
+                    <div class="reply">
+                        {% set reply_creator = reply["creator"] %}
+                        <p class="username-comment" onmousedown="newUrl('/profil/{{  reply_creator  }}')">{{  reply["creator"]  }}</p>
+                        <p class="comment-reply">{{  reply["text"]  }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
             </div>
         {% endfor %}
     </div>
