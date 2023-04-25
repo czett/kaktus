@@ -358,6 +358,7 @@ body, html{
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .profile-icon:hover{
@@ -2333,6 +2334,8 @@ input[type="radio"]{
     padding: 0.75vw;
     width: 15vw;
     box-sizing: border-box;
+    cursor: pointer;
+   
 }
 
 .gradient-text{
