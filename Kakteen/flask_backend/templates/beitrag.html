@@ -36,7 +36,7 @@
                     <p class="count">{{  post["likes"]|length  }}</p>
                 </div>
             </div>
-            <div class="share-post">
+            <div class="share-post" onmousedown="toggleShareMenu()">
                 <i class="fa-regular fa-share-from-square"></i>
                 <div class="interaction-option-count">
                     <p class="count">{{  post["shares"]  }}</p>
@@ -50,6 +50,39 @@
                     <i class="fa-regular fa-trash-can"></i>
                 </div>
             {% endif %}
+        </div>
+    </div>
+
+    <div class="share-popup">
+        <div class="share-popup-heading">
+            <h2>Beitrag teilen</h2>
+            <div class="close-share-popup" onmousedown="toggleShareMenu()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="friend">
+            <p class="friend-name">Momogus</p>
+            <div class="share-icon-wrap">
+                <i class="fa-solid fa-bomb"></i>
+            </div>
+        </div>
+        <div class="friend">
+            <p class="friend-name">Momogus</p>
+            <div class="share-icon-wrap">
+                <i class="fa-solid fa-bomb"></i>
+            </div>            
+        </div>
+        <div class="friend">
+            <p class="friend-name">Momogus</p>
+            <div class="share-icon-wrap">
+                <i class="fa-solid fa-bomb"></i>
+            </div>            
+        </div>
+        <div class="friend">
+            <p class="friend-name">Momogus</p>
+            <div class="share-icon-wrap">
+                <i class="fa-solid fa-bomb"></i>
+            </div>            
         </div>
     </div>
 

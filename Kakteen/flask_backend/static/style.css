@@ -3186,22 +3186,103 @@ textarea{
     display: none;
 }
 
+.share-popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg);
+    padding: 0;
+    border: 1px solid var(--ac);
+    border-radius: 2vh;
+    min-width: 20%;
+
+    height: auto;
+    max-height: 45vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: none;
+    z-index: 1000;
+}
+
+.share-popup ::-webkit-scrollbar{
+    display: none;
+}
+
+.share-popup .friend{
+    padding: calc(0.4 * var(--lrpad)) var(--lrpad);
+}
+
+.share-popup .share-popup-heading{
+    border-bottom: 1px solid var(--ac);
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    background-color: var(--bg);
+    z-index: 100;
+    height: 7.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-share-popup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1vw;
+    height: 1vw;
+    overflow: hidden;
+    
+    position: absolute;
+    top: 10%;
+    right: 2.5%;
+}
+
+.close-share-popup i{
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.share-popup .friend{
+    transition: 250ms;
+    position: relative;
+}
+
+.share-popup .friend:hover{
+    backdrop-filter: brightness(1.25);
+}
+
+.share-popup::-webkit-scrollbar{
+    display: none;
+}
+
+.share-popup .friend .share-icon-wrap{
+    position: absolute;
+    top: 50%;
+    right: 12.5%;
+    transform: translateY(-50%);
+    background-color: var(--ac);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc(0.175 * var(--lrpad)) calc(0.275 * var(--lrpad));
+    border-radius: 0.75vh;
+    cursor: pointer;
+    filter: brightness(.8);
+    transition: 175ms;
+}
+
+.share-popup .friend .share-icon-wrap:hover{
+    filter: brightness(1);
+}
+
+.share-popup .friend .share-icon-wrap i{
+    color: var(--bg);
+}
+
 /* post page ende */
 /* forum ende */
-
-
-/* Snake */
-
-
-
-
-
-
-
-
-
-
-/* Snake Ende */
 
 /*NICHT MEHR HIER DRUNTER ÄNDERN!!!!!!*/
 
