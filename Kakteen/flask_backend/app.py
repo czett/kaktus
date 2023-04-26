@@ -97,7 +97,7 @@ def check_for_session(session_var_name, **kwargs):
 			return False
 
 def read_products_file():
-	with open("shop.csv", "r", encoding="utf-8") as f:
+	with app.open_resource("shop.csv", "r") as f:
 		file = f.readlines()
 
 		products = []
