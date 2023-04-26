@@ -765,7 +765,7 @@ overflow: visible;
 .warenkorb-icon-wrap{
     width: 3vw;
     aspect-ratio: 1 / 1;
-    background-color: #592C59;
+    background-color: rgb(255, 99, 125);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -782,7 +782,7 @@ overflow: visible;
 
 .warenkorb-icon-wrap i{
     font-size: 1.25vw;
-    color: turquoise;
+    color: var(--fg);
     
 }
 
@@ -818,6 +818,21 @@ overflow: visible;
  /* .card-p1:hover{
     filter: brightness(1.2);
     transform: scale(1.05); */
+
+    .anz {
+
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-color: #ff7e93;
+
+    }
+
+    .anz2 {
+
+    margin-top: -42.5vw;
+    margin-left: 44.5vw;
+
+    }
     
 
 
@@ -898,7 +913,7 @@ overflow: visible;
 .warenkorb-icon-wrap{
     width: 3vw;
     aspect-ratio: 1 / 1;
-    background-color: #592C59;
+    background-color: rgb(255, 99, 125);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -914,7 +929,7 @@ overflow: visible;
 
 .warenkorb-icon-wrap i{
     font-size: 1.25vw;
-    color: turquoise;
+    color: var(--fg);
     
 }
 
@@ -1266,7 +1281,7 @@ display: inline-block;
     position: absolute;
     top:  6.5%;
     left: 6.5%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -120%);
 }
 
 .text2-w4:hover {
