@@ -241,12 +241,17 @@ function adresse(){
     if(adr == true) {
         adress.classList.add('show');
         adr = false;
-    }else {
-        adress.classList.remove('show');
-        adr = true;
+		
+		}
+    else {
+        
     }
-}
 
+	if(adrvis == true){
+		adressek.classList.remove('look');
+		adrvis = false;
+}
+}
 
 const firm = document.querySelector('.firma');
 var firmvis = false;
@@ -255,15 +260,23 @@ function firmen(){
     if(firmvis == false) {
         firm.classList.add('vis');
         firmvis = true;
-    }else {
-        firm.classList.remove('vis');
-        firmvis = false;
     }
 }
 
-// adrian dein shop ist schei**e
+function firmen2(){
 
-// Shop System Ende
+	if (firmvis == true){
+        firm.classList.remove('vis');
+        firmvis = false;
+    }
+
+
+
+}
+
+
+
+
 
 
 const adressek = document.querySelector('.adresse2');
@@ -273,11 +286,15 @@ function adressevis(){
     if(adrvis == false) {
         adressek.classList.add('look');
         adrvis = true;
-    }else {
-        adressek.classList.remove('look');
-        adrvis = false;
     }
+    
+	if (adr == false){
+		adress.classList.remove('show');
+        adr = true;
+
+	}
 }
+
 
 
 

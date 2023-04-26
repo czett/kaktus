@@ -233,22 +233,30 @@ padding-right: 3%;
         let foodCollected = false;
 
         placeFood();
-
+       
         setInterval(gameLoop, 100);
         document.addEventListener('keydown', keyDown);
 
+        var pattern1,pattern2;
+
+
         
+            
+            // pattern1=ctx.createPattern(img1,'repeat');
+            // pattern2=ctx.createPattern(img2,'repeat');
+            // ctx.Image
+            
     
 
 
         function firstDraw() {
             ctx.fillStyle = '#202020';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = document.getElementById("kaktus1");
-            var img = document.getElementById("kaktus1");
             
 
-
+            
+         
+            
             // snake.forEach(part => add(part.x, part.y));
 
             // ctx.fillStyle = 'lightgreen';
@@ -263,14 +271,26 @@ padding-right: 3%;
         // var img = document.getElementById("kaktus");
         
         
-
+             
 
 
 
         function draw() {
+            var img1 = new Image();
+      
+            img1.src = "static/img/.jpg";
+
+            var img2 = new Image();
+    
+            img2.src = "static/img/Natur.jpg";
+          
+
+            var pat = ctx.createPattern(img1, "repeat");
+            
+            
             ctx.fillStyle = '#202020';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#B3E34F';
+            ctx.fillStyle = pat;
            
 
             

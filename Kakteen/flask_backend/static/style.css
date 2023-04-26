@@ -468,8 +468,8 @@ body, html{
 .auswahl-back {
 
 
-font-size: 30px;
-size: 30px;
+
+
 overflow: visible;
 
 
@@ -483,8 +483,7 @@ overflow: visible;
     animation-iteration-count: infinite;
     cursor: pointer;
     
-    overflow: visible;
-
+   
    
 }
 
@@ -508,6 +507,8 @@ overflow: visible;
     font-size: 25px;
     margin-top: -0.5vw;
     margin-bottom: -1.5vw;
+    overflow: visible;
+    
 }
 
 
@@ -1373,7 +1374,7 @@ display: inline-block;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top:  7.7%;
+    top:  6.5%;
     left: 6.5%;
     transform: translate(-50%, -50%);
 }
@@ -1779,6 +1780,7 @@ text-align: center;
     font-weight: bold;
     
     
+    
 }
 
 .button-k:hover {
@@ -2175,9 +2177,7 @@ top: -500px;
     font-size: 16px;
 }
 
-input[type="radio"]{
-    visibility: hidden;
-}
+
 
 .form-wrap-profile-change{
     display: flex;
@@ -2436,10 +2436,54 @@ input[type="radio"]{
 }
 
 /* profilseite ende */
-/* 
-*{
-    filter: blur(0.05vh);
-} */
+
+/* Fertig Anfang */
+
+.text-f1 {
+
+font-size: 25px;
+text-align: center;
+
+}
+
+.text-f {
+
+border: 2px solid var(--ac);
+border-radius: 10vw;
+
+}
+
+.text-f2 {
+
+    font-size: 25px;
+    text-align: center;
+
+}
+
+#weiter {
+
+    font-size: 30px;
+    color: var(--ac2);
+    font-weight: bold;
+
+}
+
+.checker {
+
+font-size: 260px;
+color: var(--ac);
+
+}
+
+.check {
+
+display: flex;
+margin-left: 70vw;
+margin-top: -5vw;
+}
+
+/* Fertig Ende */
+
 
 /*=============Log in Box anfang=============*/
 
@@ -2701,6 +2745,38 @@ input[type="radio"]{
 .next:hover {
     transition: 250ms;
     transform: scale(1.1);
+}
+
+.zahl-spiel {
+
+    font-size: 30px;
+    overflow: hidden;
+    font-weight: bold;
+   
+    
+}
+
+.zähler {
+
+    display: flex;
+    margin-left: 6.4vw;
+    max-width: 40vh;
+    justify-content: left;
+    font-family: 'Comic Sans MS';
+    margin-top: -1.5vw;
+    letter-spacing: 2px;
+    color: #B3E34F;
+    
+     }
+
+#points {
+
+    border: 3px solid #ff7e93;
+    border-radius: 5vw;
+    /* padding: 3%; */
+    padding-left: 3%;
+    padding-right: 3%;
+  
 }
 
 /*===============/Kaktus Quiz [ende]\===================*/

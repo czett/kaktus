@@ -2,6 +2,38 @@
 
 {% block content %} 
 
+<h1 class="ueberschrift">Einen Moment bitte...</h1>
 
+
+<div class="loading">
+<div class="ball"></div>
+<div class="ball1"></div>
+</div>
+
+<br>
+<br>
+
+<div class="block-3">
+  </div>
+
+<script>
+
+    const load = document.querySelector('.block-3');
+    setTimeout(function() {   
+	
+	load.classList.add('lade');
+    // alert('Hallo');
+    
+    }, 500);
+
+
+    setTimeout(function(){
+                window.location.href = "/fertig";
+            }, 2800);
+
+   
+
+
+</script>
 
 {% endblock %}

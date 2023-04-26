@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+<h1 class="ueberschrift">Bezahlung erfolgreich!</h1>
+
+<div class="text-f">
+
+<p class="text-f1"><b>Die Bezahlung war erfolgreich!<br> <br>Deine Bestellung sollte in </b></p><p class="text-f1" style="color: #A0CE40">3 bis 4 Tagen</p><p class="text-f1"><b>bei dir sein oder du holst sie schon morgen bei uns ab! Bei Fragen, wende dich einfach an unseren <a href="/support" class="link-s"><b></b>Support</b></a>!</b></p>
+
+</div>
+
+<br>
+
+<br>
+
+<br>
+
+
+<p class="text-f2"><b>Weiterleitung erfolgt in:</b></p> 
+<p id="weiter" class="text-f2">10</p>
+
+
+<div class="check">
+<i class="fa-regular fa-circle-check fa-beat checker"></i>
+</div>
+
+<script>
+
+var num = 10;
+
+
+   time();
+    
+
+
+   function time(){
+	
+	setTimeout(function(){
+		
+	
+    num = 9;
+    document.getElementById('weiter').innerHTML = num;
+
+    setTimeout(function(){
+		
+       
+        num = 8;
+        document.getElementById('weiter').innerHTML = num;
+    
+        setTimeout(function(){
+		
+        
+        num = 7;
+        document.getElementById('weiter').innerHTML = num;
+    
+        setTimeout(function(){
+		
+       
+        num = 6;
+        document.getElementById('weiter').innerHTML = num;
+    
+        setTimeout(function(){
+		
+       
+        num = 5;
+        document.getElementById('weiter').innerHTML = num;
+    
+        setTimeout(function(){
+		
+        
+        num = 4;    
+        document.getElementById('weiter').innerHTML = num;
+        
+        setTimeout(function(){
+		
+        
+        num = 3;
+        document.getElementById('weiter').innerHTML = num;
+    
+        setTimeout(function(){
+		
+        
+        num = 2;
+        document.getElementById('weiter').innerHTML = num;
+    
+        
+        setTimeout(function(){
+		
+        
+        num = 1;
+        document.getElementById('weiter').innerHTML = num;
+        
+    
+        setTimeout(function(){
+		
+        
+        num = 0;
+        document.getElementById('weiter').innerHTML = num;
+    
+        setTimeout(function(){
+	    window.location.href = "/";
+        },1000)    
+    
+    },1000)            
+    
+    },1000)
+
+        
+        
+    
+    },1000)
+
+        
+       
+    
+    },1000)
+
+        
+        
+    
+
+    },1000)
+
+        
+       
+    },1000)
+
+        
+        
+        
+    
+    },1000)
+
+        
+        
+    },1000)
+
+        
+        
+
+    
+    },1000)
+
+        
+
+},1000)
+
+       
+
+        
+        
+        
+    
+
+
+    
+}
+
+</script>
+{% endblock %}
