@@ -592,7 +592,7 @@ display: inline-block;
 } 
 
 .text-s{
-
+    line-height: 1.66em;
     background-color: var(--bg);
     box-shadow: 0px 0px 10px 5px var(--bg);
     border-radius: 5vw;
