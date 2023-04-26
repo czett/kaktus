@@ -250,8 +250,15 @@ def freund_hinzufuegen(profil):
 	freqs = funcs.find_in_coll(userdata, {"_id": uid})["friend_requests"]
 	friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
 
-	if str(session["data"]["username"]) not in freqs and str(session["data"]["username"]) not in friends:
-		freqs.append(session["data"]["username"])
+	freq_exists = False
+
+	for index, item in enumerate(freqs):
+		if item["type"] == "freq":
+			if item["person"] == session["data"]["username"]:
+				freq_exists = True
+
+	if freq_exists == False and str(session["data"]["username"]) not in friends:
+		freqs.append({"type": "freq", "person": session["data"]["username"]})
 
 		query = {"_id": uid}
 		newvals = {"$set": {"friend_requests": freqs}}
@@ -265,7 +272,11 @@ def handle_freq(action, person):
 	freqs = funcs.find_in_coll(userdata, {"_id": uid})["friend_requests"]
 	friends = funcs.find_in_coll(userdata, {"_id": uid})["friends"]
 
-	freqs.remove(person)
+	for index, notif in enumerate(freqs):
+		if notif["type"] == "freq":
+			if notif["person"] == person:
+				freqs.pop(index)	
+
 	userdata.update_one(funcs.find_in_coll(userdata, {"_id": uid}), {"$set": {"friend_requests": freqs}})
 
 	if action == "accept" and str(person) not in friends:
@@ -284,7 +295,10 @@ def handle_freq(action, person):
 		userdata.update_one(query, newvals)
 
 	try:
-		session["data"]["notifications"].remove(person)
+		for index, notif in enumerate(session["data"]["notifications"]):
+			if notif["type"] == "freq":
+				if notif["person"] == person:
+					session["data"]["notifications"].pop(index)		
 	except:
 		pass
 

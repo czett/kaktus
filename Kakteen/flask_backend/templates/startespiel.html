@@ -9,15 +9,46 @@
 </head>
 
 <body onkeyup="draw()">
-
-    <p id="points" class="zahl-p1"><b>0</b></p>
-
-
     <style>
     canvas{
         float: right;
     }
+    
+    @keyframes blinken{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    50%{
+        transform: scale(.85);
+        opacity: 0.75;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
+
+.auswahl-back2 {
+
+    display: inline-block;
+    color: black;
+    background-color: black;
+    border: 2px solid black;
+    size: 20px;
+    }
+    
+    .auswahl-back2:hover{
+        filter: brightness(1.2);
+        transform: translate(0%, 0%) scale(1.05);
+        animation-duration: 1000ms;
+        animation-name: blinken;
+        animation-iteration-count: infinite;
+        
+        cursor: pointer;
+       
+    }
     
 
 
@@ -25,8 +56,8 @@
 
     </style>
     
-    <canvas id="canvas">
-            requestFullscreen();
+    <canvas id="canvas" 
+    requestFullscreen();
     </canvas>
    
 
@@ -104,10 +135,8 @@
                 snake[0].y < 0 ||
                 snake[0].y > rows - 1 ||
                 duplicatePart
-               
             ) {
-
-                
+                // window.location.href = "/startespiel";
                 placeFood();
                 snake = [{
                     x: 19,
@@ -150,8 +179,6 @@
 
         function gameLoop() {
             testGameOver();
-            score();
-            
            
             if (foodCollected) {
                 snake = [{
@@ -160,7 +187,6 @@
                 }, ...snake];
 
                 foodCollected = false;
-                
             }
 
             shiftSnake();

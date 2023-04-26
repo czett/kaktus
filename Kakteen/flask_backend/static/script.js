@@ -318,3 +318,19 @@ function toggleNewPostForm(){
 function showReplyForm(comment_id){
 	document.querySelector(".reply-comment-form-" + comment_id).style.display = "block";
 }
+
+// forum post teilen
+
+var share_menu_vis = false;
+
+function toggleShareMenu(){
+	if (share_menu_vis == true){
+		document.querySelector(".share-popup").style.display = "none";
+		share_menu_vis = false;
+	}else{
+		document.querySelector(".share-popup").style.display = "block";
+		share_menu_vis = true;
+	}
+}
+
+// post teilen ende
