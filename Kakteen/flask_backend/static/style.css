@@ -2543,8 +2543,18 @@ input[type="radio"]{
 
 /*===============/Kaktus Baukasten\===================*/
 
+#KitBackground {
+    width: 100vw;
+    height: 96.4vh;
+    margin: -2vw -2vw -2vw -2.5vw;
+    background-image: url(../static/img/wueste.png);
+    overflow: hidden;
+}
+
 #navKitDiv {
     margin: 0;
+    margin-top: 2vw;
+    margin-left: 2.5vw;
     width: 10vw;
     height: 89.5vh;
     overflow-x: hidden;
@@ -2574,7 +2584,7 @@ input[type="radio"]{
     cursor: pointer;
     transition: 150ms;
     opacity: 0.9;
-    overflow: visible;
+    overflow: hidden;
     display: flex;
 }
 .objKit:hover {
@@ -2584,8 +2594,8 @@ input[type="radio"]{
 
 .ColorSelecter {
     margin-left: 2vw;
-    width: 7vw;
-    height: 7vw;
+    width: 6.9vw;
+    height: 6.9vw;
     background-color: var(--bg);
     border: 1px solid var(--ac);
     border-radius: 15%;
@@ -2617,7 +2627,7 @@ input[type="radio"]{
     display: flex;
     width: 7vw;
     height: 7vw;
-    border-radius: 15%;
+    filter: saturate(5);
 }
 
 /*main Div*/
@@ -2630,18 +2640,19 @@ input[type="radio"]{
 
 #kitTopf {
     position: absolute;
-    width: 12vw;
-    height: 12vw;
+    width: 24vh;
+    height: 18vh;
     border: 1px solid var(--fg);
-    top: 70vh;
+    top: 77.7vh;
     left: 50vw;
     right: 50vw;
+    z-index: 10;
 }
 
 #kitBody {
     position: absolute;
-    width: 12vw;
-    height: 12vw;
+    width: 24vh;
+    height: 24vh;
     border: 1px solid red;
     top: 54%;
     left: 50%;
@@ -2650,44 +2661,67 @@ input[type="radio"]{
 
 #kitArms {
     position: absolute;
-    width: 12vw;
-    height: 12vw;
+    width: 34vh;
+    height: 24vh;
     border: 1px solid orange;
     top: 45%;
-    left: 50%;
+    left: 47.75%;
     right: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #kitHead {
     position: absolute;
-    width: 12vw;
-    height: 12vw;
+    width: 24vh;
+    height: 24vh;
     border: 1px solid yellow;
-    top: 30vh;
-    left: 50%;
-    right: 50%;
+    top: 43vh;
+    /* left: 52.45vw;
+    right: 50vw; */
+    left: 50vw;
+    right: 50vw;
+    display: flex;
+    justify-content: center;
 }
 
 #kitHat {
     position: absolute;
-    width: 12vw;
-    height: 12vw;
+    width: 24vh;
+    height: 24vh;
     border: 1px solid blue;
     top: 17%;
     left: 50%;
     right: 50%;
 }
 
-.KitImgGame {
-    
+.KitImgGame { 
     position: absolute;
     visibility: hidden;
-    width: 12vw;
-    min-height: 12vw;
+    width: 24vh;
+    height: 24vh;
+    filter: saturate(5);
 }
 
 .importIMG {
     visibility: visible;
+}
+
+.KitImgGameH {
+    left: 4.64vh;
+    width: 14.6vh;
+    height: 14.4vh;
+}
+
+.KitImgGameA {
+    width: 34vh;
+    height: 34vh;
+}
+
+.KitImgV1 {
+    margin-top: 4vh;
 }
 
 /*===============/Kaktus Baukasten [ende]\============*/

@@ -193,52 +193,64 @@ function clickColor4444() {
 
 // body
 function clickBody1() {
+    clearImgBody();
     importBody1.classList.add('importIMG');
 }
 
 function clickBody2() {
+    clearImgBody();
     importBody2.classList.add('importIMG');
 }
 
 function clickBody3() {
+    clearImgBody();
     importBody3.classList.add('importIMG');
 }
 
 function clickBody4() {
+    clearImgBody();
     importBody4.classList.add('importIMG');
 }
 
 // Arms
 function clickArm1() {
+    clearImgArm();
     importArm1.classList.add('importIMG');
 }
 
 function clickArm2() {
+    clearImgArm();
     importArm2.classList.add('importIMG');
 }
 
 function clickArm3() {
+    clearImgArm();
     importArm3.classList.add('importIMG');
 }
 
 function clickArm4() {
+    clearImgArm();
     importArm4.classList.add('importIMG');
 }
 
 // Heads
 function clickHead1() {
+    clearImgHead();
     importHead1.classList.add('importIMG');
 }
 
 function clickHead2() {
+    clearImgHead();
     importHead2.classList.add('importIMG');
 }
 
 function clickHead3() {
+    clearImgHead();
     importHead3.classList.add('importIMG');
 }
 
 function clickHead4() {
+    clearImgHead();
     importHead4.classList.add('importIMG');
 }
 
@@ -257,6 +269,22 @@ function clearImgBody() {
 
     bodyer.forEach((bildB) => {
         bildB.classList.remove('importIMG');
+    });
+}
+
+function clearImgHead() {
+    const headier = document.querySelectorAll('.KitImgGameH');
+
+    headier.forEach((bildH) => {
+        bildH.classList.remove('importIMG');
+    });
+}
+
+function clearImgArm() {
+    const armer = document.querySelectorAll('.KitImgGameA');
+
+    armer.forEach((bildA) => {
+        bildA.classList.remove('importIMG');
     });
 }
 
