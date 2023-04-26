@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="{{  url_for('static', filename='fav/favicon-32x32.png')  }}" type="image/x-icon">
 </head>
 <body>
-
+    {% block alles %}
     <!-------Animation------------------>
 
         <div id="animateBall"></div>
@@ -202,6 +202,11 @@
                                 <i class="fa-solid fa-circle-check accept-icon" onmousedown="newUrl('/freq/accept/{{  name  }}')"></i>
                             </p>
                         </p>
+                        {% elif notification["type"] == "forum_post" %}
+                        <p class="contentBoxText2">{{  notification["sender"]  }} hat einen Forum-Beitrag geteilt!
+                            {% set postid = notification["post_id"] %}
+                            <br> <p class="contentBoxText3" style="cursor: pointer;" onmousedown="newUrl('/forum/beitrag/{{postid}}/sent')"> Klick hier!</p>
+                        </p>
                         {% endif %}
                     </div>
                 {% endfor %}
@@ -258,7 +263,7 @@
    
    {% endif %}
 
-   
+   {% endblock %}
 
         {% block content %}
         {% endblock %}

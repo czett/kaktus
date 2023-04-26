@@ -22,7 +22,7 @@
 :root{
     --bg: #202020;
     --fg: #EEEEEE;
-    --ac2: #B3E34F;
+    --ac2: #65BF0A;
     --ac: #A0CE40;
     --lrpad: 2.5vw;
 }
@@ -2710,14 +2710,14 @@ input[type="radio"]{
 #navKitDiv {
     margin: 0;
     width: 10vw;
-    height: 89.9vh;
+    height: 89.5vh;
     overflow-x: hidden;
     overflow-y: scroll;
     position: fixed;
     background-color: var(--bg);
     border: 1px solid var(--ac);
     border-radius: 2vh;
-    margin-left: -1.5vw;
+    /* margin-left: -1.5vw; */
 }
 #navKitDiv::-webkit-scrollbar {
     display: none;
@@ -2738,6 +2738,8 @@ input[type="radio"]{
     cursor: pointer;
     transition: 150ms;
     opacity: 0.9;
+    overflow: visible;
+    display: flex;
 }
 .objKit:hover {
     transform: scale(1.05);
@@ -2745,20 +2747,111 @@ input[type="radio"]{
 }
 
 .ColorSelecter {
+    margin-left: 2vw;
+    width: 7vw;
+    height: 7vw;
     background-color: var(--bg);
-    z-index: 100;
+    border: 1px solid var(--ac);
+    border-radius: 15%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.moveIn {
+    margin-left: 0;
+}
+
+.KitColor {
+    font-size: 0.8vw;
+    text-align: center;
+    display: block;
+    margin: auto auto;
+    margin: 0;
+    padding: 0.4vw 0 0.4vw 0;
+    transition: 150ms;
+}
+
+.KitColor:hover {
+    background-color: #363636;
 }
 
 .KitImg {
+    display: flex;
     width: 7vw;
     height: 7vw;
     border-radius: 15%;
 }
 
+/*main Div*/
+
 #mainDiv {
     margin: 0;
     margin-left: 11vw;
     height: 88.2vh;
+}
+
+#kitTopf {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    border: 1px solid var(--fg);
+    top: 70vh;
+    left: 50vw;
+    right: 50vw;
+}
+
+#kitBody {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    border: 1px solid red;
+    top: 55%;
+    left: 50%;
+    right: 50%;
+}
+
+#kitArms {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    border: 1px solid orange;
+    top: 45%;
+    left: 50%;
+    right: 50%;
+}
+
+#kitHead {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    border: 1px solid yellow;
+    top: 30vh;
+    left: 50%;
+    right: 50%;
+}
+
+#kitHat {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    border: 1px solid blue;
+    top: 17%;
+    left: 50%;
+    right: 50%;
+}
+
+.KitImgGame {
+    
+    position: absolute;
+    visibility: hidden;
+    width: 12vw;
+    min-height: 12vw;
+}
+
+.importIMG {
+    visibility: visible;
 }
 
 /*===============/Kaktus Baukasten [ende]\============*/
@@ -3287,12 +3380,89 @@ textarea{
     color: var(--bg);
 }
 
+.account-tag{
+    background-color: var(--ac);
+    border-radius: .5vh;
+    padding: .25vh;
+    font-size: 1.5vh;
+    transition: 175ms;
+}
+
+.account-tag:hover{
+    filter: brightness(1.1);
+}
+
 /* post page ende */
 /* forum ende */
+
+button:disabled{
+    filter: saturate(0);
+}
+
+button:disabled:hover{
+    filter: saturate(0);
+}
 
 /*NICHT MEHR HIER DRUNTER ÄNDERN!!!!!!*/
 
 /* MOBILE YAY */
+
+/* tycoon */
+
+.frame{
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    background: conic-gradient(black, var(--bg), black, var(--bg), black, var(--bg), black);
+}
+
+.frame .top-bar-tycoon{
+    width: 100%;
+    padding: calc(var(--lrpad) * .33) var(--lrpad);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.frame .top-bar-tycoon .heading{
+    background-image:linear-gradient(135deg, var(--ac), var(--ac2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+
+   font-weight: 800;
+   font-family: 'Unbounded';
+   letter-spacing: .125em;
+   font-size: 5vh;
+}
+
+.frame .pflanze{
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translate(-50%, 0%);
+    border: 2px solid brown;
+    overflow: hidden;
+    height: 50vh;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+}
+
+.frame .pflanze .pflanze-img{
+    border: 2px solid red;
+    height: 10vw;
+    position: absolute;
+    top: calc(100% - 10vw / 2);
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.2341);
+}
+
+/* tycoon ende */
 
 @media screen and (max-width: 750px){
     .pc{
