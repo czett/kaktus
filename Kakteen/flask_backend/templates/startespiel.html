@@ -5,16 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake</title>
+    <title>Kaktus-Snake-Spiel</title>
+    <link rel="shortcut icon" href="{{  url_for('static', filename='fav/favicon-32x32.png')  }}" type="image/x-icon">
 </head>
 
-<body onkeyup="draw()">
+<body onkeyup="draw()" style="background-color: #202020;">
+
+    <p class="ueberschrift1">Kaktus-Snake-Spiel</p>
+<div class="canvas2">
+    <div class="back"><a href="/" class="fa-solid fa-arrow-left fa-xl back2"></a></div> <div class="reload-cont"><a href="/snake" class="fa-solid fa-rotate reload"></a></div>
+    
+    <div class="zähler">
+    <p class="zahl-spiel"><b>Score:</b></p><p id="points" class="zahl-spiel"><b>0</b></p>
+    <p class="zahl-spiel"><b>Highscore:</b></p><p id="highs" class="zahl-spiel"><b>0</b></p>
+    </div>
+    <!-- <img id="kaktus" class="kaktus1" src="../static/img/1.jpg" alt="The Kaktus"> -->
+</div>
     <style>
     canvas{
         float: right;
     }
     
-    @keyframes blinken{
+    @keyframes blinken2{
     0%{
         transform: scale(1);
         opacity: 1;
@@ -30,39 +42,179 @@
 }
 
 
-.auswahl-back2 {
+.back2 {
 
     display: inline-block;
-    color: black;
-    background-color: black;
-    border: 2px solid black;
-    size: 20px;
+    color: white;
+    text-decoration: none;
+    top: -80px;
+    size: 40px;
+    font-size: 50px;
+    margin-left: 0.4vw;
+    display: block;
+  
     }
     
-    .auswahl-back2:hover{
+    .back2:hover{
         filter: brightness(1.2);
         transform: translate(0%, 0%) scale(1.05);
         animation-duration: 1000ms;
-        animation-name: blinken;
+        animation-name: blinken2;
         animation-iteration-count: infinite;
         
         cursor: pointer;
        
     }
-    
 
+    .back{
+
+    margin-top: -5vw;
+    font-size: 25px;
+      
+   
+
+    }
+
+    .reload {
+
+         display: inline-block;
+         color: white;
+         text-decoration: none;
+         top: -80px;
+         size: 30px;
+         font-size: 30px;
+         margin-left: 0.4vw;
+         
+        }
+         
+    .reload-cont {
+
+         display: flex;
+         justify-content: right;
+         text-align: right;
+         justify-items: right;
+         align-items: right;
+         margin-right: 1vw;
+         margin-top: -1.5vw;
+         margin-bottom: 2vw;
+
+    }
+
+    .reload:hover {
+
+        filter: brightness(1.2);
+        transform: translate(0%, 0%) scale(1.05);
+        animation-duration: 1000ms;
+        animation-name: blinken2;
+        animation-iteration-count: infinite;
+        
+        cursor: pointer;
+       
+
+}
+
+    .zahl-spiel {
+
+    font-size: 30px;
+    overflow: hidden;
+    font-weight: bold;
+    color: #B3E34F;
+
+
+    }
+
+    .kaktus1 {
+
+    visibility: hidden;
+    display: none;
+
+    }
+
+    .canvas {
+
+    border: 2px solid #B3E34F;
+    border-radius: 1vw;
+    box-shadow: 0.5px 1px 3px 5px #B3E34F;
+    }
+
+    .canvas.s {
+
+     border: 2px solid red;
+     border-radius: 1vw;
+     box-shadow: 3px 3px 10px 5px red;
+     }
+    
+    .zähler {
+
+   display: flex;
+   margin-left: 6.4vw;
+   max-width: 40vh;
+   justify-content: space-between;
+   font-family: 'Comic Sans MS';
+   margin-top: -5.5vw;
+   
+    }
+
+    #points {
+
+    border: 3px solid #ff7e93;
+    border-radius: 5vw;
+    /* padding: 3%; */
+    padding-left: 3%;
+    padding-right: 3%;
+  
+   
+
+    }
+
+    #highs {
+
+border: 3px solid #ff7e93;
+border-radius: 5vw;
+/* padding: 3%; */
+padding-left: 3%;
+padding-right: 3%;
+    }
+
+    .ueberschrift1{
+    font-family: 'Unbounded';
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    font-size: 48px;
+    background-color: var(--bg);
+    box-shadow: 0px 0px 10px 5px var(--bg);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: 'Comic Sans MS';
+    justify-content: center;
+    margin-top: 2vw;
+}
+
+.canvas2 {
+
+    margin-top: -1vw;
+
+}
+
+    
 
 
 
     </style>
+
+
+<script src="https://kit.fontawesome.com/2339b7a2a3.js" crossorigin="anonymous"></script>
     
-    <canvas id="canvas" 
-    requestFullscreen();
-    </canvas>
-   
+<div class="canvas2">
+    <canvas class="canvas" id="canvas" width="1890" height="830"></canvas>
+   </div>
 
     <script>
         
+
+      
        
         let canvas = document.getElementById('canvas');
         let ctx = canvas.getContext('2d');
@@ -90,9 +242,10 @@
 
 
         function firstDraw() {
-            ctx.fillStyle = 'black';
+            ctx.fillStyle = '#202020';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'green';
+            ctx.fillStyle = document.getElementById("kaktus1");
+            var img = document.getElementById("kaktus1");
             
 
 
@@ -103,17 +256,29 @@
         }
 
         firstDraw();
+        
+        // window.onload = function() {
+        // var canvas = document.getElementById("canvas");
+        // var ctx = canvas.getContext("2d");
+        // var img = document.getElementById("kaktus");
+        
+        
+
+
+
 
         function draw() {
-            ctx.fillStyle = 'black';
+            ctx.fillStyle = '#202020';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'green';
+            ctx.fillStyle = '#B3E34F';
+           
+
             
 
 
             snake.forEach(part => add(part.x, part.y));
 
-            ctx.fillStyle = 'lightgreen';
+            ctx.fillStyle = 'green';
             add(food.x, food.y); // Food
 
             requestAnimationFrame(draw);
@@ -147,6 +312,7 @@
 
                 point = 0;
                 document.getElementById('points').innerHTML = point;
+                border();
                 
          
             }
@@ -179,6 +345,8 @@
 
         function gameLoop() {
             testGameOver();
+            score();
+           
            
             if (foodCollected) {
                 snake = [{
@@ -188,6 +356,11 @@
 
                 foodCollected = false;
             }
+
+            // if (event.key=="Enter") {
+
+            //    window.location.href = "/";
+            // } 
 
             shiftSnake();
 
@@ -232,13 +405,22 @@
         }
 
         var point = 0;
+        var high = 0;
          
         function score() {
         
         if (foodCollected == true){
 
         point += 1;
+        
 	    document.getElementById('points').innerHTML = point;
+        
+        }
+
+        if (foodCollected == true && high<point){
+
+        high +=1;
+        document.getElementById('highs').innerHTML = high;
         }
 
         //  if (wand == true && point>0){
@@ -249,6 +431,28 @@
     
         //     }
          }
+
+        //  function esc(){
+
+        //   if (event.key=="ESC") {
+
+        //     window.location.href = "/";
+        //   }
+
+        //  }
+        const bord = document.querySelector('.canvas');
+
+        
+        function border() {
+
+            bord.classList.add('s');
+            setTimeout(function(){
+                bord.classList.remove('s');
+            
+
+            },500)
+
+        }
 
          
          
