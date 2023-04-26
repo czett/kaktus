@@ -55,7 +55,7 @@ const Questions = [{
     q: "",
     a: [{ text: "", isCorrect: false },
         { text: "", isCorrect: false },
-        { text: "", isCorrect: true },
+        { text: "", isCorrect: true},
         { text: "", isCorrect: false }
     ]
 
@@ -66,6 +66,8 @@ const Questions = [{
 // points
 var points = 0;
 
+
+ 
 // Set start
 var start = true;
 
@@ -137,7 +139,9 @@ op1.addEventListener("click", () => {
     if (selected == "true") {
         result[0].innerHTML = "Richtig!!!"
         result[0].style.color = "#A0CE40";
-
+        points += 1;
+     
+        document.getElementById('point').innerHTML = points;
         div1.style.border = "2px solid #A0CE40";
 
         next.addEventListener("click", () => {
@@ -165,6 +169,8 @@ op1.addEventListener("click", () => {
     } else {
         result[0].innerHTML = "Falsch!!!";
         result[0].style.color = "red";
+        points -= 1;
+        document.getElementById('point').innerHTML = points;
 
         div1.style.border = "2px solid red";
         div1.style.boxShadow = "0px 0 3px 0.5px red";
@@ -218,7 +224,9 @@ op2.addEventListener("click", () => {
     if (selected == "true") {
         result[0].innerHTML = "Richtig!!!"
         result[0].style.color = "#A0CE40";
-
+        points += 1;
+     
+        document.getElementById('point').innerHTML = points;
         div1.style.border = "2px solid green";
 
         next.addEventListener("click", () => {
@@ -246,7 +254,8 @@ op2.addEventListener("click", () => {
     } else {
         result[0].innerHTML = "Falsch!!!";
         result[0].style.color = "red";
-
+        points -= 1;
+        document.getElementById('point').innerHTML = points;
         div2.style.border = "2px solid red";
 
         div2.style.boxShadow = "0px 0 3px 0.5px red";
@@ -300,7 +309,9 @@ op3.addEventListener("click", () => {
     if (selected == "true") {
         result[0].innerHTML = "Richtig!!!"
         result[0].style.color = "#A0CE40";
-
+        points += 1;
+     
+        document.getElementById('point').innerHTML = points;
         div3.style.border = "2px solid #A0CE40";
 
         next.addEventListener("click", () => {
@@ -323,7 +334,8 @@ op3.addEventListener("click", () => {
     } else {
         result[0].innerHTML = "Falsch!!!";
         result[0].style.color = "red";
-
+        points -= 1;
+        document.getElementById('point').innerHTML = points;
         div3.style.border = "2px solid red";
 
         div3.style.boxShadow = "0px 0 3px 0.5px red";
@@ -377,7 +389,9 @@ op4.addEventListener("click", () => {
     if (selected == "true") {
         result[0].innerHTML = "Richtig!!!"
         result[0].style.color = "#A0CE40";
-
+        points += 1;
+     
+        document.getElementById('point').innerHTML = points;
         div4.style.border = "2px solid #A0CE40";
 
         next.addEventListener("click", () => {
@@ -405,7 +419,8 @@ op4.addEventListener("click", () => {
     } else {
         result[0].innerHTML = "Falsch!!!";
         result[0].style.color = "red";
-
+        points -= 1;
+        document.getElementById('point').innerHTML = points;
         div4.style.border = "2px solid red";
 
         div4.style.boxShadow = "0px 0 3px 0.5px red";
