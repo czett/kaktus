@@ -146,6 +146,7 @@ var Anzahl = 100;
 function clickonminus(){
 	Anzahl -= 1;
 	document.getElementById('amountCouter').innerHTML = Anzahl;
+	document.getElementById('anzahl-inp').value = Anzahl;
 
 	if (Anzahl < 10) {
 		Anzahl -= Math.floor(Math.random() * 8)
@@ -155,6 +156,10 @@ function clickonminus(){
 function clickonplus(){
 	Anzahl += 1;
 	document.getElementById('amountCouter').innerHTML = Anzahl;
+	document.getElementById('anzahl-inp').value = Anzahl;
+
+	console.log(document.getElementById('anzahl-inp').value);
+	console.log(document.getElementById('anzahl-inp'));
 }
 
 //==============/Shop plus minus [ende]\=============\\

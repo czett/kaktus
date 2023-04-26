@@ -96,15 +96,7 @@ def check_for_session(session_var_name, **kwargs):
 		except:
 			return False
 
-@app.route("/")
-def start():
-	check_if_logged_in()
-	return render_template("index.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
-
-@app.route("/shop")
-def shop():
-	check_if_logged_in()
-	
+def read_products_file():
 	with open("static/shop.csv", "r", encoding="utf-8") as f:
 		file = f.readlines()
 
@@ -127,9 +119,28 @@ def shop():
 
 				line_since_break += 1
 			else:
+				product["_id"] = len(products)
 				products.append(product)
 				product = {}
 				line_since_break = 0
+
+	return products
+
+@app.route("/")
+def start():
+	check_if_logged_in()
+	return render_template("index.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
+@app.route("/shop")
+def shop():
+	check_if_logged_in()
+
+	products = read_products_file()
+
+	for product in products:
+		product["price"] = product["price"].replace(",", ".")
+		product["price"] = product["price"].replace("€", "")
+		product["price"] = float(product["price"])
 
 	return render_template("Shop.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], products=products)
 
@@ -164,15 +175,31 @@ def auswahl():
 	check_if_logged_in()
 	return render_template("Auswahl.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
-@app.route("/warenkorb")
+@app.route("/shop/warenkorb")
 def warenkorb():
 	check_if_logged_in()
-	return render_template("warenkorb.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
+	if check_for_session("warenkorb", create_empty=False) == False:
+		session["warenkorb"] = []
+
+	return render_template("warenkorb.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], warenkorb=session["warenkorb"])
 
 @app.route("/kaufen")
 def kaufen():
 	check_if_logged_in()
 	return render_template("kaufen.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
+@app.route("/produkt/<num>")
+def produktseite(num):
+	check_if_logged_in()
+	products = read_products_file()
+
+	product = products[int(num)]
+	product["price"] = product["price"].replace(",", ".")
+	product["price"] = product["price"].replace("€", "")
+	product["price"] = float(product["price"])
+
+	return render_template("p1.html", num=num, product=product, logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/weiter1")
 def weiter1():
@@ -574,9 +601,21 @@ def beitrag_teilen(post_id, receiver):
 
 # Shop
 
-@app.route("/shop/warenkorb/add/<produkt_id>")
+@app.route("/shop/warenkorb/add/<produkt_id>", methods=["POST"])
 def add_cart(produkt_id):
-	return produkt_id
+	quan = request.form["anzahl"]
+
+	if check_for_session("warenkorb", create_empty=False) == False:
+		session["warenkorb"] = []
+
+	products = read_products_file()
+	warenkorb_product = products[int(produkt_id)]
+	warenkorb_product["quantity"] = int(quan)
+
+	session["warenkorb"].append(warenkorb_product)
+	session.modified = True
+
+	return redirect("/shop/warenkorb")
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)

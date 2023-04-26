@@ -10,14 +10,14 @@
     {% for product in products %}
         <div class="card-s act" data-index="2">
             {% set img = "../static/" ~ product["img"] %}
-            <div class="gradient-s"style="background-image: url({{img}}); background-size: cover;">
+            <div class="gradient-s" style="background-image: url({{img}}); background-size: cover;">
                 <div class="warenkorb-icon-wrap">
-                    <a  href="/p1"><i class="fa-solid fa-cart-arrow-down fa-bounce"></i> </a>
+                    <a  href="/produkt/{{  product['_id']  }}"><i class="fa-solid fa-cart-arrow-down fa-bounce"></i> </a>
                 </div> 
             </div>
             <h2 class="card-title-s">{{  product["name"]  }}</h2>
             <p class="text-s" style="font-size: 18px">{{  product["desc"]  }}<br><br></p>
-            <p class="preis-s"><b>{{  product["price"]  }}</b></p>
+            <p class="preis-s"><b>{{  product["price"]  }}€</b></p>
         </div> 
     {% endfor %}
 </div>
