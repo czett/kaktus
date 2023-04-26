@@ -468,6 +468,12 @@ body, html{
     border: 2px solid var(--ac);
 }
 
+.radio-hid {
+
+visibility: hidden;
+
+} 
+
 .auswahl-back {
 
 
@@ -1358,13 +1364,6 @@ display: inline-block;
 
 /* Entdecken Anfang */
 
-.ent-cards {
-
-
-    /* box-shadow: 0px 0px 10px 5px var(--bg); */
- 
-
-}
 
 
 .text-e1 {
@@ -1387,6 +1386,22 @@ transform: translate(0%, -45%);
     overflow: visible;
     transform: translate(0%, -40%);
     border-radius: 5vw;
+    width: 100%;
+}
+.text-e22 {
+
+    display: block;
+    flex-wrap: wrap;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid var(--ac);
+    padding: 2vw;
+    box-sizing: border-box;
+    padding-top: 6vw;
+    overflow: hidden;
+    transform: translate(0%, -40%);
+    border-radius: 5vw;
+    width: 100%;
 }
 
 
@@ -1400,7 +1415,7 @@ transform: translate(0%, -45%);
     display: inline-block;
     color: transparent;
     box-sizing: border-box;
-    transform: translate(100%, -890%);
+    transform: translate(30%, -900%);
     padding-top: 1.5vw;
     padding-right: 2vw;
     background-size: 220%;
@@ -1426,10 +1441,8 @@ transform: translate(0%, -45%);
     box-sizing: border-box;
    
     
-    
-    visibility: visible;
-    
 
+display: none;
     padding-top: 0vw;
     padding-right: 0vw;
     transform: translate(0%, 0%);
@@ -1445,7 +1458,7 @@ transform: translate(0%, -45%);
     border-radius: 5vw;
     font-size: 30px;
     text-align: center;
-    display: inline-block;
+    display: flex;
     color: transparent;
     box-sizing: border-box;
     
@@ -1454,13 +1467,20 @@ transform: translate(0%, -45%);
     visibility: visible;
     
 
-    padding-top: 15vw;
-    padding-right: 94vw;
-    transform: translate(0%, -90%);
+    padding-top: 8vw;
+    padding-right: 0vw;
+    transform: translate(0%, -205%);
     background-position: 0% 70%;
     background-size: 100%;
     visibility: visible;
+    flex-wrap: wrap;
+}
 
+.eintrag1 {
+
+width: 105%;
+transform: translate(-2.3%, 0%);
+flex-wrap: wrap;
 }
 
     
@@ -1501,7 +1521,7 @@ transform: translate(0%, -45%);
         border-radius: 5vw;
         font-size: 30px;
         text-align: center;
-        display: inline-block;
+        display: none;
         color: transparent;
         box-sizing: border-box;
         visibility: hidden;
@@ -1520,16 +1540,19 @@ transform: translate(0%, -45%);
         border-radius: 5vw;
         font-size: 30px;
         text-align: center;
-        display: inline-block;
+        
         color: transparent;
         box-sizing: border-box;
         visibility: visible;
+        display: block;
     } 
 
     .eintrag2 {
         transform: translate(0%, -20%);
-
+   
     }
+
+
 
     .img-e3 {
         
@@ -1541,7 +1564,7 @@ transform: translate(0%, -45%);
         display: inline-block;
         color: transparent;
         box-sizing: border-box;
-        transform: translate(100%, -1180%);
+        transform: translate(80%, -1090%);
         padding-top: 1.5vw;
         padding-right: 2vw;
         background-size: 220%;
@@ -1568,7 +1591,7 @@ transform: translate(0%, -45%);
         border-radius: 5vw;
         font-size: 30px;
         text-align: center;
-        display: inline-block;
+        display: none;
         color: transparent;
         box-sizing: border-box;
         visibility: hidden;
@@ -1589,7 +1612,7 @@ transform: translate(0%, -45%);
         border-radius: 5vw;
         font-size: 30px;
         text-align: center;
-        display: inline-block;
+        display: block;
         color: transparent;
         box-sizing: border-box;
         visibility: visible;
@@ -1599,12 +1622,12 @@ transform: translate(0%, -45%);
     .text-e33 {
         font-size: 40px;
         text-align: center;
-        transform: translate(0%, -190%);
+        transform: translate(0%, -100%);
     }
     .eintrag3 {
     
       
-       transform: translate(0%, -55%);
+       transform: translate(0%, -20%);
 
     }
     
