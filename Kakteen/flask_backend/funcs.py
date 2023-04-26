@@ -49,3 +49,31 @@ def register(username, password):
 		return True
 	else:
 		return False, "e" #e = exists
+	
+with open("static/shop.csv", "r", encoding="utf-8") as f:
+	file = f.readlines()
+
+	products = []
+	product = {}
+	line_since_break = 0
+	
+	for line in file:
+
+		if line != "\n":
+			line = line.replace("\n", "")
+			if line_since_break == 0:
+				product["name"] = line
+			if line_since_break == 1:
+				product["desc"] = line
+			if line_since_break == 2:
+				product["price"] = line
+			else:
+				product["other"] = line
+
+			line_since_break += 1
+		else:
+			products.append(product)
+			product = {}
+			line_since_break = 0
+
+print(products)
