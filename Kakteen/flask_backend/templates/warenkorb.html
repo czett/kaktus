@@ -7,11 +7,19 @@
 <h1 class="ueberschrift">Mein Warenkorb</h1>
 
 
+<<<<<<< HEAD
 <p class="text2-w"><b>Anzahl</b></p>
 
 <p class="text2-w2"><b>Preis</b></p>
 
 <p class="text2-w3"><b>Produkt</b></p>
+=======
+<div class="pap-headers">
+  <p class="text2-w3"><b>Produkt</b></p>
+  <p class="text2-w2" onmousedown="p1()"><b>Preis</b></p>
+  <p class="text2-w"><b>Anzahl</b></p>
+</div>
+>>>>>>> e4e7fd11de3f451ec856924f67565a3c867928ca
 
 <a a href="/profil"><p class="text2-w4"><b>Profil</b></p></a>
  
@@ -19,64 +27,19 @@
 <div class="content-w">
 <div id="content-w"></div>
 
-
-  <div class="contentBoxText-w1">
-    <img class="img-w" src="{{  url_for('static', filename='img/Lemur.jpg')  }}" alt="">
-   <p class="contentBoxText2-w">Produkt Nr. 1
-       <br> <p class="contentBoxText3-w"> Beschreibung </p>
-   </p>
+{% for product in warenkorb %}
+<div class="warenkorb-item" onmousedown="newUrl('/shop/produkt')">
+  <div class="korb-info-wrap">
+    <p class="name">{{  product['name']  }}</p>
+    <p class="preis">{{  product['price']  }}</p>
+    <p class="quantity">{{  product['quantity']  }}</p>
   </div>
-
-  <br>
-
-  <div class="contentBoxText-w2">
-    <img class="img-w2" src="{{  url_for('static', filename='img/Lemur.jpg')  }}" alt="">
-   <p class="contentBoxText2-w">Produkt Nr. 2
-       <br> <p class="contentBoxText3-w"> Beschreibung </p>
-   </p>
+  <div class="korb-img-wrap">
+    {% set img = product['img'] %}
+    <img src="{{  url_for('static', filename=img)  }}" alt="Hier sollte ein Bild von '{{  product['name']  }}' sein...">
   </div>
-  
-  <div class="contentBoxText-w3">
-    <img class="img-w" src="{{  url_for('static', filename='img/Lemur.jpg')  }}" alt="">
-   <p class="contentBoxText2-w">Produkt Nr. 3
-       <br> <p class="contentBoxText3-w"> Beschreibung </p>
-   </p>
-  </div>
-
-  <div class="contentBoxText-w4">
-    <img class="img-w" src="{{  url_for('static', filename='img/Lemur.jpg')  }}" alt="">
-   <p class="contentBoxText2-w">Produkt Nr. 4
-       <br> <p class="contentBoxText3-w"> Beschreibung </p>
-   </p>
-  </div>
-
-  <div class="contentBoxText-w5">
-    <img class="img-w" src="{{  url_for('static', filename='img/Lemur.jpg')  }}" alt="">
-   <p class="contentBoxText2-w">Produkt Nr. 5
-       <br> <p class="contentBoxText3-w"> Beschreibung </p>
-   </p>
-  </div>
-
-  <div class="contentBoxText-w6">
-    <img class="img-w" src="{{  url_for('static', filename='img/Lemur.jpg')  }}" alt="">
-   <p class="contentBoxText2-w">Produkt Nr. 6
-       <br> <p class="contentBoxText3-w"> Beschreibung </p>
-   </p>
-  </div>
-
-  <div class="contentBoxText-w7">
-    <img class="img-w" src="{{  url_for('static', filename='img/Lemur.jpg')  }}" alt="">
-   <p class="contentBoxText2-w">Produkt Nr. 7
-       <br> <p class="contentBoxText3-w"> Beschreibung </p>
-   </p>
-  </div>
-
-  <div class="contentBoxText-w8">
-    <img class="img-w" src="{{  url_for('static', filename='img/Lemur.jpg')  }}" alt="">
-   <p class="contentBoxText2-w">Produkt Nr. 8
-       <br> <p class="contentBoxText3-w"> Beschreibung </p>
-   </p>
-  </div>
+</div>
+{% endfor %}
 
 </div>
 </div>

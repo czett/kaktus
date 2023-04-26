@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block content %}
+ {% block content %}
 
 <div id="navKitDiv">
 
@@ -9,7 +9,7 @@
         <p class="KitHeadline">Töpfe</p>
 
         <div class="objKit">
-            <img id="kitImg1" class="KitImg" src="../static/img/baukasten/TopfM11.jpg">
+            <img id="kitImg1" class="KitImg" src="../static/img/baukasten/TopfM11.png">
             <div id="CS1" class="ColorSelecter">
                 <p onmousedown="clickColor1()" class="KitColor">gepunktet</p>
                 <p onmousedown="clickColor2()" class="KitColor">gewellt</p>
@@ -19,7 +19,7 @@
         </div>
 
         <div class="objKit">
-            <img id="kitImg2" class="KitImg" src="../static/img/baukasten/TopfM12.jpg">
+            <img id="kitImg2" class="KitImg" src="../static/img/baukasten/TopfM12.png">
             <div id="CS2" class="ColorSelecter">
                 <p onmousedown="clickColor11()" class="KitColor">gepunktet</p>
                 <p onmousedown="clickColor22()" class="KitColor">gewellt</p>
@@ -29,7 +29,7 @@
         </div>
 
         <div class="objKit">
-            <img id="kitImg3" class="KitImg" src="../static/img/baukasten/TopfM13.jpg">
+            <img id="kitImg3" class="KitImg" src="../static/img/baukasten/TopfM13.png">
             <div id="CS3" class="ColorSelecter">
                 <p onmousedown="clickColor111()" class="KitColor">gepunktet</p>
                 <p onmousedown="clickColor222()" class="KitColor">gewellt</p>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="objKit">
-            <img id="kitImg4" class="KitImg" src="../static/img/baukasten/TopfM14.jpg">
+            <img id="kitImg4" class="KitImg" src="../static/img/baukasten/TopfM14.png">
             <div id="CS4" class="ColorSelecter">
                 <p onmousedown="clickColor1111()" class="KitColor">gepunktet</p>
                 <p onmousedown="clickColor2222()" class="KitColor">gewellt</p>
@@ -52,19 +52,59 @@
         <p class="KitHeadline">Körper</p>
 
         <div onmousedown="clickBody1()" class="objKit">
-            <img class="KitImg" src="../static/img/2.jpg">
+            <img class="KitImg" src="../static/img/baukasten/Body1.png">
         </div>
 
         <div onmousedown="clickBody2()" class="objKit">
-            <img class="KitImg" src="../static/img/2.jpg">
+            <img class="KitImg" src="../static/img/baukasten/Body2.png">
         </div>
 
         <div onmousedown="clickBody3()" class="objKit">
-            <img class="KitImg" src="../static/img/2.jpg">
+            <img class="KitImg" src="../static/img/baukasten/Body3.png">
         </div>
 
         <div onmousedown="clickBody4()" class="objKit">
-            <img class="KitImg" src="../static/img/2.jpg">
+            <img class="KitImg" src="../static/img/baukasten/Body4.png">
+        </div>
+    </div>
+
+    <div id="KitArms">
+        <p class="KitHeadline">Arme</p>
+
+        <div onmousedown="clickArm1()" class="objKit">
+            <img class="KitImg" src="../static/img/baukasten/Arm1.png">
+        </div>
+
+        <div onmousedown="clickArm2()" class="objKit">
+            <img class="KitImg" src="../static/img/baukasten/Arm2.png">
+        </div>
+
+        <div onmousedown="clickArm3()" class="objKit">
+            <img class="KitImg" src="../static/img/baukasten/Arm3.png">
+        </div>
+
+        <div onmousedown="clickArm4()" class="objKit">
+            <img class="KitImg" src="../static/img/baukasten/Arm4.png">
+        </div>
+    </div>
+
+    <div id="KitHeads">
+        <p class="KitHeadline">Köpfe</p>
+
+        <div onmousedown="clickHead1()" class="objKit">
+            <img class="KitImg" src="../static/img/baukasten/Kopf1.png">
+        </div>
+
+        <div onmousedown="clickHead2()" class="objKit">
+            <img class="KitImg" src="../static/img/baukasten/Kopf2.png">
+        </div>
+
+        <div onmousedown="clickHead3()" class="objKit">
+            <img class="KitImg" src="../static/img/baukasten/Kopf3.png">
+        </div>
+
+        <div onmousedown="clickHead4()" class="objKit">
+            <img class="KitImg" src="../static/img/baukasten/Kopf4.png">
         </div>
     </div>
 
@@ -74,43 +114,48 @@
 
 <div id="mainDiv">
     <div id="kitTopf">
-        <img id="importImg1" class="KitImgGame" src="../static/img/baukasten/TopfM11.jpg">
-        <img id="importImg2" class="KitImgGame" src="../static/img/baukasten/TopfM21.jpg">
-        <img id="importImg3" class="KitImgGame" src="../static/img/baukasten/TopfM31.jpg">
-        <img id="importImg4" class="KitImgGame" src="../static/img/baukasten/TopfM41.jpg">
+        <img id="importImg1" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM11.png">
+        <img id="importImg2" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM21.png">
+        <img id="importImg3" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM31.png">
+        <img id="importImg4" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM41.png">
 
-        <img id="importImg11" class="KitImgGame" src="../static/img/baukasten/TopfM12.jpg">
-        <img id="importImg22" class="KitImgGame" src="../static/img/baukasten/TopfM22.jpg">
-        <img id="importImg33" class="KitImgGame" src="../static/img/baukasten/TopfM32.jpg">
-        <img id="importImg44" class="KitImgGame" src="../static/img/baukasten/TopfM42.jpg">
+        <img id="importImg11" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM12.png">
+        <img id="importImg22" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM22.png">
+        <img id="importImg33" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM32.png">
+        <img id="importImg44" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM42.png">
 
-        <img id="importImg111" class="KitImgGame" src="../static/img/baukasten/TopfM13.jpg">
-        <img id="importImg222" class="KitImgGame" src="../static/img/baukasten/TopfM23.jpg">
-        <img id="importImg333" class="KitImgGame" src="../static/img/baukasten/TopfM33.jpg">
-        <img id="importImg444" class="KitImgGame" src="../static/img/baukasten/TopfM43.jpg">
+        <img id="importImg111" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM13.png">
+        <img id="importImg222" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM23.png">
+        <img id="importImg333" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM33.png">
+        <img id="importImg444" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM43.png">
 
-        <img id="importImg1111" class="KitImgGame" src="../static/img/baukasten/TopfM14.jpg">
-        <img id="importImg2222" class="KitImgGame" src="../static/img/baukasten/TopfM24.jpg">
-        <img id="importImg3333" class="KitImgGame" src="../static/img/baukasten/TopfM34.jpg">
-        <img id="importImg4444" class="KitImgGame" src="../static/img/baukasten/TopfM44.jpg">
+        <img id="importImg1111" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM14.png">
+        <img id="importImg2222" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM24.png">
+        <img id="importImg3333" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM34.png">
+        <img id="importImg4444" class="KitImgGame KitImgGameT" src="../static/img/baukasten/TopfM44.png">
     </div>
     <div id="kitBody">
-        <img id="importBody1" class="KitImgGame" src="../static/img/10.jpg">
-        <img id="importBody2" class="KitImgGame" src="../static/img/11.jpg">
-        <img id="importBody3" class="KitImgGame" src="../static/img/13.jpg">
-        <img id="importBody4" class="KitImgGame" src="../static/img/14.jpg">
+        <img id="importBody1" class="KitImgGame KitImgGameB" src="../static/img/baukasten/Body1.png">
+        <img id="importBody2" class="KitImgGame KitImgGameB" src="../static/img/baukasten/Body2.png">
+        <img id="importBody3" class="KitImgGame KitImgGameB" src="../static/img/baukasten/Body3.png">
+        <img id="importBody4" class="KitImgGame KitImgGameB" src="../static/img/baukasten/Body4.png">
     </div>
     <div id="kitArms">
-        <img id="" class="KitImgGame" src="">
+        <img id="importArm1" class="KitImgGame KitImgGameA" src="../static/img/baukasten/Arm1.png">
+        <img id="importArm2" class="KitImgGame KitImgGameA" src="../static/img/baukasten/Arm2.png">
+        <img id="importArm3" class="KitImgGame KitImgGameA" src="../static/img/baukasten/Arm3.png">
+        <img id="importArm4" class="KitImgGame KitImgGameA" src="../static/img/baukasten/Arm4.png">
     </div>
     <div id="kitHead">
-        <img id="" class="KitImgGame" src="">
+        <img id="importHead1" class="KitImgGame KitImgGameH" src="../static/img/baukasten/Kopf1.png">
+        <img id="importHead2" class="KitImgGame KitImgGameH" src="../static/img/baukasten/Kopf2.png">
+        <img id="importHead3" class="KitImgGame KitImgGameH" src="../static/img/baukasten/Kopf3.png">
+        <img id="importHead4" class="KitImgGame KitImgGameH" src="../static/img/baukasten/Kopf4.png">
     </div>
     <div id="kitHat">
         <img id="" class="KitImgGame" src="">
     </div>
 </div>
-
 
 <script src="{{  url_for('static', filename='/Kaktus_baukasten.js')  }}"></script>
 

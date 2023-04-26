@@ -7,38 +7,41 @@
 <div class="pfeil"><a href="/shop" class="fa-solid fa-arrow-left fa-xl auswahl-back"></a></div>
 
 
-<p class="ueberschrift">Klassisches Kaktuseis</p>
+<p class="ueberschrift">{{  product["name"]  }}</p>
 
 <div class="cards-p1">
 <div class="card-p1 act" data-index="1">
-    <div class="gradient-p1" id="one-p1">
+    {% set img = "../static/" ~ product["img"] %}
+    <div class="gradient-p1" style="background-image: url({{img}}); background-size: cover;">
         <div class="warenkorb-icon-wrap">
             <i class="fa-solid fa-cart-arrow-down fa-bounce"></i>
         </div> 
     </div>
-    <h2 class="card-title-p1">Klassisches Kaktuseis</h2>
-    <p class="text-p1" style="font-size: 18px">Das klassische Kaktuseis aus jedermanns Kindheit! Ein echter genuss und die pure Erfrischung im
-            heißen, trockenen Hochsommer. 
-             Nur für kurze Zeit: Eine Packung mit 36 einzelnen Eissticks für nur: 
+    <h2 class="card-title-p1">{{  product["name"]  }}</h2>
+    <p class="text-p1" style="font-size: 18px">{{  product["desc"]  }}
         </br>
         </br>
-    </p> <p class="preis-p1"><b>1,48 €</b></p>
+    </p> <p class="preis-p1"><b>{{  product["price"]  }}€</b></p>
 </div>    
 
 </div>
 
+<form id="wkform" action="/shop/warenkorb/add/{{  num  }}" method="post" enctype="multipart/form-data">
+<input type="number" class="anzahl" name="anzahl" min="1" max="2382347" value=100>
 <div class="warenkorb-button" >
-    <a href="/warenkorb">
-<button class="button-p1" onmousedown="p1vari()">In den Warenkorb</button>
+    <a href="#" onclick="submit()" type="submit">
+<button class="button-p1">In den Warenkorb</button>
 </a>
 </div>
 
-<div id="amountDiv">
-<p class="text2-p1"><b>Anzahl</b></p>
+<!-- <div id="amountDiv">
+<p class="text2-p1" id="p-anzahl-display"><b>Anzahl</b></p>
+<input type="text" name="anzahl" id="anzahl-inp"> -->
 
+</form>
 <!-- Veränderbare Zahl für Produktanzahl: -->
 
-<div class="zahl-und-options">
+<!-- <div class="zahl-und-options">
     <div class="minus" onmousedown="clickonminus()">
     <i class="fa-solid fa-minus"></i>
     </div>
@@ -46,7 +49,7 @@
     <div class="plus" onmousedown="clickonplus()">
         <i class="fa-solid fa-plus fa-beat"></i>
     </div>
-</div>
+</div> -->
 
 
 
