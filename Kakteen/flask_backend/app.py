@@ -97,7 +97,7 @@ def check_for_session(session_var_name, **kwargs):
 			return False
 
 def read_products_file():
-	with open("static/shop.csv", "r", encoding="utf-8") as f:
+	with open("shop.csv", "r", encoding="utf-8") as f:
 		file = f.readlines()
 
 		products = []
@@ -149,7 +149,7 @@ def entdecken():
 	check_if_logged_in()
 	return render_template("Entdecken.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
-@app.route("/support/agb")
+@app.route("/agb")
 def agb():
 	check_if_logged_in()
 	return render_template("agb.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])

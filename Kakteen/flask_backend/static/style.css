@@ -505,14 +505,14 @@ overflow: visible;
     }
 }
 
-
+.pfeil {
     font-size: 25px;
     margin-top: -0.5vw;
     margin-bottom: -1.5vw;
     overflow: visible;
     
 }
-
+.auswahl-back2 {
     display: inline-block;
     color: black;
     background-color: black;
