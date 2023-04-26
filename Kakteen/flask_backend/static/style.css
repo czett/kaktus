@@ -37,7 +37,8 @@ img{
 body, html{
     margin: 0px;
     padding: 0px;
-    background: url("img/emo-ji.png") 0 0 / 50px 50px repeat, var(--bg);
+    /* background: url("img/emo-ji.png") 0 0 / 50px 50px repeat, var(--bg); */
+    background-color: var(--bg);
     overflow-x: hidden;
 }
 
@@ -599,7 +600,8 @@ display: inline-block;
     user-select: none;
    
     white-space: wrap;
-    min-width: 35vh;
+    /* min-width: 20vw; */
+    max-width: 25vw;
     box-sizing: border-box;
     box-sizing: border-box; 
     box-sizing: border-box;
@@ -859,6 +861,12 @@ display: inline-block;
     width: 100%;
     position: relative;
     overflow: visible;
+}
+
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .cards-p1{
@@ -1166,11 +1174,23 @@ display: inline-block;
 
 .warenkorb-item{
     width: 100%;
-    border: 2px solid rebeccapurple;
     min-height: 12.5vh;
     display: flex;
     align-items: center;
     position: relative;
+    backdrop-filter: brightness(1.5);
+}
+
+.warenkorb-item:nth-of-type(1){
+    border-radius: 2vh 2vh 0 0;
+}
+
+.warenkorb-item:not(last-of-type){
+    border-bottom: 2px solid var(--bg);
+}
+
+.warenkorb-item:last-of-type{
+    border-radius: 0 0 2vh 2vh;
 }
 
 .warenkorb-item .korb-info-wrap{

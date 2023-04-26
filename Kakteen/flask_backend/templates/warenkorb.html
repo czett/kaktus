@@ -25,21 +25,21 @@
  
 
 <div class="content-w">
-<div id="content-w"></div>
-
-{% for product in warenkorb %}
-<div class="warenkorb-item" onmousedown="newUrl('/shop/produkt')">
-  <div class="korb-info-wrap">
-    <p class="name">{{  product['name']  }}</p>
-    <p class="preis">{{  product['price']  }}</p>
-    <p class="quantity">{{  product['quantity']  }}</p>
+<div id="content-w">  
+  {% for product in warenkorb %}
+  <div class="warenkorb-item" onmousedown="newUrl('/shop/produkt')">
+    <div class="korb-info-wrap">
+      <p class="name">{{  product['name']  }}</p>
+      <p class="preis">{{  product['price']  }}</p>
+      <p class="quantity">{{  product['quantity']  }}</p>
+    </div>
+    <div class="korb-img-wrap">
+      {% set img = product['img'] %}
+      <img src="{{  url_for('static', filename=img)  }}" alt="Hier sollte ein Bild von '{{  product['name']  }}' sein...">
+    </div>
   </div>
-  <div class="korb-img-wrap">
-    {% set img = product['img'] %}
-    <img src="{{  url_for('static', filename=img)  }}" alt="Hier sollte ein Bild von '{{  product['name']  }}' sein...">
-  </div>
+  {% endfor %}
 </div>
-{% endfor %}
 
 </div>
 </div>
