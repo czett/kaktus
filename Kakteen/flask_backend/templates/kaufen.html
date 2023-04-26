@@ -2,7 +2,7 @@
 
 {% block content %} 
 
-<div class="auswahl-back"><a href="/warenkorb" class="fa-solid fa-arrow-right fa-rotate-180 fa-xl"></a></div>
+<div class="pfeil"><a href="/warenkorb" class="fa-solid fa-arrow-left fa-xl auswahl-back"></a></div>
 
 <h1 class="ueberschrift">Bezahlart wählen</h1><p class="text-k3"><b>Betrag:</b></p>
 <!-- <p class="Betrag"><b>----</b></p> -->
@@ -11,9 +11,9 @@
     
     <p class="text-k">Versandart*:  </p>
 
-    <input type="checkbox" id="meth1" onmousedown="adressevis()" name="Zahlmethode" value="Mastercard">
+    <input type="radio" id="meth1" onmousedown="adressevis()" name="Zahlmethode" value="Mastercard">
           <label for="meth1"> Abholung</label> 
-          <input type="checkbox" checked required id="meth2" onmousedown="adresse()" name="Zahlmethode" value="Mastercard">
+          <input type="radio" checked required id="meth2" onmousedown="adresse()" name="Zahlmethode" value="Mastercard">
           <label for="meth2"> Versand</label> 
 </div>
 
@@ -49,13 +49,15 @@
         <div class="text-k">
             <p><b> Kartenangaben*:</b></p>
             </div>
-
-            <input type="checkbox" id="mann" name="Zahlmethode" value="Herr">
+          
+      
+            <input type="radio" id="mann" name="select" value="Herr">
           <label for="mann"> Herr </label>
-          <input type="checkbox" id="frau" name="Zahlmethode" value="Frau">
+          <input type="radio" id="frau" name="select" value="Frau">
           <label for="frau"> Frau</label> 
-          <input type="checkbox" id="divers" name="Zahlmethode" value="Divers">
+          <input type="radio" id="divers" name="select" value="Divers">
           <label for="divers"> Divers</label> 
+     
           <br>
           
    
@@ -81,10 +83,9 @@
         <p><b> Deine Rechnungsadresse*:</b></p>
         </div>
 
-        <input type="checkbox" checked id="priv" name="Zahlmethode" value="Mastercard" class="news">  
-       
+        <input type="radio" checked id="priv" onmousedown="firmen2()" name="Zahlmethode" value="Mastercard" class="news">  
         <label for="priv"> Privat</label>  
-         <input type="checkbox" id="firm" onmousedown="firmen()" name="Zahlmethode" value="Mastercard" class="news">
+         <input type="radio" id="firm" onmousedown="firmen()" name="Zahlmethode" value="Mastercard" class="news">
          <label for="firm"> Firma</label>
          <br>
                                
@@ -135,8 +136,8 @@
       </div>
       
       
-      <a href="/warenkorb">
-        <button class="button-k">Bestellen</button>
+      <a href="/weiter2">
+        <button class="button-k" href="/weiter2">Bestellen</button>
     </a>
 
 

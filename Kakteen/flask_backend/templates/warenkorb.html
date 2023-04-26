@@ -2,10 +2,9 @@
 
 {% block content %}
 
-<div class="auswahl-back"><a href="/profil" class="fa-solid fa-arrow-right fa-rotate-180 fa-xl"></a></div>
+<div class="pfeil"><a href="/profil" class="fa-solid fa-arrow-left fa-xl auswahl-back"></a></div>
 
 <h1 class="ueberschrift">Mein Warenkorb</h1>
-
 
 <div class="pap-headers">
   <p class="text2-w3"><b>Produkt</b></p>
@@ -17,24 +16,57 @@
  
 
 <div class="content-w">
-<div id="content-w"></div>
-
-{% for product in warenkorb %}
-<div class="warenkorb-item" onmousedown="newUrl('/shop/produkt')">
-  <div class="korb-info-wrap">
-    <p class="name">{{  product['name']  }}</p>
-    <p class="preis">{{  product['price']  }}</p>
-    <p class="quantity">{{  product['quantity']  }}</p>
+<div id="content-w">  
+  {% for product in warenkorb %}
+  {% set num = product["num"] %}
+  <div class="warenkorb-item" onmousedown="newUrl('/produkt/{{num}}')">
+    <div class="korb-info-wrap">
+      <p class="name">{{  product['name']  }}</p>
+      <p class="preis">{{  product['price']  }}</p>
+      <p class="quantity">{{  product['quantity']  }}</p>
+    </div>
+    <div class="korb-img-wrap">
+      {% set img = product['img'] %}
+      <img src="{{  url_for('static', filename=img)  }}" alt="Hier sollte ein Bild von '{{  product['name']  }}' sein...">
+    </div>
   </div>
-  <div class="korb-img-wrap">
-    {% set img = product['img'] %}
-    <img src="{{  url_for('static', filename=img)  }}" alt="Hier sollte ein Bild von '{{  product['name']  }}' sein...">
-  </div>
+  {% endfor %}
 </div>
-{% endfor %}
 
 </div>
 </div>
+
+<br>
+<br>
+
+<br>
+<br>
+
+<br>
+<br>
+
+<br>
+<br>
+
+
+<br>
+<br>
+
+
+<br>
+<br>
+
+<br>
+<br>
+
+<br>
+<br>
+
+<br>
+<br>
+
+<br>
+<br>
 
 <p class="text2-w5">Noch nicht genug im Warenkorb? Shoppe einfach <a href="/shop"><b>hier</b></a> weiter um weitere tolle Produkte zu erwerben! </p>
 

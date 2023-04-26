@@ -21,6 +21,12 @@
     </div>
     <!-- <img id="kaktus" class="kaktus1" src="../static/img/1.jpg" alt="The Kaktus"> -->
 </div>
+
+<div class="steuerung">
+
+<img class="str" src="{{  url_for('static', filename='img/wasd.png')  }}">
+
+</div>
     <style>
     canvas{
         float: right;
@@ -194,7 +200,22 @@ padding-right: 3%;
 
 .canvas2 {
 
-    margin-top: -1vw;
+    margin-top: 0.2vw;
+    
+
+}
+
+.steuerung {
+
+margin-top: -6.7vw;
+margin-left: 74vw;
+}
+
+.str {
+
+    
+width: 250px;
+height: 120px;
 
 }
 
@@ -233,22 +254,30 @@ padding-right: 3%;
         let foodCollected = false;
 
         placeFood();
-
+       
         setInterval(gameLoop, 100);
         document.addEventListener('keydown', keyDown);
 
+        var pattern1,pattern2;
+
+
         
+            
+            // pattern1=ctx.createPattern(img1,'repeat');
+            // pattern2=ctx.createPattern(img2,'repeat');
+            // ctx.Image
+            
     
 
 
         function firstDraw() {
             ctx.fillStyle = '#202020';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = document.getElementById("kaktus1");
-            var img = document.getElementById("kaktus1");
             
 
-
+            
+         
+            
             // snake.forEach(part => add(part.x, part.y));
 
             // ctx.fillStyle = 'lightgreen';
@@ -263,22 +292,34 @@ padding-right: 3%;
         // var img = document.getElementById("kaktus");
         
         
-
+             
 
 
 
         function draw() {
+            var img1 = new Image();
+      
+            img1.src = "static/img/textur11.jpg";
+
+            var img2 = new Image();
+    
+            img2.src = "static/img/wasser.jpeg";
+          
+
+            var pat = ctx.createPattern(img1, "repeat");
+            var pat2 = ctx.createPattern(img2, "repeat");
+            
+            
             ctx.fillStyle = '#202020';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#B3E34F';
-           
+            ctx.fillStyle = '#A0CE40';           
 
             
 
 
             snake.forEach(part => add(part.x, part.y));
 
-            ctx.fillStyle = 'green';
+            ctx.fillStyle = pat;
             add(food.x, food.y); // Food
 
             requestAnimationFrame(draw);

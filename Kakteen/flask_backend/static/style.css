@@ -37,7 +37,8 @@ img{
 body, html{
     margin: 0px;
     padding: 0px;
-    background: url("img/emo-ji.png") 0 0 / 50px 50px repeat, var(--bg);
+    /* background: url("img/emo-ji.png") 0 0 / 50px 50px repeat, var(--bg); */
+    background-color: var(--bg);
     overflow-x: hidden;
 }
 
@@ -467,9 +468,18 @@ body, html{
     border: 2px solid var(--ac);
 }
 
+.radio-hid {
+
+visibility: hidden;
+
+} 
+
 .auswahl-back {
 
-display: inline-block;
+
+
+
+overflow: visible;
 
 
 }
@@ -480,6 +490,9 @@ display: inline-block;
     animation-duration: 1000ms;
     animation-name: blinken;
     animation-iteration-count: infinite;
+    cursor: pointer;
+    
+   
    
 }
 
@@ -498,26 +511,30 @@ display: inline-block;
     }
 }
 
-
+.pfeil {
+    font-size: 25px;
+    margin-top: -0.5vw;
+    margin-bottom: -1.5vw;
+    overflow: visible;
+    
+}
 .auswahl-back2 {
-
     display: inline-block;
     color: black;
     background-color: black;
-    border: 2px solid black;
+    border: 2px solid black;    
+}
     
-    }
+.auswahl-back2:hover{
+    filter: brightness(1.2);
+    transform: translate(0%, 0%) scale(1.05);
+    animation-duration: 1000ms;
+    animation-name: blinken;
+    animation-iteration-count: infinite;
+    color: black;
+    cursor: pointer;
     
-    .auswahl-back2:hover{
-        filter: brightness(1.2);
-        transform: translate(0%, 0%) scale(1.05);
-        animation-duration: 1000ms;
-        animation-name: blinken;
-        animation-iteration-count: infinite;
-        color: black;
-        cursor: pointer;
-       
-    }
+}
 
 /* .profilbildoption{
     animation-name: bild;
@@ -577,7 +594,8 @@ display: inline-block;
     user-select: none;
    
     white-space: wrap;
-    min-width: 35vh;
+    /* min-width: 20vw; */
+    max-width: 25vw;
     box-sizing: border-box;
     box-sizing: border-box; 
     box-sizing: border-box;
@@ -747,7 +765,7 @@ display: inline-block;
 .warenkorb-icon-wrap{
     width: 3vw;
     aspect-ratio: 1 / 1;
-    background-color: #592C59;
+    background-color: rgb(255, 99, 125);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -764,7 +782,7 @@ display: inline-block;
 
 .warenkorb-icon-wrap i{
     font-size: 1.25vw;
-    color: turquoise;
+    color: var(--fg);
     
 }
 
@@ -800,6 +818,21 @@ display: inline-block;
  /* .card-p1:hover{
     filter: brightness(1.2);
     transform: scale(1.05); */
+
+    .anz {
+
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-color: #ff7e93;
+
+    }
+
+    .anz2 {
+
+    margin-top: -42.5vw;
+    margin-left: 44.5vw;
+
+    }
     
 
 
@@ -839,6 +872,12 @@ display: inline-block;
     overflow: visible;
 }
 
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .cards-p1{
     display: flex;
     gap: calc(2.5 * var(--lrpad));
@@ -874,7 +913,7 @@ display: inline-block;
 .warenkorb-icon-wrap{
     width: 3vw;
     aspect-ratio: 1 / 1;
-    background-color: #592C59;
+    background-color: rgb(255, 99, 125);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -890,7 +929,7 @@ display: inline-block;
 
 .warenkorb-icon-wrap i{
     font-size: 1.25vw;
-    color: turquoise;
+    color: var(--fg);
     
 }
 
@@ -927,6 +966,8 @@ display: inline-block;
     border: 1px solid var(--ac);
     outline: none;
     border-radius: 1vh;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .button-p1:hover {
@@ -1144,11 +1185,30 @@ display: inline-block;
 
 .warenkorb-item{
     width: 100%;
-    border: 2px solid rebeccapurple;
     min-height: 12.5vh;
     display: flex;
     align-items: center;
     position: relative;
+    backdrop-filter: brightness(1.5);
+    transition: 200ms;
+}
+
+.warenkorb-item:hover{
+    backdrop-filter: brightness(2);
+}
+
+.warenkorb-item:nth-of-type(1){
+    border-top-right-radius: 2vh;
+    border-top-left-radius: 2vh;
+}
+
+.warenkorb-item:not(last-of-type){
+    border-bottom: 2px solid var(--bg);
+}
+
+.warenkorb-item:last-of-type{
+    border-bottom-right-radius: 2vh;
+    border-bottom-left-radius: 2vh;
 }
 
 .warenkorb-item .korb-info-wrap{
@@ -1219,9 +1279,9 @@ display: inline-block;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top:  7.7%;
+    top:  6.5%;
     left: 6.5%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -120%);
 }
 
 .text2-w4:hover {
@@ -1320,13 +1380,6 @@ display: inline-block;
 
 /* Entdecken Anfang */
 
-.ent-cards {
-
-
-    /* box-shadow: 0px 0px 10px 5px var(--bg); */
- 
-
-}
 
 
 .text-e1 {
@@ -1349,6 +1402,22 @@ transform: translate(0%, -45%);
     overflow: visible;
     transform: translate(0%, -40%);
     border-radius: 5vw;
+    width: 100%;
+}
+.text-e22 {
+
+    display: block;
+    flex-wrap: wrap;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid var(--ac);
+    padding: 2vw;
+    box-sizing: border-box;
+    padding-top: 6vw;
+    overflow: hidden;
+    transform: translate(0%, -40%);
+    border-radius: 5vw;
+    width: 100%;
 }
 
 
@@ -1362,7 +1431,7 @@ transform: translate(0%, -45%);
     display: inline-block;
     color: transparent;
     box-sizing: border-box;
-    transform: translate(100%, -890%);
+    transform: translate(30%, -900%);
     padding-top: 1.5vw;
     padding-right: 2vw;
     background-size: 220%;
@@ -1388,10 +1457,8 @@ transform: translate(0%, -45%);
     box-sizing: border-box;
    
     
-    
-    visibility: visible;
-    
 
+display: none;
     padding-top: 0vw;
     padding-right: 0vw;
     transform: translate(0%, 0%);
@@ -1407,7 +1474,7 @@ transform: translate(0%, -45%);
     border-radius: 5vw;
     font-size: 30px;
     text-align: center;
-    display: inline-block;
+    display: flex;
     color: transparent;
     box-sizing: border-box;
     
@@ -1416,13 +1483,20 @@ transform: translate(0%, -45%);
     visibility: visible;
     
 
-    padding-top: 15vw;
-    padding-right: 94vw;
-    transform: translate(0%, -90%);
+    padding-top: 8vw;
+    padding-right: 0vw;
+    transform: translate(0%, -205%);
     background-position: 0% 70%;
     background-size: 100%;
     visibility: visible;
+    flex-wrap: wrap;
+}
 
+.eintrag1 {
+
+width: 105%;
+transform: translate(-2.3%, 0%);
+flex-wrap: wrap;
 }
 
     
@@ -1463,7 +1537,7 @@ transform: translate(0%, -45%);
         border-radius: 5vw;
         font-size: 30px;
         text-align: center;
-        display: inline-block;
+        display: none;
         color: transparent;
         box-sizing: border-box;
         visibility: hidden;
@@ -1482,16 +1556,19 @@ transform: translate(0%, -45%);
         border-radius: 5vw;
         font-size: 30px;
         text-align: center;
-        display: inline-block;
+        
         color: transparent;
         box-sizing: border-box;
         visibility: visible;
+        display: block;
     } 
 
     .eintrag2 {
         transform: translate(0%, -20%);
-
+   
     }
+
+
 
     .img-e3 {
         
@@ -1503,7 +1580,7 @@ transform: translate(0%, -45%);
         display: inline-block;
         color: transparent;
         box-sizing: border-box;
-        transform: translate(100%, -1180%);
+        transform: translate(80%, -1090%);
         padding-top: 1.5vw;
         padding-right: 2vw;
         background-size: 220%;
@@ -1530,7 +1607,7 @@ transform: translate(0%, -45%);
         border-radius: 5vw;
         font-size: 30px;
         text-align: center;
-        display: inline-block;
+        display: none;
         color: transparent;
         box-sizing: border-box;
         visibility: hidden;
@@ -1551,7 +1628,7 @@ transform: translate(0%, -45%);
         border-radius: 5vw;
         font-size: 30px;
         text-align: center;
-        display: inline-block;
+        display: block;
         color: transparent;
         box-sizing: border-box;
         visibility: visible;
@@ -1561,12 +1638,12 @@ transform: translate(0%, -45%);
     .text-e33 {
         font-size: 40px;
         text-align: center;
-        transform: translate(0%, -190%);
+        transform: translate(0%, -100%);
     }
     .eintrag3 {
     
       
-       transform: translate(0%, -55%);
+       transform: translate(0%, -20%);
 
     }
     
@@ -1619,6 +1696,7 @@ text-align: center;
     overflow: visible;
     border: 3px solid var(--ac);
     font-weight: bold;
+    
     
     
 }
@@ -2011,9 +2089,7 @@ top: -500px;
     font-size: 16px;
 }
 
-input[type="radio"]{
-    visibility: hidden;
-}
+
 
 .form-wrap-profile-change{
     display: flex;
@@ -2272,10 +2348,54 @@ input[type="radio"]{
 }
 
 /* profilseite ende */
-/* 
-*{
-    filter: blur(0.05vh);
-} */
+
+/* Fertig Anfang */
+
+.text-f1 {
+
+font-size: 25px;
+text-align: center;
+
+}
+
+.text-f {
+
+border: 2px solid var(--ac);
+border-radius: 10vw;
+
+}
+
+.text-f2 {
+
+    font-size: 25px;
+    text-align: center;
+
+}
+
+#weiter {
+
+    font-size: 30px;
+    color: var(--ac2);
+    font-weight: bold;
+
+}
+
+.checker {
+
+font-size: 260px;
+color: var(--ac);
+
+}
+
+.check {
+
+display: flex;
+margin-left: 70vw;
+margin-top: -5vw;
+}
+
+/* Fertig Ende */
+
 
 /*=============Log in Box anfang=============*/
 
@@ -2537,6 +2657,38 @@ input[type="radio"]{
 .next:hover {
     transition: 250ms;
     transform: scale(1.1);
+}
+
+.zahl-spiel {
+
+    font-size: 30px;
+    overflow: hidden;
+    font-weight: bold;
+   
+    
+}
+
+.zähler {
+
+    display: flex;
+    margin-left: 6.4vw;
+    max-width: 40vh;
+    justify-content: left;
+    font-family: 'Comic Sans MS';
+    margin-top: -1.5vw;
+    letter-spacing: 2px;
+    color: #B3E34F;
+    
+     }
+
+#points {
+
+    border: 3px solid #ff7e93;
+    border-radius: 5vw;
+    /* padding: 3%; */
+    padding-left: 3%;
+    padding-right: 3%;
+  
 }
 
 /*===============/Kaktus Quiz [ende]\===================*/
@@ -3334,7 +3486,18 @@ button:disabled:hover{
 
 /* tycoon ende */
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 900px){
+    :root{
+        --lrpad: 2vh;
+        --ac: #f04293;
+        --ac2: #aa0451;
+        --lrpad: 2vh;
+    }
+
+    ::-webkit-scrollbar{
+        display: none;
+    }
+
     .pc{
         display: none;
     }
@@ -3344,7 +3507,7 @@ button:disabled:hover{
     }
 
     .cycler, .card{
-        visibility: hidden;
+        display: none;
     }
 
     .link-box{
@@ -3352,17 +3515,32 @@ button:disabled:hover{
         width: 66vw;
         display: flex;
         flex-direction: column;
-        top: calc(3 * var(--lrpad) + 180%);
+        top: calc(7.5vh + 300%);
         left: 50%;
         padding: calc(3 * var(--lrpad));
         transform: translate(-50%, -50%);
         background: var(--bg);
         border: 1px solid var(--ac);
         border-radius: 2vh;
+        gap: 1vh;
         z-index: 200;
         display: none;
         visibility: hidden;
         transition: 250ms;
+        font-size: 2vh;
+    }
+
+    .suchleiste, .suchleiste i{
+        visibility: hidden;
+    }
+
+    .suchleiste-mob, .suchleiste-mob i{
+        visibility: hidden;
+    }
+
+    .suchleiste-mob{
+        margin-top: 2vh;
+        margin-bottom: 1vh;
     }
 
     .menu-trigger{
@@ -3379,6 +3557,125 @@ button:disabled:hover{
 
     .menu-trigger i{
         font-size: 5vw;
-        transition: 250ms;
+        transition: 400ms;
+    }
+
+    .suchleiste-mob input{
+        padding: 1vh !important;
+        border-radius: 1vh !important;
+    }
+
+    .overview .icons{
+        width: auto;
+        white-space: nowrap;
+        overflow-x: auto;
+        display: flex;
+        gap: 15vw;
+    }
+
+    .overview .icons::-webkit-scrollbar{
+        display: none;
+    }
+
+    .overview .icons .icon{
+        min-width: 60vw;
+        height: auto;
+    }
+
+    .overview .icons .icon .icon-circle{
+        width: 20vw;
+        height: 20vw;
+        font-size: 10vw;
+
+        background: linear-gradient(-135deg, var(--ac), var(--ac2));
+    }
+
+    .icon-circle i{
+        font-size: 7.5vw !important;
+    }
+
+    .overview .icons .icon .icon-desc{
+        white-space: pre-line;
+        text-align: center;
+    }
+
+    .welcome-banner{
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15%;
+        background: linear-gradient(0deg, var(--ac2), var(--ac));
+    }
+
+    .welcome-banner h1{
+        position: absolute;
+        display: block;
+        bottom: 0%;
+        left: 3%;
+        padding: 0;
+        font-size: 5.5vh;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* forum */
+
+    .post-interaction-options{
+        width: 50%;
+        position: static;
+        margin-bottom: 1vh;
+    }
+
+    .post-side-icons{
+        position: static;
+        margin: 0;
+        width: auto;
+        transform: none;
+    }
+
+    .new-post button{
+        padding: 1.25vh 2vh !important;
+    }
+
+    .new-post-form, .share-popup{
+        width: 70vw;
+        height: 30vh;
+        max-height: unset;
+    }
+
+    .new-post-form .close-new-post-form{
+        left: 90%;
+    }
+
+    .close-share-popup{
+        width: 2vh;
+        height: 2vh;
+    }
+
+    .close-share-popup i{
+        font-size: 2vh;
+    }
+
+    .share-icon-wrap{
+        padding: .75vh 1.66vh !important;
+    }
+
+    .add-comment{
+        height: 10vh;
+        display: flex;
+    }
+
+    .add-comment button[type="submit"]{
+        width: 30% !important;
+        box-sizing: border-box;
+        padding: .5vh;
+        font-size: 1.25vh;
+        align-self: center;
+    }
+
+    .add-comment textarea{
+        padding: .75vh !important;
+        max-width: 55%;
     }
 }

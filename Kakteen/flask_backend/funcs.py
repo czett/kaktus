@@ -50,7 +50,7 @@ def register(username, password):
 	else:
 		return False, "e" #e = exists
 	
-with open("static/shop.csv", "r", encoding="utf-8") as f:
+with open("shop.csv", "r", encoding="utf-8") as f:
 	file = f.readlines()
 
 	products = []
@@ -62,16 +62,27 @@ with open("static/shop.csv", "r", encoding="utf-8") as f:
 		if line != "\n":
 			line = line.replace("\n", "")
 			if line_since_break == 0:
+				for word in line:
+					word.replace("ae", "ä")
+					word.replace("ue", "ü")
+					word.replace("oe", "ö")
+					word.replace("scharfess", "ß")
 				product["name"] = line
 			if line_since_break == 1:
+				for word in line:
+					word.replace("ae", "ä")
+					word.replace("ue", "ü")
+					word.replace("oe", "ö")
+					word.replace("scharfess", "ß")
 				product["desc"] = line
 			if line_since_break == 2:
 				product["price"] = line
 			else:
-				product["other"] = line
+				product["img"] = line
 
 			line_since_break += 1
 		else:
+			product["_id"] = len(products)
 			products.append(product)
 			product = {}
 			line_since_break = 0

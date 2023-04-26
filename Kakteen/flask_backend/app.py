@@ -97,7 +97,7 @@ def check_for_session(session_var_name, **kwargs):
 			return False
 
 def read_products_file():
-	with open("static/shop.csv", "r", encoding="utf-8") as f:
+	with app.open_resource("shop.csv", "r") as f:
 		file = f.readlines()
 
 		products = []
@@ -149,7 +149,7 @@ def entdecken():
 	check_if_logged_in()
 	return render_template("Entdecken.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
-@app.route("/support/agb")
+@app.route("/agb")
 def agb():
 	check_if_logged_in()
 	return render_template("agb.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
@@ -210,6 +210,11 @@ def weiter1():
 def weiter2():
 	check_if_logged_in()
 	return render_template("weiter2.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
+@app.route("/fertig")
+def fertig():
+	check_if_logged_in()
+	return render_template("fertig.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
 @app.route("/auswahl/bestaetigen", methods=["POST"])
 def auswahlbestaetigen():
@@ -603,16 +608,29 @@ def beitrag_teilen(post_id, receiver):
 
 @app.route("/shop/warenkorb/add/<produkt_id>", methods=["POST"])
 def add_cart(produkt_id):
-	quan = request.form["anzahl"]
+	quan = int(request.form["anzahl"])
 
 	if check_for_session("warenkorb", create_empty=False) == False:
 		session["warenkorb"] = []
 
 	products = read_products_file()
 	warenkorb_product = products[int(produkt_id)]
-	warenkorb_product["quantity"] = int(quan)
 
-	session["warenkorb"].append(warenkorb_product)
+	was_found = False
+
+	for index, item in enumerate(session["warenkorb"]):
+		if item["num"] == produkt_id:
+			item_index = index
+			was_found = True
+	
+	if was_found:
+		session["warenkorb"][item_index]["quantity"] += quan
+	else:
+		warenkorb_product["quantity"] = int(quan)
+		warenkorb_product["num"] = produkt_id
+
+		session["warenkorb"].append(warenkorb_product)
+
 	session.modified = True
 
 	return redirect("/shop/warenkorb")
