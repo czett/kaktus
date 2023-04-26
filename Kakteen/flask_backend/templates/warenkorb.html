@@ -27,7 +27,8 @@
 <div class="content-w">
 <div id="content-w">  
   {% for product in warenkorb %}
-  <div class="warenkorb-item" onmousedown="newUrl('/shop/produkt')">
+  {% set num = product["num"] %}
+  <div class="warenkorb-item" onmousedown="newUrl('/produkt/{{num}}')">
     <div class="korb-info-wrap">
       <p class="name">{{  product['name']  }}</p>
       <p class="preis">{{  product['price']  }}</p>
