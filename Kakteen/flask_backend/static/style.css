@@ -469,8 +469,13 @@ body, html{
 }
 
 .auswahl-back {
-    overflow: visible;
-    display: inline-block;
+
+
+
+
+overflow: visible;
+
+
 }
 
 .auswahl-back:hover{
@@ -479,7 +484,10 @@ body, html{
     animation-duration: 1000ms;
     animation-name: blinken;
     animation-iteration-count: infinite;
-    cursor: pointer; 
+    cursor: pointer;
+    
+   
+   
 }
 
 @keyframes blinken{
@@ -497,6 +505,13 @@ body, html{
     }
 }
 
+.pfeil {
+    font-size: 25px;
+    margin-top: -0.5vw;
+    margin-bottom: -1.5vw;
+    overflow: visible;
+    
+}
 .auswahl-back2 {
     display: inline-block;
     color: black;
