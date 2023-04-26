@@ -3457,6 +3457,7 @@ button:disabled:hover{
         --lrpad: 2vh;
         --ac: #f04293;
         --ac2: #aa0451;
+        --lrpad: 2vh;
     }
 
     ::-webkit-scrollbar{
@@ -3589,6 +3590,7 @@ button:disabled:hover{
     .post-interaction-options{
         width: 50%;
         position: static;
+        margin-bottom: 1vh;
     }
 
     .post-side-icons{
@@ -3602,8 +3604,44 @@ button:disabled:hover{
         padding: 1.25vh 2vh !important;
     }
 
-    .new-post-form{
-        width: 80vw;
-        height: 50vh !important;
+    .new-post-form, .share-popup{
+        width: 70vw;
+        height: 30vh;
+        max-height: unset;
+    }
+
+    .new-post-form .close-new-post-form{
+        left: 90%;
+    }
+
+    .close-share-popup{
+        width: 2vh;
+        height: 2vh;
+    }
+
+    .close-share-popup i{
+        font-size: 2vh;
+    }
+
+    .share-icon-wrap{
+        padding: .75vh 1.66vh !important;
+    }
+
+    .add-comment{
+        height: 10vh;
+        display: flex;
+    }
+
+    .add-comment button[type="submit"]{
+        width: 30% !important;
+        box-sizing: border-box;
+        padding: .5vh;
+        font-size: 1.25vh;
+        align-self: center;
+    }
+
+    .add-comment textarea{
+        padding: .75vh !important;
+        max-width: 55%;
     }
 }
