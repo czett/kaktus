@@ -37,9 +37,11 @@ img{
 body, html{
     margin: 0px;
     padding: 0px;
-    background: var(--bg);
+    background: url("img/emo-ji.png") 0 0 / 50px 50px repeat, var(--bg);
     overflow-x: hidden;
 }
+
+
 
 .nav{
     position: fixed;
@@ -467,10 +469,7 @@ body, html{
 
 .auswahl-back {
 
-
-font-size: 30px;
-size: 30px;
-overflow: visible;
+display: inline-block;
 
 
 }
@@ -481,10 +480,6 @@ overflow: visible;
     animation-duration: 1000ms;
     animation-name: blinken;
     animation-iteration-count: infinite;
-    cursor: pointer;
-    
-    overflow: visible;
-
    
 }
 
@@ -503,16 +498,26 @@ overflow: visible;
     }
 }
 
-.pfeil {
 
-    font-size: 25px;
-    margin-top: -0.5vw;
-    margin-bottom: -1.5vw;
-}
+.auswahl-back2 {
 
-
-       
+    display: inline-block;
+    color: black;
+    background-color: black;
+    border: 2px solid black;
     
+    }
+    
+    .auswahl-back2:hover{
+        filter: brightness(1.2);
+        transform: translate(0%, 0%) scale(1.05);
+        animation-duration: 1000ms;
+        animation-name: blinken;
+        animation-iteration-count: infinite;
+        color: black;
+        cursor: pointer;
+       
+    }
 
 /* .profilbildoption{
     animation-name: bild;
@@ -570,12 +575,13 @@ overflow: visible;
 .card-s {
     transition: 500ms;
     user-select: none;
+   
     white-space: wrap;
     min-width: 35vh;
     box-sizing: border-box;
+    box-sizing: border-box; 
+    box-sizing: border-box;
     margin-left: 0.4vw;
-    max-width: 40vh;
-    
     
 }
 
@@ -698,13 +704,23 @@ overflow: visible;
     
 }
 
-
-
-.cards-container{
+.cards{
     display: flex;
+    gap: calc(2.5 * var(--lrpad));
+    align-items: center;
+    overflow-x: scroll;
+    width: auto;
+    height: 50vw;
+    white-space: nowrap;
+    /* overflow-x: visible; */
     flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-between;
+    justify-content: center;
+    max-width: 20%;
+    order: 4;
+    flex-direction: row;
+    overflow: visible;
+   
+   
 }
 
 .card-s p, .card-s h2{
@@ -731,7 +747,7 @@ overflow: visible;
 .warenkorb-icon-wrap{
     width: 3vw;
     aspect-ratio: 1 / 1;
-    background-color: rgb(255, 99, 125);
+    background-color: #592C59;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -748,7 +764,7 @@ overflow: visible;
 
 .warenkorb-icon-wrap i{
     font-size: 1.25vw;
-    color: var(--fg);
+    color: turquoise;
     
 }
 
@@ -858,7 +874,7 @@ overflow: visible;
 .warenkorb-icon-wrap{
     width: 3vw;
     aspect-ratio: 1 / 1;
-    background-color: rgb(255, 99, 125);;
+    background-color: #592C59;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -874,7 +890,7 @@ overflow: visible;
 
 .warenkorb-icon-wrap i{
     font-size: 1.25vw;
-    color: var(--fg);
+    color: turquoise;
     
 }
 
@@ -1495,20 +1511,6 @@ transform: translate(0%, -45%);
     border-radius: 5vw;
 }
 
-.text-e3 {
-
-    display: inline-block;
-    font-size: 20px;
-    text-align: center;
-    border: 2px solid var(--ac);
-    padding: 2vw;
-    box-sizing: border-box;
-    padding-top: 6vw;
-    overflow: visible;
-    transform: translate(0%, -50%);
-    border-radius: 5vw;
-}
-
 
 .img-e1 {
     
@@ -1661,7 +1663,7 @@ transform: translate(0%, -45%);
         display: inline-block;
         color: transparent;
         box-sizing: border-box;
-        transform: translate(100%, -1150%);
+        transform: translate(100%, -1180%);
         padding-top: 1.5vw;
         padding-right: 2vw;
         background-size: 220%;
@@ -2017,30 +2019,24 @@ top: -500px;
 
 .block-3  {
     width:800px; height:50px;
-    text-align:center; font-size:1em;  
-    line-height:50px; 
-    color: #000; 
-    background:#808080; 
-    margin:10px auto;
-     border:solid 2px green; 
-      border-radius: 5vw;
+    text-align:center; font-size:1em; box-sizing: border-box;   border:solid 1px #fff; line-height:50px; 
+    color: #000; background:#808080; margin:10px auto;
+     border:solid 1px #fff; 
+      
       font-size: 1em;
       letter-spacing: 1px;
-      
+      border-radius: 6px;
       display: block;
       text-align: center;
       cursor: pointer;
-      box-shadow: inset 0 0 0 0 rgb(228, 98, 119);
+      box-shadow: inset 0 0 0 0 red;
       -webkit-transition: all ease 3s;
       -moz-transition: all ease 3s;
       transition: all linear 2s;
   }
   .block-3.lade {
-      box-shadow: inset 1000px 0 0 0 var(--ac);
-      color: var(--bg); 
-     cursor:pointer; 
-     border:solid 2px green; 
-     border-radius: 5vw;
+      box-shadow: inset 800px 0 0 0 red;
+      color:white;  color:white; cursor:pointer; border:solid 1px green; 
   }
   
 
