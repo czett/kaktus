@@ -3437,7 +3437,17 @@ button:disabled:hover{
 
 /* tycoon ende */
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 900px){
+    :root{
+        --lrpad: 2vh;
+        --ac: #f04293;
+        --ac2: #aa0451;
+    }
+
+    ::-webkit-scrollbar{
+        display: none;
+    }
+
     .pc{
         display: none;
     }
@@ -3447,7 +3457,7 @@ button:disabled:hover{
     }
 
     .cycler, .card{
-        visibility: hidden;
+        display: none;
     }
 
     .link-box{
@@ -3455,17 +3465,32 @@ button:disabled:hover{
         width: 66vw;
         display: flex;
         flex-direction: column;
-        top: calc(3 * var(--lrpad) + 180%);
+        top: calc(7.5vh + 300%);
         left: 50%;
         padding: calc(3 * var(--lrpad));
         transform: translate(-50%, -50%);
         background: var(--bg);
         border: 1px solid var(--ac);
         border-radius: 2vh;
+        gap: 1vh;
         z-index: 200;
         display: none;
         visibility: hidden;
         transition: 250ms;
+        font-size: 2vh;
+    }
+
+    .suchleiste, .suchleiste i{
+        visibility: hidden;
+    }
+
+    .suchleiste-mob, .suchleiste-mob i{
+        visibility: hidden;
+    }
+
+    .suchleiste-mob{
+        margin-top: 2vh;
+        margin-bottom: 1vh;
     }
 
     .menu-trigger{
@@ -3482,6 +3507,88 @@ button:disabled:hover{
 
     .menu-trigger i{
         font-size: 5vw;
-        transition: 250ms;
+        transition: 400ms;
+    }
+
+    .suchleiste-mob input{
+        padding: 1vh !important;
+        border-radius: 1vh !important;
+    }
+
+    .overview .icons{
+        width: auto;
+        white-space: nowrap;
+        overflow-x: auto;
+        display: flex;
+        gap: 15vw;
+    }
+
+    .overview .icons::-webkit-scrollbar{
+        display: none;
+    }
+
+    .overview .icons .icon{
+        min-width: 60vw;
+        height: auto;
+    }
+
+    .overview .icons .icon .icon-circle{
+        width: 20vw;
+        height: 20vw;
+        font-size: 10vw;
+
+        background: linear-gradient(-135deg, var(--ac), var(--ac2));
+    }
+
+    .icon-circle i{
+        font-size: 7.5vw !important;
+    }
+
+    .overview .icons .icon .icon-desc{
+        white-space: pre-line;
+        text-align: center;
+    }
+
+    .welcome-banner{
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15%;
+        background: linear-gradient(0deg, var(--ac2), var(--ac));
+    }
+
+    .welcome-banner h1{
+        position: absolute;
+        display: block;
+        bottom: 0%;
+        left: 3%;
+        padding: 0;
+        font-size: 5.5vh;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* forum */
+
+    .post-interaction-options{
+        width: 50%;
+        position: static;
+    }
+
+    .post-side-icons{
+        position: static;
+        margin: 0;
+        width: auto;
+        transform: none;
+    }
+
+    .new-post button{
+        padding: 1.25vh 2vh !important;
+    }
+
+    .new-post-form{
+        width: 80vw;
+        height: 50vh !important;
     }
 }

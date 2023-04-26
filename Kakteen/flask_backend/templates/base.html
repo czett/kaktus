@@ -70,6 +70,42 @@
             <a id="shopPress" class="link">Shop</a>
             <a id="discoverPress" class="link">Entdecken</a>
             <a id="supportPress" class="link">Kakteen-Support</a>
+            <div class="suchleiste-mob">
+                <form action="/profil/suche" method="post" enctype="multipart/form-data">
+                    <div class="such-form-items">
+                        <div class="search-icon-wrap">
+                            <i class="fa-solid fa-drumstick-bite"></i>
+                        </div>
+                        <input type="text" placeholder="Profilsuche..." name="profil">
+                        <button type="submit"></button>
+                        {% if warnings["search"] is defined and warnings["search"] == True %}
+                            <style>
+                                .such-form-items input[type="text"]{
+                                    border: 1px solid #f00;
+                                    outline: none;
+                                }
+    
+                                .such-form-items .search-icon-wrap i{
+                                    color: #f00;
+                                }
+                            </style>
+                        {% elif warnings["search"] is defined and warnings["search"] == False %}
+                            <style>
+                                .such-form-items input[type="text"]{
+                                    border: 1px solid var(--ac);
+                                    outline: none;
+                                    display: none;
+                                }
+    
+                                .such-form-items .search-icon-wrap i{
+                                    color: var(--ac);
+                                    display: none;
+                                }
+                            </style>
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
             <div class="bell-wrap">
                 <i onmousedown="ausklappen()" id="bell" class="fa-solid fa-bell"></i>
                 {% if data["notifications"] is defined and data["notifications"]|length > 0 %}
