@@ -1157,10 +1157,16 @@ display: inline-block;
     align-items: center;
     position: relative;
     backdrop-filter: brightness(1.5);
+    transition: 200ms;
+}
+
+.warenkorb-item:hover{
+    backdrop-filter: brightness(2);
 }
 
 .warenkorb-item:nth-of-type(1){
-    border-radius: 2vh 2vh 0 0;
+    border-top-right-radius: 2vh;
+    border-top-left-radius: 2vh;
 }
 
 .warenkorb-item:not(last-of-type){
@@ -1168,7 +1174,8 @@ display: inline-block;
 }
 
 .warenkorb-item:last-of-type{
-    border-radius: 0 0 2vh 2vh;
+    border-bottom-right-radius: 2vh;
+    border-bottom-left-radius: 2vh;
 }
 
 .warenkorb-item .korb-info-wrap{
