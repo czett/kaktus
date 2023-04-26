@@ -278,27 +278,27 @@ padding-right: 3%;
         function draw() {
             var img1 = new Image();
       
-            img1.src = "static/img/textur1.jpg";
+            img1.src = "static/img/textur2.png";
 
             var img2 = new Image();
     
-            img2.src = "static/img/Natur.jpg";
+            img2.src = "static/img/wasser.jpeg";
           
 
             var pat = ctx.createPattern(img1, "repeat");
+            var pat2 = ctx.createPattern(img2, "repeat");
             
             
             ctx.fillStyle = '#202020';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = pat;
-           
+            ctx.fillStyle = '#A0CE40';           
 
             
 
 
             snake.forEach(part => add(part.x, part.y));
 
-            ctx.fillStyle = 'green';
+            ctx.fillStyle = pat2;
             add(food.x, food.y); // Food
 
             requestAnimationFrame(draw);
