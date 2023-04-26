@@ -516,20 +516,19 @@ overflow: visible;
     display: inline-block;
     color: black;
     background-color: black;
-    border: 2px solid black;
+    border: 2px solid black;    
+}
     
-    }
+.auswahl-back2:hover{
+    filter: brightness(1.2);
+    transform: translate(0%, 0%) scale(1.05);
+    animation-duration: 1000ms;
+    animation-name: blinken;
+    animation-iteration-count: infinite;
+    color: black;
+    cursor: pointer;
     
-    .auswahl-back2:hover{
-        filter: brightness(1.2);
-        transform: translate(0%, 0%) scale(1.05);
-        animation-duration: 1000ms;
-        animation-name: blinken;
-        animation-iteration-count: infinite;
-        color: black;
-        cursor: pointer;
-       
-    }
+}
 
 /* .profilbildoption{
     animation-name: bild;
@@ -1357,15 +1356,6 @@ display: inline-block;
 /* Mein Warenkrob Ende */
 
 /* Entdecken Anfang */
-
-.ent-cards {
-
-
-    /* box-shadow: 0px 0px 10px 5px var(--bg); */
- 
-
-}
-
 
 .text-e1 {
 
