@@ -6,150 +6,23 @@
 
 <h1 class="ueberschrift">Shop</h1>
 
-
-
-<div class="cards">
+<div class="cards-container">
+    {% for product in products %}
         <div class="card-s act" data-index="2">
-            
-            <div class="gradient-s" id="two-s">
-              
+            {% set img = "../static/" ~ product["img"] %}
+            <div class="gradient-s" style="background-image: url({{img}}); background-size: cover;">
                 <div class="warenkorb-icon-wrap">
-                    <a  href="/p1">
-                    <i class="fa-solid fa-cart-arrow-down fa-bounce"></i>
-                    </a>
-                    <!-- <a  href="/p1" class="fa-solid fa-cart-arrow-down fa-bounce"></a> -->
-                </div> 
-          
-            </div>
-            <h2 class="card-title-s">Klassisches Kaktuseis</h2>
-            <p class="text-s" style="font-size: 18px">Das klassische Kaktuseis aus jedermanns Kindheit! Ein echter genuss und die pure Erfrischung im
-                    heißen, trockenen Hochsommer. 
-                     Nur für kurze Zeit: Eine Packung mit 36 einzelnen Eissticks für nur: 
-                
-                    </br>
-                </br>
-                </br>
-                </br>
-
-            </p> <p class="preis-s"><b>21,- €</b></p>
-        </div>    
-
-        <div class="card-s act" data-index="3">
-            <div class="gradient-s" id="three-s">
-                <div class="warenkorb-icon-wrap">
-                    <a  href="/p1">
-                        <i class="fa-solid fa-cart-arrow-down fa-bounce"></i>
-                        </a>
+                    <a  href="/produkt/{{  product['_id']  }}"><i class="fa-solid fa-cart-arrow-down fa-bounce"></i> </a>
                 </div> 
             </div>
-            <h2 class="card-title-s">Spezielles Kaktuseis</h2>
-            <p class="text-s" style="font-size: 18px">Die etwas andere Art der Erfrischung, wirkt schnell und bringt den Nervenkreislauf erst so richtig wieder in Schwung!  Ein prickelnder, leicht pelziger Genuss auf der Zunge. Kaufen sie gleich 4 Stück für nur:
-            </p>
-        </br>
+            <h2 class="card-title-s">{{  product["name"]  }}</h2>
+            <p class="text-s" style="font-size: 18px">{{  product["desc"]  }}<br><br></p>
+            <p class="preis-s"><b>{{  product["price"]  }}€</b></p>
+        </div> 
+    {% endfor %}
+</div>
 
-
-        </p> <p class="preis-s"><b>30, 99 €</b></p>
-
-        </div>    
-
-        <div class="card-s act" data-index="4">
-            <div class="gradient-s" id="four-s">
-                <div class="warenkorb-icon-wrap">
-                    <a  href="/p1">
-                        <i class="fa-solid fa-cart-arrow-down fa-bounce"></i>
-                        </a>
-                </div> 
-            </div>
-            <h2 class="card-title-s">Kaktus im Topf</h2>
-            <p class="text-s" style="font-size: 18px">Eine begrünung für jedes Schlafzimmer, Büro, Wohnzimmer oder wo du es eben hinstellen möchtest. Unser Kaktus im Topf bietet dir reinen Kaktusgenuss den ganzen Tag über und ist besonders pflegeleicht!
-            </p>
-        </br>
-
-        </p> <p class="preis-s"><b>19, 99 €</b></p>
-        </div>    
-
-        <div class="card-s act" data-index="5">
-            <div class="gradient-s" id="five-s">
-                <div class="warenkorb-icon-wrap">
-                    <a  href="/p1">
-                        <i class="fa-solid fa-cart-arrow-down fa-bounce"></i>
-                        </a>
-                </div> 
-            </div>
-            <h2 class="card-title-s">Kaktuseis im Becher</h2>
-            <p class="text-s" style="font-size: 18px">Verbesserte Handhabung und kein Kleckern: Das bietet nur unser Kaktuseis im Becher, womit du den ganzen Spaß auch einfach mit deinen Freund*innen teilen kannst! Kaufe jetzt ein Karton mit 12 Bechern für nur:           </p>
-        </br>
-
-        </p> <p class="preis-s"><b>22, 20 €</b></p>
-        </div>    
-
-         <div class="card-s act"  data-index="6">
-            <div class="gradient-s" id="six-s">
-                <div class="warenkorb-icon-wrap">
-                    <a  href="/p1">
-                        <i class="fa-solid fa-cart-arrow-down fa-bounce"></i>
-                        </a>
-                </div> 
-            </div>
-            <h2 class="card-title-s">Kuscheliges Kaktuskissen</h2>
-            <p class="text-s" style="font-size: 18px">Mit unserem superkuscheligen und kühlendem Kaktuskissen bist du bestens auf die heißen Sommertage vorbereitet und schläfst wieder wie ein Murmeltier! Wir wünschen dir pieksige Träume und einen guten Schlaf! Pro Stück nur:
-            </p>
-        </br>
-
-        </p> <p class="preis-s"><b>19, 95 €</b></p>
-        </div>
-
-        <div class="card-s act" data-index="7">
-            <div class="gradient-s" id="seven-s">
-                <div class="warenkorb-icon-wrap">
-                    <a  href="/p1">
-                        <i class="fa-solid fa-cart-arrow-down fa-bounce"></i>
-                        </a>
-                </div> 
-            </div>
-            <h2 class="card-title-s">Kaktus Neonschild</h2>
-            <p class="text-s" style="font-size: 18px">Fancy Neonschild in Form eines Kaktus zum an die Wand hängen. Dies ist der Hingucker in deinem Zimmer, Keller, oder wo auch immer! Es ist Stromsparend und mit einem schalterverknüpften 12 Volt Trafo betrieben. Nur unglaubliche:
-            </p>
-        </br>
-
-        </p> <p class="preis-s"><b>24, 90 €</b></p>
-        </div>    
-
-         <div class="card-s act" data-index="8">
-            <div class="gradient-s" id="eight-s">
-                <div class="warenkorb-icon-wrap">
-                    <a  href="/p1">
-                        <i class="fa-solid fa-cart-arrow-down fa-bounce"></i>
-                        </a>
-                </div> 
-            </div>
-            <h2 class="card-title-s">Stylischer Kaktushut</h2>
-            <p class="text-s" style="font-size: 18px"> Der ultra stylische Kaktushut schützt dich perfekt vor der prallen Wüstensonne oder dem Starkregen im Urwald. Aus Kakteenfaser bestehend ist er Wasserabweisend und gut durchlüftet sodass er sich jeder Kopfform bestens anpasst. Einfach unkaputtbar! Gerade einmal für nur:
-        </p>
-   
-        <p class="preis-s"><b>4, 50 €</b></p>
-        </div>
-
-        <div class="card-s act" data-index="1">
-            <div class="gradient-s" id="one-s">
-                <div class="warenkorb-icon-wrap">
-                    <a  href="/p1">
-                        <i class="fa-solid fa-cart-arrow-down fa-bounce"></i>
-                        </a>
-                </div> 
-            </div>
-            <h2 class="card-title-s">Coole Kaktuskappe</h2>
-            <p class="text-s" style="font-size: 18px">Heiße Kaktusfaserkappe in pink mit einem kleinen Kaktus auf der Frontseite. Perfekt angepasst an jede Kopfform schützt sie perfekt for Sonne und Regen wodurch sie zum essenziellen Alltagsbegleider und Kleidungsstück wird! Nur ganze:
-            </p>
-        </br>
-
-        </p> <p class="preis-s"><b>4, 05 €</b></p>
-        </div>
-</div> 
-      
-                          
-
-<a href="/agb" class="link-s"><b>Allgemeine Geschäftsbedingungen</b></a>         
+<br><br><a href="/shop/agb" class="link-s"><b>Allgemeine Geschäftsbedingungen</b></a><br><br>
 
           
 {% endblock %}
