@@ -2809,6 +2809,7 @@ margin-top: -5vw;
     top: 54%;
     left: 50%;
     right: 50%;
+    z-index: 9;
 }
 
 #kitArms {
@@ -2819,6 +2820,7 @@ margin-top: -5vw;
     top: 45%;
     left: 47.75%;
     right: 50%;
+    z-index: 10;
 
     display: flex;
     justify-content: center;
@@ -2839,14 +2841,34 @@ margin-top: -5vw;
     justify-content: center;
 }
 
+#kitShirt {
+    position: absolute;
+    width: 24vh;
+    height: 24vh;
+    border: 1px solid green;
+    top: 57%;
+    left: 50%;
+    right: 50%;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #kitHat {
     position: absolute;
     width: 24vh;
     height: 24vh;
     border: 1px solid blue;
-    top: 17%;
+    top: 38%;
     left: 50%;
     right: 50%;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .KitImgGame { 
@@ -2872,9 +2894,25 @@ margin-top: -5vw;
     height: 34vh;
 }
 
+.KitImgGameS {
+    left: 1vw;
+    width: 21vh;
+    height: 19vh;
+}
+
+.KitImgGameHA {
+    right: 0.5vw;
+    width: 20vh;
+    height: 20vh;
+}
+
 .KitImgV1 {
     margin-top: 4vh;
 }
+
+/* Hüte style */
+
+
 
 /*===============/Kaktus Baukasten [ende]\============*/
 
