@@ -2,8 +2,6 @@
 
 {% block content %}
 
-
-
 <h1 class="ueberschrift">Shop</h1>
 
 <div class="cards-container">
@@ -18,8 +16,8 @@
             <h2 class="card-title-s">{{  product["name"]  }}</h2>
             <p class="text-s" style="font-size: 18px">
                 {{  product["desc"]  }}
+                <p class="preis-s"><b>{{  product["price"]  }}€</b></p>
                 <br><br></p>
-            <p class="preis-s"><b>{{  product["price"]  }}€</b></p>
         </div> 
     {% endfor %}
 </div>

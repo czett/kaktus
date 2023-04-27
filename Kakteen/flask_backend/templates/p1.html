@@ -2,11 +2,7 @@
 
 {% block content %}
 
-
-
 <div class="pfeil"><a href="/shop" class="fa-solid fa-arrow-left fa-xl auswahl-back"></a></div>
-
-
 <p class="ueberschrift">{{  product["name"]  }}</p>
 
 <div class="cards-p1">
@@ -21,45 +17,23 @@
     <p class="text-p1" style="font-size: 18px">{{  product["desc"]  }}
         </br>
         </br>
-    </p> <p class="preis-p1"><b>{{  product["price"]  }}€</b></p>
+    </p>
+    <div class="anzahl-menu">
+        <div class="anz"><p>Anzahl:</p></p>
+    
+        <form id="wkform" action="/shop/warenkorb/add/{{  num  }}" method="post" enctype="multipart/form-data">
+            <input type="number" class="anzahl" name="anzahl" min="1" max="2382347" value=100>
+            <div class="warenkorb-button" >
+                <a href="#" onclick="submit()" type="submit">
+                    <button class="button-p1">In den Warenkorb</button>
+                </a>
+            </div>
+        </form>
+    </div>
+    <p class="preis-p1"><b>{{  product["price"]  }}€ <span class="preisprostueck">Preis pro Stück</span></b></p>
 </div>    
 
 </div>
-<div class="anz2">
-<p class="anz"><b>Anzahl:</b></p>
-</div>
-<form id="wkform" action="/shop/warenkorb/add/{{  num  }}" method="post" enctype="multipart/form-data">
-<input type="number" class="anzahl" name="anzahl" min="1" max="2382347" value=100>
-<div class="warenkorb-button" >
-    <a href="#" onclick="submit()" type="submit">
-<button class="button-p1">In den Warenkorb</button>
-</a>
-</div>
-
-<!-- <div id="amountDiv">
-<p class="text2-p1" id="p-anzahl-display"><b>Anzahl</b></p>
-<input type="text" name="anzahl" id="anzahl-inp"> -->
-
-</form>
-<!-- Veränderbare Zahl für Produktanzahl: -->
-
-<!-- <div class="zahl-und-options">
-    <div class="minus" onmousedown="clickonminus()">
-    <i class="fa-solid fa-minus"></i>
-    </div>
-    <p id="amountCouter" class="zahl-p1"><b>100</b></p>
-    <div class="plus" onmousedown="clickonplus()">
-        <i class="fa-solid fa-plus fa-beat"></i>
-    </div>
-</div> -->
-
-
-
-
-
-</div>
-
-
 
 
 {% endblock %}

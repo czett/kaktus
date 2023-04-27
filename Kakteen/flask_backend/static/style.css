@@ -476,10 +476,14 @@ visibility: hidden;
 
 .auswahl-back {
 
-
-
-
-overflow: visible;
+   
+    color: white;
+    text-decoration: none;
+    top: -80px;
+    size: 40px;
+    font-size: 50px;
+    margin-left: 0.4vw;
+    display: flex;
 
 
 }
@@ -513,9 +517,9 @@ overflow: visible;
 
 .pfeil {
     font-size: 25px;
-    margin-top: -0.5vw;
-    margin-bottom: -1.5vw;
+    margin-top: 0.5vw;
     overflow: visible;
+    display: flex;
     
 }
 .auswahl-back2 {
@@ -823,13 +827,13 @@ overflow: visible;
 
     font-size: 30px;
     text-decoration: underline;
-    text-decoration-color: #ff7e93;
+    text-decoration-color: #ff92a4;
 
     }
 
     .anz2 {
 
-    margin-top: -42.5vw;
+    margin-top: -43.5vw;
     margin-left: 44.5vw;
 
     }
@@ -1234,6 +1238,9 @@ display: inline-block;
     right: 5%;
     top: 50%;
     transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .korb-img-wrap img{
@@ -1881,46 +1888,6 @@ display: block;
     font-size: 30px;
     -moz-animation: spinoff .5s infinite linear;
     -webkit-animation: spinoff .5s infinite linear;
-}
-
-@-moz-keyframes spin {
-    0% {
-        -moz-transform: rotate(0deg);
-    }
-
-    100% {
-        -moz-transform: rotate(360deg);
-    };
-}
-
-@-moz-keyframes spinoff {
-    0% {
-        -moz-transform: rotate(0deg);
-    }
-
-    100% {
-        -moz-transform: rotate(-360deg);
-    };
-}
-
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(360deg);
-    };
-}
-
-@-webkit-keyframes spinoff {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(-360deg);
-    };
 }
 
 /* .loading{
@@ -2757,6 +2724,10 @@ margin-top: -5vw;
     flex-direction: column;
 }
 
+.preisprostueck{
+    font-size: 1.5vh;
+}
+
 .moveIn {
     margin-left: 0;
 }
@@ -3527,13 +3498,19 @@ button:disabled:hover{
 @media screen and (max-width: 900px){
     :root{
         --lrpad: 2vh;
-        --ac: #f04293;
-        --ac2: #aa0451;
+        /* --ac: #f04293;
+        --ac2: #aa0451; */
+        --ac: darkred;
+        --ac2: aquamarine;
         --lrpad: 2vh;
     }
 
     ::-webkit-scrollbar{
         display: none;
+    }
+
+    .content{
+        margin: 0;
     }
 
     .pc{
@@ -3548,6 +3525,14 @@ button:disabled:hover{
         display: none;
     }
 
+    .nav{
+        position: sticky;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: 1000;
+    }
+
     .link-box{
         position: absolute;
         width: 66vw;
@@ -3560,7 +3545,7 @@ button:disabled:hover{
         background: var(--bg);
         border: 1px solid var(--ac);
         border-radius: 2vh;
-        gap: 1vh;
+        height: 35vh;
         z-index: 200;
         display: none;
         visibility: hidden;
@@ -3582,8 +3567,8 @@ button:disabled:hover{
     }
 
     .menu-trigger{
-        width: 7.5vw;
-        height: 7.5vw;
+        width: 10vw;
+        height: 10vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -3594,7 +3579,7 @@ button:disabled:hover{
     }
 
     .menu-trigger i{
-        font-size: 5vw;
+        font-size: 7.5vw;
         transition: 400ms;
     }
 
@@ -3715,5 +3700,263 @@ button:disabled:hover{
     .add-comment textarea{
         padding: .75vh !important;
         max-width: 55%;
+    }
+
+    .logreg-box{
+        display: block;
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+        padding: calc(var(--lrpad) * 0.5) var(--lrpad);
+        width: 75vw;
+        box-sizing: border-box;
+        border-radius: 2vh;
+        overflow: hidden;
+    }
+
+    .logreg-box form{
+        width: auto;
+    }
+
+    .logreg-box form input, .logreg-box form button{
+        width: 100% !important;
+        padding: 3vw 2vw !important;
+        border-radius: 1.33vh !important;
+    }
+
+    .top-leiste{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        height: auto;
+    }
+
+    .top-leiste .info-leiste{
+        width: 100%;
+        padding: 0 1.5vh;
+        border-radius: 2vh;
+        margin-top: 2.5vh;
+    }
+
+    .stift-wrap{
+        width: 5.55vh;
+        z-index: 20;
+    }
+
+    .settings-icon-wrap{
+        top: 5%;
+        left: 97.5%;
+    }
+
+    .logout-text-btn{
+        display: none;
+    }
+
+    .settings{
+        width: 75vw;
+        z-index: 1000;
+        border-radius: 2vh;
+    }
+
+    .close-icon-wrap{
+        left: 97.5%;
+    }
+
+    .profil-warenkotb-btn{
+        position: static;
+        transform: none;
+        display: block;
+        margin: 2vh auto;
+        border-radius: 2vh;
+        width: 100%;
+    }
+
+    .flp{
+        width: 66vw;
+        max-height: unset;
+    }
+
+    .close-friends-tab{
+        top: 20% !important;
+        left: 92.5% !important;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    .card-s{
+        min-width: 40vw;
+    }
+
+    .card-s .card-title-s{
+        font-size: 2.5vh;
+    }
+
+    .card-s .text-s{
+        font-size: 1.5vh !important;
+    }
+
+    .card-s .preis-s{
+        font-size: 3.5vh;
+        padding: 1vh 0;
+        border-radius: 1.5vh;
+    }
+
+    .card-s .gradient-s{
+        border-color: var(--ac);
+    }
+
+    .link-s{
+        cursor: pointer;
+        transition: 200ms;
+    }
+
+    .gradient-s{
+        border-width: .5vh;
+    }
+
+    .warenkorb-icon-wrap{
+        width: 4vh;
+        height: 4vh;
+        aspect-ratio: unset;
+        z-index: 100;
+        visibility: visible;
+        border-radius: 1.5vh;
+        background-color: var(--ac);
+    }
+
+    .warenkorb-icon-wrap i, .warenkorb-icon-wrap a{
+        font-size: 1.75vh;
+    }
+
+    .ueberschrift{
+        font-size: 3.5vh;
+    }
+    
+    .cards-p1{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        height: auto;
+        gap: unset;
+    }
+    
+    .card-p1{
+        max-width: 100%;
+        display: block;
+        box-sizing: border-box;
+        position: static;
+    }
+
+    .gradient-p1{
+        margin: 0;
+        border-color: var(--ac);
+    }
+
+    .card-p1 .warenkorb-icon-wrap{
+        display: none;
+    }
+
+    .text-p1{
+        line-height: 1.35em;
+        font-size: 1.75vh !important;
+    }
+
+    .anzahl-menu{
+        position: relative;
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .anzahl-menu form button, .anzahl-menu form input{
+        position: static;
+        transform: unset;
+        width: 100%;
+        min-width: unset;
+        height: auto;
+        min-height: unset;
+        box-sizing: border-box;
+        padding: 2vh;
+        border-radius: 1.75vh;
+        border: 2px solid var(--ac);
+    }
+
+    .anzahl-menu form button{
+        color: var(--fg);
+        background-color: var(--ac);
+        margin-top: 1vh;
+    }
+
+    .anz{
+        text-decoration: underline var(--ac);
+    }
+
+    .preis-p1{
+        border-color: var(--ac);
+        border-radius: 1.75vh;
+        font-size: 5vh;
+    }
+
+    .preisprostueck{
+        font-size: 1vh;
+    }
+
+    .korb-info-wrap, .pap-headers{
+        width: 75% !important;
+    }
+
+    .korb-img-wrap{
+        width: 6.66vh;
+        height: 6.66vh;
+    }
+
+    .pap-headers p{
+        font-size: 2.25vh !important;
+        text-decoration: none;
+    }
+
+    .korb-info-wrap p{
+        font-size: 1.5vh !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .eintraege{
+        display: block;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .eintraege div{
+        display: block;
+        transform: none;
+        height: auto;
+        margin: 3vh 0;
+        width: 100%;
+        box-sizing: border-box;
+        position: static;
+    }
+
+    .eintrag{
+        transform: unset !important;
+    }
+    
+    .eintrag .entdecken-img{
+        display: none;
+    }
+
+    .eintraege div *{
+        position: static;
+        transform: none;
+    }
+    
+    .eintrag .text-e2{
+        padding: 2vh;
+        font-size: 1.75vh;
+        line-height: 1.5em;
+        position: relative;
     }
 }
