@@ -3180,7 +3180,16 @@ margin-top: -5vw;
     position: fixed;
 }
 
-
+#removeAll {
+    background-color: var(--bg);
+    border: 1px solid var(--ac);
+    border-radius: 2vh;
+}
+#Paparazi {
+    display: inline-block;
+    margin: 0;
+    padding: 1vh 1vw 1vh 1vw;
+}
 
 
 /*===============/Kaktus Baukasten [ende]\============*/
