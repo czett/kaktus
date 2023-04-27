@@ -42,7 +42,7 @@ const Questions = [{
 },
 {
     id: 4,
-    q: "Zu welcher Pflanzenart gehören Kakteen",
+    q: "Zu welcher Pflanzenart gehören Kakteen?",
     a: [{ text: "Sukkulenten", isCorrect: true },
         { text: "Kürbisgewächs", isCorrect: false },
         { text: "Knöterichgewächse", isCorrect: false },
@@ -52,11 +52,11 @@ const Questions = [{
 },
 {
     id: 5,
-    q: "",
-    a: [{ text: "", isCorrect: false },
-        { text: "", isCorrect: false },
-        { text: "", isCorrect: true},
-        { text: "", isCorrect: false }
+    q: "Auf welchem Untergrund wachsen Kakteen am besten?",
+    a: [{ text: "Erde", isCorrect: false },
+        { text: "Kies", isCorrect: false },
+        { text: "Sand", isCorrect: true},
+        { text: "Rindenmulch", isCorrect: false }
     ]
 
 },
@@ -413,6 +413,8 @@ op4.addEventListener("click", () => {
             div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
     
             result[0].innerHTML = "";
+
+            
     
             })
 
@@ -424,6 +426,9 @@ op4.addEventListener("click", () => {
         div4.style.border = "2px solid red";
 
         div4.style.boxShadow = "0px 0 3px 0.5px red";
+
+        
+
 
         next.addEventListener("click", () => {
             
@@ -444,6 +449,10 @@ op4.addEventListener("click", () => {
         div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
 
         result[0].innerHTML = "";
+
+        
+
+
 
         })
 
@@ -470,6 +479,22 @@ if (id < 5) {
 }
 
 })
+
+var pl = 0;
+
+function plus(){
+
+pl +=1;
+
+    if (pl==6){
+    
+        pl = 0;
+    setTimeout(function(){
+        window.location.href = "/erfolg";
+    }, 500);
+
+    }
+}
 
 
 //==============/Kaktus Quiz [ende]\=============\\

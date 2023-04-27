@@ -19,18 +19,28 @@
         </br>
     </p>
     <div class="anzahl-menu">
-        <div class="anz"><p>Anzahl:</p></p>
-    
+       
+        <div class="anz"><p class="colin">Anzahl:</p>
+        </div>
+        
         <form id="wkform" action="/shop/warenkorb/add/{{  num  }}" method="post" enctype="multipart/form-data">
-            <input type="number" class="anzahl" name="anzahl" min="1" max="2382347" value=100>
-            <div class="warenkorb-button" >
+          
+             <input type="number" class="anzahl" name="anzahl" min="1" max="2382347" value=100>
+            
+            
+            <!-- <div class="warenkorb-button" > -->
+                {% if logged_in == True %}
                 <a href="#" onclick="submit()" type="submit">
-                    <button class="button-p1">In den Warenkorb</button>
+                    
+                    <button class="button-p3 profil-warenkorb-btn2">In den Warenkorb</button>
                 </a>
-            </div>
+                {% endif %}
+            <!-- </div> -->
         </form>
     </div>
+    <div class="preis-p11">
     <p class="preis-p1"><b>{{  product["price"]  }}€ <span class="preisprostueck">Preis pro Stück</span></b></p>
+    </div>
 </div>    
 
 </div>

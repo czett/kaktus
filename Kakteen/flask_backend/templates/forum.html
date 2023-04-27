@@ -4,10 +4,10 @@
 
 <div class="top-forum-bar">
     <div class="forum-heading">
-        <h2>Forum</h2>
+        <h1 class="ueberschrift">Forum</h1>
     </div>
     <div class="new-post" onmousedown="toggleNewPostForm()">
-        <button>Neuer Beitrag</button>
+        <button class="new-button"><b>Neuer Beitrag</b></button>
     </div>
 </div>
 
@@ -16,7 +16,7 @@
     <form action="/forum/neuer-beitrag" enctype="multipart/form-data" method="post">
         <input required name="title" type="text" placeholder="Titel vom Post">
         <textarea required name="description" placeholder="Beschreibung/Fragestellung"></textarea>
-        <button type="submit">Erstellen</button>
+        <button type="submit" class="new-button">Erstellen</button>
     </form>
     <div class="close-new-post-form" onmousedown="toggleNewPostForm()">
         <i class="fa-solid fa-xmark"></i>

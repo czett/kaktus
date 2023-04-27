@@ -27,7 +27,7 @@
             <div class="flp-heading">
                 <p>Freunde von {{  profile_data["username"]  }}</p>
                 <div class="close-friends-tab" onmousedown="toggleFriendList()">
-                    <i class="fa-solid fa-mug-hot"></i>
+                    <i class="fa-solid fa-xmark fa-beat" style="color: #fe3471;"></i>
                 </div>
             </div>
             {% for friend in profile_data["friends"] %}
@@ -85,7 +85,7 @@
             <div class="heading">
                 <p class="settings-title">Einstellungen</p>
                 <div class="close-icon-wrap" onmousedown="openSettings()">
-                    <i class="fa-solid fa-xmark"></i>
+                    <i class="fa-solid fa-xmark fa-beat" style="color: #fe3471;"></i>
                 </div>
             </div>
             <div class="option">
