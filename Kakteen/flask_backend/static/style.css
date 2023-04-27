@@ -1034,6 +1034,7 @@ margin-left:40vw;
     animation-iteration-count: infinite;
     animation-duration: 1000ms;
     animation-delay: 10ms;
+    cursor: pointer;
 }
 
 .anzahl{
@@ -1215,6 +1216,7 @@ font-size: 20px;
     animation-iteration-count: infinite;
     animation-duration: 1000ms;
     animation-delay: 10ms;
+    cursor: pointer;
 }
 
 
@@ -1448,6 +1450,7 @@ font-size: 20px;
     animation-iteration-count: infinite;
     animation-duration: 1000ms;
     animation-delay: 10ms;
+    cursor: pointer;
 }
 
 
@@ -1753,9 +1756,18 @@ text-align: center;
 
 .auswaehlen2 {
 
-color: black;
+    background-color: transparent;
+color: var(--);
 font-size: 30px;
 text-align: center;
+border: 2px solid var(--ac);
+border-radius: 0.5vw;
+}
+
+.auswaehlen2:hover {
+
+cursor: pointer;
+
 }
 
 .button-k {
@@ -1789,6 +1801,7 @@ text-align: center;
     animation-iteration-count: infinite;
     animation-duration: 1000ms;
     animation-delay: 10ms;
+    cursor: pointer;
 }
 
 label::after {
@@ -1833,12 +1846,26 @@ font-size: 30px;
 
 }
 
+
+
 .ang {
 
 background-color: #303030;
 border: 2px solid var(--ac);
 font-size: 30px;
 border-radius: 0.5vw;
+
+}
+
+.ang:hover {
+    
+    cursor: pointer;
+
+}
+
+.round {
+
+cursor: pointer;
 
 }
 
@@ -2457,6 +2484,7 @@ top: -500px;
     animation-iteration-count: infinite;
     animation-duration: 1000ms;
     animation-delay: 10ms;
+    cursor: pointer;
 }
 
 .button-e2 {
@@ -2491,6 +2519,7 @@ top: -500px;
     animation-iteration-count: infinite;
     animation-duration: 1000ms;
     animation-delay: 10ms;
+    cursor: pointer;
 }
 
 
