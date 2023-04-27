@@ -3,14 +3,14 @@
     "builds": [
         {
             "src": "Kakteen/flask_backend/app.py",
-            "use": "@vercel/python",
-            "excludeFiles": "**/*.html"
+            "use": "@vercel/python"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "Kakteen/flask_backend/app.py"
+            "dest": "Kakteen/flask_backend/app.py",
+            "excludeFiles": "**/*.html"
         }
     ]
 }
