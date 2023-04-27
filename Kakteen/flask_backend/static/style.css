@@ -2876,7 +2876,7 @@ margin-top: -5vw;
     position: absolute;
     width: 24vh;
     height: 18vh;
-    border: 1px solid var(--fg);
+    /* border: 1px solid var(--fg); */
     top: 77.7vh;
     left: 50vw;
     right: 50vw;
@@ -2887,22 +2887,22 @@ margin-top: -5vw;
     position: absolute;
     width: 24vh;
     height: 24vh;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     top: 54%;
     left: 50%;
     right: 50%;
-    z-index: 9;
+    z-index: 8;
 }
 
 #kitArms {
     position: absolute;
     width: 34vh;
     height: 24vh;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     top: 45%;
     left: 47.75%;
     right: 50%;
-    z-index: 10;
+    z-index: 9;
 
     display: flex;
     justify-content: center;
@@ -2913,7 +2913,7 @@ margin-top: -5vw;
     position: absolute;
     width: 24vh;
     height: 24vh;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     top: 43vh;
     /* left: 52.45vw;
     right: 50vw; */
@@ -2927,11 +2927,11 @@ margin-top: -5vw;
     position: absolute;
     width: 24vh;
     height: 24vh;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     top: 57%;
     left: 50%;
     right: 50%;
-    z-index: 10;
+    z-index: 9;
 
     display: flex;
     justify-content: center;
@@ -2942,7 +2942,7 @@ margin-top: -5vw;
     position: absolute;
     width: 24vh;
     height: 24vh;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     top: 38%;
     left: 50%;
     right: 50%;
@@ -3045,12 +3045,75 @@ margin-top: -5vw;
     height: 14vh;
 }
 
-#importShirt4{
-    right: -5vw;
-    width: 25vh;
-    height: 25vh;
+.KitImgGameSL{
+    width: 35vh;
+    height: 33vh;
+    left: -2.7vw;
+    top: -23%;
+    z-index: 1;
+}
+/* Remover */
+
+.removeBar {
+    margin: 0;
+    margin-top: 2vw;
+    margin-left: 2.5vw;
+    width: auto;
+    height: auto;
+    position: fixed;
 }
 
+#removeAll {
+    background-color: var(--bg);
+    border: 1px solid var(--ac);
+    border-radius: 2vh;
+}
+#Paparazi {
+    display: inline-block;
+    margin: 0;
+    padding: 1vh 1vw 1vh 1vw;
+    border-radius: 2vh;
+    cursor: pointer;
+    transition: 150ms;
+}
+#Paparazi:hover {
+    background-color: #363636;
+}
+
+#removeIcon {
+    margin-right: 0.7vw;
+    cursor: pointer;
+    transition: 100ms;
+}
+#removeIcon.rotatio {
+    rotate: 90deg;
+}
+#removeIcon:hover {
+    transform: scale(1.1);
+}
+
+.onclickRemover {
+    background-color: var(--bg);
+    border: 1px solid var(--ac);
+    margin-top: 0.7vh;
+    border-radius: 2vh;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.onclickRemover.goIn {
+    width: auto;
+    height: auto;
+    visibility: visible;
+}
+.onclickRemoverOjk {
+    padding: 0.7vh 0 0.7vh 1vw;
+    cursor: pointer;
+}
+.onclickRemoverOjk:hover {
+    background-color: #363636;
+}
 
 
 /*===============/Kaktus Baukasten [ende]\============*/

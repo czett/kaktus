@@ -1,6 +1,6 @@
 
 const colorSelecter = document.querySelector('.ColorSelecter');
-var kitImg1move = document.getElementById('kitImg1');
+//var kitImg1move = document.getElementById('kitImg1');
 var kitImg2move = document.getElementById('kitImg2');
 var kitImg3move = document.getElementById('kitImg3');
 var kitImg4move = document.getElementById('kitImg4');
@@ -8,10 +8,10 @@ var kitImg4move = document.getElementById('kitImg4');
 // getting the picutures
 
 // töpfe
-const importImg1 = document.querySelector('#importImg1');
-const importImg2 = document.querySelector('#importImg2');
-const importImg3 = document.querySelector('#importImg3');
-const importImg4 = document.querySelector('#importImg4');
+// const importImg1 = document.querySelector('#importImg1');
+// const importImg2 = document.querySelector('#importImg2');
+// const importImg3 = document.querySelector('#importImg3');
+// const importImg4 = document.querySelector('#importImg4');
 
 const importImg11 = document.querySelector('#importImg11');
 const importImg22 = document.querySelector('#importImg22');
@@ -75,16 +75,25 @@ document.addEventListener('DOMContentLoaded', function () {
         },   
 ];
 
-    document.querySelector('#kitImg1').addEventListener('click', function() {
-            kitImg1move.animate(moveLeft, {
-				duration: 200,
-				iterations: 1,
-				fill: 'forwards'
-			});
-            const CS1 = document.querySelector('#CS1');
-            CS1.classList.add('moveIn');
-        } 
-    );
+var moveBack = [
+
+    {
+        width: '7vw',
+        height: '7vw',
+        visibility: 'visible',
+    },   
+];
+
+    // document.querySelector('#kitImg1').addEventListener('click', function() {
+    //         kitImg1move.animate(moveLeft, {
+	// 			duration: 200,
+	// 			iterations: 1,
+	// 			fill: 'forwards'
+	// 		});
+    //         const CS1 = document.querySelector('#CS1');
+    //         CS1.classList.add('moveIn');
+    //     } 
+    // );
 
     document.querySelector('#kitImg2').addEventListener('click', function() {
         kitImg2move.animate(moveLeft, {
@@ -92,6 +101,19 @@ document.addEventListener('DOMContentLoaded', function () {
             iterations: 1,
             fill: 'forwards'
         });
+
+        kitImg3move.animate(moveBack, {
+            duration: 1,
+            iterations: 1,
+            fill: 'forwards'
+        });
+
+        kitImg4move.animate(moveBack, {
+            duration: 1,
+            iterations: 1,
+            fill: 'forwards'
+        });
+
         const CS2 = document.querySelector('#CS2');
         CS2.classList.add('moveIn');
     } 
@@ -103,6 +125,19 @@ document.addEventListener('DOMContentLoaded', function () {
             iterations: 1,
             fill: 'forwards'
         });
+
+        kitImg2move.animate(moveBack, {
+            duration: 1,
+            iterations: 1,
+            fill: 'forwards'
+        });
+
+        kitImg4move.animate(moveBack, {
+            duration: 1,
+            iterations: 1,
+            fill: 'forwards'
+        });
+
         const CS3 = document.querySelector('#CS3');
         CS3.classList.add('moveIn');
     } 
@@ -114,6 +149,19 @@ document.addEventListener('DOMContentLoaded', function () {
             iterations: 1,
             fill: 'forwards'
         });
+
+        kitImg3move.animate(moveBack, {
+            duration: 1,
+            iterations: 1,
+            fill: 'forwards'
+        });
+
+        kitImg2move.animate(moveBack, {
+            duration: 1,
+            iterations: 1,
+            fill: 'forwards'
+        });
+
         const CS4 = document.querySelector('#CS4');
         CS4.classList.add('moveIn');
     } 
@@ -122,25 +170,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // 1. topf
 
-function clickColor1() {
-    clearImgTopf();
-    importImg1.classList.add('importIMG');
-}
+// function clickColor1() {
+//     clearImgTopf();
+//     importImg1.classList.add('importIMG');
+// }
 
-function clickColor2() {
-    clearImgTopf();
-    importImg2.classList.add('importIMG'); 
-}
+// function clickColor2() {
+//     clearImgTopf();
+//     importImg2.classList.add('importIMG'); 
+// }
 
-function clickColor3() {
-    clearImgTopf();
-    importImg3.classList.add('importIMG'); 
-}
+// function clickColor3() {
+//     clearImgTopf();
+//     importImg3.classList.add('importIMG'); 
+// }
 
-function clickColor4() {
-    clearImgTopf();
-    importImg4.classList.add('importIMG');
-}
+// function clickColor4() {
+//     clearImgTopf();
+//     importImg4.classList.add('importIMG');
+// }
 
 // 2. topf
 
