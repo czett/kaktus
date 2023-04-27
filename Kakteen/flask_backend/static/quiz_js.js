@@ -413,6 +413,8 @@ op4.addEventListener("click", () => {
             div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
     
             result[0].innerHTML = "";
+
+            
     
             })
 
@@ -424,6 +426,9 @@ op4.addEventListener("click", () => {
         div4.style.border = "2px solid red";
 
         div4.style.boxShadow = "0px 0 3px 0.5px red";
+
+        
+
 
         next.addEventListener("click", () => {
             
@@ -444,6 +449,10 @@ op4.addEventListener("click", () => {
         div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
 
         result[0].innerHTML = "";
+
+        
+
+
 
         })
 
@@ -470,6 +479,22 @@ if (id < 5) {
 }
 
 })
+
+var pl = 0;
+
+function plus(){
+
+pl +=1;
+
+    if (pl==6){
+    
+        pl = 0;
+    setTimeout(function(){
+        window.location.href = "/";
+    }, 1000);
+
+    }
+}
 
 
 //==============/Kaktus Quiz [ende]\=============\\
