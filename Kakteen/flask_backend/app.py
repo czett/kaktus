@@ -215,6 +215,11 @@ def fertig():
 	check_if_logged_in()
 	return render_template("fertig.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
 
+@app.route("/erfolg")
+def erfolg():
+	check_if_logged_in()
+	return render_template("erfolg.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+
 @app.route("/auswahl/bestaetigen", methods=["POST"])
 def auswahlbestaetigen():
 	check_if_logged_in()

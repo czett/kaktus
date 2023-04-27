@@ -560,6 +560,18 @@ visibility: hidden;
 
 /* SHOP Anfang */
 
+.text-ss {
+
+font-size: 40px;
+font-weight: bold;
+color: red;
+text-align: center;
+animation-name: blinken;
+animation-iteration-count: infinite;
+animation-duration: 1000ms;
+
+}
+
 .stift-wrap{
     background-color: var(--ac);
     aspect-ratio: 1 / 1;
@@ -2412,6 +2424,77 @@ top: -500px;
 }
 
 /* profilseite ende */
+
+/* Erfolg Anfang */
+
+.button-e {
+    transition-duration: 0.4s;
+    font-size: 30px;
+    min-width: 40vh;
+    min-height: 10vh;
+    transform: translate(235px,100px);
+    color: white;
+    
+    background-color: var(--ac); 
+    border-radius: 1vw;
+    overflow: visible;
+    border: 3px solid var(--ac);
+    margin-left: -5vw;
+    margin-top: -40vh;
+}
+
+
+.button-e:hover {
+
+    background-image: url(img/arrow.png);
+    background-position: 50%, 55%;
+    background-size: 350%;
+    background-color: var(--ac); 
+    color: transparent; 
+   
+    
+    animation: warenkorb;
+    animation-iteration-count: infinite;
+    animation-duration: 1000ms;
+    animation-delay: 10ms;
+}
+
+.button-e2 {
+    transition-duration: 0.4s;
+    font-size: 30px;
+    min-width: 40vh;
+    min-height: 10vh;
+    transform: translate(235px,100px);
+    color: white;
+    
+    background-color: var(--ac); 
+    border-radius: 1vw;
+    overflow: visible;
+    border: 3px solid var(--ac);
+    margin-left: 5vw;
+    margin-top: -40vh;
+    
+    
+}
+
+
+.button-e2:hover {
+
+    background-image: url(img/haus.png);
+    background-position: 50%, 50%;
+    background-size: 320%;
+    background-color: var(--ac); 
+    color: transparent; 
+   
+    
+    animation: warenkorb;
+    animation-iteration-count: infinite;
+    animation-duration: 1000ms;
+    animation-delay: 10ms;
+}
+
+
+/* Erfolg Ende */
 
 /* Fertig Anfang */
 

@@ -490,8 +490,8 @@ pl +=1;
     
         pl = 0;
     setTimeout(function(){
-        window.location.href = "/";
-    }, 1000);
+        window.location.href = "/erfolg";
+    }, 500);
 
     }
 }

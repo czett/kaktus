@@ -3,15 +3,19 @@
 {% block content %}
 
 <h1 class="ueberschrift">Shop</h1>
-
+{% if logged_in == False %}
+<p class="text-ss">Bitte erst anmelden! Käufe im Shop sind sonst nicht möglich!</p>
+{% endif %}
 <div class="cards-container">
     {% for product in products %}
         <div class="card-s act" data-index="2">
             {% set img = "../static/" ~ product["img"] %}
             <div class="gradient-s" style="background-image: url({{img}}); background-size: cover;">
+                {% if logged_in == True %}
                 <div class="warenkorb-icon-wrap">
                     <a  href="/produkt/{{  product['_id']  }}"><i class="fa-solid fa-cart-arrow-down fa-bounce"></i> </a>
                 </div> 
+                {% endif %}
             </div>
             <h2 class="card-title-s">{{  product["name"]  }}</h2>
             <p class="text-s" style="font-size: 18px">
