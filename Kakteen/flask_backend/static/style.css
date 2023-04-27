@@ -2930,7 +2930,77 @@ margin-top: -5vw;
     
 }
 
+/* Remove Bar */
 
+.removeBar {
+    position: fixed;
+    margin: 0;
+    margin-top: 2vw;
+    margin-left: 2.5vw;
+    overflow: hidden;
+    transition: 150ms;
+}
+
+.onclickRemover {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+.onclickRemover.goIn {
+    visibility: visible;
+    width: auto;
+    height: auto;
+}
+
+#removeAll {
+    margin: 0;
+    background-color: var(--bg);
+    border: 1px solid var(--ac);
+    border-radius: 2vh;
+}
+#Paparazi {
+    margin: 0;
+    padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+    cursor: pointer;
+    display: inline-block;
+}
+#Paparazi:hover {
+    border-radius: 2vh;
+    background-color: #363636;
+}
+
+#removeIcon{
+    margin: 0.5vw;
+    cursor: pointer;
+    rotate: 0deg;
+    transition: 100ms;
+}
+#removeIcon:hover {
+    transform: scale(1.1);
+}
+
+#removeIcon.rotatio {
+    transition: 150ms;
+    rotate: 90deg;
+}
+
+.onclickRemover {
+    background-color: var(--bg);
+    border-radius: 2vh;
+    overflow: hidden;
+    margin: 0;
+    margin-top: 0.7vh;
+    border: 1px solid var(--ac);
+    transition: 150ms;
+}
+.onclickRemoverOjk {
+    padding: 0.9vh 0 0.9vh 1vw;
+    cursor: pointer;
+    transition: 150ms;
+}
+.onclickRemoverOjk:hover {
+    background-color: #363636;
+}
 
 /*===============/Kaktus Baukasten [ende]\============*/
 

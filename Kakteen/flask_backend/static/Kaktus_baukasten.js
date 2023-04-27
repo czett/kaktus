@@ -403,3 +403,46 @@ function clearImgAll() {
         bild.classList.remove('importIMG');
     });
 }
+
+// remover Bar 
+
+const ctntR = document.querySelector('.onclickRemover');
+const Icon = document.querySelector('#removeIcon');
+var ausgeklapptR = false;
+
+function RemoverAusklappen(){
+    if(ausgeklapptR == false) {
+        ctntR.classList.add('goIn');
+        Icon.classList.add('rotatio');
+        ausgeklapptR = true;
+    }else {
+        ctntR.classList.remove('goIn');
+        Icon.classList.remove('rotatio');
+        ausgeklapptR = false;
+    }
+}
+
+// remove the elements 
+
+function RemoveAllover() {
+    clearImgAll();
+}
+
+function RemoveT() {
+    clearImgTopf();
+}
+function RemoveB() {
+    clearImgBody();
+}
+function RemoveA() {
+    clearImgArm();
+}
+function RemoveH() {
+    clearImgHead();
+}
+function RemoveS() {
+    clearImgShirt();
+}
+function RemoveHA() {
+    clearImgHat();
+}
