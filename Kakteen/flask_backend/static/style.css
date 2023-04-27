@@ -2750,7 +2750,6 @@ margin-top: -5vw;
     display: flex;
     width: 7vw;
     height: 7vw;
-    filter: saturate(5);
 }
 
 /*main Div*/
@@ -2847,7 +2846,6 @@ margin-top: -5vw;
     visibility: hidden;
     width: 24vh;
     height: 24vh;
-    filter: saturate(5);
 }
 
 .importIMG {
@@ -2879,6 +2877,15 @@ margin-top: -5vw;
 
 .KitImgV1 {
     margin-top: 4vh;
+    filter: saturate(5);
+}
+
+.KitImgK, .KitImgA, .KitImgH {
+    filter: saturate(5);
+}
+
+.KitImgGameT, .KitImgGameB, .KitImgGameA, .KitImgGameH {
+    filter: saturate(5);
 }
 
 /* Hüte style */
