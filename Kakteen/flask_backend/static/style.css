@@ -2994,7 +2994,7 @@ margin-top: -5vw;
     position: absolute;
     width: 24vh;
     height: 18vh;
-    border: 1px solid var(--fg);
+    /* border: 1px solid var(--fg); */
     top: 77.7vh;
     left: 50vw;
     right: 50vw;
@@ -3005,7 +3005,7 @@ margin-top: -5vw;
     position: absolute;
     width: 24vh;
     height: 24vh;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     top: 54%;
     left: 50%;
     right: 50%;
@@ -3016,7 +3016,7 @@ margin-top: -5vw;
     position: absolute;
     width: 34vh;
     height: 24vh;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     top: 45%;
     left: 47.75%;
     right: 50%;
@@ -3031,7 +3031,7 @@ margin-top: -5vw;
     position: absolute;
     width: 24vh;
     height: 24vh;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     top: 43vh;
     /* left: 52.45vw;
     right: 50vw; */
@@ -3045,7 +3045,7 @@ margin-top: -5vw;
     position: absolute;
     width: 24vh;
     height: 24vh;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     top: 57%;
     left: 50%;
     right: 50%;
@@ -3060,7 +3060,7 @@ margin-top: -5vw;
     position: absolute;
     width: 24vh;
     height: 24vh;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     top: 38%;
     left: 50%;
     right: 50%;
