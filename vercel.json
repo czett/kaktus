@@ -11,5 +11,10 @@
             "src": "/(.*)",
             "dest": "Kakteen/flask_backend/app.py"
         }
-    ]
+    ],
+    "functions": {
+        "pages/**/*": {
+            "excludeFiles": "public/**"
+        }
+    }
 }
