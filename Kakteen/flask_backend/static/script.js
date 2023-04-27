@@ -43,11 +43,13 @@ function triggerMenu(){
 	if (menuCollapsed == true){
 		document.querySelector(".link-box").style.display = "flex";
 		document.querySelector(".link-box").style.visibility = "visible";
-		document.querySelector(".trigger-icon").style.transform = "rotate(90deg)";
+		document.querySelector(".suchleiste-mob").style.visibility = "visible";
+		document.querySelector(".trigger-icon").style.transform = "rotate(180deg)";
 		menuCollapsed = false;
 	}else{
 		document.querySelector(".link-box").style.display = "none";
 		document.querySelector(".link-box").style.visibility = "hidden";
+		document.querySelector(".suchleiste-mob").style.visibility = "hidden";
 		document.querySelector(".trigger-icon").style.transform = "rotate(0deg)";
 		menuCollapsed = true;
 	}

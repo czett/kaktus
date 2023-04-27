@@ -1887,46 +1887,6 @@ display: block;
     -webkit-animation: spinoff .5s infinite linear;
 }
 
-@-moz-keyframes spin {
-    0% {
-        -moz-transform: rotate(0deg);
-    }
-
-    100% {
-        -moz-transform: rotate(360deg);
-    };
-}
-
-@-moz-keyframes spinoff {
-    0% {
-        -moz-transform: rotate(0deg);
-    }
-
-    100% {
-        -moz-transform: rotate(-360deg);
-    };
-}
-
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(360deg);
-    };
-}
-
-@-webkit-keyframes spinoff {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(-360deg);
-    };
-}
-
 /* .loading{
 
 
@@ -2699,8 +2659,18 @@ margin-top: -5vw;
 
 /*===============/Kaktus Baukasten\===================*/
 
+#KitBackground {
+    width: 100vw;
+    height: 96.4vh;
+    margin: -2vw -2vw -2vw -2.5vw;
+    background-image: url(../static/img/wueste.png);
+    overflow: hidden;
+}
+
 #navKitDiv {
     margin: 0;
+    margin-top: 2vw;
+    margin-left: 2.5vw;
     width: 10vw;
     height: 89.5vh;
     overflow-x: hidden;
@@ -2730,7 +2700,7 @@ margin-top: -5vw;
     cursor: pointer;
     transition: 150ms;
     opacity: 0.9;
-    overflow: visible;
+    overflow: hidden;
     display: flex;
 }
 .objKit:hover {
@@ -2740,8 +2710,8 @@ margin-top: -5vw;
 
 .ColorSelecter {
     margin-left: 2vw;
-    width: 7vw;
-    height: 7vw;
+    width: 6.9vw;
+    height: 6.9vw;
     background-color: var(--bg);
     border: 1px solid var(--ac);
     border-radius: 15%;
@@ -2773,7 +2743,7 @@ margin-top: -5vw;
     display: flex;
     width: 7vw;
     height: 7vw;
-    border-radius: 15%;
+    filter: saturate(5);
 }
 
 /*main Div*/
@@ -2786,18 +2756,19 @@ margin-top: -5vw;
 
 #kitTopf {
     position: absolute;
-    width: 12vw;
-    height: 12vw;
+    width: 24vh;
+    height: 18vh;
     border: 1px solid var(--fg);
-    top: 70vh;
+    top: 77.7vh;
     left: 50vw;
     right: 50vw;
+    z-index: 10;
 }
 
 #kitBody {
     position: absolute;
-    width: 12vw;
-    height: 12vw;
+    width: 24vh;
+    height: 24vh;
     border: 1px solid red;
     top: 54%;
     left: 50%;
@@ -2806,44 +2777,67 @@ margin-top: -5vw;
 
 #kitArms {
     position: absolute;
-    width: 12vw;
-    height: 12vw;
+    width: 34vh;
+    height: 24vh;
     border: 1px solid orange;
     top: 45%;
-    left: 50%;
+    left: 47.75%;
     right: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #kitHead {
     position: absolute;
-    width: 12vw;
-    height: 12vw;
+    width: 24vh;
+    height: 24vh;
     border: 1px solid yellow;
-    top: 30vh;
-    left: 50%;
-    right: 50%;
+    top: 43vh;
+    /* left: 52.45vw;
+    right: 50vw; */
+    left: 50vw;
+    right: 50vw;
+    display: flex;
+    justify-content: center;
 }
 
 #kitHat {
     position: absolute;
-    width: 12vw;
-    height: 12vw;
+    width: 24vh;
+    height: 24vh;
     border: 1px solid blue;
     top: 17%;
     left: 50%;
     right: 50%;
 }
 
-.KitImgGame {
-    
+.KitImgGame { 
     position: absolute;
     visibility: hidden;
-    width: 12vw;
-    min-height: 12vw;
+    width: 24vh;
+    height: 24vh;
+    filter: saturate(5);
 }
 
 .importIMG {
     visibility: visible;
+}
+
+.KitImgGameH {
+    left: 4.64vh;
+    width: 14.6vh;
+    height: 14.4vh;
+}
+
+.KitImgGameA {
+    width: 34vh;
+    height: 34vh;
+}
+
+.KitImgV1 {
+    margin-top: 4vh;
 }
 
 /*===============/Kaktus Baukasten [ende]\============*/
@@ -3456,7 +3450,20 @@ button:disabled:hover{
 
 /* tycoon ende */
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 900px){
+    :root{
+        --lrpad: 2vh;
+        /* --ac: #f04293;
+        --ac2: #aa0451; */
+        --ac: darkred;
+        --ac2: aquamarine;
+        --lrpad: 2vh;
+    }
+
+    ::-webkit-scrollbar{
+        display: none;
+    }
+
     .pc{
         display: none;
     }
@@ -3466,7 +3473,7 @@ button:disabled:hover{
     }
 
     .cycler, .card{
-        visibility: hidden;
+        display: none;
     }
 
     .link-box{
@@ -3474,22 +3481,37 @@ button:disabled:hover{
         width: 66vw;
         display: flex;
         flex-direction: column;
-        top: calc(3 * var(--lrpad) + 180%);
+        top: calc(7.5vh + 300%);
         left: 50%;
         padding: calc(3 * var(--lrpad));
         transform: translate(-50%, -50%);
         background: var(--bg);
         border: 1px solid var(--ac);
         border-radius: 2vh;
+        height: 35vh;
         z-index: 200;
         display: none;
         visibility: hidden;
         transition: 250ms;
+        font-size: 2vh;
+    }
+
+    .suchleiste, .suchleiste i{
+        visibility: hidden;
+    }
+
+    .suchleiste-mob, .suchleiste-mob i{
+        visibility: hidden;
+    }
+
+    .suchleiste-mob{
+        margin-top: 2vh;
+        margin-bottom: 1vh;
     }
 
     .menu-trigger{
-        width: 7.5vw;
-        height: 7.5vw;
+        width: 10vw;
+        height: 10vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -3500,7 +3522,198 @@ button:disabled:hover{
     }
 
     .menu-trigger i{
-        font-size: 5vw;
-        transition: 250ms;
+        font-size: 7.5vw;
+        transition: 400ms;
+    }
+
+    .suchleiste-mob input{
+        padding: 1vh !important;
+        border-radius: 1vh !important;
+    }
+
+    .overview .icons{
+        width: auto;
+        white-space: nowrap;
+        overflow-x: auto;
+        display: flex;
+        gap: 15vw;
+    }
+
+    .overview .icons::-webkit-scrollbar{
+        display: none;
+    }
+
+    .overview .icons .icon{
+        min-width: 60vw;
+        height: auto;
+    }
+
+    .overview .icons .icon .icon-circle{
+        width: 20vw;
+        height: 20vw;
+        font-size: 10vw;
+
+        background: linear-gradient(-135deg, var(--ac), var(--ac2));
+    }
+
+    .icon-circle i{
+        font-size: 7.5vw !important;
+    }
+
+    .overview .icons .icon .icon-desc{
+        white-space: pre-line;
+        text-align: center;
+    }
+
+    .welcome-banner{
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15%;
+        background: linear-gradient(0deg, var(--ac2), var(--ac));
+    }
+
+    .welcome-banner h1{
+        position: absolute;
+        display: block;
+        bottom: 0%;
+        left: 3%;
+        padding: 0;
+        font-size: 5.5vh;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* forum */
+
+    .post-interaction-options{
+        width: 50%;
+        position: static;
+        margin-bottom: 1vh;
+    }
+
+    .post-side-icons{
+        position: static;
+        margin: 0;
+        width: auto;
+        transform: none;
+    }
+
+    .new-post button{
+        padding: 1.25vh 2vh !important;
+    }
+
+    .new-post-form, .share-popup{
+        width: 70vw;
+        height: 30vh;
+        max-height: unset;
+    }
+
+    .new-post-form .close-new-post-form{
+        left: 90%;
+    }
+
+    .close-share-popup{
+        width: 2vh;
+        height: 2vh;
+    }
+
+    .close-share-popup i{
+        font-size: 2vh;
+    }
+
+    .share-icon-wrap{
+        padding: .75vh 1.66vh !important;
+    }
+
+    .add-comment{
+        height: 10vh;
+        display: flex;
+    }
+
+    .add-comment button[type="submit"]{
+        width: 30% !important;
+        box-sizing: border-box;
+        padding: .5vh;
+        font-size: 1.25vh;
+        align-self: center;
+    }
+
+    .add-comment textarea{
+        padding: .75vh !important;
+        max-width: 55%;
+    }
+
+    .logreg-box{
+        display: block;
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+        padding: calc(var(--lrpad) * 0.5) var(--lrpad);
+        width: 75vw;
+        box-sizing: border-box;
+        border-radius: 2vh;
+        overflow: hidden;
+    }
+
+    .logreg-box form{
+        width: auto;
+    }
+
+    .logreg-box form input, .logreg-box form button{
+        width: 100% !important;
+        padding: 3vw 2vw !important;
+        border-radius: 1.33vh !important;
+    }
+
+    .top-leiste{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        height: auto;
+    }
+
+    .top-leiste .info-leiste{
+        width: 100%;
+        padding: 0 1.5vh;
+        border-radius: 2vh;
+        margin-top: 2.5vh;
+    }
+
+    .stift-wrap{
+        width: 5.55vh;
+    }
+
+    .settings-icon-wrap{
+        top: 5%;
+        left: 97.5%;
+    }
+
+    .logout-text-btn{
+        display: none;
+    }
+
+    .settings{
+        width: 75vw;
+        z-index: 1000;
+        border-radius: 2vh;
+    }
+
+    .close-icon-wrap{
+        left: 97.5%;
+    }
+
+    .profil-warenkotb-btn{
+        position: static;
+        transform: none;
+        display: block;
+        margin: 2vh auto;
+        border-radius: 2vh;
+        width: 100%;
+    }
+
+    a{
+        text-decoration: none;
     }
 }
