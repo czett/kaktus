@@ -42,7 +42,7 @@ const Questions = [{
 },
 {
     id: 4,
-    q: "Zu welcher Pflanzenart gehören Kakteen",
+    q: "Zu welcher Pflanzenart gehören Kakteen?",
     a: [{ text: "Sukkulenten", isCorrect: true },
         { text: "Kürbisgewächs", isCorrect: false },
         { text: "Knöterichgewächse", isCorrect: false },
@@ -52,11 +52,11 @@ const Questions = [{
 },
 {
     id: 5,
-    q: "",
-    a: [{ text: "", isCorrect: false },
-        { text: "", isCorrect: false },
-        { text: "", isCorrect: true},
-        { text: "", isCorrect: false }
+    q: "Auf welchem Untergrund wachsen Kakteen am besten?",
+    a: [{ text: "Erde", isCorrect: false },
+        { text: "Kies", isCorrect: false },
+        { text: "Sand", isCorrect: true},
+        { text: "Rindenmulch", isCorrect: false }
     ]
 
 },
