@@ -560,6 +560,18 @@ visibility: hidden;
 
 /* SHOP Anfang */
 
+.text-ss {
+
+font-size: 40px;
+font-weight: bold;
+color: red;
+text-align: center;
+animation-name: blinken;
+animation-iteration-count: infinite;
+animation-duration: 1000ms;
+
+}
+
 .stift-wrap{
     background-color: var(--ac);
     aspect-ratio: 1 / 1;
@@ -1022,6 +1034,7 @@ margin-left:40vw;
     animation-iteration-count: infinite;
     animation-duration: 1000ms;
     animation-delay: 10ms;
+    cursor: pointer;
 }
 
 .anzahl{
@@ -1203,6 +1216,7 @@ font-size: 20px;
     animation-iteration-count: infinite;
     animation-duration: 1000ms;
     animation-delay: 10ms;
+    cursor: pointer;
 }
 
 
@@ -1436,6 +1450,7 @@ font-size: 20px;
     animation-iteration-count: infinite;
     animation-duration: 1000ms;
     animation-delay: 10ms;
+    cursor: pointer;
 }
 
 
@@ -1741,9 +1756,18 @@ text-align: center;
 
 .auswaehlen2 {
 
-color: black;
+    background-color: transparent;
+color: var(--);
 font-size: 30px;
 text-align: center;
+border: 2px solid var(--ac);
+border-radius: 0.5vw;
+}
+
+.auswaehlen2:hover {
+
+cursor: pointer;
+
 }
 
 .button-k {
@@ -1777,6 +1801,7 @@ text-align: center;
     animation-iteration-count: infinite;
     animation-duration: 1000ms;
     animation-delay: 10ms;
+    cursor: pointer;
 }
 
 label::after {
@@ -1821,12 +1846,26 @@ font-size: 30px;
 
 }
 
+
+
 .ang {
 
 background-color: #303030;
 border: 2px solid var(--ac);
 font-size: 30px;
 border-radius: 0.5vw;
+
+}
+
+.ang:hover {
+    
+    cursor: pointer;
+
+}
+
+.round {
+
+cursor: pointer;
 
 }
 
@@ -2412,6 +2451,79 @@ top: -500px;
 }
 
 /* profilseite ende */
+
+/* Erfolg Anfang */
+
+.button-e {
+    transition-duration: 0.4s;
+    font-size: 30px;
+    min-width: 40vh;
+    min-height: 10vh;
+    transform: translate(235px,100px);
+    color: white;
+    
+    background-color: var(--ac); 
+    border-radius: 1vw;
+    overflow: visible;
+    border: 3px solid var(--ac);
+    margin-left: -5vw;
+    margin-top: -40vh;
+}
+
+
+.button-e:hover {
+
+    background-image: url(img/arrow.png);
+    background-position: 50%, 55%;
+    background-size: 350%;
+    background-color: var(--ac); 
+    color: transparent; 
+   
+    
+    animation: warenkorb;
+    animation-iteration-count: infinite;
+    animation-duration: 1000ms;
+    animation-delay: 10ms;
+    cursor: pointer;
+}
+
+.button-e2 {
+    transition-duration: 0.4s;
+    font-size: 30px;
+    min-width: 40vh;
+    min-height: 10vh;
+    transform: translate(235px,100px);
+    color: white;
+    
+    background-color: var(--ac); 
+    border-radius: 1vw;
+    overflow: visible;
+    border: 3px solid var(--ac);
+    margin-left: 5vw;
+    margin-top: -40vh;
+    
+    
+}
+
+
+.button-e2:hover {
+
+    background-image: url(img/haus.png);
+    background-position: 50%, 50%;
+    background-size: 320%;
+    background-color: var(--ac); 
+    color: transparent; 
+   
+    
+    animation: warenkorb;
+    animation-iteration-count: infinite;
+    animation-duration: 1000ms;
+    animation-delay: 10ms;
+    cursor: pointer;
+}
+
+
+/* Erfolg Ende */
 
 /* Fertig Anfang */
 
@@ -3056,7 +3168,20 @@ margin-top: -5vw;
     height: 32vh;
     left: -2.7vw;
 
+/* Remover */
+
+.removeBar {
+    margin: 0;
+    margin-top: 2vw;
+    margin-left: 2.5vw;
+    width: auto;
+    height: auto;
+    position: fixed;
 }
+
+
+
+
 /*===============/Kaktus Baukasten [ende]\============*/
 
 /* friends list popup */

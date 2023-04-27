@@ -29,9 +29,12 @@
             
             
             <!-- <div class="warenkorb-button" > -->
+                {% if logged_in == True %}
                 <a href="#" onclick="submit()" type="submit">
+                    
                     <button class="button-p3 profil-warenkorb-btn2">In den Warenkorb</button>
                 </a>
+                {% endif %}
             <!-- </div> -->
         </form>
     </div>
