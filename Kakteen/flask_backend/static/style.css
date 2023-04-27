@@ -1883,46 +1883,6 @@ display: block;
     -webkit-animation: spinoff .5s infinite linear;
 }
 
-@-moz-keyframes spin {
-    0% {
-        -moz-transform: rotate(0deg);
-    }
-
-    100% {
-        -moz-transform: rotate(360deg);
-    };
-}
-
-@-moz-keyframes spinoff {
-    0% {
-        -moz-transform: rotate(0deg);
-    }
-
-    100% {
-        -moz-transform: rotate(-360deg);
-    };
-}
-
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(360deg);
-    };
-}
-
-@-webkit-keyframes spinoff {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(-360deg);
-    };
-}
-
 /* .loading{
 
 
@@ -3489,8 +3449,10 @@ button:disabled:hover{
 @media screen and (max-width: 900px){
     :root{
         --lrpad: 2vh;
-        --ac: #f04293;
-        --ac2: #aa0451;
+        /* --ac: #f04293;
+        --ac2: #aa0451; */
+        --ac: darkred;
+        --ac2: aquamarine;
         --lrpad: 2vh;
     }
 
@@ -3522,7 +3484,7 @@ button:disabled:hover{
         background: var(--bg);
         border: 1px solid var(--ac);
         border-radius: 2vh;
-        gap: 1vh;
+        height: 35vh;
         z-index: 200;
         display: none;
         visibility: hidden;
@@ -3677,5 +3639,77 @@ button:disabled:hover{
     .add-comment textarea{
         padding: .75vh !important;
         max-width: 55%;
+    }
+
+    .logreg-box{
+        display: block;
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+        padding: calc(var(--lrpad) * 0.5) var(--lrpad);
+        width: 75vw;
+        box-sizing: border-box;
+        border-radius: 2vh;
+        overflow: hidden;
+    }
+
+    .logreg-box form{
+        width: auto;
+    }
+
+    .logreg-box form input, .logreg-box form button{
+        width: 100% !important;
+        padding: 3vw 2vw !important;
+        border-radius: 1.33vh !important;
+    }
+
+    .top-leiste{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        height: auto;
+    }
+
+    .top-leiste .info-leiste{
+        width: 100%;
+        padding: 0 1.5vh;
+        border-radius: 2vh;
+        margin-top: 2.5vh;
+    }
+
+    .stift-wrap{
+        width: 5.55vh;
+    }
+
+    .settings-icon-wrap{
+        top: 5%;
+        left: 97.5%;
+    }
+
+    .logout-text-btn{
+        display: none;
+    }
+
+    .settings{
+        width: 75vw;
+        z-index: 1000;
+        border-radius: 2vh;
+    }
+
+    .close-icon-wrap{
+        left: 97.5%;
+    }
+
+    .profil-warenkotb-btn{
+        position: static;
+        transform: none;
+        display: block;
+        margin: 2vh auto;
+        border-radius: 2vh;
+        width: 100%;
+    }
+
+    a{
+        text-decoration: none;
     }
 }
