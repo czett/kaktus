@@ -1238,6 +1238,9 @@ display: inline-block;
     right: 5%;
     top: 50%;
     transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .korb-img-wrap img{
@@ -3764,5 +3767,50 @@ button:disabled:hover{
 
     .gradient-s{
         border-width: .5vh;
+    }
+
+    .warenkorb-icon-wrap{
+        width: 4vh;
+        height: 4vh;
+        aspect-ratio: unset;
+        z-index: 100;
+        visibility: visible;
+        border-radius: 1.5vh;
+    }
+
+    .warenkorb-icon-wrap i, .warenkorb-icon-wrap a{
+        font-size: 1.75vh;
+    }
+
+    .ueberschrift{
+        font-size: 3.75vh;
+    }
+    
+    .cards-p1{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        height: auto;
+        gap: unset;
+    }
+    
+    .card-p1{
+        max-width: 100%;
+        display: block;
+        box-sizing: border-box;
+        position: static;
+    }
+
+    .gradient-p1{
+        margin: 0;
+    }
+
+    .card-p1 .warenkorb-icon-wrap{
+        display: none;
+    }
+
+    .text-p1{
+        line-height: 1.35em;
+        font-size: 1.75vh !important;
     }
 }
