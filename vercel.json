@@ -9,8 +9,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "Kakteen/flask_backend/app.py",
-            "excludeFiles": "**/*.html"
+            "dest": "Kakteen/flask_backend/app.py"
         }
     ]
 }
