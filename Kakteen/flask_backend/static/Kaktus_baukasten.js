@@ -1,6 +1,6 @@
 
 const colorSelecter = document.querySelector('.ColorSelecter');
-var kitImg1move = document.getElementById('kitImg1');
+//var kitImg1move = document.getElementById('kitImg1');
 var kitImg2move = document.getElementById('kitImg2');
 var kitImg3move = document.getElementById('kitImg3');
 var kitImg4move = document.getElementById('kitImg4');
@@ -75,6 +75,15 @@ document.addEventListener('DOMContentLoaded', function () {
         },   
 ];
 
+var moveBack = [
+
+    {
+        width: '7vw',
+        height: '7vw',
+        visibility: 'visible',
+    },   
+];
+
     // document.querySelector('#kitImg1').addEventListener('click', function() {
     //         kitImg1move.animate(moveLeft, {
 	// 			duration: 200,
@@ -92,6 +101,19 @@ document.addEventListener('DOMContentLoaded', function () {
             iterations: 1,
             fill: 'forwards'
         });
+
+        kitImg3move.animate(moveBack, {
+            duration: 1,
+            iterations: 1,
+            fill: 'forwards'
+        });
+
+        kitImg4move.animate(moveBack, {
+            duration: 1,
+            iterations: 1,
+            fill: 'forwards'
+        });
+
         const CS2 = document.querySelector('#CS2');
         CS2.classList.add('moveIn');
     } 
@@ -103,6 +125,19 @@ document.addEventListener('DOMContentLoaded', function () {
             iterations: 1,
             fill: 'forwards'
         });
+
+        kitImg2move.animate(moveBack, {
+            duration: 1,
+            iterations: 1,
+            fill: 'forwards'
+        });
+
+        kitImg4move.animate(moveBack, {
+            duration: 1,
+            iterations: 1,
+            fill: 'forwards'
+        });
+
         const CS3 = document.querySelector('#CS3');
         CS3.classList.add('moveIn');
     } 
@@ -114,6 +149,19 @@ document.addEventListener('DOMContentLoaded', function () {
             iterations: 1,
             fill: 'forwards'
         });
+
+        kitImg3move.animate(moveBack, {
+            duration: 1,
+            iterations: 1,
+            fill: 'forwards'
+        });
+
+        kitImg2move.animate(moveBack, {
+            duration: 1,
+            iterations: 1,
+            fill: 'forwards'
+        });
+
         const CS4 = document.querySelector('#CS4');
         CS4.classList.add('moveIn');
     } 
