@@ -1,6 +1,5 @@
 from flask import Flask, render_template, redirect, session, request, jsonify
-#import funcs as funcs
-import pymongo, certifi, string, random
+import certifi, string, random
 from datetime import datetime
 from pymongo import MongoClient
 

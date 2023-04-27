@@ -2724,6 +2724,10 @@ margin-top: -5vw;
     flex-direction: column;
 }
 
+.preisprostueck{
+    font-size: 1.5vh;
+}
+
 .moveIn {
     margin-left: 0;
 }
@@ -2776,6 +2780,7 @@ margin-top: -5vw;
     top: 54%;
     left: 50%;
     right: 50%;
+    z-index: 9;
 }
 
 #kitArms {
@@ -2786,6 +2791,7 @@ margin-top: -5vw;
     top: 45%;
     left: 47.75%;
     right: 50%;
+    z-index: 10;
 
     display: flex;
     justify-content: center;
@@ -2806,14 +2812,34 @@ margin-top: -5vw;
     justify-content: center;
 }
 
+#kitShirt {
+    position: absolute;
+    width: 24vh;
+    height: 24vh;
+    border: 1px solid green;
+    top: 57%;
+    left: 50%;
+    right: 50%;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #kitHat {
     position: absolute;
     width: 24vh;
     height: 24vh;
     border: 1px solid blue;
-    top: 17%;
+    top: 38%;
     left: 50%;
     right: 50%;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .KitImgGame { 
@@ -2839,9 +2865,25 @@ margin-top: -5vw;
     height: 34vh;
 }
 
+.KitImgGameS {
+    left: 1vw;
+    width: 21vh;
+    height: 19vh;
+}
+
+.KitImgGameHA {
+    right: 0.5vw;
+    width: 20vh;
+    height: 20vh;
+}
+
 .KitImgV1 {
     margin-top: 4vh;
 }
+
+/* Hüte style */
+
+
 
 /*===============/Kaktus Baukasten [ende]\============*/
 
@@ -3488,6 +3530,7 @@ button:disabled:hover{
         top: 0px;
         left: 0px;
         width: 100%;
+        z-index: 1000;
     }
 
     .link-box{
@@ -3760,6 +3803,10 @@ button:disabled:hover{
         border-radius: 1.5vh;
     }
 
+    .card-s .gradient-s{
+        border-color: var(--ac);
+    }
+
     .link-s{
         cursor: pointer;
         transition: 200ms;
@@ -3776,6 +3823,7 @@ button:disabled:hover{
         z-index: 100;
         visibility: visible;
         border-radius: 1.5vh;
+        background-color: var(--ac);
     }
 
     .warenkorb-icon-wrap i, .warenkorb-icon-wrap a{
@@ -3783,7 +3831,7 @@ button:disabled:hover{
     }
 
     .ueberschrift{
-        font-size: 3.75vh;
+        font-size: 3.5vh;
     }
     
     .cards-p1{
@@ -3803,6 +3851,7 @@ button:disabled:hover{
 
     .gradient-p1{
         margin: 0;
+        border-color: var(--ac);
     }
 
     .card-p1 .warenkorb-icon-wrap{
@@ -3812,5 +3861,102 @@ button:disabled:hover{
     .text-p1{
         line-height: 1.35em;
         font-size: 1.75vh !important;
+    }
+
+    .anzahl-menu{
+        position: relative;
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .anzahl-menu form button, .anzahl-menu form input{
+        position: static;
+        transform: unset;
+        width: 100%;
+        min-width: unset;
+        height: auto;
+        min-height: unset;
+        box-sizing: border-box;
+        padding: 2vh;
+        border-radius: 1.75vh;
+        border: 2px solid var(--ac);
+    }
+
+    .anzahl-menu form button{
+        color: var(--fg);
+        background-color: var(--ac);
+        margin-top: 1vh;
+    }
+
+    .anz{
+        text-decoration: underline var(--ac);
+    }
+
+    .preis-p1{
+        border-color: var(--ac);
+        border-radius: 1.75vh;
+        font-size: 5vh;
+    }
+
+    .preisprostueck{
+        font-size: 1vh;
+    }
+
+    .korb-info-wrap, .pap-headers{
+        width: 75% !important;
+    }
+
+    .korb-img-wrap{
+        width: 6.66vh;
+        height: 6.66vh;
+    }
+
+    .pap-headers p{
+        font-size: 2.25vh !important;
+        text-decoration: none;
+    }
+
+    .korb-info-wrap p{
+        font-size: 1.5vh !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .eintraege{
+        display: block;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .eintraege div{
+        display: block;
+        transform: none;
+        height: auto;
+        margin: 3vh 0;
+        width: 100%;
+        box-sizing: border-box;
+        position: static;
+    }
+
+    .eintrag{
+        transform: unset !important;
+    }
+    
+    .eintrag .entdecken-img{
+        display: none;
+    }
+
+    .eintraege div *{
+        position: static;
+        transform: none;
+    }
+    
+    .eintrag .text-e2{
+        padding: 2vh;
+        font-size: 1.75vh;
+        line-height: 1.5em;
+        position: relative;
     }
 }
