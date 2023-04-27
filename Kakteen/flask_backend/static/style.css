@@ -476,10 +476,14 @@ visibility: hidden;
 
 .auswahl-back {
 
-
-
-
-overflow: visible;
+   
+    color: white;
+    text-decoration: none;
+    top: -80px;
+    size: 40px;
+    font-size: 50px;
+    margin-left: 0.4vw;
+    display: flex;
 
 
 }
@@ -513,9 +517,9 @@ overflow: visible;
 
 .pfeil {
     font-size: 25px;
-    margin-top: -0.5vw;
-    margin-bottom: -1.5vw;
+    margin-top: 0.5vw;
     overflow: visible;
+    display: flex;
     
 }
 .auswahl-back2 {
@@ -823,13 +827,13 @@ overflow: visible;
 
     font-size: 30px;
     text-decoration: underline;
-    text-decoration-color: #ff7e93;
+    text-decoration-color: #ff92a4;
 
     }
 
     .anz2 {
 
-    margin-top: -42.5vw;
+    margin-top: -43.5vw;
     margin-left: 44.5vw;
 
     }
