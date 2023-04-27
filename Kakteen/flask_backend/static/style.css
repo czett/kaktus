@@ -3140,6 +3140,18 @@ margin-top: -5vw;
     height: 25vh;
 }
 
+/* Remover */
+
+.removeBar {
+    margin: 0;
+    margin-top: 2vw;
+    margin-left: 2.5vw;
+    width: auto;
+    height: auto;
+    position: fixed;
+}
+
+
 
 
 /*===============/Kaktus Baukasten [ende]\============*/
