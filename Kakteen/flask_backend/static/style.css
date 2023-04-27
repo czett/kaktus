@@ -3134,10 +3134,22 @@ margin-top: -5vw;
     height: 14vh;
 }
 
-.KitImgGameSL{
-    right: 20vw;
-    width: 32vh;
-    height: 32vh;
+#importShirt4{
+    right: -5vw;
+    width: 25vh;
+    height: 25vh;
+}
+
+#importShirt5{
+    width: 30vh;
+    height: 30vh;
+
+}
+
+#importShirt6{
+    width: 30vh;
+    height: 30vh;
+
 }
 
 /*===============/Kaktus Baukasten [ende]\============*/
