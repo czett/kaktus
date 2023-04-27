@@ -2868,7 +2868,6 @@ margin-top: -5vw;
     display: flex;
     width: 7vw;
     height: 7vw;
-    filter: saturate(5);
 }
 
 /*main Div*/
@@ -2898,6 +2897,7 @@ margin-top: -5vw;
     top: 54%;
     left: 50%;
     right: 50%;
+    z-index: 9;
 }
 
 #kitArms {
@@ -2908,6 +2908,7 @@ margin-top: -5vw;
     top: 45%;
     left: 47.75%;
     right: 50%;
+    z-index: 10;
 
     display: flex;
     justify-content: center;
@@ -2928,14 +2929,34 @@ margin-top: -5vw;
     justify-content: center;
 }
 
+#kitShirt {
+    position: absolute;
+    width: 24vh;
+    height: 24vh;
+    border: 1px solid green;
+    top: 57%;
+    left: 50%;
+    right: 50%;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #kitHat {
     position: absolute;
     width: 24vh;
     height: 24vh;
     border: 1px solid blue;
-    top: 17%;
+    top: 38%;
     left: 50%;
     right: 50%;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .KitImgGame { 
@@ -2943,7 +2964,6 @@ margin-top: -5vw;
     visibility: hidden;
     width: 24vh;
     height: 24vh;
-    filter: saturate(5);
 }
 
 .importIMG {
@@ -2961,8 +2981,80 @@ margin-top: -5vw;
     height: 34vh;
 }
 
+.KitImgGameS {
+    left: 1vw;
+    width: 21vh;
+    height: 19vh;
+}
+
+.KitImgGameHA {
+    right: 0.5vw;
+    width: 20vh;
+    height: 20vh;
+}
+
 .KitImgV1 {
     margin-top: 4vh;
+    filter: saturate(5);
+}
+
+.KitImgK, .KitImgA, .KitImgH {
+    filter: saturate(5);
+}
+
+.KitImgGameT, .KitImgGameB, .KitImgGameA, .KitImgGameH {
+    filter: saturate(5);
+}
+
+/* Hüte style */
+
+
+
+#importHat2{
+    left: 0.9vw;
+    width: 19vh;
+    height: 17vh;
+}
+
+#importHat3{
+    left: 2vw;
+    top: -16%;
+    width: 25vh;
+    height: 24vh;
+}
+
+#importHat4{
+    left: 2vw;
+    width: 18vh;
+    height: 17vh;
+}
+
+
+
+#importHat6{
+    left: 0.6vw;
+    width: 19vh;
+    height: 17vh;
+}
+
+#importHat7{
+    left: 1.15vw;
+    bottom: 12%;
+    width: 19vh;
+    height: 17vh;
+}
+
+#importHat8{
+    left: 2vw;
+    bottom: 12%;
+    width: 16vh;
+    height: 14vh;
+}
+
+.KitImgGameSL{
+    right: 20vw;
+    width: 32vh;
+    height: 32vh;
 }
 
 /*===============/Kaktus Baukasten [ende]\============*/

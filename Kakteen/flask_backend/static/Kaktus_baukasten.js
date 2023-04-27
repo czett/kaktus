@@ -46,6 +46,24 @@ const importHead2 = document.querySelector('#importHead2');
 const importHead3 = document.querySelector('#importHead3');
 const importHead4 = document.querySelector('#importHead4');
 
+// T-shirts
+const importShirt1 = document.querySelector('#importShirt1');
+const importShirt2 = document.querySelector('#importShirt2');
+const importShirt3 = document.querySelector('#importShirt3');
+const importShirt4 = document.querySelector('#importShirt4');
+const importShirt5 = document.querySelector('#importShirt5');
+const importShirt6 = document.querySelector('#importShirt6');
+
+// Hats
+const importHat1 = document.querySelector('#importHat1');
+const importHat2 = document.querySelector('#importHat2');
+const importHat3 = document.querySelector('#importHat3');
+const importHat4 = document.querySelector('#importHat4');
+const importHat5 = document.querySelector('#importHat5');
+const importHat6 = document.querySelector('#importHat6');
+const importHat7 = document.querySelector('#importHat7');
+const importHat8 = document.querySelector('#importHat8');
+
 
 document.addEventListener('DOMContentLoaded', function () {
 	var moveLeft = [
@@ -254,6 +272,79 @@ function clickHead4() {
     importHead4.classList.add('importIMG');
 }
 
+// Shirts
+function clickShirt1() {
+    clearImgShirt();
+    importShirt1.classList.add('importIMG');
+}
+
+function clickShirt2() {
+    clearImgShirt();
+    importShirt2.classList.add('importIMG');
+}
+
+function clickShirt3() {
+    clearImgShirt();
+    importShirt3.classList.add('importIMG');
+}
+
+function clickShirt4() {
+    clearImgShirt();
+    importShirt4.classList.add('importIMG');
+}
+
+function clickShirt5() {
+    clearImgShirt();
+    importShirt5.classList.add('importIMG');
+}
+
+function clickShirt6() {
+    clearImgShirt();
+    importShirt6.classList.add('importIMG');
+}
+
+// Hats
+function clickHat1() {
+    clearImgHat();
+    importHat1.classList.add('importIMG');
+}
+
+function clickHat2() {
+    clearImgHat();
+    importHat2.classList.add('importIMG');
+}
+
+function clickHat3() {
+    clearImgHat();
+    importHat3.classList.add('importIMG');
+}
+
+function clickHat4() {
+    clearImgHat();
+    importHat4.classList.add('importIMG');
+}
+
+function clickHat5() {
+    clearImgHat();
+    importHat5.classList.add('importIMG');
+}
+
+function clickHat6() {
+    clearImgHat();
+    importHat6.classList.add('importIMG');
+}
+
+function clickHat7() {
+    clearImgHat();
+    importHat7.classList.add('importIMG');
+}
+
+function clickHat8() {
+    clearImgHat();
+    importHat8.classList.add('importIMG');
+}
+
+
 // remove functions
 
 function clearImgTopf() {
@@ -287,6 +378,23 @@ function clearImgArm() {
         bildA.classList.remove('importIMG');
     });
 }
+
+function clearImgHat() {
+    const hadter = document.querySelectorAll('.KitImgGameHA');
+
+    hadter.forEach((bildHA) => {
+        bildHA.classList.remove('importIMG');
+    });
+}
+
+function clearImgShirt() {
+    const shorter = document.querySelectorAll('.KitImgGameS');
+
+    shorter.forEach((bildS) => {
+        bildS.classList.remove('importIMG');
+    });
+}
+
 
 function clearImgAll() {
     const bilder = document.querySelectorAll('.KitImgGame');
