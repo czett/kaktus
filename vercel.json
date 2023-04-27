@@ -13,8 +13,8 @@
         }
     ],
     "functions": {
-        "pages/**/*": {
-            "excludeFiles": "public/**"
+        "api/**/*.py": {
+            "excludeFiles": "**/*.html"
         }
     }
 }
