@@ -3460,6 +3460,10 @@ button:disabled:hover{
         display: none;
     }
 
+    .content{
+        margin: 0;
+    }
+
     .pc{
         display: none;
     }
@@ -3470,6 +3474,13 @@ button:disabled:hover{
 
     .cycler, .card{
         display: none;
+    }
+
+    .nav{
+        position: sticky;
+        top: 0px;
+        left: 0px;
+        width: 100%;
     }
 
     .link-box{
@@ -3679,6 +3690,7 @@ button:disabled:hover{
 
     .stift-wrap{
         width: 5.55vh;
+        z-index: 20;
     }
 
     .settings-icon-wrap{
@@ -3709,7 +3721,44 @@ button:disabled:hover{
         width: 100%;
     }
 
+    .flp{
+        width: 66vw;
+        max-height: unset;
+    }
+
+    .close-friends-tab{
+        top: 20% !important;
+        left: 92.5% !important;
+    }
+
     a{
         text-decoration: none;
+    }
+
+    .card-s{
+        min-width: 40vw;
+    }
+
+    .card-s .card-title-s{
+        font-size: 2.5vh;
+    }
+
+    .card-s .text-s{
+        font-size: 1.5vh !important;
+    }
+
+    .card-s .preis-s{
+        font-size: 3.5vh;
+        padding: 1vh 0;
+        border-radius: 1.5vh;
+    }
+
+    .link-s{
+        cursor: pointer;
+        transition: 200ms;
+    }
+
+    .gradient-s{
+        border-width: .5vh;
     }
 }
