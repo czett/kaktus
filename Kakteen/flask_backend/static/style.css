@@ -2770,20 +2770,15 @@ margin-top: -5vw;
 }
 
 .zahl-spiel {
-
     font-size: 30px;
     overflow: hidden;
     font-weight: bold;
     display: flex;
     margin-top: 1.5vw;
-    margin-left: 2vw;
-    
-    
-    
+    margin-left: 2vw;   
 }
 
 .zähler {
-
     display: flex;
     margin-left: 6.4vw;
     max-width: 40vh;
@@ -2792,22 +2787,15 @@ margin-top: -5vw;
     margin-top: -1.5vw;
     letter-spacing: 2px;
     color: #B3E34F;
-   
-    
-    /* padding: 1vw;
-    padding-right: -5vw; */
-     }
+}
 
-     .zahl-spiel2 {
-
-        font-size: 30px;
-        overflow: hidden;
-        font-weight: bold;
-        display: flex;
-        font-weight: bold;
-    
-        
-     }
+.zahl-spiel2 {
+    font-size: 30px;
+    overflow: hidden;
+    font-weight: bold;
+    display: flex;
+    font-weight: bold;     
+}
 
 /*===============/Kaktus Quiz [ende]\===================*/
 
@@ -4453,6 +4441,4 @@ button:disabled:hover{
         top: -23%;
         z-index: 1;
     }
-
 }
-
