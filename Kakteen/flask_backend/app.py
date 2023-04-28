@@ -280,7 +280,7 @@ def register():
 
 		session["data"] = {"user_id": uid, "username": un, "pimg": None, "friends": [], "own_profile": True}
 
-		add_entry(userdata, {"_id": uid, "friends": [], "pimg": None, "notifications": [], "reports": 0})
+		add_entry(userdata, {"_id": uid, "friends": [], "pimg": None, "notifications": [], "reports": []})
 
 		return redirect("/profil")
 	else:
@@ -310,106 +310,141 @@ def anderesprofil(profil):
 	session["warnings"] = {}
 	session.modified = True
 
-	uid = find_in_coll(logreg, {"username": profil})["_id"]
-	user_ud = find_in_coll(userdata, {"_id": uid})
+	try:
+		uid = find_in_coll(logreg, {"username": profil})["_id"]
+		user_ud = find_in_coll(userdata, {"_id": uid})
 
-	usersfriends = find_in_coll(userdata, {"_id": find_in_coll(logreg, {"username": profil})["_id"]})["friends"]
+		usersfriends = find_in_coll(userdata, {"_id": find_in_coll(logreg, {"username": profil})["_id"]})["friends"]
 
-	for friend in usersfriends:
-		if find_in_coll(logreg, {"username": friend}) == None:
-			usersfriends.remove(friend)
-	
-	userdata.update_one({"_id": str(find_in_coll(logreg, {"username": profil})["_id"])}, {"$set": {"friends": usersfriends}})
+		for friend in usersfriends:
+			if find_in_coll(logreg, {"username": friend}) == None:
+				usersfriends.remove(friend)
+		
+		userdata.update_one({"_id": str(find_in_coll(logreg, {"username": profil})["_id"])}, {"$set": {"friends": usersfriends}})
 
-	if session["logged_in"] == True and session["data"]["user_id"] == uid:
-		profile_data = {"user_id": uid, "username": profil, "friends": user_ud["friends"], "pimg": user_ud["pimg"], "own_profile": True}
-	else:
-		profile_data = {"user_id": uid, "username": profil, "friends": user_ud["friends"], "pimg": user_ud["pimg"], "own_profile": False}
+		if session["logged_in"] == True and session["data"]["user_id"] == uid:
+			profile_data = {"user_id": uid, "username": profil, "friends": user_ud["friends"], "pimg": user_ud["pimg"], "own_profile": True}
+		else:
+			profile_data = {"user_id": uid, "username": profil, "friends": user_ud["friends"], "pimg": user_ud["pimg"], "own_profile": False}
 
-	return render_template("Profil.html", profile_data=profile_data, warnings=session["warnings"], data=session["data"], logged_in=session["logged_in"])
+		return render_template("Profil.html", profile_data=profile_data, warnings=session["warnings"], data=session["data"], logged_in=session["logged_in"])
+	except:
+		return redirect("/")
 
 @app.route("/delete-account")
 def delete_account():
-	uid = session["data"]["user_id"]
+	check_if_logged_in()
 
-	userdata.delete_one({"_id": uid})
-	logreg.delete_one({"_id": uid})
+	try:
+		uid = session["data"]["user_id"]
+
+		userdata.delete_one({"_id": uid})
+		logreg.delete_one({"_id": uid})
+	except:
+		pass
 
 	return redirect("/logout")
 
 @app.route("/change-password", methods=["POST"])
 def change_password():
-	uid = session["data"]["user_id"]
-	newpw = request.form.get("newpw")
+	try:
+		uid = session["data"]["user_id"]
+		newpw = request.form.get("newpw")
 
-	query = {"_id": uid}
-	newvals = {"$set": {"password": newpw}}
-	logreg.update_one(query, newvals)
+		query = {"_id": uid}
+		newvals = {"$set": {"password": newpw}}
+		logreg.update_one(query, newvals)
 
-	return redirect("/profil")
+		return redirect("/profil")
+	except:
+		return redirect("/")
 
 @app.route("/freund-hinzufuegen/<profil>")
 def freund_hinzufuegen(profil):
-	uid = find_in_coll(logreg, {"username": profil})["_id"]
-	freqs = find_in_coll(userdata, {"_id": uid})["notifications"]
-	friends = find_in_coll(userdata, {"_id": uid})["friends"]
+	try:
+		uid = find_in_coll(logreg, {"username": profil})["_id"]
+		freqs = find_in_coll(userdata, {"_id": uid})["notifications"]
+		friends = find_in_coll(userdata, {"_id": uid})["friends"]
 
-	freq_exists = False
+		freq_exists = False
 
-	for index, item in enumerate(freqs):
-		if item["type"] == "freq":
-			if item["person"] == session["data"]["username"]:
-				freq_exists = True
+		for index, item in enumerate(freqs):
+			if item["type"] == "freq":
+				if item["person"] == session["data"]["username"]:
+					freq_exists = True
 
-	if freq_exists == False and str(session["data"]["username"]) not in friends:
-		freqs.append({"type": "freq", "person": session["data"]["username"]})
+		if freq_exists == False and str(session["data"]["username"]) not in friends:
+			freqs.append({"type": "freq", "person": session["data"]["username"]})
 
-		query = {"_id": uid}
-		newvals = {"$set": {"notifications": freqs}}
-		userdata.update_one(query, newvals)
+			query = {"_id": uid}
+			newvals = {"$set": {"notifications": freqs}}
+			userdata.update_one(query, newvals)
 
-	return redirect("/profil")
+		return redirect("/profil")
+	except:
+		return redirect("/")
 
 @app.route("/freq/<action>/<person>")
 def handle_freq(action, person):
-	uid = session["data"]["user_id"]
-	freqs = find_in_coll(userdata, {"_id": uid})["notifications"]
-	friends = find_in_coll(userdata, {"_id": uid})["friends"]
-
-	for index, notif in enumerate(freqs):
-		if notif["type"] == "freq":
-			if notif["person"] == person:
-				freqs.pop(index)	
-
-	userdata.update_one(find_in_coll(userdata, {"_id": uid}), {"$set": {"notifications": freqs}})
-
-	if action == "accept" and str(person) not in friends:
-		friends = find_in_coll(userdata, {"_id": uid})["friends"]
-		friends.append(person)
-
-		query = {"_id": uid}
-		newvals = {"$set": {"friends": friends}}
-		userdata.update_one(query, newvals)
-
-		friends = find_in_coll(userdata, {"_id": find_in_coll(logreg, {"username": person})["_id"]})["friends"]
-		friends.append(find_in_coll(logreg, {"_id": uid})["username"])
-
-		query = {"_id": find_in_coll(logreg, {"username": person})["_id"]}
-		newvals = {"$set": {"friends": friends}}
-		userdata.update_one(query, newvals)
-
 	try:
-		for index, notif in enumerate(session["data"]["notifications"]):
+		uid = session["data"]["user_id"]
+		freqs = find_in_coll(userdata, {"_id": uid})["notifications"]
+		friends = find_in_coll(userdata, {"_id": uid})["friends"]
+
+		for index, notif in enumerate(freqs):
 			if notif["type"] == "freq":
 				if notif["person"] == person:
-					session["data"]["notifications"].pop(index)		
+					freqs.pop(index)	
+
+		userdata.update_one(find_in_coll(userdata, {"_id": uid}), {"$set": {"notifications": freqs}})
+
+		if action == "accept" and str(person) not in friends:
+			friends = find_in_coll(userdata, {"_id": uid})["friends"]
+			friends.append(person)
+
+			query = {"_id": uid}
+			newvals = {"$set": {"friends": friends}}
+			userdata.update_one(query, newvals)
+
+			friends = find_in_coll(userdata, {"_id": find_in_coll(logreg, {"username": person})["_id"]})["friends"]
+			friends.append(find_in_coll(logreg, {"_id": uid})["username"])
+
+			query = {"_id": find_in_coll(logreg, {"username": person})["_id"]}
+			newvals = {"$set": {"friends": friends}}
+			userdata.update_one(query, newvals)
+
+		try:
+			for index, notif in enumerate(session["data"]["notifications"]):
+				if notif["type"] == "freq":
+					if notif["person"] == person:
+						session["data"]["notifications"].pop(index)		
+		except:
+			pass
+
+		session["data"]["friends"] = friends
+		session.modified = True
+
+		return redirect(f"/profil")
 	except:
-		pass
+		return redirect("/")
 
-	session["data"]["friends"] = friends
-	session.modified = True
+@app.route("/profil/melden/<profil_id>")
+def melden(profil_id):
+	try:
+		profilud = find_in_coll(userdata, {"_id": profil_id})
+		reports = profilud["reports"]
 
-	return redirect(f"/profil")
+		if session["data"]["user_id"] not in reports:
+			reports.append(session["data"]["user_id"])
+			userdata.update_one({"_id": profil_id}, {"$set": {"reports": reports}})
+		
+		if len(find_in_coll(userdata, {"_id": profil_id})["reports"]) > 3:
+			userdata.delete_one({"_id": profil_id})
+			logreg.delete_one({"_id": profil_id})
+
+		return redirect(f"/profil/{session['data']['username']}")
+	except:
+		return redirect("/")
 
 @app.route("/logout")
 def logout():
@@ -419,12 +454,18 @@ def logout():
 @app.route("/baukasten")
 def kaubasten():
 	check_if_logged_in()
-	return render_template("Kaktus_baukasten.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+	try:
+		return render_template("Kaktus_baukasten.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+	except:
+		return redirect("/")
 
 @app.route("/snake")
 def snake():
 	check_if_logged_in()
-	return render_template("startespiel.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+	try:
+		return render_template("startespiel.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"])
+	except:
+		return redirect("/")
 
 @app.route("/forum")
 def forum_render():
@@ -446,80 +487,92 @@ def forum_render():
 
 @app.route("/forum/neuer-beitrag", methods=["POST"])
 def neuer_beitrag():
-	title = request.form.get("title")
-	desc = request.form.get("description")
-	post_id_exists = True
+	try:
+		title = request.form.get("title")
+		desc = request.form.get("description")
+		post_id_exists = True
 
-	while post_id_exists:
-		post_id = create_id(16)
+		while post_id_exists:
+			post_id = create_id(16)
 
-		if find_in_coll(forum, {"_id": post_id}) == None:
-			post_id_exists = False
-		else:
-			post_id_exists = True
-	
-	username = session["data"]["username"]
-	user_id = session["data"]["user_id"]
-	
-	post_dict = {"_id": post_id, "title": title, "desc": desc, "date": datetime.now(), "creator": username, "creator_id": user_id, "likes": [], "comments": [], "shares": 0, "reports": 0, "clicks": 0}
+			if find_in_coll(forum, {"_id": post_id}) == None:
+				post_id_exists = False
+			else:
+				post_id_exists = True
+		
+		username = session["data"]["username"]
+		user_id = session["data"]["user_id"]
+		
+		post_dict = {"_id": post_id, "title": title, "desc": desc, "date": datetime.now(), "creator": username, "creator_id": user_id, "likes": [], "comments": [], "shares": 0, "reports": [], "clicks": 0}
 
-	add_entry(forum, post_dict)
+		add_entry(forum, post_dict)
+	except:
+		pass
 
 	return redirect("/forum")
 
 @app.route("/forum/beitrag/<beitrag_id>/<action>")
 def forum_beitrag(beitrag_id, action):
-	if find_in_coll(forum, {"_id": beitrag_id}) != None:
-		post = find_in_coll(forum, {"_id": beitrag_id})
-		clicks = post["clicks"]
-		clicks += 1
+	try:
+		if find_in_coll(forum, {"_id": beitrag_id}) != None:
+			post = find_in_coll(forum, {"_id": beitrag_id})
+			clicks = post["clicks"]
+			clicks += 1
 
-		forum.update_one({"_id": beitrag_id}, {"$set": {"clicks": clicks}})		
+			forum.update_one({"_id": beitrag_id}, {"$set": {"clicks": clicks}})		
 
-		if (datetime.now() - post["date"]).total_seconds() > 120:
-			post["hot"] = False
+			if (datetime.now() - post["date"]).total_seconds() > 120:
+				post["hot"] = False
+			else:
+				post["hot"] = True
+
+			if action == "view":
+				return render_template("beitrag.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
+			elif action == "sent":
+				own_notis = find_in_coll(userdata, {"_id": session["data"]["user_id"]})["notifications"]
+				for index, item in enumerate(own_notis):
+					#return "wöoifhwpöeuhgfuefwgöiwegf"
+					if item["type"] == "forum_post":
+						if item["post_id"] == beitrag_id:
+							own_notis.pop(index)
+
+				userdata.update_one({"_id": session["data"]["user_id"]}, {"$set": {"notifications": own_notis}})
+				session["data"]["notifications"] = own_notis
+				session.modified = True
+
+				return render_template("beitrag.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
+			else:
+				return render_template("beitrag.html", action=action, logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
 		else:
-			post["hot"] = True
-
-		if action == "view":
-			return render_template("beitrag.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
-		elif action == "sent":
-			own_notis = find_in_coll(userdata, {"_id": session["data"]["user_id"]})["notifications"]
-			for index, item in enumerate(own_notis):
-				#return "wöoifhwpöeuhgfuefwgöiwegf"
-				if item["type"] == "forum_post":
-					if item["post_id"] == beitrag_id:
-						own_notis.pop(index)
-
-			userdata.update_one({"_id": session["data"]["user_id"]}, {"$set": {"notifications": own_notis}})
-			session["data"]["notifications"] = own_notis
-			session.modified = True
-
-			return render_template("beitrag.html", logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
-		else:
-			return render_template("beitrag.html", action=action, logged_in=session["logged_in"], data=session["data"], warnings=session["warnings"], post=post)
-	else:
+			return redirect("/forum")
+	except:
 		return redirect("/forum")
 
 @app.route("/forum/beitrag-loeschen/<beitrag_id>")
 def beitrag_loeschen(beitrag_id):
-	if find_in_coll(forum, {"_id": beitrag_id})["creator_id"] == session["data"]["user_id"]:
-		forum.delete_one({"_id": beitrag_id})
+	try:
+		if find_in_coll(forum, {"_id": beitrag_id})["creator_id"] == session["data"]["user_id"]:
+			forum.delete_one({"_id": beitrag_id})
+	except:
+		pass
 	
 	return redirect("/forum")
 
 @app.route("/forum/beitrag-liken/<beitrag_id>")
 def beitrag_like_toggle(beitrag_id):
-	if session["data"]["user_id"] not in find_in_coll(forum, {"_id": beitrag_id})["likes"]:
-		likes = find_in_coll(forum, {"_id": beitrag_id})["likes"]
-		likes.append(session["data"]["user_id"])
-		
-		forum.update_one({"_id": beitrag_id}, {"$set": {"likes": likes}})
-	else:
-		likes = find_in_coll(forum, {"_id": beitrag_id})["likes"]
-		likes.remove(session["data"]["user_id"])
-		
-		forum.update_one({"_id": beitrag_id}, {"$set": {"likes": likes}})
+	try:
+		if session["data"]["user_id"] not in find_in_coll(forum, {"_id": beitrag_id})["likes"]:
+			likes = find_in_coll(forum, {"_id": beitrag_id})["likes"]
+			likes.append(session["data"]["user_id"])
+			
+			forum.update_one({"_id": beitrag_id}, {"$set": {"likes": likes}})
+		else:
+			likes = find_in_coll(forum, {"_id": beitrag_id})["likes"]
+			likes.remove(session["data"]["user_id"])
+			
+			forum.update_one({"_id": beitrag_id}, {"$set": {"likes": likes}})
+	except:
+		pass
 	
 	return redirect("/forum")
 
@@ -554,57 +607,66 @@ def kommentar_hinzufuegen(postid):
 
 @app.route("/forum/beitrag/<postid>/kommentar-loeschen/<comment_id>")
 def kommentar_loeschen(postid, comment_id):
-	comments = find_in_coll(forum, {"_id": postid})["comments"]
-	
-	for count, item in enumerate(comments):
-		if item["_id"] == comment_id:
-			comment_index = count
-			comment = item
+	try:
+		comments = find_in_coll(forum, {"_id": postid})["comments"]
+		
+		for count, item in enumerate(comments):
+			if item["_id"] == comment_id:
+				comment_index = count
+				comment = item
 
-	if comment["creator_id"] == session["data"]["user_id"]:
+		if comment["creator_id"] == session["data"]["user_id"]:
 
-		comments.pop(comment_index)
+			comments.pop(comment_index)
 
-		forum.update_one({"_id": postid}, {"$set": {"comments": comments}})
-	
+			forum.update_one({"_id": postid}, {"$set": {"comments": comments}})
+	except:
+		pass
+
 	return redirect(f"/forum/beitrag/{postid}/view")
 
 @app.route("/forum/beitrag/<beitrag_id>/<comment_id>/kommentar-antwort", methods=["POST"])
 def kommentar_antworten(beitrag_id, comment_id):
-	comment_reply_text = request.form.get("comment-reply")
+	try:
+		comment_reply_text = request.form.get("comment-reply")
 
-	comment_reply = {"text": comment_reply_text, "creator": session["data"]["username"], "creator_id": session["data"]["user_id"]}
+		comment_reply = {"text": comment_reply_text, "creator": session["data"]["username"], "creator_id": session["data"]["user_id"]}
 
-	comments = find_in_coll(forum, {"_id": beitrag_id})["comments"]
+		comments = find_in_coll(forum, {"_id": beitrag_id})["comments"]
 
-	for index, item in enumerate(comments):
-		if item["_id"] == comment_id:
-			comments.pop(index)
-			comment = item
+		for index, item in enumerate(comments):
+			if item["_id"] == comment_id:
+				comments.pop(index)
+				comment = item
 
-	comment["replies"].append(comment_reply)
-	comments.append(comment)
+		comment["replies"].append(comment_reply)
+		comments.append(comment)
 
-	forum.update_one({"_id": beitrag_id}, {"$set": {"comments": comments}})
+		forum.update_one({"_id": beitrag_id}, {"$set": {"comments": comments}})
+	except:
+		pass
 
 	return redirect(f"/forum/beitrag/{beitrag_id}/view")
 
 @app.route("/forum/beitrag-teilen/<post_id>/<receiver>")
 def beitrag_teilen(post_id, receiver):
-	if receiver in find_in_coll(userdata, {"_id": session["data"]["user_id"]})["friends"]:
-		receiver_id = find_in_coll(logreg, {"username": receiver})["_id"]
-		receiver_ud = find_in_coll(userdata, {"_id": receiver_id})
-		receiver_notifications = receiver_ud["notifications"]
+	try:
+		if receiver in find_in_coll(userdata, {"_id": session["data"]["user_id"]})["friends"]:
+			receiver_id = find_in_coll(logreg, {"username": receiver})["_id"]
+			receiver_ud = find_in_coll(userdata, {"_id": receiver_id})
+			receiver_notifications = receiver_ud["notifications"]
 
-		receiver_notifications.append({"type": "forum_post", "sender": session["data"]["username"], "sender_id": session["data"]["user_id"], "post_id": post_id})
-		receiver_ud["notifications"] = receiver_notifications
+			receiver_notifications.append({"type": "forum_post", "sender": session["data"]["username"], "sender_id": session["data"]["user_id"], "post_id": post_id})
+			receiver_ud["notifications"] = receiver_notifications
 
-		userdata.update_one({"_id": receiver_id}, {"$set": {"notifications": receiver_notifications}})
+			userdata.update_one({"_id": receiver_id}, {"$set": {"notifications": receiver_notifications}})
 
-		post = find_in_coll(forum, {"_id": post_id})
-		shares = post["shares"]
-		shares += 1
-		forum.update_one({"_id": post_id}, {"$set": {"shares": shares}})
+			post = find_in_coll(forum, {"_id": post_id})
+			shares = post["shares"]
+			shares += 1
+			forum.update_one({"_id": post_id}, {"$set": {"shares": shares}})
+	except:
+		pass
 
 	return redirect(f"/forum/beitrag/{post_id}/view")
 
@@ -612,32 +674,35 @@ def beitrag_teilen(post_id, receiver):
 
 @app.route("/shop/warenkorb/add/<produkt_id>", methods=["POST"])
 def add_cart(produkt_id):
-	quan = int(request.form["anzahl"])
+	try:
+		quan = int(request.form["anzahl"])
 
-	if check_for_session("warenkorb", create_empty=False) == False:
-		session["warenkorb"] = []
+		if check_for_session("warenkorb", create_empty=False) == False:
+			session["warenkorb"] = []
 
-	products = read_products_file()
-	warenkorb_product = products[int(produkt_id)]
+		products = read_products_file()
+		warenkorb_product = products[int(produkt_id)]
 
-	was_found = False
+		was_found = False
 
-	for index, item in enumerate(session["warenkorb"]):
-		if item["num"] == produkt_id:
-			item_index = index
-			was_found = True
-	
-	if was_found:
-		session["warenkorb"][item_index]["quantity"] += quan
-	else:
-		warenkorb_product["quantity"] = int(quan)
-		warenkorb_product["num"] = produkt_id
+		for index, item in enumerate(session["warenkorb"]):
+			if item["num"] == produkt_id:
+				item_index = index
+				was_found = True
+		
+		if was_found:
+			session["warenkorb"][item_index]["quantity"] += quan
+		else:
+			warenkorb_product["quantity"] = int(quan)
+			warenkorb_product["num"] = produkt_id
 
-		session["warenkorb"].append(warenkorb_product)
+			session["warenkorb"].append(warenkorb_product)
 
-	session.modified = True
+		session.modified = True
 
-	return redirect("/shop/warenkorb")
+		return redirect("/shop/warenkorb")
+	except:
+		return redirect(f"/shop/produkt/{produkt_id}")
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)
