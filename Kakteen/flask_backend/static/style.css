@@ -39,6 +39,7 @@ body, html{
     padding: 0px;
     /* background: url("img/emo-ji.png") 0 0 / 50px 50px repeat, var(--bg); */
     background-color: var(--bg);
+    background-image: url(img/lemur_rezept.png);
     overflow-x: hidden;
 }
 
