@@ -2819,6 +2819,7 @@ margin-top: -5vw;
     margin: -2vw -2vw -2vw -2.5vw;
     background-image: url(../static/img/wueste.png);
     overflow: hidden;
+    background-size: cover;
 }
 
 #mobileKit {
@@ -3047,8 +3048,6 @@ margin-top: -5vw;
 }
 
 /* Hüte style */
-
-
 
 #importHat2{
     left: 0.9vw;
@@ -4367,6 +4366,92 @@ button:disabled:hover{
 
     #removeIcon1.rotatio1 {
         transform: rotate(90deg);
+    }
+
+    #kitTopf {
+        top: 77.7vh;
+        left: 45%;
+        right: 50%;
+    }
+    
+    #kitBody {
+        top: 54%;
+        left: 45%;
+        right: 50%;
+    }
+    
+    #kitArms {
+        top: 45%;
+        left: 38.75%;
+        right: 50%;
+    }
+    
+    #kitHead {
+        left: 45.5vw;
+        right: 50vw;
+    }
+    
+    #kitShirt {
+        top: 57%;
+        left: 47%;
+        right: 50%;
+    }
+    
+    #kitHat {
+        top: 38%;
+        left: 45%;
+        right: 50%;
+    }
+
+    /* Hüte style */
+
+    #importHat2{
+        left: 2vw;
+        width: 19vh;
+        height: 17vh;
+    }
+
+    #importHat3{
+        left: 6vw;
+        top: -16%;
+        width: 25vh;
+        height: 24vh;
+    }
+
+    #importHat4{
+        left: 5vw;
+        width: 18vh;
+        height: 17vh;
+    }
+
+
+
+    #importHat6{
+        left: 0.9vw;
+        width: 19vh;
+        height: 17vh;
+    }
+
+    #importHat7{
+        left: 3.15vw;
+        bottom: 12%;
+        width: 19vh;
+        height: 17vh;
+    }
+
+    #importHat8{
+        left: 5.5vw;
+        bottom: 12%;
+        width: 16vh;
+        height: 14vh;
+    }
+
+    .KitImgGameSL{
+        width: 35vh;
+        height: 33vh;
+        left: -9vw;
+        top: -23%;
+        z-index: 1;
     }
 
 }
