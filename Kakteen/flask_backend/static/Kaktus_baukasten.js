@@ -470,6 +470,22 @@ function RemoverAusklappen(){
     }
 }
 
+const ctntR1 = document.querySelector('#navKitDiv');
+const Icon1 = document.querySelector('#removeIcon1');
+var ausgeklapptR1 = false;
+
+function clickElm() {
+    if(ausgeklapptR1 == false) {
+        ctntR1.classList.add('goIn1');
+        Icon1.classList.add('rotatio1');
+        ausgeklapptR1 = true;
+    }else {
+        ctntR1.classList.remove('goIn1');
+        Icon1.classList.remove('rotatio1');
+        ausgeklapptR1 = false;
+    }
+}
+
 // remove the elements 
 
 function RemoveAllover() {
