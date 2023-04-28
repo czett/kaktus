@@ -76,6 +76,7 @@ body, html{
     font-size: 30px;
     color: var(--ac);
     letter-spacing: 0.1em;
+    cursor: pointer;
 }
 
 .content{
@@ -1355,7 +1356,7 @@ font-size: 20px;
 .text2-w4 {
     font-size: 30px;
     font-weight: bold;
-    color:rgb(255, 99, 125);
+    color: var(--fg)
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1500,6 +1501,7 @@ display: block;
 justify-content: space-around;
 width: 99%;
 background-image: url(img/textur.png);
+    
     background-size: 100%;
     border: 2px solid var(--ac);
     padding: 1vw;
@@ -2763,10 +2765,7 @@ margin-top: -5vw;
         font-weight: bold;
         display: flex;
         font-weight: bold;
-    border: 2px solid #ff7e93;
-    border-radius: 5vw;
-    padding: 1vw;
-    margin-top: 0.5vw;
+    
         
      }
 
