@@ -1,5 +1,11 @@
 
 
+ // Next button and method
+ const next = document.getElementsByClassName('next')[0];
+ var id = 0;
+
+ 
+
 const Questions = [{
     id: 0,
     q: "Wie viele Stacheln haben Kakteen im Durchschnitt?",
@@ -66,8 +72,6 @@ const Questions = [{
 // points
 var points = 0;
 
-
- 
 // Set start
 var start = true;
 
@@ -115,6 +119,13 @@ var selected = "";
 
 // Show selection for op1
 op1.addEventListener("click", () => {
+
+    var buttons = document.querySelectorAll('.paragrahQuiz');
+
+    buttons.forEach(button => {
+        button.disabled = true;
+    });
+
     // op1.style.scale = "1.3";
     // op4.style.scale = "1";
     // op2.style.scale = "1";
@@ -139,10 +150,38 @@ op1.addEventListener("click", () => {
     if (selected == "true") {
         result[0].innerHTML = "Richtig!!!"
         result[0].style.color = "#A0CE40";
-        points += 1;
      
         document.getElementById('point').innerHTML = points;
         div1.style.border = "2px solid #A0CE40";
+
+        setTimeout(function(){
+        start = false;
+            if (id < 5) {
+                id++;
+                iterate(id);
+                console.log(id);
+            }
+            div1.style.scale = "1";
+            div2.style.scale = "1";
+            div3.style.scale = "1";
+            div4.style.scale = "1";
+
+            div1.style.border = "2px solid #A0CE40";
+            div2.style.border = "2px solid #A0CE40";
+            div3.style.border = "2px solid #A0CE40";
+            div4.style.border = "2px solid #A0CE40";
+
+            div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+
+            var buttons = document.querySelectorAll('.paragrahQuiz');
+
+                buttons.forEach(button => {
+                    button.disabled = false;
+            });
+        },1000 );
 
         next.addEventListener("click", () => {
             
@@ -175,6 +214,35 @@ op1.addEventListener("click", () => {
         div1.style.border = "2px solid red";
         div1.style.boxShadow = "0px 0 3px 0.5px red";
 
+        setTimeout(function(){
+            start = false;
+                if (id < 5) {
+                    id++;
+                    iterate(id);
+                    console.log(id);
+                }
+                div1.style.scale = "1";
+                div2.style.scale = "1";
+                div3.style.scale = "1";
+                div4.style.scale = "1";
+
+                div1.style.border = "2px solid #A0CE40";
+                div2.style.border = "2px solid #A0CE40";
+                div3.style.border = "2px solid #A0CE40";
+                div4.style.border = "2px solid #A0CE40";
+
+                div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+                div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+                div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+                div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+
+                var buttons = document.querySelectorAll('.paragrahQuiz');
+
+                buttons.forEach(button => {
+                    button.disabled = false;
+                });
+            },1000 );
+
         next.addEventListener("click", () => {
             
             
@@ -202,6 +270,13 @@ op1.addEventListener("click", () => {
 
 // Show selection for op2
 op2.addEventListener("click", () => {
+
+    var buttons = document.querySelectorAll('.paragrahQuiz');
+
+                buttons.forEach(button => {
+                    button.disabled = true;
+            });
+
     // op1.style.backgroundColor = "lightskyblue";
     // op2.style.scale = "1.3";
     // op1.style.scale = "1";
@@ -224,10 +299,38 @@ op2.addEventListener("click", () => {
     if (selected == "true") {
         result[0].innerHTML = "Richtig!!!"
         result[0].style.color = "#A0CE40";
-        points += 1;
      
         document.getElementById('point').innerHTML = points;
         div1.style.border = "2px solid green";
+
+        setTimeout(function(){
+        start = false;
+            if (id < 5) {
+                id++;
+                iterate(id);
+                console.log(id);
+            }
+            div1.style.scale = "1";
+            div2.style.scale = "1";
+            div3.style.scale = "1";
+            div4.style.scale = "1";
+
+            div1.style.border = "2px solid #A0CE40";
+            div2.style.border = "2px solid #A0CE40";
+            div3.style.border = "2px solid #A0CE40";
+            div4.style.border = "2px solid #A0CE40";
+
+            div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+
+            var buttons = document.querySelectorAll('.paragrahQuiz');
+
+                buttons.forEach(button => {
+                    button.disabled = false;
+            });
+        },1000 );
 
         next.addEventListener("click", () => {
             
@@ -260,6 +363,35 @@ op2.addEventListener("click", () => {
 
         div2.style.boxShadow = "0px 0 3px 0.5px red";
 
+        setTimeout(function(){
+        start = false;
+            if (id < 5) {
+                id++;
+                iterate(id);
+                console.log(id);
+            }
+            div1.style.scale = "1";
+            div2.style.scale = "1";
+            div3.style.scale = "1";
+            div4.style.scale = "1";
+
+            div1.style.border = "2px solid #A0CE40";
+            div2.style.border = "2px solid #A0CE40";
+            div3.style.border = "2px solid #A0CE40";
+            div4.style.border = "2px solid #A0CE40";
+
+            div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+
+            var buttons = document.querySelectorAll('.paragrahQuiz');
+
+                buttons.forEach(button => {
+                    button.disabled = false;
+            });
+        },1000 );
+
         next.addEventListener("click", () => {
             
             
@@ -287,6 +419,12 @@ op2.addEventListener("click", () => {
 
 // Show selection for op3
 op3.addEventListener("click", () => {
+
+    var buttons = document.querySelectorAll('.paragrahQuiz');
+
+                buttons.forEach(button => {
+                    button.disabled = true;
+            });
     // op1.style.backgroundColor = "lightskyblue";
     // op2.style.backgroundColor = "lightskyblue";
     // op1.style.scale = "1";
@@ -309,10 +447,38 @@ op3.addEventListener("click", () => {
     if (selected == "true") {
         result[0].innerHTML = "Richtig!!!"
         result[0].style.color = "#A0CE40";
-        points += 1;
      
         document.getElementById('point').innerHTML = points;
         div3.style.border = "2px solid #A0CE40";
+
+        setTimeout(function(){
+        start = false;
+            if (id < 5) {
+                id++;
+                iterate(id);
+                console.log(id);
+            }
+            div1.style.scale = "1";
+            div2.style.scale = "1";
+            div3.style.scale = "1";
+            div4.style.scale = "1";
+
+            div1.style.border = "2px solid #A0CE40";
+            div2.style.border = "2px solid #A0CE40";
+            div3.style.border = "2px solid #A0CE40";
+            div4.style.border = "2px solid #A0CE40";
+
+            div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+
+            var buttons = document.querySelectorAll('.paragrahQuiz');
+
+                buttons.forEach(button => {
+                    button.disabled = false;
+            });
+        },1000 );
 
         next.addEventListener("click", () => {
             
@@ -339,6 +505,35 @@ op3.addEventListener("click", () => {
         div3.style.border = "2px solid red";
 
         div3.style.boxShadow = "0px 0 3px 0.5px red";
+
+        setTimeout(function(){
+        start = false;
+            if (id < 5) {
+                id++;
+                iterate(id);
+                console.log(id);
+            }
+            div1.style.scale = "1";
+            div2.style.scale = "1";
+            div3.style.scale = "1";
+            div4.style.scale = "1";
+
+            div1.style.border = "2px solid #A0CE40";
+            div2.style.border = "2px solid #A0CE40";
+            div3.style.border = "2px solid #A0CE40";
+            div4.style.border = "2px solid #A0CE40";
+
+            div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+
+            var buttons = document.querySelectorAll('.paragrahQuiz');
+
+                buttons.forEach(button => {
+                    button.disabled = false;
+            });
+        },1000 );
 
         next.addEventListener("click", () => {
             
@@ -367,6 +562,12 @@ op3.addEventListener("click", () => {
 
 // Show selection for op4
 op4.addEventListener("click", () => {
+
+    var buttons = document.querySelectorAll('.paragrahQuiz');
+
+                buttons.forEach(button => {
+                    button.disabled = true;
+            });
     // op1.style.backgroundColor = "lightskyblue";
     // op2.style.backgroundColor = "lightskyblue";
     // op3.style.backgroundColor = "lightskyblue";
@@ -389,10 +590,38 @@ op4.addEventListener("click", () => {
     if (selected == "true") {
         result[0].innerHTML = "Richtig!!!"
         result[0].style.color = "#A0CE40";
-        points += 1;
      
         document.getElementById('point').innerHTML = points;
         div4.style.border = "2px solid #A0CE40";
+
+        setTimeout(function(){
+        start = false;
+            if (id < 5) {
+                id++;
+                iterate(id);
+                console.log(id);
+            }
+            div1.style.scale = "1";
+            div2.style.scale = "1";
+            div3.style.scale = "1";
+            div4.style.scale = "1";
+
+            div1.style.border = "2px solid #A0CE40";
+            div2.style.border = "2px solid #A0CE40";
+            div3.style.border = "2px solid #A0CE40";
+            div4.style.border = "2px solid #A0CE40";
+
+            div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+
+            var buttons = document.querySelectorAll('.paragrahQuiz');
+
+                buttons.forEach(button => {
+                    button.disabled = false;
+            });
+        },1000 );
 
         next.addEventListener("click", () => {
             
@@ -427,8 +656,34 @@ op4.addEventListener("click", () => {
 
         div4.style.boxShadow = "0px 0 3px 0.5px red";
 
-        
+        setTimeout(function(){
+        start = false;
+            if (id < 5) {
+                id++;
+                iterate(id);
+                console.log(id);
+            }         
+            div1.style.scale = "1";
+            div2.style.scale = "1";
+            div3.style.scale = "1";
+            div4.style.scale = "1";
 
+            div1.style.border = "2px solid #A0CE40";
+            div2.style.border = "2px solid #A0CE40";
+            div3.style.border = "2px solid #A0CE40";
+            div4.style.border = "2px solid #A0CE40";
+
+            div1.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div2.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div3.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+            div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
+
+            var buttons = document.querySelectorAll('.paragrahQuiz');
+
+                buttons.forEach(button => {
+                    button.disabled = false;
+            });
+        },1000 );
 
         next.addEventListener("click", () => {
             
@@ -462,8 +717,8 @@ iterate("0");
 }
 
 // Next button and method
-const next = document.getElementsByClassName('next')[0];
-var id = 0;
+// const next = document.getElementsByClassName('next')[0];
+// var id = 0;
 
 next.addEventListener("click", () => {
 start = false;
