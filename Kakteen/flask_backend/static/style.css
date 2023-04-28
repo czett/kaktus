@@ -95,6 +95,18 @@ body, html{
     display: inline-block;
 }
 
+    .ueberschrift2{
+        font-family: 'Unbounded';
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        font-size: 70px;
+        background-color: var(--bg);
+        box-shadow: 0px 0px 10px 5px var(--bg);
+        text-align: center;
+        position: relative;
+    }
+
+
 .such-form-items{
     display: flex;
     justify-content: center;
@@ -3179,6 +3191,66 @@ cursor: pointer;
 }
 
 /* flp ende */
+
+/* Error Anfang */
+
+.siren1 {
+
+
+position: relative;
+align-items: center;
+text-align: center;
+margin-left: 60vw;
+margin-top: -20vh;
+
+
+
+}
+
+.siren2 {
+
+
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin-left: -65vw;
+    margin-top: -30.5vh;
+    
+    
+    
+    }
+
+.siren {
+  
+width: 30vw;
+height: 30vh;
+animation-duration: 900ms;
+    animation-name: sirene;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes sirene{
+    0%{
+        filter: grayscale(1);
+    }
+    50%{
+        filter: grayscale(0);
+    }
+    100%{
+        filter: grayscale(1);
+    }
+}
+
+.rick{
+    position: relative;
+align-items: center;
+text-align: center;
+display: flex;
+}
+
+
+/* Error Ende */
 
 
 /* komische icons girlande */
