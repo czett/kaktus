@@ -51,9 +51,6 @@
                     <p class="count">{{  post["shares"]  }}</p>
                 </div>
             </div>
-            <div class="report-post">
-                <i class="fa-regular fa-flag"></i>
-            </div>
             {% if data["username"] == post["creator"] %}
                 <div class="delete-post" onmousedown="newUrl('/forum/beitrag-loeschen/{{  postid  }}')">
                     <i class="fa-regular fa-trash-can"></i>
