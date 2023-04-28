@@ -2821,6 +2821,11 @@ margin-top: -5vw;
     overflow: hidden;
 }
 
+#mobileKit {
+    display: none;
+    user-select: none;
+}
+
 #navKitDiv {
     margin: 0;
     margin-top: 2vw;
@@ -2870,6 +2875,7 @@ margin-top: -5vw;
     border: 1px solid var(--ac);
     border-radius: 15%;
     overflow: hidden;
+    user-select: none;
 
     display: flex;
     flex-direction: column;
@@ -2909,6 +2915,7 @@ margin-top: -5vw;
     margin: 0;
     margin-left: 11vw;
     height: 88.2vh;
+    user-select: none;
 }
 
 #kitTopf {
@@ -3100,6 +3107,8 @@ margin-top: -5vw;
     width: auto;
     height: auto;
     position: fixed;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 #removeAll {
@@ -4310,6 +4319,54 @@ button:disabled:hover{
         font-size: 1.75vh;
         line-height: 1.5em;
         position: relative;
+    }
+
+    /* Baukasten Mobile */
+
+    #mobileKit {
+        display: block;
+        margin-top: 2vw;
+        margin-left: 3vw;
+        background-color: var(--bg);
+        display: inline-block;
+        width: max-content;
+        padding: 1vw;
+        border: 1px solid var(--ac);
+        border-radius: 2vh;
+    }
+
+    #navKitDiv {
+        display: none;
+    }
+    
+
+    #navKitDiv.goIn1 {
+        display: block;
+        position: absolute;
+        height: 80vh;
+        width: 20vw;
+    }
+
+    .KitImgV1 {
+        margin-top: 1vh;
+    }
+
+    .removeBar {
+        top: 93%;
+        right: 5%;
+        width: max-content;
+        position: absolute;
+    }
+
+    .onclickRemover {
+        margin-top: -23vh;
+    }
+    #removeIcon.rotatio {
+        rotate: -90deg;
+    }
+
+    #removeIcon1.rotatio1 {
+        transform: rotate(90deg);
     }
 
 }

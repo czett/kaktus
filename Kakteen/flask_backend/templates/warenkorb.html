@@ -26,7 +26,7 @@
   <div class="warenkorb-item" onmousedown="newUrl('/produkt/{{num}}')">
     <div class="korb-info-wrap">
       <p class="name">{{  product['name']  }}</p>
-      <p class="preis">{{  product['price']  }}</p>
+      <p class="preis">{{  product['price']*product['quantity']|int }}</p>
       <p class="quantity">{{  product['quantity']  }}</p>
     </div>
     <div class="korb-img-wrap">
