@@ -4,8 +4,6 @@
  const next = document.getElementsByClassName('next')[0];
  var id = 0;
 
- 
-
 const Questions = [{
     id: 0,
     q: "Wie viele Stacheln haben Kakteen im Durchschnitt?",
@@ -71,6 +69,9 @@ const Questions = [{
 
 // points
 var points = 0;
+
+// setter
+var setter = false;
 
 // Set start
 var start = true;
@@ -148,10 +149,11 @@ op1.addEventListener("click", () => {
     selected = op1.value;
 
     if (selected == "true") {
-        result[0].innerHTML = "Richtig!!!"
+        result[0].innerHTML = "Richtig!!!";
         result[0].style.color = "#A0CE40";
-     
-        document.getElementById('point').innerHTML = points;
+
+        setter = true;
+
         div1.style.border = "2px solid #A0CE40";
 
         setTimeout(function(){
@@ -208,8 +210,6 @@ op1.addEventListener("click", () => {
     } else {
         result[0].innerHTML = "Falsch!!!";
         result[0].style.color = "red";
-
-        document.getElementById('point').innerHTML = points;
 
         div1.style.border = "2px solid red";
         div1.style.boxShadow = "0px 0 3px 0.5px red";
@@ -297,10 +297,11 @@ op2.addEventListener("click", () => {
     selected = op2.value;
 
     if (selected == "true") {
-        result[0].innerHTML = "Richtig!!!"
+        result[0].innerHTML = "Richtig!!!";
         result[0].style.color = "#A0CE40";
-     
-        document.getElementById('point').innerHTML = points;
+
+        setter = true;
+
         div1.style.border = "2px solid green";
 
         setTimeout(function(){
@@ -357,8 +358,7 @@ op2.addEventListener("click", () => {
     } else {
         result[0].innerHTML = "Falsch!!!";
         result[0].style.color = "red";
-        
-        document.getElementById('point').innerHTML = points;
+
         div2.style.border = "2px solid red";
 
         div2.style.boxShadow = "0px 0 3px 0.5px red";
@@ -445,10 +445,11 @@ op3.addEventListener("click", () => {
     selected = op3.value;
 
     if (selected == "true") {
-        result[0].innerHTML = "Richtig!!!"
+        result[0].innerHTML = "Richtig!!!";
         result[0].style.color = "#A0CE40";
-     
-        document.getElementById('point').innerHTML = points;
+
+        setter = true;
+
         div3.style.border = "2px solid #A0CE40";
 
         setTimeout(function(){
@@ -501,7 +502,6 @@ op3.addEventListener("click", () => {
         result[0].innerHTML = "Falsch!!!";
         result[0].style.color = "red";
         
-        document.getElementById('point').innerHTML = points;
         div3.style.border = "2px solid red";
 
         div3.style.boxShadow = "0px 0 3px 0.5px red";
@@ -588,10 +588,11 @@ op4.addEventListener("click", () => {
     selected = op4.value;
 
     if (selected == "true") {
-        result[0].innerHTML = "Richtig!!!"
+        result[0].innerHTML = "Richtig!!!";
         result[0].style.color = "#A0CE40";
+
+        setter = true;
      
-        document.getElementById('point').innerHTML = points;
         div4.style.border = "2px solid #A0CE40";
 
         setTimeout(function(){
@@ -651,7 +652,6 @@ op4.addEventListener("click", () => {
         result[0].innerHTML = "Falsch!!!";
         result[0].style.color = "red";
         
-        document.getElementById('point').innerHTML = points;
         div4.style.border = "2px solid red";
 
         div4.style.boxShadow = "0px 0 3px 0.5px red";
@@ -746,5 +746,33 @@ pl +=1;
     }
 }
 
+op1.addEventListener("click", () => {
+    if(setter == true) {
+        points ++;
+        document.getElementById('point').innerHTML = points;
+        setter = false;
+    }
+});
+op2.addEventListener("click", () => {
+    if(setter == true) {
+        points ++;
+        document.getElementById('point').innerHTML = points;
+        setter = false;
+    }
+});
+op3.addEventListener("click", () => {
+    if(setter == true) {
+        points ++;
+        document.getElementById('point').innerHTML = points;
+        setter = false;
+    }
+});
+op4.addEventListener("click", () => {
+    if(setter == true) {
+        points ++;
+        document.getElementById('point').innerHTML = points;
+        setter = false;
+    }
+});
 
 //==============/Kaktus Quiz [ende]\=============\\
