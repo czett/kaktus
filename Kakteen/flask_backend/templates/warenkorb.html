@@ -8,6 +8,7 @@
 {% endif %}
 <h1 class="ueberschrift">Mein Warenkorb</h1>
 
+<div class="bez">
 <div class="pap-headers">
   <p class="text2-w3"><b>Produkt</b></p>
   <p class="text2-w2" onmousedown="p1()"><b>Preis (in €)</b></p>
@@ -25,7 +26,7 @@
   <div class="warenkorb-item" onmousedown="newUrl('/produkt/{{num}}')">
     <div class="korb-info-wrap">
       <p class="name">{{  product['name']  }}</p>
-      <p class="preis">{{  product['price']  }}</p>
+      <p class="preis">{{  product['price']*product['quantity']|int }}</p>
       <p class="quantity">{{  product['quantity']  }}</p>
     </div>
     <div class="korb-img-wrap">
@@ -39,48 +40,15 @@
 </div>
 </div>
 
-<br>
-<br>
 
-<br>
-<br>
-
-<br>
-<br>
-
-<br>
-<br>
-
-
-<br>
-<br>
-
-
-<br>
-<br>
-
-<br>
-<br>
-
-<br>
-<br>
-
-<br>
-<br>
-
-<br>
-<br>
 
 <p class="text2-w5">Noch nicht genug im Warenkorb? Shoppe einfach <a href="/shop"><b>hier</b></a> weiter um weitere tolle Produkte zu erwerben! </p>
-
-
-
-
 
 {% if logged_in == True %}
 <a href="/weiter1">
   <button class="button-profil">Bezahlen</button>
 </a>
+</div>
 {% endif %}
 <br>
 <br>

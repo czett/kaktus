@@ -687,6 +687,7 @@ def add_cart(produkt_id):
 
 		products = read_products_file()
 		warenkorb_product = products[int(produkt_id)]
+		warenkorb_product["price"] = float(warenkorb_product["price"])
 
 		was_found = False
 

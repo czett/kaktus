@@ -1286,6 +1286,7 @@ font-size: 20px;
 
 .warenkorb-item:hover{
     backdrop-filter: brightness(2);
+    cursor: pointer;
 }
 
 .warenkorb-item:nth-of-type(1){
@@ -1369,14 +1370,15 @@ font-size: 20px;
 .text2-w4 {
     font-size: 30px;
     font-weight: bold;
-    color: var(--fg)
+    color: var(--fg);
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top:  6.5%;
+    top:  9.5%;
     left: 6.5%;
     transform: translate(-40%, -105%);
+
 }
 
 .text2-w4:hover {
@@ -1384,19 +1386,19 @@ font-size: 20px;
     text-decoration: underline;
     text-decoration-color: darkgray;
 
+
 }
 
 .text2-w5 {
     font-size: 25px;
    
-    display: inline-block;
-    justify-content: center;
+    display: block;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
-    position: absolute;
-    top:  90%;
-    left: 50.5%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    
+    
 }
 
 .img-w {
@@ -1441,7 +1443,7 @@ font-size: 20px;
     font-size: 30px;
     min-width: 40vh;
     min-height: 10vh;
-    transform: translate(200%,70%);
+    transform: translate(200%,0%);
     color: white;
     
     background-color: var(--ac); 
@@ -1452,7 +1454,7 @@ font-size: 20px;
     text-align: center;
     align-items: center;
     display: inline-block;
-    
+    margin-left: -3vw;
 }
 
 .button-profil:hover {
@@ -1469,6 +1471,31 @@ font-size: 20px;
     animation-duration: 1000ms;
     animation-delay: 10ms;
     cursor: pointer;
+}
+
+.bez {
+
+display: block;
+flex-wrap: wrap;
+justify-content: space-around;
+
+}
+
+.name {
+
+font-size: 25px;
+}
+
+.preis {
+
+    font-size: 25px;
+
+}
+
+.quantity {
+
+    font-size: 25px;
+
 }
 
 
@@ -2750,7 +2777,8 @@ margin-top: -5vw;
     display: flex;
     margin-top: 1.5vw;
     margin-left: 2vw;
-    
+    border: 2px solid var(--ac2);
+    padding: 2px;
     
     
 }
@@ -2792,6 +2820,11 @@ margin-top: -5vw;
     margin: -2vw -2vw -2vw -2.5vw;
     background-image: url(../static/img/wueste.png);
     overflow: hidden;
+}
+
+#mobileKit {
+    display: none;
+    user-select: none;
 }
 
 #navKitDiv {
@@ -2843,6 +2876,7 @@ margin-top: -5vw;
     border: 1px solid var(--ac);
     border-radius: 15%;
     overflow: hidden;
+    user-select: none;
 
     display: flex;
     flex-direction: column;
@@ -2882,6 +2916,7 @@ margin-top: -5vw;
     margin: 0;
     margin-left: 11vw;
     height: 88.2vh;
+    user-select: none;
 }
 
 #kitTopf {
@@ -3073,6 +3108,8 @@ margin-top: -5vw;
     width: auto;
     height: auto;
     position: fixed;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 #removeAll {
@@ -4283,6 +4320,54 @@ button:disabled:hover{
         font-size: 1.75vh;
         line-height: 1.5em;
         position: relative;
+    }
+
+    /* Baukasten Mobile */
+
+    #mobileKit {
+        display: block;
+        margin-top: 2vw;
+        margin-left: 3vw;
+        background-color: var(--bg);
+        display: inline-block;
+        width: max-content;
+        padding: 1vw;
+        border: 1px solid var(--ac);
+        border-radius: 2vh;
+    }
+
+    #navKitDiv {
+        display: none;
+    }
+    
+
+    #navKitDiv.goIn1 {
+        display: block;
+        position: absolute;
+        height: 80vh;
+        width: 20vw;
+    }
+
+    .KitImgV1 {
+        margin-top: 1vh;
+    }
+
+    .removeBar {
+        top: 93%;
+        right: 5%;
+        width: max-content;
+        position: absolute;
+    }
+
+    .onclickRemover {
+        margin-top: -23vh;
+    }
+    #removeIcon.rotatio {
+        rotate: -90deg;
+    }
+
+    #removeIcon1.rotatio1 {
+        transform: rotate(90deg);
     }
 
 }
