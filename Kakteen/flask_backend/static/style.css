@@ -76,6 +76,7 @@ body, html{
     font-size: 30px;
     color: var(--ac);
     letter-spacing: 0.1em;
+    cursor: pointer;
 }
 
 .content{
@@ -94,6 +95,18 @@ body, html{
     box-shadow: 0px 0px 10px 5px var(--bg);
     display: inline-block;
 }
+
+    .ueberschrift2{
+        font-family: 'Unbounded';
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        font-size: 70px;
+        background-color: var(--bg);
+        box-shadow: 0px 0px 10px 5px var(--bg);
+        text-align: center;
+        position: relative;
+    }
+
 
 .such-form-items{
     display: flex;
@@ -381,6 +394,8 @@ body, html{
     transform: translate(-50%, -50%);
 }
 
+
+
 .submit-wrap .image-selector-submit{
     background-color: var(--ac);
     padding: calc(0.5 * var(--lrpad));
@@ -402,6 +417,7 @@ body, html{
 
 .submit-wrap .image-selector-submit:hover{
     filter: brightness(1.2);
+    cursor: pointer;
 }
 
 .image-selector-submit span{
@@ -480,7 +496,7 @@ visibility: hidden;
 .auswahl-back {
 
    
-    color: rgb(255, 99, 125);
+    color: var(--fg);
     text-decoration: none;
     top: -80px;
     size: 40px;
@@ -596,6 +612,7 @@ animation-duration: 1000ms;
 
 .stift-wrap:hover{
     filter: brightness(0.9);
+    cursor: pointer;
 }
 
 
@@ -1351,7 +1368,7 @@ font-size: 20px;
 .text2-w4 {
     font-size: 30px;
     font-weight: bold;
-    color:rgb(255, 99, 125);
+    color: var(--fg)
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1462,266 +1479,122 @@ font-size: 20px;
 
 .text-e1 {
 
-font-size: 40px;
+font-size: 50px;
 text-align: center;
-transform: translate(0%, -45%);
+transform: translate(0%, 5%);
+z-index: 15;
+color: white;
+font-weight: bold;
 
 }
 
 .text-e2 {
 
     display: inline-block;
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
-    border: 2px solid var(--ac);
-    padding: 2vw;
-    box-sizing: border-box;
-    padding-top: 6vw;
+    
     overflow: visible;
-    transform: translate(0%, -40%);
-    border-radius: 5vw;
+    transform: translate(0%, -00%);
+    color: white;
     width: 100%;
-}
-.text-e22 {
-
-    display: block;
-    flex-wrap: wrap;
-    font-size: 20px;
-    text-align: center;
-    border: 2px solid var(--ac);
-    padding: 2vw;
-    box-sizing: border-box;
-    padding-top: 6vw;
-    overflow: hidden;
-    transform: translate(0%, -40%);
-    border-radius: 5vw;
-    width: 100%;
-}
-
-
-.img-e1 {
     
-    background-image: url(img/kakteenland.png);
-    border: 2px solid var(--ac);
-    border-radius: 5vw;
-    font-size: 30px;
-    text-align: center;
-    display: inline-block;
-    color: transparent;
-    box-sizing: border-box;
-    transform: translate(30%, -900%);
-    padding-top: 1.5vw;
-    padding-right: 2vw;
-    background-size: 220%;
-    background-position: 0% 50%;
-    visibility: visible;
+    
     
 }
 
-.img-e1:hover{
-
-    cursor: pointer;
-}
-
-.img-e11 {
-    
-    background-image: url(img/kakteenland.png);
-    border: 0px solid var(--ac);
-    border-radius: 0vw;
-    font-size: 0px;
-    text-align: center;
-    display: inline-block;
-    color: transparent;
-    box-sizing: border-box;
-   
-    
-
-display: none;
-    padding-top: 0vw;
-    padding-right: 0vw;
-    transform: translate(0%, 0%);
-    background-position: 0% 0%;
-    background-size: 0%;
-    visibility: hidden;
-} 
-
-.img-e11.img {
-
-    background-image: url(img/kakteenland.png);
-    border: 2px solid var(--ac);
-    border-radius: 5vw;
-    font-size: 30px;
-    text-align: center;
-    display: flex;
-    color: transparent;
-    box-sizing: border-box;
-    
-    
-    
-    visibility: visible;
-    
-
-    padding-top: 8vw;
-    padding-right: 0vw;
-    transform: translate(0%, -205%);
-    background-position: 0% 70%;
-    background-size: 100%;
-    visibility: visible;
-    flex-wrap: wrap;
-}
 
 .eintrag1 {
 
 width: 105%;
-transform: translate(-2.3%, 0%);
+margin-top: 5vh;
 flex-wrap: wrap;
+display: block;
+justify-content: space-around;
+width: 99%;
+background-image: url(img/textur.png);
+    
+    background-size: 100%;
+    border: 2px solid var(--ac);
+    padding: 1vw;
+    background-position: 50% 50%;
+    box-sizing: border-box;
+    box-shadow:#A0CE40 2px 3px 10px 15px;
+    border-radius: 5vw;
 }
 
-    
-    .img-e2 {
-        
-        background-image: url(img/topfkakteen.png);
-        border: 2px solid var(--ac);
-        border-radius: 5vw;
-        font-size: 30px;
-        text-align: center;
-        display: inline-block;
-        color: transparent;
-        box-sizing: border-box;
-        transform: translate(100%, -850%);
-        padding-top: 1.5vw;
-        padding-right: 2vw;
-        background-size: 220%;
-        background-position: 0% 50%;
-        visibility: visible;
-        
-    }
+.eintrag1:hover {
 
-    .img-e2:hover{
+    filter: brightness(1.01);
+    transform: scale(1.007);
 
-        cursor: pointer;
-    }
-    
-    .img-e22 {
-        
-        padding-top: 15vw;
-        padding-right: 94vw;
-        transform: translate(0%, -90%);
-        background-position: 0% 70%;
-        background-size: 40%;
+}
 
-        background-image: url(img/topfkakteen.png);
-        border: 2px solid var(--ac);
-        border-radius: 5vw;
-        font-size: 30px;
-        text-align: center;
-        display: none;
-        color: transparent;
-        box-sizing: border-box;
-        visibility: hidden;
-    } 
+.eintraege {
 
-    .img-e22.img2 {
-        
-        padding-top: 14vw;
-        padding-right: 94vw;
-        transform: translate(0%, -90%);
-        background-position: 0% 70%;
-        background-size: 40%;
+flex-wrap: wrap;
+justify-content: space-around;
 
-        background-image: url(img/topfkakteen.png);
-        border: 2px solid var(--ac);
-        border-radius: 5vw;
-        font-size: 30px;
-        text-align: center;
-        
-        color: transparent;
-        box-sizing: border-box;
-        visibility: visible;
-        display: block;
-    } 
+}
 
     .eintrag2 {
-        transform: translate(0%, -20%);
-   
+        margin-top: 39vh;
+        width: 105%;
+margin-top: 5vh;
+flex-wrap: wrap;
+display: block;
+justify-content: space-around;
+width: 99%;
+background-image: url(img/textur.png);
+    background-size: 100%;
+    border: 2px solid var(--ac);
+    padding: 2vw;
+    box-sizing: border-box;
+    box-shadow:#A0CE40 2px 3px 10px 15px;
+    border-radius: 5vw;
     }
 
+    .eintrag2:hover {
 
+        filter: brightness(1.01);
+        transform: scale(1.007);
 
-    .img-e3 {
-        
-        background-image: url(img/kaktusstreifen.jpg);
-        border: 2px solid var(--ac);
-        border-radius: 5vw;
-        font-size: 30px;
-        text-align: center;
-        display: inline-block;
-        color: transparent;
-        box-sizing: border-box;
-        transform: translate(80%, -1090%);
-        padding-top: 1.5vw;
-        padding-right: 2vw;
-        background-size: 220%;
-        background-position: 50% 50%;
-        visibility: visible;
-        
     }
 
-    .img-e3:hover{
-
-        cursor: pointer;
-    }
-
-    .img-e33 {
-        
-        padding-top: 15vw;
-        padding-right: 94vw;
-        transform: translate(0%, -90%);
-        background-position: 0% 70%;
-        background-size: 20%;
-
-        background-image: url(img/topfkakteen.png);
-        border: 2px solid var(--ac);
-        border-radius: 5vw;
-        font-size: 30px;
-        text-align: center;
-        display: none;
-        color: transparent;
-        box-sizing: border-box;
-        visibility: hidden;
-    } 
 
     
 
-    .img-e33.img3 {
-        
-        padding-top: 23vw;
-        padding-right: 94vw;
-        transform: translate(0%, -80%);
-        background-position: 0% 70%;
-        background-size: 50%;
+    
 
-        background-image: url(img/kaktusstreifen.png);
-        border: 2px solid var(--ac);
-        border-radius: 5vw;
-        font-size: 30px;
-        text-align: center;
-        display: block;
-        color: transparent;
-        box-sizing: border-box;
-        visibility: visible;
-    } 
+    
 
+    
 
-    .text-e33 {
-        font-size: 40px;
-        text-align: center;
-        transform: translate(0%, -100%);
-    }
+    
     .eintrag3 {
     
-      
-       transform: translate(0%, -20%);
+        width: 105%;
+        margin-top: 6vh; 
+               flex-wrap: wrap;
+        display: block;
+        justify-content: space-around;
+        width: 99%;
+        background-image: url(img/textur.png);
+            background-size: 100%;
+            border: 2px solid var(--ac);
+            padding: 2vw;
+            box-sizing: border-box;
+            box-shadow:#A0CE40 2px 3px 10px 15px;
+            
+            border-radius: 5vw;
+       
+
+    }
+
+    .eintrag3:hover {
+
+        filter: brightness(1.01);
+        transform: scale(1.007);
 
     }
     
@@ -1940,15 +1813,31 @@ display: block;
 
 /* Kaufen Ende */
 
+.settings-icon-wrap {
+    font-size: 25px;
+
+}
+
+
+.settings-icon-wrap:hover {
+
+cursor: pointer;
+
+}
+
+.option:hover {
+
+cursor: pointer;
+
+}
 
 
 
-
-.settings:hover{
+/* .settings:hover{
 
     cursor: pointer;
 
-}
+} */
 
 /* Weiterleitung 1 Anfang */
 
@@ -2233,6 +2122,7 @@ top: -500px;
     transition: 500ms;
     box-shadow: 0px 0px 10px 1px var(--ac);
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .profilbildoption img{
@@ -2415,6 +2305,12 @@ top: -500px;
 
 .settings .heading .close-icon-wrap i, .settings-icon-wrap i{
     transition: 200ms;
+}
+
+.close-icon-wrap:hover{
+
+cursor: pointer;
+
 }
 
 /* .settings-menu{
@@ -2837,7 +2733,7 @@ margin-top: -5vw;
     box-shadow: 0px 0 3px 0.5px greenyellow;
     font-size: 20px;
     font-weight: bold;
-    color: rgb(255, 125, 147);
+    color: white;
 }
 
 .next:hover {
@@ -2881,10 +2777,7 @@ margin-top: -5vw;
         font-weight: bold;
         display: flex;
         font-weight: bold;
-    border: 2px solid #ff7e93;
-    border-radius: 5vw;
-    padding: 1vw;
-    margin-top: 0.5vw;
+    
         
      }
 
@@ -3306,6 +3199,66 @@ cursor: pointer;
 }
 
 /* flp ende */
+
+/* Error Anfang */
+
+.siren1 {
+
+
+position: relative;
+align-items: center;
+text-align: center;
+margin-left: 60vw;
+margin-top: -20vh;
+
+
+
+}
+
+.siren2 {
+
+
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin-left: -65vw;
+    margin-top: -30.5vh;
+    
+    
+    
+    }
+
+.siren {
+  
+width: 30vw;
+height: 30vh;
+animation-duration: 900ms;
+    animation-name: sirene;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes sirene{
+    0%{
+        filter: grayscale(1);
+    }
+    50%{
+        filter: grayscale(0);
+    }
+    100%{
+        filter: grayscale(1);
+    }
+}
+
+.rick{
+    position: relative;
+align-items: center;
+text-align: center;
+display: flex;
+}
+
+
+/* Error Ende */
 
 
 /* komische icons girlande */
@@ -4389,3 +4342,4 @@ button:disabled:hover{
     }
 
 }
+

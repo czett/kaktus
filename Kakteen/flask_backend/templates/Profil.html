@@ -8,8 +8,8 @@
     <div class="profile-image-container">
         <div class="direct-img-container">
             <!-- <img src="img/profile-icon.jpg" alt="" class="profile-image"> -->
-            {% if data["pimg"] != None %}
-                {% set pimg_url = 'img/' ~ data["pimg"] ~ '.jpg' %}
+            {% if profile_data["pimg"] is defined and profile_data["pimg"] != None %}
+                {% set pimg_url = 'img/' ~  profile_data["pimg"] ~ '.jpg' %}
                 <img src="{{  url_for('static', filename=pimg_url)  }}" class="page-profile-image">
             {% else %}
                 <img src="{{  url_for('static', filename='img/No-user.jpg')  }}" class="page-profile-image">
@@ -55,6 +55,7 @@
             <p class="logout logout-text-btn" onmousedown="newUrl('/logout')">Logout</p>
             {% else %}
             {% set uname = profile_data["username"] %}
+            {% set userid = profile_data["user_id"] %}
             
             {% if profile_data["username"] not in data["friends"] %}
             <button class="add" onmousedown="newUrl('/freund-hinzufuegen/{{  uname  }}')"><i class="fa-solid fa-user-group"></i> Freund hinzufügen</button>
@@ -62,7 +63,7 @@
             <button class="add" disabled onmousedown="newUrl('/freund-hinzufuegen/{{  uname  }}')"><i class="fa-solid fa-user-group"></i> Freund hinzugefügt</button>
             {% endif %}
 
-            <button class="report"><i class="fa-solid fa-flag"></i> Melden</button>
+            <button class="report" onmousedown="newUrl('/profil/melden/{{userid}}')"><i class="fa-solid fa-flag"></i> Melden</button>
             {% endif %}
         </div>
         {% if profile_data["own_profile"] == True %}

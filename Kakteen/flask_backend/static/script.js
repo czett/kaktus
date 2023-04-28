@@ -189,55 +189,6 @@ function togglePasswordChange(){
 
 // Settings Ende
 
-// Image Klicken
-
-
-
-const imge1 = document.querySelector('.img-e1');
-const imge11 = document.querySelector('.img-e11');
-var imghover1 = false;
-
-function imgHover(){
-    if(imghover1 == false) {
-        imge11.classList.add('img');
-        imghover1 = true;
-    }else {
-        imge11.classList.remove('img');
-        imghover1 = false;
-    }
-}
-
-// const imge2 = document.querySelector('.img-e2');
-// const imge22 = document.querySelector('.img-e22');
-// var imghover2 = false;
-
-// function imgHover2(){
-//     if(imghover2 == false) {
-//         imge22.classList.add('img2');
-//         imghover2 = true;
-//     }else {
-//         imge22.classList.remove('img2');
-//         imghover2 = false;
-//     }
-// }
-
-const imge3 = document.querySelector('.img-e3');
-const imge33 = document.querySelector('.img-e33');
-var imghover3 = false;
-
-function imgHover3(){
-    if(imghover3 == false) {
-        imge33.classList.add('img3');
-        imghover3 = true;
-    }else {
-        imge33.classList.remove('img3');
-        imghover3 = false;
-    }
-}
-
-
-// Image Klicken Ende
-
 // Bezahl Anfang
 
 const adress = document.querySelector('.Rechnungsadresse');
