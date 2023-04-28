@@ -169,7 +169,7 @@ op1.addEventListener("click", () => {
     } else {
         result[0].innerHTML = "Falsch!!!";
         result[0].style.color = "red";
-        points -= 1;
+
         document.getElementById('point').innerHTML = points;
 
         div1.style.border = "2px solid red";
@@ -254,7 +254,7 @@ op2.addEventListener("click", () => {
     } else {
         result[0].innerHTML = "Falsch!!!";
         result[0].style.color = "red";
-        points -= 1;
+        
         document.getElementById('point').innerHTML = points;
         div2.style.border = "2px solid red";
 
@@ -334,7 +334,7 @@ op3.addEventListener("click", () => {
     } else {
         result[0].innerHTML = "Falsch!!!";
         result[0].style.color = "red";
-        points -= 1;
+        
         document.getElementById('point').innerHTML = points;
         div3.style.border = "2px solid red";
 
@@ -421,7 +421,7 @@ op4.addEventListener("click", () => {
     } else {
         result[0].innerHTML = "Falsch!!!";
         result[0].style.color = "red";
-        points -= 1;
+        
         document.getElementById('point').innerHTML = points;
         div4.style.border = "2px solid red";
 
@@ -449,11 +449,6 @@ op4.addEventListener("click", () => {
         div4.style.boxShadow = "0px 0 3px 0.5px #A0CE40";
 
         result[0].innerHTML = "";
-
-        
-
-
-
         })
 
     }
@@ -490,7 +485,7 @@ pl +=1;
     
         pl = 0;
     setTimeout(function(){
-        window.location.href = "/erfolg";
+        window.location.href = "/";
     }, 500);
 
     }
