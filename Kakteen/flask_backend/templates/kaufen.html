@@ -2,8 +2,9 @@
 
 {% block content %} 
 
+{% if logged_in == True %}
 <div class="pfeil"><a href="/shop/warenkorb" class="fa-solid fa-arrow-left fa-xl auswahl-back"></a></div>
-
+{% endif %}
 <h1 class="ueberschrift">Bezahlart wählen:</h1><p class="text-k3"><b>Betrag:</b></p>
 <!-- <p class="Betrag"><b>----</b></p> -->
 
@@ -135,10 +136,11 @@
   
       </div>
       
-      
+      {% if logged_in == True %}
       <a href="/weiter2">
         <button class="button-k" href="/weiter2">Bestellen</button>
     </a>
+    {% endif %}
 
 
 
